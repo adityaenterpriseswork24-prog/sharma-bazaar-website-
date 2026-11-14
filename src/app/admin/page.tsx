@@ -7,9 +7,9 @@ import {
   CheckCircle2,
   XCircle,
   PlusCircle,
-  TrendingUp,
   Layers,
-  Sparkles
+  Sparkles,
+  ArrowRight,
 } from 'lucide-react';
 import { Product } from '@/types';
 import { INITIAL_PRODUCTS } from '@/data/initial-products';
@@ -57,97 +57,79 @@ export default function AdminDashboardPage() {
     .slice(0, 5);
 
   return (
-    <div className="space-y-8">
-      {/* Welcome Banner */}
-      <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-subtle flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div className="space-y-8 font-sans">
+      {/* Top Banner */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-200">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-blue">
-            Operational Dashboard
+          <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+            Operations Center
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-brand-navy mt-1">
-            Welcome back, {user?.name || 'Staff Member'}
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy">
+            Dashboard Overview
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Manage showroom display units, distributor catalogue prices, and product availability.
+          <p className="text-xs text-neutral-500 font-mono mt-0.5">
+            Logged in as {user?.name} · {user?.role === 'admin' ? 'Executive Administrator' : 'Showroom Manager'}
           </p>
         </div>
 
         <Link
           href="/admin/products/new"
-          className="px-5 py-3 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-all shrink-0"
+          className="px-4 py-2.5 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2 shadow-subtle shrink-0"
         >
-          <PlusCircle className="w-4 h-4 text-blue-400" />
+          <PlusCircle className="w-3.5 h-3.5" />
           <span>Add New Product</span>
         </Link>
       </div>
 
       {/* 4 Metric Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-subtle flex items-center gap-4">
-          <div className="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold">
-            <Package className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-xs text-slate-500 font-medium">Total Products</p>
-            <p className="text-2xl font-black text-brand-navy">{totalProducts}</p>
-            <p className="text-[10px] text-slate-400">In Showroom Database</p>
-          </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+        <div className="p-5 bg-white border border-neutral-200 rounded-sm space-y-1">
+          <p className="text-neutral-400 text-[10px] uppercase">TOTAL INVENTORY</p>
+          <p className="text-2xl font-bold text-brand-navy font-sans">{totalProducts}</p>
+          <p className="text-neutral-500 text-[11px]">Showroom Models</p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-subtle flex items-center gap-4">
-          <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
-            <CheckCircle2 className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-xs text-slate-500 font-medium">Active Displayed</p>
-            <p className="text-2xl font-black text-emerald-700">{activeProducts}</p>
-            <p className="text-[10px] text-emerald-600">Visible to Public</p>
-          </div>
+        <div className="p-5 bg-white border border-neutral-200 rounded-sm space-y-1">
+          <p className="text-neutral-400 text-[10px] uppercase">ACTIVE ON DISPLAY</p>
+          <p className="text-2xl font-bold text-emerald-700 font-sans">{activeProducts}</p>
+          <p className="text-neutral-500 text-[11px]">Visible to Customers</p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-subtle flex items-center gap-4">
-          <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center font-bold">
-            <XCircle className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-xs text-slate-500 font-medium">Inactive / Archived</p>
-            <p className="text-2xl font-black text-slate-700">{inactiveProducts}</p>
-            <p className="text-[10px] text-slate-400">Hidden from Website</p>
-          </div>
+        <div className="p-5 bg-white border border-neutral-200 rounded-sm space-y-1">
+          <p className="text-neutral-400 text-[10px] uppercase">HIDDEN / ARCHIVED</p>
+          <p className="text-2xl font-bold text-neutral-500 font-sans">{inactiveProducts}</p>
+          <p className="text-neutral-400 text-[11px]">Out of Stock</p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-subtle flex items-center gap-4">
-          <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
-            <Sparkles className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-xs text-slate-500 font-medium">Featured Best Sellers</p>
-            <p className="text-2xl font-black text-amber-600">{featuredProducts}</p>
-            <p className="text-[10px] text-slate-400">Homepage Spotlight</p>
-          </div>
+        <div className="p-5 bg-white border border-neutral-200 rounded-sm space-y-1">
+          <p className="text-neutral-400 text-[10px] uppercase">FEATURED DEALS</p>
+          <p className="text-2xl font-bold text-amber-700 font-sans">{featuredProducts}</p>
+          <p className="text-neutral-500 text-[11px]">Homepage Spotlight</p>
         </div>
       </div>
 
-      {/* Category Breakdown & Recently Updated Grid */}
+      {/* Split Grid: Category Breakdown + Recent Products */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Category Breakdown */}
-        <div className="lg:col-span-5 bg-white p-6 rounded-3xl border border-slate-200 shadow-subtle space-y-4">
+        <div className="lg:col-span-5 bg-white border border-neutral-200 rounded-sm p-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
-              <Layers className="w-4 h-4 text-brand-blue" />
-              <span>Category Inventory</span>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-brand-navy font-mono">
+              Category Distribution
             </h2>
-            <Link href="/admin/products" className="text-xs font-semibold text-brand-blue hover:underline">
-              View All
+            <Link href="/admin/products" className="text-xs font-mono text-neutral-500 hover:text-brand-navy hover:underline">
+              Inventory &rarr;
             </Link>
           </div>
 
-          <div className="space-y-3 pt-2">
+          <div className="space-y-2 pt-2">
             {categoryStats.map((cat) => (
-              <div key={cat.id} className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between text-xs">
-                <span className="font-semibold text-slate-800">{cat.name}</span>
-                <span className="font-bold text-brand-navy bg-white px-2.5 py-1 rounded-md border border-slate-200">
-                  {cat.count} models
+              <div
+                key={cat.id}
+                className="p-3 bg-neutral-50 border border-neutral-100 rounded-sm flex items-center justify-between text-xs font-mono"
+              >
+                <span className="font-semibold text-neutral-800 font-sans">{cat.name}</span>
+                <span className="font-bold text-brand-navy bg-white px-2 py-0.5 rounded-sm border border-neutral-200">
+                  {cat.count} units
                 </span>
               </div>
             ))}
@@ -155,52 +137,39 @@ export default function AdminDashboardPage() {
         </div>
 
         {/* Recently Updated Products */}
-        <div className="lg:col-span-7 bg-white p-6 rounded-3xl border border-slate-200 shadow-subtle space-y-4">
+        <div className="lg:col-span-7 bg-white border border-neutral-200 rounded-sm p-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-emerald-600" />
-              <span>Recently Updated Models</span>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-brand-navy font-mono">
+              Recently Synchronized Models
             </h2>
-            <Link href="/admin/products" className="text-xs font-semibold text-brand-blue hover:underline">
-              Manage Catalogue
+            <Link href="/admin/products" className="text-xs font-mono text-neutral-500 hover:text-brand-navy hover:underline">
+              View All &rarr;
             </Link>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead>
-                <tr className="border-b border-slate-200 text-slate-400 font-semibold uppercase tracking-wider">
-                  <th className="pb-3">Product Name</th>
-                  <th className="pb-3">Category</th>
-                  <th className="pb-3">Our Price</th>
-                  <th className="pb-3 text-right">Status</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {recentProducts.map((p) => (
-                  <tr key={p.id} className="hover:bg-slate-50">
-                    <td className="py-3 font-semibold text-slate-900 max-w-[200px] truncate">
-                      <Link href={`/admin/products/${p.id}/edit`} className="hover:text-brand-blue">
-                        {p.name}
-                      </Link>
-                    </td>
-                    <td className="py-3 text-slate-500 capitalize">{p.category.replace('-', ' ')}</td>
-                    <td className="py-3 font-black text-brand-navy">{formatINR(p.ourPrice)}</td>
-                    <td className="py-3 text-right">
-                      <span
-                        className={`inline-block px-2 py-0.5 rounded text-[10px] font-bold ${
-                          p.isActive
-                            ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                            : 'bg-slate-100 text-slate-600'
-                        }`}
-                      >
-                        {p.isActive ? 'Active' : 'Inactive'}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="border border-neutral-200 rounded-sm divide-y divide-neutral-200 text-xs">
+            {recentProducts.map((p) => (
+              <div key={p.id} className="p-3.5 flex items-center justify-between hover:bg-neutral-50 transition-colors">
+                <div className="space-y-0.5 max-w-sm">
+                  <p className="font-semibold text-neutral-900 truncate font-sans">{p.name}</p>
+                  <p className="text-[11px] font-mono text-neutral-400">
+                    {p.brand} · Model: {p.modelNumber}
+                  </p>
+                </div>
+                <div className="text-right font-mono">
+                  <p className="font-bold text-brand-navy">{formatINR(p.ourPrice)}</p>
+                  <span
+                    className={`text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-sm font-semibold ${
+                      p.isActive
+                        ? 'text-emerald-700 bg-emerald-50'
+                        : 'text-neutral-500 bg-neutral-100'
+                    }`}
+                  >
+                    {p.isActive ? 'Active' : 'Hidden'}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

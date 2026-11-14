@@ -8,9 +8,9 @@ import {
   Edit3,
   Trash2,
   ExternalLink,
-  CheckCircle,
-  XCircle,
-  RotateCcw
+  RotateCcw,
+  Eye,
+  EyeOff,
 } from 'lucide-react';
 import { Product } from '@/types';
 import { INITIAL_PRODUCTS } from '@/data/initial-products';
@@ -31,6 +31,15 @@ export default function AdminProductsPage() {
       } catch {
         // ignore
       }
+    } else {
+      fetch('/api/products')
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.products && Array.isArray(data.products)) {
+            setProducts(data.products);
+          }
+        })
+        .catch(() => {});
     }
   }, []);
 
@@ -106,72 +115,67 @@ export default function AdminProductsPage() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-sans">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-200">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-black text-brand-navy">Product Inventory</h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Create, modify prices, update specifications, and toggle showroom display units.
+          <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+            Inventory Database
+          </span>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy">
+            Product Inventory
+          </h1>
+          <p className="text-xs text-neutral-500 font-mono mt-0.5">
+            Modify pricing, specifications, model numbers, and public visibility.
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <button
             onClick={handleResetToDefaults}
-            className="px-3.5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors"
-            title="Reset to default models"
+            className="px-3.5 py-2.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 text-xs font-mono font-medium rounded-sm flex items-center gap-1.5 transition-colors border border-neutral-200"
+            title="Reset defaults"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <RotateCcw className="w-3.5 h-3.5 text-neutral-500" />
             <span>Reset Defaults</span>
           </button>
 
           <Link
             href="/admin/products/new"
-            className="px-5 py-2.5 rounded-xl bg-brand-navy hover:bg-slate-800 text-white text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm transition-all"
+            className="px-4 py-2.5 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2 shadow-subtle"
           >
-            <PlusCircle className="w-4 h-4 text-blue-400" />
-            <span>Add New Product</span>
+            <PlusCircle className="w-3.5 h-3.5" />
+            <span>Add Product</span>
           </Link>
         </div>
       </div>
 
-      {/* Notification Banner */}
       {notification && (
-        <div
-          className={`p-4 rounded-xl text-xs font-semibold flex items-center justify-between shadow-sm animate-in fade-in ${
-            notification.type === 'success'
-              ? 'bg-emerald-50 border border-emerald-200 text-emerald-800'
-              : 'bg-rose-50 border border-rose-200 text-rose-800'
-          }`}
-        >
+        <div className="p-3.5 rounded-sm bg-neutral-900 text-white text-xs font-mono flex items-center justify-between shadow-subtle">
           <span>{notification.message}</span>
-          <button onClick={() => setNotification(null)} className="text-slate-400 hover:text-slate-600">
-            ✕
-          </button>
         </div>
       )}
 
-      {/* Filters Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="relative w-full sm:w-80">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+      {/* Filter Bar */}
+      <div className="p-4 bg-white border border-neutral-200 rounded-sm grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+        <div className="sm:col-span-8 relative">
+          <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by name, brand, model..."
-            className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+            placeholder="Search by title, brand, or model number..."
+            className="w-full pl-9 pr-3 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs focus:outline-none focus:border-brand-navy font-sans"
           />
         </div>
 
-        <div className="flex items-center gap-2 w-full sm:w-auto">
+        <div className="sm:col-span-4">
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full sm:w-auto py-2 px-3 rounded-xl border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 bg-white"
+            className="w-full py-2 px-3 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono text-neutral-700 focus:outline-none focus:border-brand-navy"
           >
-            <option value="all">All Categories ({products.length})</option>
+            <option value="all">All Departments</option>
             {ELECTRONICS_CATEGORIES.map((cat) => (
               <option key={cat.id} value={cat.id}>
                 {cat.name}
@@ -181,123 +185,105 @@ export default function AdminProductsPage() {
         </div>
       </div>
 
-      {/* Product Table */}
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-subtle overflow-hidden">
+      {/* High-Precision Data Table */}
+      <div className="border border-neutral-200 rounded-sm overflow-hidden bg-white">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase tracking-wider font-semibold">
-              <tr>
-                <th className="py-3.5 px-4">Item</th>
-                <th className="py-3.5 px-4">Brand &amp; Model</th>
-                <th className="py-3.5 px-4">Category</th>
-                <th className="py-3.5 px-4">Showroom Price</th>
-                <th className="py-3.5 px-4">MRP &amp; Savings</th>
+          <table className="w-full text-left text-xs border-collapse font-sans">
+            <thead>
+              <tr className="border-b border-neutral-200 bg-neutral-50 font-mono text-[10px] uppercase tracking-wider text-neutral-500">
+                <th className="py-3.5 px-4">Product &amp; Model</th>
+                <th className="py-3.5 px-4">Department</th>
+                <th className="py-3.5 px-4 font-mono text-right">Showroom Price</th>
+                <th className="py-3.5 px-4 font-mono text-right">MRP</th>
                 <th className="py-3.5 px-4 text-center">Status</th>
                 <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
-              {filtered.map((p) => {
-                const { savingsAmount, discountPercent, hasSavings } = calculateSavings(
-                  p.mrpPrice,
-                  p.ourPrice
-                );
+            <tbody className="divide-y divide-neutral-200">
+              {filtered.map((product) => {
+                const { savingsAmount, hasSavings } = calculateSavings(product.mrpPrice, product.ourPrice);
                 return (
-                  <tr key={p.id} className="hover:bg-slate-50/80 transition-colors">
-                    {/* Item Image & Title */}
-                    <td className="py-3 px-4">
+                  <tr key={product.id} className="hover:bg-neutral-50/70 transition-colors">
+                    <td className="py-3.5 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden shrink-0 p-1 flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-sm bg-neutral-50 border border-neutral-200 overflow-hidden shrink-0 p-1 flex items-center justify-center">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src={p.imageUrl}
-                            alt={p.name}
+                            src={product.imageUrl}
+                            alt={product.name}
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        <div className="max-w-[220px]">
-                          <p className="font-bold text-slate-900 truncate">{p.name}</p>
-                          <Link
-                            href={`/electronics/${p.slug}`}
-                            target="_blank"
-                            className="text-[11px] text-brand-blue hover:underline inline-flex items-center gap-1"
-                          >
-                            <span>Preview Live Page</span>
-                            <ExternalLink className="w-2.5 h-2.5" />
-                          </Link>
+                        <div className="max-w-xs sm:max-w-md">
+                          <p className="font-semibold text-neutral-900 truncate">{product.name}</p>
+                          <p className="font-mono text-[10px] text-neutral-400">
+                            {product.brand} · {product.modelNumber}
+                          </p>
                         </div>
                       </div>
                     </td>
 
-                    {/* Brand & Model */}
-                    <td className="py-3 px-4 font-medium">
-                      <p className="text-slate-900 font-semibold">{p.brand}</p>
-                      <p className="text-slate-400 font-mono text-[11px]">{p.modelNumber}</p>
+                    <td className="py-3.5 px-4 font-mono text-[11px] text-neutral-500 uppercase tracking-wider">
+                      {product.category.replace('-', ' ')}
                     </td>
 
-                    {/* Category */}
-                    <td className="py-3 px-4 capitalize text-slate-600 font-medium">
-                      {p.category.replace('-', ' ')}
+                    <td className="py-3.5 px-4 text-right font-mono font-bold text-brand-navy">
+                      {formatINR(product.ourPrice)}
                     </td>
 
-                    {/* Our Price */}
-                    <td className="py-3 px-4 font-black text-brand-navy text-sm">
-                      {formatINR(p.ourPrice)}
+                    <td className="py-3.5 px-4 text-right font-mono text-neutral-400 line-through">
+                      {product.mrpPrice > 0 ? formatINR(product.mrpPrice) : '—'}
                     </td>
 
-                    {/* MRP & Savings */}
-                    <td className="py-3 px-4">
-                      <p className="text-slate-400 line-through text-[11px]">
-                        MRP {formatINR(p.mrpPrice)}
-                      </p>
-                      {hasSavings && (
-                        <p className="text-emerald-700 font-bold text-[11px]">
-                          Save {formatINR(savingsAmount)} ({discountPercent}%)
-                        </p>
-                      )}
-                    </td>
-
-                    {/* Status Toggle */}
-                    <td className="py-3 px-4 text-center">
+                    <td className="py-3.5 px-4 text-center font-mono">
                       <button
-                        onClick={() => handleToggleActive(p.id)}
-                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold border transition-colors ${
-                          p.isActive
-                            ? 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100'
-                            : 'bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200'
+                        onClick={() => handleToggleActive(product.id)}
+                        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-semibold tracking-wider uppercase transition-colors ${
+                          product.isActive
+                            ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'
+                            : 'bg-neutral-100 text-neutral-500 border border-neutral-200 hover:bg-neutral-200'
                         }`}
                         title="Click to toggle visibility"
                       >
-                        {p.isActive ? (
+                        {product.isActive ? (
                           <>
-                            <CheckCircle className="w-3 h-3 text-emerald-600" />
+                            <Eye className="w-3 h-3" />
                             <span>Active</span>
                           </>
                         ) : (
                           <>
-                            <XCircle className="w-3 h-3 text-slate-400" />
+                            <EyeOff className="w-3 h-3" />
                             <span>Hidden</span>
                           </>
                         )}
                       </button>
                     </td>
 
-                    {/* Actions */}
-                    <td className="py-3 px-4 text-right">
+                    <td className="py-3.5 px-4 text-right">
                       <div className="flex items-center justify-end gap-2">
                         <Link
-                          href={`/admin/products/${p.id}/edit`}
-                          className="p-1.5 rounded-lg text-slate-600 hover:text-brand-blue hover:bg-slate-100 transition-colors"
+                          href={`/electronics/${product.slug}`}
+                          target="_blank"
+                          className="p-1.5 text-neutral-400 hover:text-brand-navy transition-colors rounded-sm hover:bg-neutral-100"
+                          title="View on site"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </Link>
+
+                        <Link
+                          href={`/admin/products/${product.id}/edit`}
+                          className="p-1.5 text-neutral-600 hover:text-brand-navy transition-colors rounded-sm hover:bg-neutral-100"
                           title="Edit product"
                         >
-                          <Edit3 className="w-4 h-4" />
+                          <Edit3 className="w-3.5 h-3.5" />
                         </Link>
+
                         <button
-                          onClick={() => handleDelete(p.id, p.name)}
-                          className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors"
-                          title="Delete product"
+                          onClick={() => handleDelete(product.id, product.name)}
+                          className="p-1.5 text-neutral-400 hover:text-rose-600 transition-colors rounded-sm hover:bg-rose-50"
+                          title="Delete from catalogue"
                         >
-                          <Trash2 className="w-4 h-4" />
+                          <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </td>
@@ -306,6 +292,11 @@ export default function AdminProductsPage() {
               })}
             </tbody>
           </table>
+        </div>
+
+        <div className="p-3 border-t border-neutral-200 bg-neutral-50 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+          <span>Total records: {filtered.length}</span>
+          <span>Sharma Electronics Inventory Registry</span>
         </div>
       </div>
     </div>

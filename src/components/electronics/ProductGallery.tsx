@@ -22,7 +22,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   return (
     <div className="space-y-4">
       {/* Main Image Display */}
-      <div className="relative aspect-[4/3] bg-white rounded-3xl border border-slate-200 overflow-hidden p-6 flex items-center justify-center shadow-subtle">
+      <div className="relative aspect-[4/3] bg-neutral-50/70 border border-neutral-200 rounded-sm overflow-hidden p-8 flex items-center justify-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={selectedImage}
@@ -36,15 +36,15 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
       {/* Thumbnails */}
       {images && images.length > 1 && (
-        <div className="flex items-center gap-3 overflow-x-auto pb-2">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1">
           {images.map((img, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(img)}
-              className={`relative w-20 h-20 rounded-xl bg-white border-2 overflow-hidden p-1.5 shrink-0 transition-all ${
+              className={`relative w-16 h-16 rounded-sm bg-neutral-50 border overflow-hidden p-1 shrink-0 transition-all ${
                 selectedImage === img
-                  ? 'border-brand-blue shadow-md scale-105'
-                  : 'border-slate-200 hover:border-slate-300 opacity-70 hover:opacity-100'
+                  ? 'border-brand-navy shadow-subtle'
+                  : 'border-neutral-200 hover:border-neutral-300 opacity-60 hover:opacity-100'
               }`}
               aria-label={`View image ${index + 1}`}
             >

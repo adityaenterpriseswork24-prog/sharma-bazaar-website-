@@ -47,12 +47,12 @@ export default function EditProductPage() {
 
   if (!product) {
     return (
-      <div className="py-12 text-center space-y-4">
-        <h2 className="text-xl font-bold text-slate-900">Product Not Found</h2>
-        <p className="text-xs text-slate-500">The product ID &quot;{productId}&quot; does not exist.</p>
+      <div className="py-12 text-center space-y-4 max-w-md mx-auto p-8 bg-white border border-neutral-200 rounded-sm">
+        <h2 className="text-xl font-bold text-brand-navy">Product Not Found</h2>
+        <p className="text-xs text-neutral-500 font-mono">The product ID &quot;{productId}&quot; does not exist in inventory.</p>
         <button
           onClick={() => router.push('/admin/products')}
-          className="px-4 py-2 rounded-xl bg-brand-navy text-white text-xs font-semibold"
+          className="px-4 py-2 rounded-sm bg-brand-navy text-white text-xs font-mono uppercase tracking-wider"
         >
           Back to Catalogue
         </button>

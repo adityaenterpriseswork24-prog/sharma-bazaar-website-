@@ -2,17 +2,12 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import {
-  ChevronRight,
   Clock,
   Calendar,
-  UserCheck,
-  ArrowLeft,
   ArrowRight,
   MessageCircle,
   Phone,
-  Sparkles,
-  Building2,
-  CheckCircle2
+  Check,
 } from 'lucide-react';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { SITE_CONFIG } from '@/data/site-config';
@@ -134,69 +129,61 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
       />
 
-      <article className="bg-white min-h-screen py-10 sm:py-14">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <article className="bg-white min-h-screen py-10 sm:py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-1.5 text-xs text-slate-500 overflow-x-auto py-1">
-            <Link href="/" className="hover:text-brand-blue shrink-0">
-              Home
+          <nav className="flex items-center gap-2 text-xs font-mono text-neutral-400 overflow-x-auto py-1">
+            <Link href="/" className="hover:text-brand-navy shrink-0">
+              Showroom
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-            <Link href="/blog" className="hover:text-brand-blue shrink-0">
-              Blog
+            <span>/</span>
+            <Link href="/blog" className="hover:text-brand-navy shrink-0">
+              Journal
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-            <span className="text-slate-800 font-semibold truncate max-w-xs">{post.title}</span>
+            <span>/</span>
+            <span className="text-neutral-800 font-semibold truncate max-w-xs">{post.title}</span>
           </nav>
 
           {/* Article Header */}
           <header className="space-y-4">
-            <div className="flex items-center gap-3 text-xs font-semibold">
-              <span className="text-brand-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                {post.category}
-              </span>
-              <span className="flex items-center gap-1 text-slate-500">
-                <Clock className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-3 font-mono text-xs text-neutral-400 uppercase tracking-wider">
+              <span className="font-bold text-brand-navy">{post.category}</span>
+              <span>·</span>
+              <span className="flex items-center gap-1">
+                <Clock className="w-3 h-3" />
                 {post.readTime}
               </span>
-              <span className="flex items-center gap-1 text-slate-500">
-                <Calendar className="w-3.5 h-3.5" />
-                {post.publishedDate}
-              </span>
+              <span>·</span>
+              <span>{post.publishedDate}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-navy tracking-tight leading-[1.15]">
               {post.title}
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="text-base text-neutral-600 leading-relaxed font-normal">
               {post.excerpt}
             </p>
 
             {/* Author Byline */}
-            <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center font-bold">
-                  <UserCheck className="w-5 h-5 text-brand-blue" />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm font-bold text-slate-900">{post.author}</p>
-                  <p className="text-[11px] text-slate-500">{post.authorRole}</p>
-                </div>
+            <div className="pt-4 border-t border-neutral-200 flex items-center justify-between text-xs font-mono">
+              <div>
+                <p className="font-bold text-neutral-900 font-sans">{post.author}</p>
+                <p className="text-neutral-400 text-[11px]">{post.authorRole}</p>
               </div>
 
               <Link
                 href={`/electronics?category=${post.relatedCategorySlug}`}
-                className="text-xs font-bold text-brand-blue hover:underline flex items-center gap-1"
+                className="font-semibold text-brand-navy hover:underline flex items-center gap-1"
               >
                 <span>View {post.category} in Store</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
           </header>
 
           {/* Cover Image */}
-          <div className="rounded-3xl overflow-hidden aspect-[16/9] bg-slate-100 border border-slate-200 shadow-card">
+          <div className="border border-neutral-200 rounded-sm overflow-hidden aspect-[16/9] bg-neutral-100">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={post.coverImage}
@@ -206,28 +193,27 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {/* Article Body Content */}
-          <div className="space-y-8 text-slate-800 leading-relaxed text-sm sm:text-base">
+          <div className="space-y-8 text-neutral-800 leading-relaxed text-sm sm:text-base">
             {post.content.map((sec, idx) => (
               <section key={idx} className="space-y-4">
-                <h2 className="text-2xl font-black text-brand-navy pt-2">
+                <h2 className="text-xl sm:text-2xl font-bold text-brand-navy pt-2">
                   {sec.heading}
                 </h2>
                 {sec.paragraphs.map((p, pIdx) => (
-                  <p key={pIdx} className="text-slate-700 leading-relaxed">
+                  <p key={pIdx} className="text-neutral-700 leading-relaxed">
                     {p}
                   </p>
                 ))}
 
                 {sec.keyTakeaways && sec.keyTakeaways.length > 0 && (
-                  <div className="p-5 sm:p-6 rounded-2xl bg-blue-50/70 border border-blue-100 space-y-2.5 my-4">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-brand-blue flex items-center gap-1.5">
-                      <Sparkles className="w-4 h-4 text-brand-blue" />
-                      <span>Key Takeaways for Buyers</span>
+                  <div className="p-5 bg-neutral-50 border border-neutral-200 rounded-sm space-y-2 my-4">
+                    <h4 className="font-mono text-xs uppercase tracking-wider text-brand-navy font-bold">
+                      Key Takeaways for Buyers
                     </h4>
-                    <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700">
+                    <ul className="space-y-1.5 text-xs text-neutral-700">
                       {sec.keyTakeaways.map((item, tIdx) => (
                         <li key={tIdx} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -238,54 +224,37 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             ))}
           </div>
 
-          {/* In-Article WhatsApp Counter-Quote Box */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white space-y-4 shadow-elevated">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-              Direct Showroom Advantage
+          {/* Showroom Direct WhatsApp CTA Box */}
+          <div className="p-6 sm:p-8 bg-brand-navy text-white rounded-sm space-y-4 mt-12">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+              Personal Showroom Advice
             </span>
-            <h3 className="text-xl sm:text-2xl font-black">
-              Found a price online? Compare it with us before you order.
+            <h3 className="text-xl font-bold text-white">
+              Have a question about this appliance?
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Selected models at our 5-floor Masoodpur showroom can be ₹1,000–₹2,000 cheaper than major e-commerce platforms, with genuine brand warranty and same-day South Delhi dispatch.
+            <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              Our store manager at Masoodpur Dairy showroom can review room dimensions, water TDS, or online quotes with you directly.
             </p>
-            <div className="pt-2 flex flex-col sm:flex-row gap-3">
+
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2"
+                className="px-5 py-3 bg-brand-whatsapp hover:bg-brand-whatsappDark text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2 shadow-subtle"
               >
-                <MessageCircle className="w-4 h-4 fill-white text-brand-whatsapp" />
-                <span>Ask Showroom Price on WhatsApp</span>
+                <MessageCircle className="w-4 h-4 fill-white" />
+                <span>Ask on WhatsApp</span>
               </a>
+
               <a
                 href={`tel:${SITE_CONFIG.phone}`}
-                className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 border border-white/10"
+                className="px-5 py-3 bg-white text-brand-navy hover:bg-neutral-100 text-xs font-bold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2"
               >
-                <Phone className="w-4 h-4 text-blue-400" />
-                <span>Call Showroom ({SITE_CONFIG.phone})</span>
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call {SITE_CONFIG.phone}</span>
               </a>
             </div>
-          </div>
-
-          {/* Back link */}
-          <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-brand-blue"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back to All Guides</span>
-            </Link>
-
-            <Link
-              href="/electronics"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-blue hover:underline"
-            >
-              <span>Explore Electronics Catalogue</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </article>

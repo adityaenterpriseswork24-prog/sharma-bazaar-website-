@@ -3,11 +3,10 @@
 import { useState, useEffect } from 'react';
 import {
   ShieldAlert,
-  UserCheck,
   UserPlus,
   Trash2,
   Shield,
-  CheckCircle2
+  Check,
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
 import { UserAccount, UserRole } from '@/types';
@@ -66,25 +65,20 @@ export default function AdminEmployeesPage() {
     null
   );
 
-  // STRICT SERVER/ROLE CHECK: If user is not Admin, display Access Denied
+  // STRICT ROLE CHECK: If user is not Admin, display Access Denied
   if (!isAdmin) {
     return (
-      <div className="py-16 max-w-lg mx-auto text-center space-y-4">
-        <div className="w-16 h-16 rounded-3xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center mx-auto shadow-subtle">
-          <ShieldAlert className="w-8 h-8" />
+      <div className="py-16 max-w-lg mx-auto text-center space-y-4 font-sans">
+        <div className="w-12 h-12 rounded-sm bg-rose-50 border border-rose-200 text-rose-700 flex items-center justify-center mx-auto">
+          <ShieldAlert className="w-6 h-6" />
         </div>
-        <h2 className="text-2xl font-black text-brand-navy">
+        <h2 className="text-xl font-bold text-brand-navy">
           403 — Administrative Clearance Required
         </h2>
-        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+        <p className="text-xs text-neutral-600 leading-relaxed font-mono">
           Your account is currently assigned the role of <strong>Shop Manager</strong>.
-          Per showroom security protocol, employee management and role delegations are strictly restricted to <strong>Executive Admins</strong>.
+          Per showroom protocol, employee access governance is restricted strictly to <strong>Executive Administrators</strong>.
         </p>
-        <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-500 text-left space-y-1">
-          <p className="font-bold text-slate-700">Role Capabilities Summary:</p>
-          <p>• <strong>Shop Manager:</strong> Product catalogue, pricing adjustments, display statuses.</p>
-          <p>• <strong>Admin:</strong> Complete platform access, credentials, and employee roles.</p>
-        </div>
       </div>
     );
   }
@@ -106,7 +100,7 @@ export default function AdminEmployeesPage() {
     setEmail('');
     setShowAddForm(false);
     setNotification({
-      message: `Staff account created for ${name} with ${role.replace('_', ' ')} privileges.`,
+      message: `Staff credentials granted for ${name} (${role.replace('_', ' ')}).`,
       type: 'success',
     });
     setTimeout(() => setNotification(null), 4000);
@@ -134,162 +128,130 @@ export default function AdminEmployeesPage() {
   };
 
   return (
-    <div className="space-y-6 max-w-5xl">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div className="space-y-6 max-w-5xl font-sans">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-200">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-amber-600">
-            Executive Control
+          <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+            Security Governance
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-brand-navy">Staff &amp; Role Management</h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Authorize team members, assign operational roles, and enforce RBAC credentials.
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy">
+            Staff &amp; Role Management
+          </h1>
+          <p className="text-xs text-neutral-500 font-mono mt-0.5">
+            Manage showroom employee authorization, role clearance levels, and credentials.
           </p>
         </div>
 
         <button
           onClick={() => setShowAddForm(!showAddForm)}
-          className="px-5 py-2.5 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-all shrink-0"
+          className="px-4 py-2.5 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2 shadow-subtle shrink-0"
         >
-          <UserPlus className="w-4 h-4 text-emerald-400" />
-          <span>{showAddForm ? 'Close Form' : 'Add New Staff Member'}</span>
+          <UserPlus className="w-3.5 h-3.5" />
+          <span>{showAddForm ? 'Close Form' : 'Enroll Staff'}</span>
         </button>
       </div>
 
       {notification && (
-        <div
-          className={`p-4 rounded-xl text-xs font-semibold flex items-center gap-2 ${
-            notification.type === 'success'
-              ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-              : 'bg-rose-50 text-rose-800 border border-rose-200'
-          }`}
-        >
-          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+        <div className="p-3.5 rounded-sm bg-neutral-900 text-white text-xs font-mono flex items-center gap-2 shadow-subtle">
+          <Check className="w-4 h-4 text-emerald-400" />
           <span>{notification.message}</span>
         </div>
       )}
 
-      {/* Add Employee Form Drawer */}
       {showAddForm && (
-        <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-card space-y-4 animate-in slide-in-from-top-2">
-          <h3 className="text-base font-bold text-slate-900 border-b border-slate-100 pb-2 flex items-center gap-2">
-            <UserPlus className="w-4 h-4 text-brand-blue" />
-            <span>Create Showroom Staff Account</span>
+        <form onSubmit={handleAddEmployee} className="p-6 bg-white border border-neutral-200 rounded-sm space-y-4">
+          <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 border-b border-neutral-100 pb-2">
+            Enroll New Showroom Personnel
           </h3>
-
-          <form onSubmit={handleAddEmployee} className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
             <div>
-              <label className="block font-semibold text-slate-700 mb-1">Full Name</label>
+              <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">Full Name</label>
               <input
                 type="text"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. Amit Sharma"
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                placeholder="e.g. Vikram Sharma"
+                className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs focus:outline-none focus:border-brand-navy"
               />
             </div>
-
             <div>
-              <label className="block font-semibold text-slate-700 mb-1">Company / Staff Email</label>
+              <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">Staff Email</label>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="e.g. staff@sharmaelectronics.com"
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                placeholder="vikram@sharmaelectronics.com"
+                className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
               />
             </div>
-
             <div>
-              <label className="block font-semibold text-slate-700 mb-1">Assigned Role</label>
+              <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">Clearance Level</label>
               <select
                 value={role}
                 onChange={(e) => setRole(e.target.value as UserRole)}
-                className="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
+                className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
               >
-                <option value="shop_manager">Shop Manager (Inventory Only)</option>
-                <option value="admin">Admin (Full Control)</option>
+                <option value="shop_manager">Shop Manager</option>
+                <option value="admin">Executive Admin</option>
               </select>
             </div>
-
-            <div className="sm:col-span-3 flex justify-end gap-2 pt-2">
-              <button
-                type="button"
-                onClick={() => setShowAddForm(false)}
-                className="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="px-5 py-2 rounded-xl bg-brand-navy text-white text-xs font-bold"
-              >
-                Save Staff Account
-              </button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <button
+            type="submit"
+            className="px-5 py-2.5 bg-brand-navy text-white text-xs font-semibold uppercase tracking-wider rounded-sm"
+          >
+            Create Staff Profile
+          </button>
+        </form>
       )}
 
-      {/* Staff Table */}
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-subtle overflow-hidden">
-        <div className="p-4 border-b border-slate-100 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-brand-blue" />
-            <h3 className="text-sm font-bold text-slate-900">Active Staff Accounts</h3>
-          </div>
-          <span className="text-xs text-slate-400 font-medium">
-            {employees.length} Authorized Accounts
-          </span>
-        </div>
-
+      {/* Staff Registry Table */}
+      <div className="border border-neutral-200 rounded-sm overflow-hidden bg-white">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 border-b border-slate-200 text-slate-400 font-semibold uppercase tracking-wider">
-              <tr>
-                <th className="py-3 px-4">Staff Member</th>
-                <th className="py-3 px-4">Email</th>
-                <th className="py-3 px-4">Role Privileges</th>
-                <th className="py-3 px-4 text-center">Change Role</th>
-                <th className="py-3 px-4 text-right">Action</th>
+          <table className="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr className="border-b border-neutral-200 bg-neutral-50 font-mono text-[10px] uppercase tracking-wider text-neutral-500">
+                <th className="py-3.5 px-4">Staff Member</th>
+                <th className="py-3.5 px-4">Email</th>
+                <th className="py-3.5 px-4">Clearance Role</th>
+                <th className="py-3.5 px-4">Issued On</th>
+                <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-neutral-200">
               {employees.map((emp) => (
-                <tr key={emp.uid} className="hover:bg-slate-50/80">
-                  <td className="py-3 px-4 font-bold text-slate-900 flex items-center gap-2">
-                    <UserCheck className="w-4 h-4 text-brand-blue shrink-0" />
-                    <span>{emp.name}</span>
+                <tr key={emp.uid} className="hover:bg-neutral-50/70 transition-colors">
+                  <td className="py-3.5 px-4 font-semibold text-neutral-900 font-sans">
+                    {emp.name}
                   </td>
-                  <td className="py-3 px-4 font-mono text-slate-600">{emp.email}</td>
-                  <td className="py-3 px-4">
-                    <span
-                      className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider ${
-                        emp.role === 'admin'
-                          ? 'bg-amber-100 text-amber-800 border border-amber-200'
-                          : 'bg-blue-100 text-blue-800 border border-blue-200'
-                      }`}
-                    >
-                      {emp.role === 'admin' ? 'Executive Admin' : 'Shop Manager'}
-                    </span>
+                  <td className="py-3.5 px-4 font-mono text-neutral-500">
+                    {emp.email}
                   </td>
-                  <td className="py-3 px-4 text-center">
+                  <td className="py-3.5 px-4">
                     <button
                       onClick={() => handleToggleRole(emp.uid)}
-                      className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition-colors"
-                      title="Toggle role between Admin and Shop Manager"
+                      className={`font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm border ${
+                        emp.role === 'admin'
+                          ? 'bg-amber-50 text-amber-800 border-amber-200'
+                          : 'bg-blue-50 text-blue-800 border-blue-200'
+                      }`}
+                      title="Click to toggle clearance role"
                     >
-                      Switch to {emp.role === 'admin' ? 'Shop Manager' : 'Admin'}
+                      {emp.role === 'admin' ? 'Executive Admin' : 'Shop Manager'}
                     </button>
                   </td>
-                  <td className="py-3 px-4 text-right">
+                  <td className="py-3.5 px-4 font-mono text-[11px] text-neutral-400">
+                    {emp.createdAt ? new Date(emp.createdAt).toLocaleDateString() : 'Active'}
+                  </td>
+                  <td className="py-3.5 px-4 text-right">
                     <button
                       onClick={() => handleDelete(emp.uid, emp.name)}
-                      className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
-                      title="Revoke account"
+                      className="p-1.5 text-neutral-400 hover:text-rose-600 transition-colors rounded-sm hover:bg-rose-50"
+                      title="Revoke clearance"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="w-3.5 h-3.5" />
                     </button>
                   </td>
                 </tr>

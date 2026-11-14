@@ -1,25 +1,24 @@
 import Link from 'next/link';
 import {
-  Sparkles,
   ArrowRight,
   MessageCircle,
   Phone,
   ShieldCheck,
   Building2,
-  Percent,
   CheckCircle2,
   Tv,
   Wind,
   Refrigerator,
   Flame,
+  Sparkles,
   Droplets,
   MapPin,
-  ExternalLink,
   Star,
-  Users,
-  Award,
   Clock,
-  ArrowUpRight
+  ArrowUpRight,
+  Truck,
+  RotateCcw,
+  Zap,
 } from 'lucide-react';
 import { SITE_CONFIG, ELECTRONICS_CATEGORIES, GOOGLE_REVIEWS_MOCK } from '@/data/site-config';
 import { getActiveProducts } from '@/lib/products';
@@ -27,9 +26,9 @@ import { ProductCard } from '@/components/ui/ProductCard';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata = {
-  title: `${SITE_CONFIG.businessName} | Electronics Store in Vasant Kunj Delhi`,
+  title: `${SITE_CONFIG.businessName} | Premier Electronics Showroom Vasant Kunj`,
   description:
-    'Vasant Kunj premier electronics showroom. Competitive local prices on Sony, Samsung, LG, Daikin, Bosch TVs, ACs, Refrigerators & Washing Machines. Visit our 5-floor showroom at Masoodpur Dairy.',
+    'Vasant Kunj premier multi-brand consumer electronics showroom. Competitive local showroom prices on Sony, Samsung, LG, Daikin, Bosch TVs, ACs, Refrigerators and Washing Machines. 5-floor showroom at Masoodpur Dairy.',
   alternates: {
     canonical: 'https://www.sharmaelectronics.com',
   },
@@ -48,17 +47,6 @@ export default async function HomePage() {
     `Hi Sharma Electronics, I have an online price quote for an electronic product. Can you share your best local showroom price?`
   );
 
-  // Category Icon Mapping
-  const categoryIcons: Record<string, React.ReactNode> = {
-    televisions: <Tv className="w-6 h-6 text-brand-blue" />,
-    'air-conditioners': <Wind className="w-6 h-6 text-brand-blue" />,
-    refrigerators: <Refrigerator className="w-6 h-6 text-brand-blue" />,
-    'washing-machines': <Flame className="w-6 h-6 text-brand-blue" />,
-    microwaves: <Sparkles className="w-6 h-6 text-brand-blue" />,
-    'water-dispensers': <Droplets className="w-6 h-6 text-brand-blue" />,
-  };
-
-  // Structured Data Schema for Local Business
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'ElectronicsStore',
@@ -109,110 +97,93 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Local Business JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
 
       {/* ====================================================
-          SECTION 3: HERO SECTION
+          SECTION 1: HERO (Architectural Editorial)
       ==================================================== */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50 pt-10 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-100">
+      <section className="relative bg-white pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-brand-blue text-xs sm:text-sm font-bold shadow-sm">
-                <Building2 className="w-4 h-4 text-brand-blue" />
-                <span>5-Floor Commercial Showroom in Masoodpur, Vasant Kunj</span>
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 border border-neutral-200 px-2.5 py-1 rounded-sm">
+                  Masoodpur Dairy · Vasant Kunj
+                </span>
+                <span className="text-xs font-mono text-neutral-400">
+                  Est. 2019
+                </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-navy tracking-tight leading-[1.15]">
+              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-brand-navy leading-[1.08]">
                 Big Brands. Better Prices.{' '}
-                <span className="text-brand-blue block mt-1">Right Here in Vasant Kunj.</span>
+                <span className="block text-neutral-500 font-medium mt-1">
+                  Right Here in Vasant Kunj.
+                </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Shop TVs, ACs, Refrigerators, Washing Machines and more at competitive prices.
-                Visit our showroom or enquire on WhatsApp before purchasing online.
+              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl font-normal">
+                Shop 4K Smart TVs, Inverter Air Conditioners, Multi-Door Refrigerators,
+                and Laundry Care at competitive local showroom prices. Compare quotes with us before buying online.
               </p>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                 <Link
                   href="/electronics"
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-card hover:shadow-cardHover transition-all transform hover:-translate-y-0.5"
+                  className="px-6 py-3.5 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors text-center flex items-center justify-center gap-2"
                 >
-                  <span>Explore Electronics</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Explore Catalogue</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
                 <a
                   href={heroWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all"
+                  className="px-6 py-3.5 bg-brand-whatsapp hover:bg-brand-whatsappDark text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors text-center flex items-center justify-center gap-2 shadow-subtle"
                 >
-                  <MessageCircle className="w-5 h-5 fill-white text-brand-whatsapp" />
-                  <span>Get Best Price on WhatsApp</span>
+                  <MessageCircle className="w-4 h-4 fill-white" />
+                  <span>Get Quote on WhatsApp</span>
                 </a>
               </div>
 
-              {/* Trust Badges */}
-              <div className="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 text-left">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">100% Original</h4>
-                    <p className="text-[11px] text-slate-500">Official Brand Warranty</p>
-                  </div>
+              {/* Showroom Specs Line */}
+              <div className="pt-6 border-t border-neutral-100 grid grid-cols-3 gap-4 font-mono text-xs">
+                <div>
+                  <p className="text-neutral-400 text-[10px] uppercase tracking-wider">Facility</p>
+                  <p className="font-bold text-brand-navy mt-0.5">5 Full Floors</p>
                 </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Compare Online</h4>
-                    <p className="text-[11px] text-slate-500">Selected Products Cheaper</p>
-                  </div>
+                <div>
+                  <p className="text-neutral-400 text-[10px] uppercase tracking-wider">Access</p>
+                  <p className="font-bold text-brand-navy mt-0.5">Commercial Lift</p>
                 </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Commercial Lift</h4>
-                    <p className="text-[11px] text-slate-500">Easy 5-Floor Access</p>
-                  </div>
+                <div>
+                  <p className="text-neutral-400 text-[10px] uppercase tracking-wider">Warranty</p>
+                  <p className="font-bold text-brand-navy mt-0.5">100% Brand Seal</p>
                 </div>
               </div>
             </div>
 
-            {/* Right Hero Image Card */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden border border-slate-200/90 shadow-elevated bg-slate-900">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
-                  alt="Sony 4K OLED and QLED Smart TVs on display at Sharma Electronics Vasant Kunj"
-                  className="w-full aspect-[4/3] object-cover opacity-90 hover:scale-105 transition-transform duration-700"
-                />
+            {/* Right Hero Image Frame */}
+            <div className="lg:col-span-5">
+              <div className="relative border border-neutral-200 bg-neutral-50 p-4 sm:p-6 rounded-sm">
+                <div className="relative aspect-[4/3] bg-white border border-neutral-200/80 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
+                    alt="Premium 4K Smart TV display at Sharma Electronics showroom Vasant Kunj"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-                {/* Overlay Badge */}
-                <div className="absolute inset-x-4 bottom-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-slate-200/80">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-[11px] font-bold text-brand-blue uppercase tracking-wider">
-                        Masoodpur Dairy Showroom
-                      </span>
-                      <h4 className="text-sm font-extrabold text-brand-navy">
-                        Physical Store · Authorized Dealer Networks
-                      </h4>
-                      <p className="text-xs text-slate-500">
-                        Sony · Samsung · LG · Daikin · Bosch · IFB · Voltas
-                      </p>
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
-                      <Percent className="w-5 h-5 text-emerald-600" />
-                    </div>
-                  </div>
+                <div className="mt-4 pt-3 border-t border-neutral-200/80 flex items-center justify-between text-xs font-mono text-neutral-500">
+                  <span>Authorised Distributor Dealer</span>
+                  <span className="text-neutral-900 font-semibold">Sony · Samsung · LG · Daikin</span>
                 </div>
               </div>
             </div>
@@ -221,57 +192,56 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 4: PRICE ADVANTAGE BANNER
+          SECTION 2: WHY PAY MORE ONLINE? (Editorial Statement)
       ==================================================== */}
-      <section className="bg-brand-navy text-white py-14 border-y border-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.25),rgba(255,255,255,0))]"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="bg-brand-navy text-white py-14 sm:py-20 border-b border-neutral-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4 text-center lg:text-left">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-blue text-blue-100 text-xs font-bold uppercase tracking-widest">
-                Local Showroom Advantage
+            <div className="lg:col-span-8 space-y-4">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                The Local Showroom Advantage
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
                 WHY PAY MORE ONLINE?
               </h2>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+              <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-2xl">
                 Compare prices with us before purchasing. Selected electronics products can be{' '}
-                <strong className="text-emerald-400 font-extrabold">₹1,000–₹2,000 cheaper</strong> than major
-                online marketplaces, backed with personalized local service and genuine manufacturer warranty.
+                <span className="text-white font-bold underline decoration-neutral-500">₹1,000–₹2,000 cheaper</span> than major online portals,
+                backed by verified brand warranty, doorstep floor delivery, and genuine store ownership.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-center">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <p className="text-xl font-black text-white">₹1k–₹2k</p>
-                  <p className="text-xs text-slate-300">Potential Savings</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 text-xs font-mono">
+                <div className="p-3 bg-white/5 border border-white/10 rounded-sm">
+                  <p className="text-neutral-400 text-[10px]">SAVINGS</p>
+                  <p className="text-base font-bold text-white mt-0.5">₹1k–₹2k</p>
                 </div>
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <p className="text-xl font-black text-white">Personal</p>
-                  <p className="text-xs text-slate-300">Showroom Help</p>
+                <div className="p-3 bg-white/5 border border-white/10 rounded-sm">
+                  <p className="text-neutral-400 text-[10px]">ASSISTANCE</p>
+                  <p className="text-base font-bold text-white mt-0.5">Personal</p>
                 </div>
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <p className="text-xl font-black text-white">5 Floors</p>
-                  <p className="text-xs text-slate-300">Physical Store</p>
+                <div className="p-3 bg-white/5 border border-white/10 rounded-sm">
+                  <p className="text-neutral-400 text-[10px]">FACILITY</p>
+                  <p className="text-base font-bold text-white mt-0.5">5 Floors</p>
                 </div>
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <p className="text-xl font-black text-white">Multi-Brand</p>
-                  <p className="text-xs text-slate-300">Dealer Network</p>
+                <div className="p-3 bg-white/5 border border-white/10 rounded-sm">
+                  <p className="text-neutral-400 text-[10px]">SOURCING</p>
+                  <p className="text-base font-bold text-white mt-0.5">Authorized</p>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center gap-3">
+            <div className="lg:col-span-4 flex flex-col items-start lg:items-end gap-3">
               <a
                 href={priceAdvantageWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-brand-blue hover:bg-brand-blueHover text-white font-bold text-base flex items-center justify-center gap-2 shadow-lg transition-transform transform hover:scale-105"
+                className="w-full sm:w-auto px-6 py-4 bg-white text-brand-navy hover:bg-neutral-100 text-xs font-bold uppercase tracking-wider rounded-sm transition-colors text-center flex items-center justify-center gap-2"
               >
                 <span>Check Our Latest Prices</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
-              <span className="text-xs text-slate-400 text-center">
-                Share any model number on WhatsApp for instant quote
+              <span className="text-[11px] font-mono text-neutral-400">
+                Send any model number or screenshot
               </span>
             </div>
           </div>
@@ -279,69 +249,64 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 5: SHOP BY CATEGORY
+          SECTION 3: SHOP BY CATEGORY (Curated Directory)
       ==================================================== */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200/60">
+      <section className="py-20 bg-neutral-50/50 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
-              Comprehensive Multi-Brand Inventory
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
-              Shop by Electronics Category
-            </h2>
-            <p className="text-slate-600 text-base">
-              Explore leading international brands on display or available on quick dealer arrangement.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                Department Directory
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
+                Shop by Electronics Category
+              </h2>
+            </div>
+            <Link
+              href="/electronics"
+              className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-navy hover:underline flex items-center gap-1.5"
+            >
+              <span>View All Catalogue</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ELECTRONICS_CATEGORIES.map((cat) => (
               <div
                 key={cat.id}
-                className="group flex flex-col bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-subtle hover:shadow-cardHover transition-all duration-300 transform hover:-translate-y-1"
+                className="group flex flex-col bg-white border border-neutral-200 rounded-sm overflow-hidden hover:border-brand-navy transition-colors"
               >
-                {/* Category Image */}
-                <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden">
+                <div className="relative aspect-[16/10] bg-neutral-100 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={cat.imageUrl}
-                    alt={`${cat.name} available at Sharma Electronics Vasant Kunj`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt={cat.name}
+                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded bg-black/40 backdrop-blur-md">
-                      {cat.brands.slice(0, 3).join(', ')}
-                    </span>
-                  </div>
+                  <span className="absolute bottom-2 left-3 font-mono text-[10px] text-white bg-black/60 px-2 py-0.5 rounded-sm">
+                    {cat.brands.slice(0, 3).join(' · ')}
+                  </span>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-2 mb-2">
-                    {categoryIcons[cat.id]}
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-brand-blue transition-colors">
-                      {cat.name}
-                    </h3>
-                  </div>
-
-                  <p className="text-xs font-semibold text-brand-blue mb-2">
-                    {cat.tagline}
-                  </p>
-
-                  <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">
+                <div className="p-5 flex flex-col flex-grow space-y-2">
+                  <h3 className="text-lg font-bold text-neutral-900 group-hover:text-brand-navy">
+                    {cat.name}
+                  </h3>
+                  <p className="text-xs text-neutral-500 leading-relaxed line-clamp-2">
                     {cat.shortDescription}
                   </p>
 
-                  <Link
-                    href={`/electronics?category=${cat.id}`}
-                    className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-100 group-hover:bg-brand-navy text-slate-800 group-hover:text-white text-sm font-bold transition-all"
-                  >
-                    <span>Explore {cat.name}</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </Link>
+                  <div className="mt-auto pt-4 border-t border-neutral-100">
+                    <Link
+                      href={`/electronics?category=${cat.id}`}
+                      className="inline-flex items-center justify-between w-full text-xs font-semibold uppercase tracking-wider text-brand-navy hover:underline"
+                    >
+                      <span>Explore Collection</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -350,29 +315,25 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 6: BEST PRICE PRODUCTS
+          SECTION 4: FEATURED SHOWROOM INVENTORY
       ==================================================== */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
-                Live Showroom Deals
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                Verified Inventory
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight mt-1">
-                Best Price Featured Products
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
+                Featured Showroom Models
               </h2>
-              <p className="text-slate-600 text-sm mt-1 max-w-xl">
-                Real models with competitive pricing. Check our showroom price or send a quick inquiry on WhatsApp.
-              </p>
             </div>
-
             <Link
               href="/electronics"
-              className="inline-flex items-center gap-2 text-sm font-bold text-brand-blue hover:text-brand-blueHover hover:underline"
+              className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-navy hover:underline flex items-center gap-1.5"
             >
-              <span>View All Electronics</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Explore All Models</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
@@ -385,86 +346,121 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 7: WHY CHOOSE US
+          SECTION 5: THE 5-FLOOR COMMERCIAL SHOWROOM
       ==================================================== */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200/80">
+      <section className="py-20 bg-neutral-50/70 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
-              Why Customers Trust Sharma Electronics
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6 space-y-5">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                Physical Retail Infrastructure
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-brand-navy">
+                Five Floors. Owned Commercial Property. Masoodpur Dairy.
+              </h2>
+              <p className="text-sm text-neutral-600 leading-relaxed">
+                Unlike online brokers operating without physical locations, Sharma Electronics
+                operates from our owned commercial showroom spanning five floors (~200 Gaj per floor).
+              </p>
+              <p className="text-sm text-neutral-600 leading-relaxed">
+                Families, seniors, and homeowners can walk in and inspect active television panels,
+                refrigerators, and air conditioning units. Our commercial passenger lift makes every display floor accessible without stairs.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 pt-4 font-mono text-xs">
+                <div className="p-4 bg-white border border-neutral-200 rounded-sm">
+                  <p className="text-neutral-400 text-[10px]">FLOOR SCALE</p>
+                  <p className="text-base font-bold text-brand-navy mt-1">~200 Gaj/Floor</p>
+                  <p className="text-neutral-500 text-[11px] mt-0.5">Spacious displays</p>
+                </div>
+                <div className="p-4 bg-white border border-neutral-200 rounded-sm">
+                  <p className="text-neutral-400 text-[10px]">COMMERCIAL LIFT</p>
+                  <p className="text-base font-bold text-brand-navy mt-1">Full Accessibility</p>
+                  <p className="text-neutral-500 text-[11px] mt-0.5">Senior-friendly</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6">
+              <div className="relative border border-neutral-200 p-3 bg-white rounded-sm">
+                <div className="aspect-[4/3] bg-neutral-100 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
+                    alt="Sharma Electronics 5-Floor Showroom at Masoodpur Dairy Vasant Kunj"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-3 flex items-center justify-between text-xs font-mono text-neutral-500">
+                  <span>Masoodpur Dairy, Vasant Kunj</span>
+                  <span>Open Daily 10 AM – 9 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================
+          SECTION 6: WHY CHOOSE US (6 Trust Pillars)
+      ==================================================== */}
+      <section className="py-20 bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="max-w-2xl">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+              Showroom Standards
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
-              6 Reasons to Buy from Our Showroom
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
+              Why South Delhi Chooses Sharma Electronics
             </h2>
-            <p className="text-slate-600 text-base">
-              The convenience of a local showroom combined with prices that compete with online giants.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-subtle hover:shadow-card transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-xl mb-4">
-                <Percent className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">1. Competitive Pricing</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                We operate with lower retail overheads and direct distributor networks, allowing us to offer selected products ₹1,000–₹2,000 cheaper than major e-commerce platforms.
+            <div className="space-y-2 border-l border-neutral-200 pl-4">
+              <p className="font-mono text-[11px] text-neutral-400 uppercase">01</p>
+              <h3 className="text-base font-bold text-neutral-900">Wholesale Local Pricing</h3>
+              <p className="text-xs text-neutral-500 leading-relaxed">
+                Direct regional dealer agreements allow us to offer select models ₹1,000–₹2,000 cheaper than marketplace listings.
               </p>
             </div>
 
-            {/* Feature 2 */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-subtle hover:shadow-card transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-xl mb-4">
-                <Building2 className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">2. Physical Showroom</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                No faceless web sellers. Visit our 5-floor owned commercial showroom in Masoodpur Dairy, Vasant Kunj with commercial lift access.
+            <div className="space-y-2 border-l border-neutral-200 pl-4">
+              <p className="font-mono text-[11px] text-neutral-400 uppercase">02</p>
+              <h3 className="text-base font-bold text-neutral-900">Physical Five-Floor Showroom</h3>
+              <p className="text-xs text-neutral-500 leading-relaxed">
+                Owned commercial retail space at Masoodpur Dairy with commercial lift access and real display models.
               </p>
             </div>
 
-            {/* Feature 3 */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-subtle hover:shadow-card transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-xl mb-4">
-                <Award className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">3. Multiple Authorized Brands</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                We source directly through official regional distributor partnerships across Sony, Samsung, LG, Daikin, Bosch, IFB, and Voltas with 100% genuine brand warranties.
+            <div className="space-y-2 border-l border-neutral-200 pl-4">
+              <p className="font-mono text-[11px] text-neutral-400 uppercase">03</p>
+              <h3 className="text-base font-bold text-neutral-900">Multi-Brand Dealer Alliances</h3>
+              <p className="text-xs text-neutral-500 leading-relaxed">
+                Direct supply chains for Sony, Samsung, LG, Daikin, Bosch, IFB, and Voltas with authorized brand warranty.
               </p>
             </div>
 
-            {/* Feature 4 */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-subtle hover:shadow-card transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-xl mb-4">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">4. Personal Assistance</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Get honest, unhurried advice on room tonnage, TV display tech, and hard-water laundry needs without algorithmic upsells.
+            <div className="space-y-2 border-l border-neutral-200 pl-4">
+              <p className="font-mono text-[11px] text-neutral-400 uppercase">04</p>
+              <h3 className="text-base font-bold text-neutral-900">Dedicated Floor Lifting</h3>
+              <p className="text-xs text-neutral-500 leading-relaxed">
+                Showroom delivery staff brings heavy appliances directly into your flat, eliminating curbside delivery drops.
               </p>
             </div>
 
-            {/* Feature 5 */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-subtle hover:shadow-card transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-xl mb-4">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">5. Established Since 2019</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Rooted in South Delhi since 2019. Thousands of satisfied homeowners across Vasant Kunj trust our integrity, fair pricing, and direct manufacturer after-sales support.
+            <div className="space-y-2 border-l border-neutral-200 pl-4">
+              <p className="font-mono text-[11px] text-neutral-400 uppercase">05</p>
+              <h3 className="text-base font-bold text-neutral-900">Rooted Locally Since 2019</h3>
+              <p className="text-xs text-neutral-500 leading-relaxed">
+                Trusted commercial presence serving Vasant Kunj, Vasant Vihar, Chattarpur, and South Delhi households.
               </p>
             </div>
 
-            {/* Feature 6 */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-subtle hover:shadow-card transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-xl mb-4">
-                <Clock className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">6. Convenient Local Access</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Quick 10-minute access from Chattarpur, Aerocity, and Vasant Vihar Metro Stations. Fast same-day delivery and doorstep installation coordination across South Delhi.
+            <div className="space-y-2 border-l border-neutral-200 pl-4">
+              <p className="font-mono text-[11px] text-neutral-400 uppercase">06</p>
+              <h3 className="text-base font-bold text-neutral-900">24h Custom Model Sourcing</h3>
+              <p className="text-xs text-neutral-500 leading-relaxed">
+                If a specific capacity or flagship model is not on floor display, we arrange it from regional distributors within 24 hours.
               </p>
             </div>
           </div>
@@ -472,165 +468,50 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 8: SHOWROOM EXPERIENCE
+          SECTION 7: REVIEWS & COMMUNITY TESTIMONIALS
       ==================================================== */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
-                Five-Floor Commercial Property
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight leading-tight">
-                Experience South Delhi&apos;s Dedicated Consumer Electronics Destination
-              </h2>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Spanning five full floors of owned commercial space—approximately 200 gaj (1,800 sq.ft) per floor—our Masoodpur showroom offers an uncrowded, comfortable shopping experience equipped with a modern commercial lift.
-              </p>
-
-              <div className="space-y-3.5">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                    ✓
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Commercial Passenger Lift</h4>
-                    <p className="text-xs text-slate-500">Effortless access for senior family members across all five floors.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                    ✓
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Live Demonstrations &amp; Packed Units</h4>
-                    <p className="text-xs text-slate-500">Inspect panel quality, AC quietness, and build finishing in person.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                    ✓
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Distributor Procurement on Demand</h4>
-                    <p className="text-xs text-slate-500">Need a specific high-end 75-inch TV or French-door fridge? We arrange it directly from authorized distributors within 24 hours.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/about"
-                  className="px-6 py-3 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-sm inline-flex items-center justify-center gap-2"
-                >
-                  <span>Read Our Business Story</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <a
-                  href={SITE_CONFIG.googleMapsDirectionsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm inline-flex items-center justify-center gap-2 border border-slate-200"
-                >
-                  <span>Get Driving Directions</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-
-            {/* Visual Grid */}
-            <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="rounded-2xl overflow-hidden shadow-subtle border border-slate-200 aspect-[4/5] bg-slate-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=600&q=80"
-                    alt="Television showroom display at Sharma Electronics"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-4 rounded-xl bg-blue-50 border border-blue-100 text-center">
-                  <p className="text-2xl font-black text-brand-blue">200 Gaj</p>
-                  <p className="text-xs font-semibold text-slate-600">Per Floor Area</p>
-                </div>
-              </div>
-
-              <div className="space-y-4 pt-6">
-                <div className="p-4 rounded-xl bg-slate-900 text-white text-center">
-                  <p className="text-2xl font-black text-emerald-400">Est. 2019</p>
-                  <p className="text-xs text-slate-300">Trusted South Delhi Retailer</p>
-                </div>
-                <div className="rounded-2xl overflow-hidden shadow-subtle border border-slate-200 aspect-[4/5] bg-slate-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=600&q=80"
-                    alt="Refrigerator and home appliances display"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================
-          SECTION 9: CUSTOMER REVIEWS (Google Reviews)
-      ==================================================== */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <section className="py-20 bg-neutral-50/50 border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-amber-600 mb-1">
-                <Star className="w-4 h-4 fill-amber-400 text-amber-500" />
-                <span>Verified Google Business Reviews</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
-                Loved by Residents of Vasant Kunj
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                Verified Feedback
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
+                South Delhi Customer Experiences
               </h2>
-              <p className="text-slate-600 text-sm mt-1">
-                Real feedback from South Delhi homeowners who compared prices and bought from our showroom.
-              </p>
             </div>
-
             <a
               href={SITE_CONFIG.googleMapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-sm hover:bg-slate-50"
+              className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-navy hover:underline flex items-center gap-1.5"
             >
-              <span>View Google Business Profile</span>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+              <span>Google Business Profile</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {GOOGLE_REVIEWS_MOCK.map((review) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {GOOGLE_REVIEWS_MOCK.map((review, i) => (
               <div
-                key={review.id}
-                className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-subtle flex flex-col justify-between"
+                key={i}
+                className="p-6 bg-white border border-neutral-200 rounded-sm space-y-4 flex flex-col justify-between"
               >
-                <div>
-                  <div className="flex items-center gap-1 text-amber-400 mb-3">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                <div className="space-y-3">
+                  <div className="flex items-center gap-1 text-amber-500">
+                    {[...Array(review.rating)].map((_, idx) => (
+                      <Star key={idx} className="w-3.5 h-3.5 fill-amber-500" />
                     ))}
                   </div>
-                  <p className="text-xs text-slate-700 leading-relaxed italic mb-4">
+                  <p className="text-xs text-neutral-600 leading-relaxed italic">
                     &ldquo;{review.text}&rdquo;
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100">
-                  <h4 className="text-sm font-bold text-slate-900">{review.author}</h4>
-                  <p className="text-[11px] text-slate-500">{review.location}</p>
-                  <span className="inline-block mt-1 text-[10px] font-semibold text-brand-blue bg-blue-50 px-2 py-0.5 rounded">
-                    Verified Purchase · {review.category}
-                  </span>
+                <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+                  <span className="font-bold text-neutral-800 font-sans">{review.author}</span>
+                  <span>{review.date}</span>
                 </div>
               </div>
             ))}
@@ -639,91 +520,69 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 10: LOCATION & DIRECTIONS
+          SECTION 8: SHOWROOM LOCATION & TRANSIT
       ==================================================== */}
-      <section className="py-20 bg-white border-t border-slate-200/80" id="showroom-location">
+      <section className="py-20 bg-white border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
-              Showroom Location &amp; Directions
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
-              Visit Our Electronics Showroom in Vasant Kunj
-            </h2>
-            <p className="text-slate-600 text-base">
-              Conveniently located at Masoodpur Dairy, easily accessible from all sectors of Vasant Kunj and major South Delhi metro lines.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-5 space-y-6">
+              <div>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                  Directions &amp; Hours
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
+                  Visit Our Vasant Kunj Showroom
+                </h2>
+                <p className="text-xs text-neutral-500 mt-2 leading-relaxed">
+                  Located conveniently on the main thoroughfare of Masoodpur Dairy, Vasant Kunj with commercial lift access.
+                </p>
+              </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Address & Contact Details Card */}
-            <div className="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white flex flex-col justify-between shadow-elevated">
-              <div className="space-y-6">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-brand-blue">
-                    Physical Store Address
-                  </span>
-                  <h3 className="text-xl font-bold text-white mt-1">
-                    {SITE_CONFIG.businessName}
-                  </h3>
-                  <p className="text-sm text-slate-300 mt-2 leading-relaxed">
-                    {SITE_CONFIG.address},<br />
-                    {SITE_CONFIG.area}, {SITE_CONFIG.city} - {SITE_CONFIG.pincode}
-                  </p>
-                  <p className="text-xs text-slate-400 mt-1">
-                    Landmark: {SITE_CONFIG.landmark}
+              <div className="space-y-3 font-mono text-xs">
+                <div className="p-3.5 bg-neutral-50 border border-neutral-200 rounded-sm">
+                  <p className="text-neutral-400 text-[10px] uppercase">ADDRESS</p>
+                  <p className="text-neutral-800 font-sans font-medium mt-0.5">
+                    {SITE_CONFIG.address}, {SITE_CONFIG.area}, New Delhi - {SITE_CONFIG.pincode}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800 space-y-3">
-                  <div className="flex items-center gap-3 text-sm">
-                    <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>{SITE_CONFIG.workingHours}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <Phone className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Call: {SITE_CONFIG.phone}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <Building2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Commercial Lift Available (5 Floors)</span>
-                  </div>
+                <div className="p-3.5 bg-neutral-50 border border-neutral-200 rounded-sm">
+                  <p className="text-neutral-400 text-[10px] uppercase">TIMINGS</p>
+                  <p className="text-neutral-800 font-sans font-medium mt-0.5">
+                    {SITE_CONFIG.workingHours} (Open All 7 Days)
+                  </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800">
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                    Nearest Metro Stations
+                <div className="p-3.5 bg-neutral-50 border border-neutral-200 rounded-sm">
+                  <p className="text-neutral-400 text-[10px] uppercase">METRO STATIONS</p>
+                  <p className="text-neutral-800 text-[11px] mt-0.5">
+                    Chattarpur (Yellow Line) · Aerocity (Airport Express) · Vasant Vihar (Magenta Line)
                   </p>
-                  <ul className="text-xs space-y-1.5 text-slate-300">
-                    <li>• Chattarpur Metro (Yellow Line) — 10 mins</li>
-                    <li>• Delhi Aerocity Metro (Airport Line) — 12 mins</li>
-                    <li>• Vasant Vihar Metro (Magenta Line) — 12 mins</li>
-                  </ul>
                 </div>
               </div>
 
-              <div className="pt-8 grid grid-cols-2 gap-3">
+              <div className="pt-2 flex items-center gap-3">
                 <a
                   href={SITE_CONFIG.googleMapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-4 rounded-xl bg-brand-blue hover:bg-brand-blueHover text-white font-bold text-xs sm:text-sm text-center flex items-center justify-center gap-1.5 transition-colors"
+                  className="px-5 py-3 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2"
                 >
-                  <MapPin className="w-4 h-4" />
-                  <span>Get Directions</span>
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Get Driving Directions</span>
                 </a>
+
                 <a
                   href={`tel:${SITE_CONFIG.phone}`}
-                  className="py-3 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm text-center flex items-center justify-center gap-1.5 transition-colors border border-white/10"
+                  className="px-5 py-3 bg-neutral-50 hover:bg-neutral-100 text-brand-navy text-xs font-mono font-semibold rounded-sm border border-neutral-200 transition-colors flex items-center gap-2"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>Call Now</span>
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>{SITE_CONFIG.phone}</span>
                 </a>
               </div>
             </div>
 
-            {/* Google Maps Embed */}
-            <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-slate-200/90 shadow-card min-h-[360px] bg-slate-100">
+            <div className="lg:col-span-7 border border-neutral-200 bg-neutral-100 rounded-sm overflow-hidden min-h-[380px]">
               <iframe
                 title="Sharma Electronics Location in Masoodpur Vasant Kunj"
                 src={SITE_CONFIG.googleMapsEmbedUrl}
@@ -740,51 +599,47 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 11: FINAL HIGH-CONVERTING CTA
+          SECTION 9: FINAL CONVERSION CTA
       ==================================================== */}
-      <section className="py-16 bg-gradient-to-r from-brand-navy via-slate-900 to-brand-navy text-white text-center">
+      <section className="bg-brand-navy text-white py-16 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-widest border border-emerald-500/30">
-            <Sparkles className="w-3.5 h-3.5" />
+          <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
             Before You Place An Order Online
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
             Looking for the Best Price on Electronics?
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
-            Contact us before you buy. Compare prices, ask about stock availability, or visit our showroom today. We would love to help you save!
+          <p className="text-sm sm:text-base text-neutral-300 max-w-xl mx-auto leading-relaxed">
+            Contact us before you buy. Compare prices, check showroom stock, or visit our 5-floor facility today.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <a
               href={priceAdvantageWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-xl bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-bold text-base flex items-center gap-2 shadow-lg transition-transform transform hover:scale-105"
+              className="px-6 py-3.5 bg-brand-whatsapp hover:bg-brand-whatsappDark text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2 shadow-subtle"
             >
-              <MessageCircle className="w-5 h-5 fill-white text-brand-whatsapp" />
-              <span>WhatsApp Us Now</span>
+              <MessageCircle className="w-4 h-4 fill-white" />
+              <span>WhatsApp Store Manager</span>
             </a>
 
             <a
               href={`tel:${SITE_CONFIG.phone}`}
-              className="px-8 py-4 rounded-xl bg-brand-blue hover:bg-brand-blueHover text-white font-bold text-base flex items-center gap-2 shadow-lg transition-transform transform hover:scale-105"
+              className="px-6 py-3.5 bg-white text-brand-navy hover:bg-neutral-100 text-xs font-bold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2"
             >
-              <Phone className="w-5 h-5" />
-              <span>Call {SITE_CONFIG.phone}</span>
+              <Phone className="w-3.5 h-3.5" />
+              <span>Call Showroom</span>
             </a>
 
-            <a
-              href={SITE_CONFIG.googleMapsDirectionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base flex items-center gap-2 border border-white/20 transition-colors"
+            <Link
+              href="/contact"
+              className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold uppercase tracking-wider rounded-sm border border-white/20 transition-colors"
             >
-              <MapPin className="w-5 h-5" />
               <span>Visit Showroom</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

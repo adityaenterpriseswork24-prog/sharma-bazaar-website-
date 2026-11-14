@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { Search, RotateCcw, MessageCircle, X } from 'lucide-react';
+import { Search, MessageCircle, X, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import { Product } from '@/types';
 import { ELECTRONICS_CATEGORIES, SITE_CONFIG } from '@/data/site-config';
 import { ProductCard } from '@/components/ui/ProductCard';
@@ -24,21 +24,18 @@ export function CatalogueView({
   const [searchQuery, setSearchQuery] = useState<string>(initialSearch);
   const [sortBy, setSortBy] = useState<string>('featured');
 
-  // Sync category when props change (e.g. navigation via header / mobile drawer)
   useEffect(() => {
     if (initialCategory) {
       setSelectedCategory(initialCategory);
     }
   }, [initialCategory]);
 
-  // Sync search query when props change
   useEffect(() => {
     if (initialSearch !== undefined) {
       setSearchQuery(initialSearch);
     }
   }, [initialSearch]);
 
-  // Sync with client-side admin inventory if modified
   useEffect(() => {
     try {
       const stored = localStorage.getItem('sharma_admin_products');
@@ -53,7 +50,6 @@ export function CatalogueView({
     }
   }, []);
 
-  // Extract all unique brands dynamically
   const availableBrands = useMemo(() => {
     const brands = new Set<string>();
     products.forEach((p) => {
@@ -62,25 +58,21 @@ export function CatalogueView({
     return Array.from(brands).sort();
   }, [products]);
 
-  // Filter & sort products
   const filteredProducts = useMemo(() => {
     let result = [...products];
 
-    // Filter by category
     if (selectedCategory !== 'all') {
       result = result.filter(
         (p) => p.category.toLowerCase() === selectedCategory.toLowerCase()
       );
     }
 
-    // Filter by brand
     if (selectedBrand !== 'all') {
       result = result.filter(
         (p) => p.brand.toLowerCase() === selectedBrand.toLowerCase()
       );
     }
 
-    // Filter by search query
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim();
       result = result.filter(
@@ -93,7 +85,6 @@ export function CatalogueView({
       );
     }
 
-    // Sort
     if (sortBy === 'price-asc') {
       result.sort((a, b) => a.ourPrice - b.ourPrice);
     } else if (sortBy === 'price-desc') {
@@ -101,7 +92,6 @@ export function CatalogueView({
     } else if (sortBy === 'savings-desc') {
       result.sort((a, b) => (b.mrpPrice - b.ourPrice) - (a.mrpPrice - a.ourPrice));
     } else {
-      // featured first
       result.sort((a, b) => (b.isFeatured ? 1 : 0) - (a.isFeatured ? 1 : 0));
     }
 
@@ -128,107 +118,117 @@ export function CatalogueView({
 
   return (
     <div className="space-y-8">
-      {/* Search & Sort Controls Bar */}
-      <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-subtle space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5 items-center">
-          {/* Search input */}
-          <div className="md:col-span-6 relative">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by brand, TV size, AC tonnage, model number..."
-              className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
-                aria-label="Clear search"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            )}
-          </div>
-
-          {/* Brand select */}
-          <div className="md:col-span-3">
-            <select
-              value={selectedBrand}
-              onChange={(e) => setSelectedBrand(e.target.value)}
-              className="w-full py-2.5 px-3 rounded-xl border border-slate-200 text-sm font-medium text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue"
-            >
-              <option value="all">All Brands ({availableBrands.length})</option>
-              {availableBrands.map((brand) => (
-                <option key={brand} value={brand}>
-                  {brand}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Sort select */}
-          <div className="md:col-span-3">
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="w-full py-2.5 px-3 rounded-xl border border-slate-200 text-sm font-medium text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue"
-            >
-              <option value="featured">Featured / Best Sellers</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="savings-desc">Maximum Savings</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Category Horizontal Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1 pb-1">
+      {/* Category Tabs Bar */}
+      <div className="border-b border-neutral-200 overflow-x-auto no-scrollbar">
+        <div className="flex items-center gap-6 sm:gap-8 pb-3 text-xs font-mono uppercase tracking-wider whitespace-nowrap min-w-max">
           <button
             onClick={() => setSelectedCategory('all')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shrink-0 transition-colors ${
+            className={`transition-colors pb-1 relative ${
               selectedCategory === 'all'
-                ? 'bg-brand-navy text-white shadow-sm'
-                : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                ? 'text-brand-navy font-bold'
+                : 'text-neutral-400 hover:text-neutral-700'
             }`}
           >
-            All Categories ({initialProducts.length})
+            <span>All Categories ({products.length})</span>
+            {selectedCategory === 'all' && (
+              <span className="absolute -bottom-3 left-0 right-0 h-[2px] bg-brand-navy"></span>
+            )}
           </button>
+
           {ELECTRONICS_CATEGORIES.map((cat) => {
-            const count = initialProducts.filter((p) => p.category === cat.id).length;
+            const count = products.filter((p) => p.category === cat.id).length;
             const isSelected = selectedCategory === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shrink-0 transition-colors ${
+                className={`transition-colors pb-1 relative ${
                   isSelected
-                    ? 'bg-brand-blue text-white shadow-sm'
-                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                    ? 'text-brand-navy font-bold'
+                    : 'text-neutral-400 hover:text-neutral-700'
                 }`}
               >
-                {cat.name} ({count})
+                <span>{cat.name} ({count})</span>
+                {isSelected && (
+                  <span className="absolute -bottom-3 left-0 right-0 h-[2px] bg-brand-navy"></span>
+                )}
               </button>
             );
           })}
         </div>
+      </div>
 
-        {/* Active Filter Summary Bar */}
-        {hasActiveFilters && (
-          <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-xs text-slate-500">
-            <span>
-              Showing <strong>{filteredProducts.length}</strong> matching products
-            </span>
+      {/* Filter Controls Toolbar */}
+      <div className="p-4 sm:p-5 bg-neutral-50/80 border border-neutral-200 rounded-sm space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+          {/* Search Field */}
+          <div className="md:col-span-6 relative">
+            <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search by brand, TV size, tonnage, model number..."
+              className="w-full pl-9 pr-8 py-2.5 bg-white border border-neutral-200 text-xs text-neutral-900 rounded-sm focus:outline-none focus:border-brand-navy transition-colors font-sans"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
+                aria-label="Clear search"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+
+          {/* Brand Filter */}
+          <div className="md:col-span-3">
+            <select
+              value={selectedBrand}
+              onChange={(e) => setSelectedBrand(e.target.value)}
+              className="w-full py-2.5 px-3 bg-white border border-neutral-200 text-xs font-mono text-neutral-700 rounded-sm focus:outline-none focus:border-brand-navy"
+            >
+              <option value="all">All Brands ({availableBrands.length})</option>
+              {availableBrands.map((b) => (
+                <option key={b} value={b}>
+                  {b}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Sort Filter */}
+          <div className="md:col-span-3">
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="w-full py-2.5 px-3 bg-white border border-neutral-200 text-xs font-mono text-neutral-700 rounded-sm focus:outline-none focus:border-brand-navy"
+            >
+              <option value="featured">Sort: Featured First</option>
+              <option value="price-asc">Sort: Price (Lowest First)</option>
+              <option value="price-desc">Sort: Price (Highest First)</option>
+              <option value="savings-desc">Sort: Highest Savings</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Results Counter & Reset */}
+        <div className="pt-2 border-t border-neutral-200/60 flex items-center justify-between text-xs font-mono text-neutral-500">
+          <div>
+            Showing <span className="font-bold text-brand-navy">{filteredProducts.length}</span> of {products.length} models
+          </div>
+
+          {hasActiveFilters && (
             <button
               onClick={resetFilters}
-              className="flex items-center gap-1 text-brand-blue hover:underline font-semibold"
+              className="text-neutral-600 hover:text-brand-navy hover:underline inline-flex items-center gap-1 text-[11px]"
             >
-              <RotateCcw className="w-3.5 h-3.5" />
+              <X className="w-3 h-3" />
               <span>Reset Filters</span>
             </button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       {/* Product Grid */}
@@ -240,54 +240,36 @@ export function CatalogueView({
         </div>
       ) : (
         /* Empty State */
-        <div className="text-center py-16 px-4 bg-white rounded-3xl border border-slate-200 max-w-xl mx-auto space-y-4">
-          <div className="w-16 h-16 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center mx-auto">
-            <Search className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-bold text-slate-900">No Direct Matches Found</h3>
-          <p className="text-sm text-slate-600 leading-relaxed">
-            We maintain limited display stock but can quickly arrange any model from our authorized distributor network in Delhi NCR.
+        <div className="p-12 text-center bg-white border border-neutral-200 rounded-sm space-y-4 max-w-xl mx-auto">
+          <p className="font-mono text-xs uppercase tracking-widest text-neutral-400">
+            No exact display models match &quot;{searchQuery}&quot;
           </p>
+          <h3 className="text-xl font-bold text-brand-navy">
+            We Can Arrange Any Model Within 24 Hours
+          </h3>
+          <p className="text-xs text-neutral-600 leading-relaxed">
+            Our showroom procures directly from regional distributor networks. Send us the model number or online link and we will provide our best counter-price.
+          </p>
+
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button
-              onClick={resetFilters}
-              className="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm font-semibold"
-            >
-              Clear Search &amp; Filters
-            </button>
             <a
               href={customRequestWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-xl bg-brand-whatsapp hover:bg-brand-whatsappHover text-white text-sm font-bold flex items-center gap-2"
+              className="px-5 py-3 bg-brand-whatsapp hover:bg-brand-whatsappDark text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2 shadow-subtle"
             >
-              <MessageCircle className="w-4 h-4 fill-white text-brand-whatsapp" />
+              <MessageCircle className="w-4 h-4 fill-white" />
               <span>Request Model on WhatsApp</span>
             </a>
+            <button
+              onClick={resetFilters}
+              className="px-4 py-3 text-xs font-mono text-neutral-600 hover:text-brand-navy"
+            >
+              Clear Search
+            </button>
           </div>
         </div>
       )}
-
-      {/* Model On Demand Notice */}
-      <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-slate-50 border border-blue-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <h4 className="text-base font-bold text-slate-900">
-            Can&apos;t find the exact model or size you need?
-          </h4>
-          <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            We procure specific OLED/QLED TVs, large side-by-side refrigerators, and heavy inverter ACs directly from distributors on demand.
-          </p>
-        </div>
-        <a
-          href={customRequestWhatsAppUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 px-5 py-2.5 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm"
-        >
-          <MessageCircle className="w-4 h-4 text-emerald-400" />
-          <span>Ask Store Manager</span>
-        </a>
-      </div>
     </div>
   );
 }

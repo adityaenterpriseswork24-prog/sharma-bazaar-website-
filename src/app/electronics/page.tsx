@@ -23,18 +23,18 @@ export default async function ElectronicsPage({ searchParams }: ElectronicsPageP
   const products = await getActiveProducts();
 
   return (
-    <div className="bg-slate-50/60 min-h-screen py-10 sm:py-14">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div className="bg-white min-h-screen py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Page Header */}
-        <div className="space-y-2">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
-            {SITE_CONFIG.businessName} Multi-Brand Catalogue
+        <div className="space-y-3 max-w-2xl">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+            Showroom Inventory &amp; Distributor Index
           </span>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
-            Electronics Showroom &amp; Price Catalogue
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-brand-navy">
+            Electronics Catalogue
           </h1>
-          <p className="text-slate-600 text-sm sm:text-base max-w-2xl leading-relaxed">
-            All prices reflect genuine brand merchandise with authorized manufacturer warranty.
+          <p className="text-sm text-neutral-600 leading-relaxed">
+            All prices reflect genuine manufacturer merchandise with authentic GST tax invoice.
             Compare prices with online portals and get our best quote on WhatsApp.
           </p>
         </div>

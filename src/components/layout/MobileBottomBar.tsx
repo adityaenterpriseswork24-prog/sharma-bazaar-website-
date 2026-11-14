@@ -14,19 +14,19 @@ export function MobileBottomBar() {
 
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I am on your website and want to check showroom prices and current availability.`
+    `Hi Sharma Electronics, I am viewing your website and want to check current showroom prices.`
   );
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-2.5 shadow-2xl">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-neutral-200 px-3 py-2 shadow-elevated">
       <div className="grid grid-cols-3 gap-2 text-center">
         {/* Call Button */}
         <a
           href={`tel:${SITE_CONFIG.phone}`}
-          className="flex flex-col items-center justify-center py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-bold transition-colors border border-slate-200"
+          className="flex flex-col items-center justify-center py-2 px-1 bg-neutral-50 hover:bg-neutral-100 text-brand-navy rounded-sm text-[11px] font-semibold transition-colors border border-neutral-200 font-mono"
         >
-          <Phone className="w-4 h-4 text-brand-blue mb-0.5" />
-          <span>Call Now</span>
+          <Phone className="w-3.5 h-3.5 text-neutral-600 mb-0.5" />
+          <span>Call</span>
         </a>
 
         {/* Directions */}
@@ -34,9 +34,9 @@ export function MobileBottomBar() {
           href={SITE_CONFIG.googleMapsDirectionsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center py-1.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-bold transition-colors border border-slate-200"
+          className="flex flex-col items-center justify-center py-2 px-1 bg-neutral-50 hover:bg-neutral-100 text-brand-navy rounded-sm text-[11px] font-semibold transition-colors border border-neutral-200"
         >
-          <Navigation className="w-4 h-4 text-emerald-600 mb-0.5" />
+          <Navigation className="w-3.5 h-3.5 text-neutral-600 mb-0.5" />
           <span>Directions</span>
         </a>
 
@@ -45,9 +45,9 @@ export function MobileBottomBar() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center py-1.5 px-2 bg-brand-whatsapp hover:bg-brand-whatsappHover text-white rounded-lg text-xs font-bold transition-colors shadow-sm"
+          className="flex flex-col items-center justify-center py-2 px-1 bg-brand-whatsapp hover:bg-brand-whatsappDark text-white rounded-sm text-[11px] font-semibold transition-colors shadow-subtle"
         >
-          <MessageCircle className="w-4 h-4 fill-white text-brand-whatsapp mb-0.5" />
+          <MessageCircle className="w-3.5 h-3.5 fill-white mb-0.5" />
           <span>WhatsApp</span>
         </a>
       </div>

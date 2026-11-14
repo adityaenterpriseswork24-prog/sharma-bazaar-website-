@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, CheckCircle2, Building2 } from 'lucide-react';
+import { Save, Check } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site-config';
 
 export default function AdminSettingsPage() {
@@ -39,96 +39,114 @@ export default function AdminSettingsPage() {
   };
 
   return (
-    <div className="space-y-6 max-w-4xl">
-      <div>
-        <h1 className="text-2xl sm:text-3xl font-black text-brand-navy">Showroom Configuration</h1>
-        <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-          Manage business contact numbers, showroom operating hours, and location metadata.
-        </p>
+    <div className="space-y-6 max-w-4xl font-sans">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-200">
+        <div>
+          <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+            System Preferences
+          </span>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy">
+            Showroom Configuration
+          </h1>
+          <p className="text-xs text-neutral-500 font-mono mt-0.5">
+            Manage showroom contact channels, operating hours, and location metadata.
+          </p>
+        </div>
+
+        {saved && (
+          <div className="px-3.5 py-2 rounded-sm bg-neutral-900 text-white text-xs font-mono flex items-center gap-1.5 shadow-subtle">
+            <Check className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Settings Saved</span>
+          </div>
+        )}
       </div>
 
-      {saved && (
-        <div className="p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-          <span>Showroom settings saved successfully.</span>
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-subtle space-y-6 text-xs sm:text-sm">
-        <h3 className="text-base font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
-          <Building2 className="w-4 h-4 text-brand-blue" />
-          <span>General Business Settings</span>
+      <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 border border-neutral-200 rounded-sm space-y-6 text-xs">
+        <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 border-b border-neutral-100 pb-2">
+          Business Contact &amp; Metadata
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block font-semibold text-slate-700 mb-1">Business Name</label>
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">
+              Trading Business Name
+            </label>
             <input
               type="text"
               value={businessName}
               onChange={(e) => setBusinessName(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs focus:outline-none focus:border-brand-navy font-sans"
             />
           </div>
 
           <div>
-            <label className="block font-semibold text-slate-700 mb-1">Official Email</label>
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">
+              Official Store Email
+            </label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
             />
           </div>
 
           <div>
-            <label className="block font-semibold text-slate-700 mb-1">Telephone Number</label>
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">
+              Telephone Number
+            </label>
             <input
               type="text"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
             />
           </div>
 
           <div>
-            <label className="block font-semibold text-slate-700 mb-1">WhatsApp Business Number</label>
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">
+              WhatsApp Business Number
+            </label>
             <input
               type="text"
               value={whatsapp}
               onChange={(e) => setWhatsapp(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
             />
           </div>
 
           <div className="sm:col-span-2">
-            <label className="block font-semibold text-slate-700 mb-1">Showroom Address</label>
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">
+              Showroom Physical Address
+            </label>
             <input
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs focus:outline-none focus:border-brand-navy font-sans"
             />
           </div>
 
           <div className="sm:col-span-2">
-            <label className="block font-semibold text-slate-700 mb-1">Showroom Operating Hours</label>
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">
+              Operating Hours
+            </label>
             <input
               type="text"
               value={workingHours}
               onChange={(e) => setWorkingHours(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs focus:outline-none focus:border-brand-navy font-sans"
             />
           </div>
         </div>
 
-        <div className="pt-4 border-t border-slate-100 flex justify-end">
+        <div className="pt-4 border-t border-neutral-100 flex justify-end">
           <button
             type="submit"
-            className="px-6 py-2.5 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-all"
+            className="px-6 py-2.5 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2 shadow-subtle"
           >
-            <Save className="w-4 h-4 text-emerald-400" />
-            <span>Update Showroom Settings</span>
+            <Save className="w-3.5 h-3.5" />
+            <span>Save Configuration</span>
           </button>
         </div>
       </form>

@@ -11,11 +11,9 @@ import {
   Settings,
   LogOut,
   ExternalLink,
-  Tv,
-  AlertCircle
+  ShieldCheck,
 } from 'lucide-react';
 import { AuthProvider, useAuth } from '@/lib/auth-context';
-import { isFirebaseConfigured } from '@/lib/firebase/client';
 
 function AdminNavigation({ children }: { children: React.ReactNode }) {
   const { user, loading, logout, isAdmin } = useAuth();
@@ -35,11 +33,11 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
 
   if (loading || !user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
+      <div className="min-h-screen flex items-center justify-center bg-brand-navy text-white">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-10 h-10 border-4 border-brand-blue border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-sm font-semibold">
-            {loading ? 'Verifying Staff Authorization...' : 'Redirecting to Staff Login...'}
+          <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
+          <p className="text-xs font-mono uppercase tracking-widest text-neutral-400">
+            {loading ? 'Verifying Staff Authorization...' : 'Redirecting to Login...'}
           </p>
         </div>
       </div>
@@ -55,31 +53,35 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col md:flex-row">
-      {/* Sidebar */}
-      <aside className="w-full md:w-64 bg-slate-900 text-slate-300 flex flex-col justify-between shrink-0 border-r border-slate-800">
+    <div className="min-h-screen bg-neutral-100 flex flex-col md:flex-row font-sans">
+      {/* Sidebar: Linear / Stripe style */}
+      <aside className="w-full md:w-64 bg-brand-navy text-neutral-300 flex flex-col justify-between shrink-0 border-r border-neutral-800">
         <div>
-          {/* Brand Logo in Admin */}
-          <div className="p-6 border-b border-slate-800">
-            <Link href="/admin" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-brand-blue flex items-center justify-center text-white font-bold">
-                <Tv className="w-4 h-4" />
+          {/* Logo */}
+          <div className="p-6 border-b border-white/10 flex items-center justify-between">
+            <Link href="/admin" className="flex items-center gap-3">
+              <div className="w-7 h-7 rounded-sm bg-white/10 border border-white/15 flex items-center justify-center font-mono text-xs font-bold text-white">
+                SE
               </div>
               <div>
-                <span className="text-base font-extrabold text-white">Sharma Staff</span>
-                <span className="block text-[10px] text-slate-400">Inventory &amp; Operations</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-white block">
+                  Operations Vault
+                </span>
+                <span className="text-[10px] font-mono text-neutral-400 block">
+                  Sharma Electronics
+                </span>
               </div>
             </Link>
           </div>
 
-          {/* User Badge */}
-          <div className="p-4 mx-4 my-4 rounded-xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-between">
-            <div>
-              <p className="text-xs font-bold text-white truncate max-w-[120px]">{user.name}</p>
-              <p className="text-[10px] text-slate-400 truncate max-w-[120px]">{user.email}</p>
+          {/* User Status Bar */}
+          <div className="p-4 mx-3 my-4 rounded-sm bg-white/5 border border-white/10 flex items-center justify-between font-mono text-xs">
+            <div className="truncate max-w-[130px]">
+              <p className="font-bold text-white text-[11px] truncate">{user.name}</p>
+              <p className="text-[10px] text-neutral-400 truncate">{user.email}</p>
             </div>
             <span
-              className={`text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded ${
+              className={`text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-bold ${
                 user.role === 'admin'
                   ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
                   : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
@@ -89,8 +91,8 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
             </span>
           </div>
 
-          {/* Nav Links */}
-          <nav className="px-3 space-y-1">
+          {/* Navigation Links */}
+          <nav className="px-3 space-y-1 font-mono text-xs">
             {navItems.map((item) => {
               if (item.adminOnly && !isAdmin) return null;
               const isActive = pathname === item.href;
@@ -99,18 +101,18 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                  className={`flex items-center justify-between px-3 py-2.5 rounded-sm transition-colors ${
                     isActive
-                      ? 'bg-brand-blue text-white shadow-sm'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-white/10 text-white font-bold border-l-2 border-white'
+                      : 'text-neutral-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-3.5 h-3.5" />
                     <span>{item.label}</span>
                   </div>
                   {item.adminOnly && (
-                    <span className="text-[9px] uppercase tracking-wider bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded">
+                    <span className="text-[9px] text-neutral-500 uppercase">
                       Admin
                     </span>
                   )}
@@ -120,16 +122,16 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
 
-        {/* Footer actions */}
-        <div className="p-4 border-t border-slate-800 space-y-2">
+        {/* Footer Actions */}
+        <div className="p-4 border-t border-white/10 space-y-2 font-mono text-xs">
           <Link
             href="/"
             target="_blank"
-            className="flex items-center justify-between px-3.5 py-2 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="flex items-center justify-between px-3 py-2 text-neutral-400 hover:text-white transition-colors"
           >
             <span className="flex items-center gap-2">
               <ExternalLink className="w-3.5 h-3.5" />
-              <span>View Live Website</span>
+              <span>Public Showroom</span>
             </span>
           </Link>
 
@@ -138,7 +140,7 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
               await logout();
               window.location.href = '/admin/login';
             }}
-            className="w-full flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-rose-400 hover:bg-rose-950/40 transition-colors text-left"
+            className="w-full flex items-center gap-2 px-3 py-2 text-neutral-400 hover:text-rose-400 transition-colors text-left"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Sign Out</span>
@@ -146,20 +148,8 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
         </div>
       </aside>
 
-      {/* Main Content Pane */}
-      <main className="flex-grow p-4 sm:p-8 max-w-7xl mx-auto w-full overflow-y-auto">
-        {!isFirebaseConfigured && (
-          <div className="mb-6 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-xs flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <div>
-              <p className="font-bold">Firebase Configuration Notice</p>
-              <p className="text-amber-700 mt-0.5">
-                Firebase keys are not yet set in `.env.local`. Running in seamless internal evaluation mode.
-                All product mutations, status toggles, and catalog management function live in the active session.
-              </p>
-            </div>
-          </div>
-        )}
+      {/* Main Content Workspace */}
+      <main className="flex-grow p-6 sm:p-10 max-w-7xl mx-auto w-full overflow-y-auto">
         {children}
       </main>
     </div>

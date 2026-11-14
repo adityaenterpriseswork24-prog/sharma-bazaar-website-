@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Phone, MapPin, Sparkles, Lock } from 'lucide-react';
+import { Phone, MapPin, Lock, ArrowUpRight } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site-config';
 
 export function AnnouncementBar() {
@@ -13,42 +13,47 @@ export function AnnouncementBar() {
   }
 
   return (
-    <div className="bg-brand-navy text-white text-xs sm:text-sm py-2 px-4 border-b border-white/10">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-4 text-center sm:text-left">
-        <div className="flex items-center gap-2 font-medium tracking-wide">
-          <span className="inline-flex items-center gap-1 bg-brand-blue/30 text-blue-300 text-[11px] font-semibold px-2 py-0.5 rounded-full border border-brand-blue/40">
-            <Sparkles className="w-3 h-3 text-blue-300" />
-            Vasant Kunj Showroom
+    <div className="bg-brand-navy text-white text-[11px] py-2 px-4 sm:px-8 border-b border-white/10 tracking-wide">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        {/* Left: Location & Showroom scale */}
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 border border-white/15 px-2 py-0.5 rounded-sm">
+            Showroom Direct
           </span>
-          <span className="text-slate-200">
-            Premium Electronics · Competitive Local Prices · Visit Our 5-Floor Showroom
+          <span className="text-neutral-200 hidden sm:inline">
+            5-Floor Showroom · Masoodpur Dairy, Vasant Kunj · Authorized Distributor Network
+          </span>
+          <span className="text-neutral-200 sm:hidden">
+            Vasant Kunj Showroom · 5 Commercial Floors
           </span>
         </div>
 
-        <div className="hidden md:flex items-center gap-5 text-slate-300 text-xs">
+        {/* Right: Direct Contacts */}
+        <div className="flex items-center gap-5 text-neutral-300 font-medium">
           <a
             href={SITE_CONFIG.googleMapsDirectionsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 hover:text-white transition-colors"
+            className="hidden md:inline-flex items-center gap-1.5 hover:text-white transition-colors"
           >
-            <MapPin className="w-3.5 h-3.5 text-brand-blue" />
-            <span>Masoodpur Dairy, Vasant Kunj</span>
+            <MapPin className="w-3 h-3 text-neutral-400" />
+            <span>Find on Map</span>
           </a>
+
           <a
             href={`tel:${SITE_CONFIG.phone}`}
-            className="flex items-center gap-1 hover:text-white transition-colors font-medium text-white"
+            className="inline-flex items-center gap-1.5 text-white hover:text-neutral-200 transition-colors font-mono"
           >
-            <Phone className="w-3.5 h-3.5 text-emerald-400" />
+            <Phone className="w-3 h-3 text-neutral-400" />
             <span>{SITE_CONFIG.phone}</span>
           </a>
+
           <Link
             href="/admin/login"
-            className="inline-flex items-center gap-1 bg-white/10 hover:bg-white/20 text-slate-200 hover:text-white px-2 py-0.5 rounded transition-colors text-[11px] font-semibold"
-            title="Showroom Staff Portal"
+            className="hidden lg:inline-flex items-center gap-1 text-neutral-400 hover:text-white transition-colors border-l border-white/15 pl-4 text-[10px] uppercase font-mono tracking-wider"
           >
-            <Lock className="w-3 h-3 text-amber-300" />
-            <span>Staff Login</span>
+            <Lock className="w-3 h-3" />
+            <span>Staff</span>
           </Link>
         </div>
       </div>
