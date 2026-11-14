@@ -12,7 +12,7 @@ export function FloatingWhatsApp() {
     return null;
   }
 
-  const defaultMsg = `Hi Sharma Electronics, I am on your website and want to check your best showroom price & availability.`;
+  const defaultMsg = `Hi Sharma Bazaar, I am on your website and want to check your best showroom price & availability.`;
   const url = buildWhatsAppUrl(SITE_CONFIG.whatsapp, defaultMsg);
 
   return (
@@ -21,7 +21,7 @@ export function FloatingWhatsApp() {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Inquire on WhatsApp with Sharma Electronics"
+        aria-label="Inquire on WhatsApp with Sharma Bazaar"
         className="group flex items-center gap-2.5 px-4 py-3 bg-brand-whatsapp hover:bg-brand-whatsappDark text-white rounded-full shadow-hover hover:shadow-elevated transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
       >
         <MessageCircle className="w-5 h-5 fill-white text-transparent shrink-0" />

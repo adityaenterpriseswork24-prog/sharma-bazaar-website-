@@ -22,17 +22,17 @@ interface BlogPostPageProps {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const post = BLOG_POSTS.find((p) => p.slug === params.slug);
   if (!post) {
-    return { title: 'Article Not Found | Sharma Electronics' };
+    return { title: 'Article Not Found | Sharma Bazaar' };
   }
 
   return {
-    title: `${post.title} | Sharma Electronics`,
+    title: `${post.title} | Sharma Bazaar`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://www.sharmaelectronics.com/blog/${post.slug}`,
+      canonical: `https://www.sharmabazaar.com/blog/${post.slug}`,
     },
     openGraph: {
-      title: `${post.title} | Sharma Electronics`,
+      title: `${post.title} | Sharma Bazaar`,
       description: post.excerpt,
       images: [
         {
@@ -63,7 +63,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I just read your article "${post.title}" and would like to ask a question or get showroom pricing.`
+    `Hi Sharma Bazaar, I just read your article "${post.title}" and would like to ask a question or get showroom pricing.`
   );
 
   const articleSchema = {
@@ -89,7 +89,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://www.sharmaelectronics.com/blog/${post.slug}`,
+      '@id': `https://www.sharmabazaar.com/blog/${post.slug}`,
     },
   };
 
@@ -101,19 +101,19 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.sharmaelectronics.com',
+        item: 'https://www.sharmabazaar.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://www.sharmaelectronics.com/blog',
+        item: 'https://www.sharmabazaar.com/blog',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: `https://www.sharmaelectronics.com/blog/${post.slug}`,
+        item: `https://www.sharmabazaar.com/blog/${post.slug}`,
       },
     ],
   };

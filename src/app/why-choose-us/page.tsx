@@ -12,18 +12,18 @@ import { SITE_CONFIG } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Why Choose Us | Sharma Electronics vs Online & Mall Chains',
+  title: 'Why Choose Us | Sharma Bazaar vs Online & Mall Chains',
   description:
-    'Discover why Vasant Kunj and South Delhi homeowners buy from Sharma Electronics. Compare our showroom prices, 5-floor facility, lift access, and WhatsApp counter-quotes against Amazon, Flipkart, and Croma.',
+    'Discover why Vasant Kunj and South Delhi homeowners buy from Sharma Bazaar. Compare our showroom prices, genuine distributor stock, and WhatsApp counter-quotes against Amazon, Flipkart, and Croma.',
   alternates: {
-    canonical: 'https://www.sharmaelectronics.com/why-choose-us',
+    canonical: 'https://www.sharmabazaar.com/why-choose-us',
   },
 };
 
 export default function WhyChooseUsPage() {
   const counterQuoteWhatsAppUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I am on your Why Choose Us page. I have an online price quote and would like to get your best showroom counter-price.`
+    `Hi Sharma Bazaar, I am on your Why Choose Us page. I have an online price quote and would like to get your best showroom counter-price.`
   );
 
   const comparisonRows = [
@@ -42,8 +42,8 @@ export default function WhyChooseUsPage() {
       highlight: false,
     },
     {
-      feature: 'Doorstep Floor Lifting',
-      sharma: 'Dedicated showroom staff lifts heavy units directly into your flat',
+      feature: 'White-Glove Home Delivery',
+      sharma: 'Dedicated showroom staff delivers heavy units directly into your flat',
       online: 'Couriers frequently leave heavy 80kg boxes at ground floor/gate',
       mall: 'Third-party delivery partners with unpredictable arrival windows',
       highlight: true,
@@ -78,7 +78,7 @@ export default function WhyChooseUsPage() {
     },
     {
       q: 'How can your prices be ₹1,000–₹2,000 cheaper than Amazon or Flipkart?',
-      a: 'Online marketplaces charge merchants 8% to 15% in platform commissions, payment gateway fees, and return logistics overhead. Furthermore, shopping mall retailers pay massive monthly mall rentals. Because we operate from our owned 5-floor commercial property in Masoodpur Dairy and procure directly from regional distributors, we operate on lower margins and pass those savings directly to local buyers.',
+      a: 'Online marketplaces charge merchants 8% to 15% in platform commissions, payment gateway fees, and return logistics overhead. Furthermore, shopping mall retailers pay massive monthly mall rentals. Because we operate from our owned commercial showroom property in Masoodpur Dairy and procure directly from regional distributors, we operate on lower margins and pass those savings directly to local buyers.',
     },
     {
       q: 'Can you arrange a specific electronics model that is not on display?',
@@ -122,10 +122,10 @@ export default function WhyChooseUsPage() {
               The Real Comparison
             </span>
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-brand-navy">
-              Why Choose Sharma Electronics?
+              Why Choose Sharma Bazaar?
             </h1>
             <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
-              Compare our local showroom pricing, five-floor physical facility, lift access,
+              Compare our local showroom pricing, physical demonstration displays,
               and WhatsApp counter-quotes against online marketplaces and mall chains.
             </p>
           </div>
@@ -138,7 +138,7 @@ export default function WhyChooseUsPage() {
                   <tr className="border-b border-neutral-200 bg-neutral-50 font-mono text-[11px] uppercase tracking-wider text-neutral-500">
                     <th className="py-4 px-5 w-1/4">Key Consideration</th>
                     <th className="py-4 px-5 w-1/3 text-brand-navy font-bold bg-neutral-100/60">
-                      Sharma Electronics (Vasant Kunj)
+                      Sharma Bazaar (Vasant Kunj)
                     </th>
                     <th className="py-4 px-5 w-1/4">Amazon / Flipkart</th>
                     <th className="py-4 px-5 w-1/4">Mall Retail Chains</th>
@@ -246,7 +246,7 @@ export default function WhyChooseUsPage() {
               Ready to Experience Better Prices &amp; Genuine Local Care?
             </h2>
             <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto">
-              Visit our 5-floor showroom at Masoodpur Dairy, Vasant Kunj or message our store manager on WhatsApp.
+              Visit our showroom at Masoodpur Dairy, Vasant Kunj or message our store manager on WhatsApp.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">

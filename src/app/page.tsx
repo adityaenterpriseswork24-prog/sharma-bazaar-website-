@@ -28,9 +28,9 @@ import { buildWhatsAppUrl } from '@/lib/utils';
 export const metadata = {
   title: `${SITE_CONFIG.businessName} | Premier Electronics Showroom Vasant Kunj`,
   description:
-    'Vasant Kunj premier multi-brand consumer electronics showroom. Competitive local showroom prices on Sony, Samsung, LG, Daikin, Bosch TVs, ACs, Refrigerators and Washing Machines. 5-floor showroom at Masoodpur Dairy.',
+    'Vasant Kunj premier multi-brand consumer electronics showroom. Competitive local showroom prices on Sony, Samsung, LG, Daikin, Bosch TVs, ACs, Refrigerators and Washing Machines. Masoodpur Dairy showroom.',
   alternates: {
-    canonical: 'https://www.sharmaelectronics.com',
+    canonical: 'https://www.sharmabazaar.com',
   },
 };
 
@@ -39,12 +39,12 @@ export default async function HomePage() {
 
   const heroWhatsAppUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I visited your website and would like to compare online prices for electronics before buying.`
+    `Hi Sharma Bazaar, I visited your website and would like to compare online prices for electronics before buying.`
   );
 
   const priceAdvantageWhatsAppUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I have an online price quote for an electronic product. Can you share your best local showroom price?`
+    `Hi Sharma Bazaar, I have an online price quote for an electronic product. Can you share your best local showroom price?`
   );
 
   const localBusinessSchema = {
@@ -156,11 +156,11 @@ export default async function HomePage() {
               <div className="pt-6 border-t border-neutral-100 grid grid-cols-3 gap-4 font-mono text-xs">
                 <div>
                   <p className="text-neutral-400 text-[10px] uppercase tracking-wider">Facility</p>
-                  <p className="font-bold text-brand-navy mt-0.5">5 Full Floors</p>
+                  <p className="font-bold text-brand-navy mt-0.5">Physical Showroom</p>
                 </div>
                 <div>
-                  <p className="text-neutral-400 text-[10px] uppercase tracking-wider">Access</p>
-                  <p className="font-bold text-brand-navy mt-0.5">Commercial Lift</p>
+                  <p className="text-neutral-400 text-[10px] uppercase tracking-wider">Demos</p>
+                  <p className="font-bold text-brand-navy mt-0.5">Live Display Units</p>
                 </div>
                 <div>
                   <p className="text-neutral-400 text-[10px] uppercase tracking-wider">Warranty</p>
@@ -176,7 +176,7 @@ export default async function HomePage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
-                    alt="Premium 4K Smart TV display at Sharma Electronics showroom Vasant Kunj"
+                    alt="Premium 4K Smart TV display at Sharma Bazaar showroom Vasant Kunj"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -207,7 +207,7 @@ export default async function HomePage() {
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-2xl">
                 Compare prices with us before purchasing. Selected electronics products can be{' '}
                 <span className="text-white font-bold underline decoration-neutral-500">₹1,000–₹2,000 cheaper</span> than major online portals,
-                backed by verified brand warranty, doorstep floor delivery, and genuine store ownership.
+                backed by verified brand warranty, doorstep white-glove delivery, and genuine store ownership.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 text-xs font-mono">
@@ -221,7 +221,7 @@ export default async function HomePage() {
                 </div>
                 <div className="p-3 bg-white/5 border border-white/10 rounded-sm">
                   <p className="text-neutral-400 text-[10px]">FACILITY</p>
-                  <p className="text-base font-bold text-white mt-0.5">5 Floors</p>
+                  <p className="text-base font-bold text-white mt-0.5">Physical</p>
                 </div>
                 <div className="p-3 bg-white/5 border border-white/10 rounded-sm">
                   <p className="text-neutral-400 text-[10px]">SOURCING</p>
@@ -346,7 +346,7 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 5: THE 5-FLOOR COMMERCIAL SHOWROOM
+          SECTION 5: THE PHYSICAL SHOWROOM EXPERIENCE
       ==================================================== */}
       <section className="py-20 bg-neutral-50/70 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -356,27 +356,27 @@ export default async function HomePage() {
                 Physical Retail Infrastructure
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-brand-navy">
-                Five Floors. Owned Commercial Property. Masoodpur Dairy.
+                A Real Showroom Experience. Masoodpur Dairy, Vasant Kunj.
               </h2>
               <p className="text-sm text-neutral-600 leading-relaxed">
-                Unlike online brokers operating without physical locations, Sharma Electronics
-                operates from our owned commercial showroom spanning five floors (~200 Gaj per floor).
+                Unlike online-only platforms operating without physical stock or local touchpoints, Sharma Bazaar
+                welcomes you to our dedicated consumer electronics showroom in Masoodpur Dairy, Vasant Kunj.
               </p>
               <p className="text-sm text-neutral-600 leading-relaxed">
                 Families, seniors, and homeowners can walk in and inspect active television panels,
-                refrigerators, and air conditioning units. Our commercial passenger lift makes every display floor accessible without stairs.
+                refrigerators, and air conditioning units under real living-room lighting before making a decision.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4 font-mono text-xs">
                 <div className="p-4 bg-white border border-neutral-200 rounded-sm">
-                  <p className="text-neutral-400 text-[10px]">FLOOR SCALE</p>
-                  <p className="text-base font-bold text-brand-navy mt-1">~200 Gaj/Floor</p>
-                  <p className="text-neutral-500 text-[11px] mt-0.5">Spacious displays</p>
+                  <p className="text-neutral-400 text-[10px]">INSPECTION</p>
+                  <p className="text-base font-bold text-brand-navy mt-1">Live Display Units</p>
+                  <p className="text-neutral-500 text-[11px] mt-0.5">Test picture & sound</p>
                 </div>
                 <div className="p-4 bg-white border border-neutral-200 rounded-sm">
-                  <p className="text-neutral-400 text-[10px]">COMMERCIAL LIFT</p>
-                  <p className="text-base font-bold text-brand-navy mt-1">Full Accessibility</p>
-                  <p className="text-neutral-500 text-[11px] mt-0.5">Senior-friendly</p>
+                  <p className="text-neutral-400 text-[10px]">DELIVERY</p>
+                  <p className="text-base font-bold text-brand-navy mt-1">White-Glove Service</p>
+                  <p className="text-neutral-500 text-[11px] mt-0.5">Direct to your doorstep</p>
                 </div>
               </div>
             </div>
@@ -387,7 +387,7 @@ export default async function HomePage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
-                    alt="Sharma Electronics 5-Floor Showroom at Masoodpur Dairy Vasant Kunj"
+                    alt="Sharma Bazaar Showroom at Masoodpur Dairy Vasant Kunj"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -411,7 +411,7 @@ export default async function HomePage() {
               Showroom Standards
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
-              Why South Delhi Chooses Sharma Electronics
+              Why South Delhi Chooses Sharma Bazaar
             </h2>
           </div>
 
@@ -426,9 +426,9 @@ export default async function HomePage() {
 
             <div className="space-y-2 border-l border-neutral-200 pl-4">
               <p className="font-mono text-[11px] text-neutral-400 uppercase">02</p>
-              <h3 className="text-base font-bold text-neutral-900">Physical Five-Floor Showroom</h3>
+              <h3 className="text-base font-bold text-neutral-900">Spacious Physical Showroom</h3>
               <p className="text-xs text-neutral-500 leading-relaxed">
-                Owned commercial retail space at Masoodpur Dairy with commercial lift access and real display models.
+                Dedicated retail showroom at Masoodpur Dairy with genuine display models and courteous product specialists.
               </p>
             </div>
 
@@ -442,7 +442,7 @@ export default async function HomePage() {
 
             <div className="space-y-2 border-l border-neutral-200 pl-4">
               <p className="font-mono text-[11px] text-neutral-400 uppercase">04</p>
-              <h3 className="text-base font-bold text-neutral-900">Dedicated Floor Lifting</h3>
+              <h3 className="text-base font-bold text-neutral-900">White-Glove Home Delivery</h3>
               <p className="text-xs text-neutral-500 leading-relaxed">
                 Showroom delivery staff brings heavy appliances directly into your flat, eliminating curbside delivery drops.
               </p>
@@ -534,7 +534,7 @@ export default async function HomePage() {
                   Visit Our Vasant Kunj Showroom
                 </h2>
                 <p className="text-xs text-neutral-500 mt-2 leading-relaxed">
-                  Located conveniently on the main thoroughfare of Masoodpur Dairy, Vasant Kunj with commercial lift access.
+                  Located conveniently on the main thoroughfare of Masoodpur Dairy, Vasant Kunj with accessible ground-floor entry and parking.
                 </p>
               </div>
 
@@ -584,7 +584,7 @@ export default async function HomePage() {
 
             <div className="lg:col-span-7 border border-neutral-200 bg-neutral-100 rounded-sm overflow-hidden min-h-[380px]">
               <iframe
-                title="Sharma Electronics Location in Masoodpur Vasant Kunj"
+                title="Sharma Bazaar Location in Masoodpur Vasant Kunj"
                 src={SITE_CONFIG.googleMapsEmbedUrl}
                 width="100%"
                 height="100%"
@@ -612,7 +612,7 @@ export default async function HomePage() {
           </h2>
 
           <p className="text-sm sm:text-base text-neutral-300 max-w-xl mx-auto leading-relaxed">
-            Contact us before you buy. Compare prices, check showroom stock, or visit our 5-floor facility today.
+            Contact us before you buy. Compare prices, check showroom stock, or visit our Vasant Kunj showroom today.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">

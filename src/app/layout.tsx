@@ -14,9 +14,10 @@ export const metadata: Metadata = {
   },
   description:
     'Vasant Kunj premier multi-brand electronics showroom. Competitive local showroom prices on Sony, Samsung, LG, Daikin, Bosch TVs, ACs, Refrigerators and Washing Machines. Masoodpur Dairy, Vasant Kunj.',
-  metadataBase: new URL('https://www.sharmaelectronics.com'),
+  metadataBase: new URL('https://www.sharmabazaar.com'),
   keywords: [
     'Electronics store Vasant Kunj Delhi',
+    'Sharma Bazaar Vasant Kunj',
     'Electronics shop near me',
     'TV price Vasant Kunj',
     'AC dealer South Delhi',
@@ -32,11 +33,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://www.sharmaelectronics.com',
+    url: 'https://www.sharmabazaar.com',
     siteName: SITE_CONFIG.businessName,
-    title: `${SITE_CONFIG.businessName} | Electronics Store in Vasant Kunj Delhi`,
+    title: `${SITE_CONFIG.businessName} | Premier Electronics Store in Vasant Kunj Delhi`,
     description:
-      'Compare prices with us before purchasing online. Competitive local prices on TVs, ACs, Refrigerators, Washing Machines & more at our 5-floor Vasant Kunj showroom.',
+      'Compare prices with us before purchasing online. Competitive local showroom prices on TVs, ACs, Refrigerators, Washing Machines & more at Sharma Bazaar Vasant Kunj.',
     images: [
       {
         url: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80',

@@ -11,18 +11,18 @@ import { buildWhatsAppUrl } from '@/lib/utils';
 import { ContactForm } from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Showroom & Driving Directions | Sharma Electronics Vasant Kunj',
+  title: 'Contact Showroom & Driving Directions | Sharma Bazaar Vasant Kunj',
   description:
-    'Visit Sharma Electronics at Masoodpur Dairy, Vasant Kunj, New Delhi 110070. Call +91 70119 62356 or WhatsApp. Complete directions from Chattarpur, Aerocity & Vasant Vihar Metro Stations.',
+    'Visit Sharma Bazaar at Masoodpur Dairy, Vasant Kunj, New Delhi 110070. Call +91 70119 62356 or WhatsApp. Complete directions from Chattarpur, Aerocity & Vasant Vihar Metro Stations.',
   alternates: {
-    canonical: 'https://www.sharmaelectronics.com/contact',
+    canonical: 'https://www.sharmabazaar.com/contact',
   },
 };
 
 export default function ContactPage() {
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I am on your contact page and would like to get directions or check showroom opening today.`
+    `Hi Sharma Bazaar, I am on your contact page and would like to get directions or check showroom opening today.`
   );
 
   return (
@@ -37,7 +37,7 @@ export default function ContactPage() {
             Visit Our Vasant Kunj Showroom
           </h1>
           <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
-            Located on the main thoroughfare of Masoodpur Dairy, Vasant Kunj with 5 full floors of electronics displays and a commercial lift.
+            Located on the main thoroughfare of Masoodpur Dairy, Vasant Kunj with spacious electronics display zones and convenient showroom parking.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default function ContactPage() {
 
               <div className="aspect-[16/10] bg-neutral-100 min-h-[340px]">
                 <iframe
-                  title="Sharma Electronics Location in Masoodpur Vasant Kunj"
+                  title="Sharma Bazaar Location in Masoodpur Vasant Kunj"
                   src={SITE_CONFIG.googleMapsEmbedUrl}
                   width="100%"
                   height="100%"

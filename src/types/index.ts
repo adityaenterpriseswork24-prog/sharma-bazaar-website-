@@ -66,10 +66,8 @@ export interface BusinessSettings {
     latitude: number;
     longitude: number;
   };
-  floorsInfo: {
-    totalFloors: number;
-    areaPerFloor: string;
-    hasCommercialLift: boolean;
+  showroomInfo?: {
     establishedYear: number;
+    description: string;
   };
 }

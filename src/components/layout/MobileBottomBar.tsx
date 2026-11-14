@@ -14,7 +14,7 @@ export function MobileBottomBar() {
 
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I am viewing your website and want to check current showroom prices.`
+    `Hi Sharma Bazaar, I am viewing your website and want to check current showroom prices.`
   );
 
   return (

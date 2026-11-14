@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
   const product = await getProductBySlug(params.slug);
   if (!product) {
     return {
-      title: 'Product Not Found | Sharma Electronics',
+      title: 'Product Not Found | Sharma Bazaar',
     };
   }
 
@@ -37,15 +37,15 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
 
   return {
     title: `${product.name} | Best Showroom Price Vasant Kunj`,
-    description: `Buy ${product.name} (Model: ${product.modelNumber}) at Sharma Electronics Vasant Kunj. Listed at ${formattedPrice}${
+    description: `Buy ${product.name} (Model: ${product.modelNumber}) at Sharma Bazaar Vasant Kunj. Listed at ${formattedPrice}${
       hasSavings ? ` (Save ${formatINR(savingsAmount)} vs MRP)` : ''
-    }. Visit our 5-floor showroom at Masoodpur Dairy or enquire on WhatsApp.`,
+    }. Visit our Masoodpur Dairy showroom or enquire on WhatsApp.`,
     alternates: {
-      canonical: `https://www.sharmaelectronics.com/electronics/${product.slug}`,
+      canonical: `https://www.sharmabazaar.com/electronics/${product.slug}`,
     },
     openGraph: {
-      title: `${product.name} | Sharma Electronics Vasant Kunj`,
-      description: `Best showroom price on ${product.brand} ${product.category}. Visit Sharma Electronics Masoodpur Dairy, Vasant Kunj or message us on WhatsApp.`,
+      title: `${product.name} | Sharma Bazaar Vasant Kunj`,
+      description: `Best showroom price on ${product.brand} ${product.category}. Visit Sharma Bazaar Masoodpur Dairy, Vasant Kunj or message us on WhatsApp.`,
       images: [
         {
           url: product.imageUrl,
@@ -205,7 +205,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                     Physical Showroom Display &amp; Instant Arrangement
                   </p>
                   <p className="leading-relaxed">
-                    This unit is available at our 5-floor Masoodpur showroom or can be procured within 24 hours directly from authorized brand distributors.
+                    This unit is available at our Masoodpur Dairy showroom or can be procured within 24 hours directly from authorized brand distributors.
                   </p>
                 </div>
               </div>
@@ -282,11 +282,11 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   </div>
                   <div className="flex items-center gap-2">
                     <Truck className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                    <span>Doorstep Lift</span>
+                    <span>Free Delivery</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Building2 className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                    <span>5-Floor Store</span>
+                    <span>Live Demo</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
@@ -302,7 +302,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   <div className="text-xs">
                     <p className="font-bold text-white">Prefer to inspect in showroom?</p>
                     <p className="text-neutral-400 mt-0.5 text-[11px] leading-relaxed">
-                      Visit Masoodpur Dairy, Vasant Kunj. Open daily 10 AM – 9 PM with lift access.
+                      Visit Masoodpur Dairy, Vasant Kunj. Open daily 10 AM – 9 PM with convenient parking.
                     </p>
                   </div>
                 </div>

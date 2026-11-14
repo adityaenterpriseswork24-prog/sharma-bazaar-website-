@@ -296,7 +296,7 @@ export default function AdminProductsPage() {
 
         <div className="p-3 border-t border-neutral-200 bg-neutral-50 flex items-center justify-between text-[11px] font-mono text-neutral-400">
           <span>Total records: {filtered.length}</span>
-          <span>Sharma Electronics Inventory Registry</span>
+          <span>Sharma Bazaar Inventory Registry</span>
         </div>
       </div>
     </div>

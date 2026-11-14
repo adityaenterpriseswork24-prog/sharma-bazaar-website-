@@ -113,7 +113,7 @@ export function CatalogueView({
 
   const customRequestWhatsAppUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I am looking for a specific model that is not listed on your catalogue: ${searchQuery ? `"${searchQuery}"` : 'electronics model'}. Can you arrange it and share your best showroom price?`
+    `Hi Sharma Bazaar, I am looking for a specific model that is not listed on your catalogue: ${searchQuery ? `"${searchQuery}"` : 'electronics model'}. Can you arrange it and share your best showroom price?`
   );
 
   return (

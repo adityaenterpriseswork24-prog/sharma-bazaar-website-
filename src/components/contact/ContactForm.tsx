@@ -18,7 +18,7 @@ export function ContactForm() {
     e.preventDefault();
     if (!name.trim()) return;
 
-    let message = `Hi Sharma Electronics,\n\nI am submitting a showroom inquiry from your website:\n\n`;
+    let message = `Hi Sharma Bazaar,\n\nI am submitting a showroom inquiry from your website:\n\n`;
     message += `Name: ${name}\n`;
     if (phone.trim()) {
       message += `Phone: ${phone}\n`;

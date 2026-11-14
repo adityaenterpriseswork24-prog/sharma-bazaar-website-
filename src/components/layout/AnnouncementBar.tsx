@@ -21,10 +21,10 @@ export function AnnouncementBar() {
             Showroom Direct
           </span>
           <span className="text-neutral-200 hidden sm:inline">
-            5-Floor Showroom · Masoodpur Dairy, Vasant Kunj · Authorized Distributor Network
+            Premier Electronics Showroom · Masoodpur Dairy, Vasant Kunj · Authorized Distributor Network
           </span>
           <span className="text-neutral-200 sm:hidden">
-            Vasant Kunj Showroom · 5 Commercial Floors
+            Vasant Kunj Showroom · Premier Electronics Destination
           </span>
         </div>
 

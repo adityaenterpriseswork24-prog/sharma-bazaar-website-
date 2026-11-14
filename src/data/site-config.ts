@@ -1,11 +1,11 @@
 import { BusinessSettings, CategoryInfo } from '@/types';
 
 export const SITE_CONFIG: BusinessSettings = {
-  businessName: 'Sharma Electronics',
+  businessName: 'Sharma Bazaar',
   tagline: 'Big Brands. Better Prices. Right Here in Vasant Kunj.',
   phone: '+91 70119 62356',
   whatsapp: '917011962356',
-  email: 'contact@sharmaelectronics.com',
+  email: 'contact@sharmabazaar.com',
   address: '80-B, Masoodpur Dairy, Near Vasant Kunj',
   area: 'Vasant Kunj',
   city: 'New Delhi',
@@ -18,11 +18,9 @@ export const SITE_CONFIG: BusinessSettings = {
     latitude: 28.5415,
     longitude: 77.1557,
   },
-  floorsInfo: {
-    totalFloors: 5,
-    areaPerFloor: '200 Gaj (approx. 1,800 sq.ft)',
-    hasCommercialLift: true,
+  showroomInfo: {
     establishedYear: 2019,
+    description: 'Premier consumer electronics showroom serving South Delhi since 2019.',
   },
 };
 
@@ -105,7 +103,7 @@ export const GOOGLE_REVIEWS_MOCK = [
     location: 'Sector B, Pocket 1, Vasant Kunj',
     rating: 5,
     date: '1 week ago',
-    text: 'Saved ₹1,800 on a Sony 55-inch 4K TV compared to Amazon! They have a 5-floor showroom in Masoodpur with a proper lift. The owner personally verified the seal and arranged prompt delivery to my flat within 4 hours. Superb local service.',
+    text: 'Saved ₹1,800 on a Sony 55-inch 4K TV compared to Amazon! They have a spacious physical showroom in Masoodpur with real demonstration units. The owner personally verified the seal and arranged prompt delivery to my flat within 4 hours. Superb local service.',
     category: 'Televisions',
   },
   {
@@ -123,7 +121,7 @@ export const GOOGLE_REVIEWS_MOCK = [
     location: 'Munirka Enclave, South Delhi',
     rating: 5,
     date: '1 month ago',
-    text: 'Ordered a Bosch 8kg front load washing machine on WhatsApp after comparing prices with Croma and Reliance Digital. Sharma Electronics beat the quote by ₹1,500 with authentic brand bill and manufacturer warranty provided immediately.',
+    text: 'Ordered a Bosch 8kg front load washing machine on WhatsApp after comparing prices with Croma and Reliance Digital. Sharma Bazaar beat the quote by ₹1,500 with authentic brand bill and manufacturer warranty provided immediately.',
     category: 'Washing Machines',
   },
   {
@@ -132,7 +130,7 @@ export const GOOGLE_REVIEWS_MOCK = [
     location: 'Pocket 3, Sector D, Vasant Kunj',
     rating: 5,
     date: '2 months ago',
-    text: 'Visited the Masoodpur showroom personally. Very spacious five floors of electronics with a clean lift. They checked online prices right in front of us and gave us a genuine ₹1,200 discount on a Samsung double door refrigerator. Highly recommended.',
+    text: 'Visited the Masoodpur showroom personally. Very wide collection of electronics with real display models. They checked online prices right in front of us and gave us a genuine ₹1,200 discount on a Samsung double door refrigerator. Highly recommended.',
     category: 'Refrigerators',
   },
 ];

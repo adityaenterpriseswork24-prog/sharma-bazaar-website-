@@ -35,7 +35,7 @@ export function Header() {
 
   const defaultWhatsAppUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I am on your website and would like to inquire about current showroom prices & stock availability.`
+    `Hi Sharma Bazaar, I am on your website and would like to inquire about current showroom prices & stock availability.`
   );
 
   if (pathname.startsWith('/admin')) {
@@ -53,7 +53,7 @@ export function Header() {
           {/* Architectural Brand Identity */}
           <Link href="/" className="flex items-center gap-3.5 group">
             <div className="w-9 h-9 rounded-sm bg-brand-navy flex items-center justify-center text-white font-mono text-sm font-bold tracking-tight shadow-sm group-hover:bg-black transition-colors">
-              SE
+              SB
             </div>
             <div>
               <div className="flex items-baseline gap-1.5">
@@ -61,13 +61,13 @@ export function Header() {
                   SHARMA
                 </span>
                 <span className="text-xs font-mono tracking-widest text-neutral-500 uppercase">
-                  ELECTRONICS
+                  BAZAAR
                 </span>
               </div>
               <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest flex items-center gap-1.5">
                 <span>Vasant Kunj</span>
                 <span className="w-1 h-1 rounded-full bg-neutral-300"></span>
-                <span>5 Floors</span>
+                <span>Premier Showroom</span>
               </p>
             </div>
           </Link>

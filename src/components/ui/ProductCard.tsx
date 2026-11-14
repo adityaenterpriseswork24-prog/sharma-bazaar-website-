@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { Product } from '@/types';

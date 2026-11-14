@@ -24,7 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Air Conditioners',
     readTime: '5 min read',
     publishedDate: '12 May 2026',
-    author: 'Sharma Electronics Technical Team',
+    author: 'Sharma Bazaar Technical Team',
     authorRole: 'Showroom Senior HVAC Specialist',
     coverImage: 'https://images.unsplash.com/photo-1614633833026-06201a070e2a?auto=format&fit=crop&w=1200&q=80',
     relatedCategorySlug: 'air-conditioners',
@@ -52,7 +52,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Why Local Showroom Procurement Beats Online Sellers',
         paragraphs: [
           'Online platforms often ship air conditioners from distant regional fulfillment hubs where outdoor units suffer bent condenser fins or microscopic gas leaks during rough transit.',
-          'At Sharma Electronics in Masoodpur, our units arrive directly via authorized brand distributor logistics. Our showroom staff personally verifies sealed boxes, and brand-authorized engineers handle the installation with proper vacuuming within 24 hours.',
+          'At Sharma Bazaar in Masoodpur, our units arrive directly via authorized brand distributor logistics. Our showroom staff personally verifies sealed boxes, and brand-authorized engineers handle the installation with proper vacuuming within 24 hours.',
         ],
       },
     ],
@@ -79,7 +79,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: 'The Local Showroom Advantage in Vasant Kunj',
         paragraphs: [
-          'At Sharma Electronics, we operate a 5-floor physical showroom in Masoodpur Dairy with an operational commercial lift. When you buy from us, you can inspect the physical demonstration model, check the display black levels, and examine the build quality.',
+          'At Sharma Bazaar, we operate a spacious physical showroom in Masoodpur Dairy with active demonstration models. When you buy from us, you can inspect the physical demonstration model, check the display black levels, and examine the build quality.',
           'Most importantly: because we operate from an owned commercial property without marketplace platform commissions (which take 8% to 15% from online sellers), selected models at our showroom can be ₹1,000 to ₹2,000 cheaper than Amazon and Flipkart.',
         ],
         keyTakeaways: [
@@ -130,7 +130,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Televisions',
     readTime: '7 min read',
     publishedDate: '02 August 2026',
-    author: 'Sharma Electronics Technical Team',
+    author: 'Sharma Bazaar Technical Team',
     authorRole: 'Showroom Display Specialist',
     coverImage: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80',
     relatedCategorySlug: 'televisions',
@@ -151,7 +151,7 @@ export const BLOG_POSTS: BlogPost[] = [
         keyTakeaways: [
           'Bright drawing room with daytime sun: Choose Samsung QLED / Crystal 4K.',
           'Movie nights, sports, and dark room viewing: Choose Sony Bravia / LG OLED.',
-          'Visit our 5-floor Masoodpur showroom to compare both screens side-by-side in person.',
+          'Visit our Masoodpur Dairy showroom to compare both screens side-by-side in person.',
         ],
       },
     ],

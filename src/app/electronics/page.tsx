@@ -6,9 +6,9 @@ import { SITE_CONFIG } from '@/data/site-config';
 export const metadata: Metadata = {
   title: 'Consumer Electronics Catalogue | Best Prices in Vasant Kunj Delhi',
   description:
-    'Browse 4K Smart TVs, Split Inverter ACs, Double Door Refrigerators, Washing Machines & Microwaves at Sharma Electronics Vasant Kunj. Compare prices with online portals and visit our showroom.',
+    'Browse 4K Smart TVs, Split Inverter ACs, Double Door Refrigerators, Washing Machines & Microwaves at Sharma Bazaar Vasant Kunj. Compare prices with online portals and visit our showroom.',
   alternates: {
-    canonical: 'https://www.sharmaelectronics.com/electronics',
+    canonical: 'https://www.sharmabazaar.com/electronics',
   },
 };
 

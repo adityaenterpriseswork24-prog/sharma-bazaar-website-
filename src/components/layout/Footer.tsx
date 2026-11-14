@@ -16,7 +16,7 @@ export function Footer() {
 
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I am viewing your website and would like showroom assistance or driving directions.`
+    `Hi Sharma Bazaar, I am viewing your website and would like showroom assistance or driving directions.`
   );
 
   return (
@@ -24,7 +24,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main 4-Column Architectural Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
-          {/* Col 1: Identity & 5-Floor Context */}
+          {/* Col 1: Identity & Showroom Context */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block">
               <div className="flex items-baseline gap-2">
@@ -32,20 +32,20 @@ export function Footer() {
                   SHARMA
                 </span>
                 <span className="text-xs font-mono tracking-widest text-neutral-400 uppercase">
-                  ELECTRONICS
+                  BAZAAR
                 </span>
               </div>
             </Link>
 
             <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
-              South Delhi&apos;s physical multi-brand consumer electronics destination.
-              Owned five-floor commercial showroom in Masoodpur Dairy, Vasant Kunj with commercial lift access.
+              South Delhi&apos;s premier multi-brand consumer electronics showroom.
+              Physical store located in Masoodpur Dairy, Vasant Kunj with authorized distributor pricing.
             </p>
 
             <div className="p-3.5 rounded-sm bg-white/5 border border-white/10 space-y-1.5 font-mono text-[11px]">
               <div className="text-white font-medium flex items-center justify-between">
-                <span>5-Floor Showroom</span>
-                <span className="text-neutral-400">~200 Gaj/Floor</span>
+                <span>Physical Showroom</span>
+                <span className="text-neutral-400">Est. 2019</span>
               </div>
               <p className="text-neutral-400 text-[10px] leading-normal">
                 Direct regional dealer network · Televisions · Refrigeration · Air Conditioning · Laundry

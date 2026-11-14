@@ -13,18 +13,18 @@ import { SITE_CONFIG } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'About Us | Sharma Electronics Showroom Vasant Kunj',
+  title: 'About Us | Sharma Bazaar Showroom Vasant Kunj',
   description:
-    'Established in 2019 in Masoodpur Dairy, Vasant Kunj. 5-floor commercial showroom offering multi-brand electronics: TVs, ACs, Refrigerators, Washing Machines & Microwaves with lift access.',
+    'Established in 2019 in Masoodpur Dairy, Vasant Kunj. Premier commercial showroom offering multi-brand electronics: TVs, ACs, Refrigerators, Washing Machines & Microwaves.',
   alternates: {
-    canonical: 'https://www.sharmaelectronics.com/about',
+    canonical: 'https://www.sharmabazaar.com/about',
   },
 };
 
 export default function AboutPage() {
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I read your About page and would like to visit the showroom or inquire about a product.`
+    `Hi Sharma Bazaar, I read your About page and would like to visit the showroom or inquire about a product.`
   );
 
   return (
@@ -41,7 +41,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
-            Established in 2019 in Masoodpur Dairy, Vasant Kunj, Sharma Electronics has grown into one of South Delhi&apos;s most dependable physical retail destinations. Operating from our owned five-floor commercial property, we bring leading global electronics brands closer to you with competitive showroom prices and personal service.
+            Established in 2019 in Masoodpur Dairy, Vasant Kunj, Sharma Bazaar has grown into one of South Delhi&apos;s most dependable physical retail destinations. Operating from our owned commercial showroom property, we bring leading global electronics brands closer to you with competitive showroom prices and personal service.
           </p>
         </div>
 
@@ -49,17 +49,17 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
           <div className="p-6 bg-neutral-50 border border-neutral-200 rounded-sm space-y-2">
             <p className="text-neutral-400 text-[10px]">01 · FACILITY</p>
-            <h3 className="text-base font-bold text-brand-navy font-sans">5 Commercial Floors</h3>
+            <h3 className="text-base font-bold text-brand-navy font-sans">Physical Showroom</h3>
             <p className="text-neutral-600 font-sans text-xs leading-relaxed">
-              Approximately 200 Gaj per floor (~1,800 sq.ft) of owned retail space, providing spacious display zones for televisions, refrigeration, air conditioning, and laundry care.
+              Dedicated retail showroom space in Masoodpur Dairy, providing spacious display zones for televisions, refrigeration, air conditioning, and laundry care.
             </p>
           </div>
 
           <div className="p-6 bg-neutral-50 border border-neutral-200 rounded-sm space-y-2">
-            <p className="text-neutral-400 text-[10px]">02 · ACCESSIBILITY</p>
-            <h3 className="text-base font-bold text-brand-navy font-sans">Commercial Lift</h3>
+            <p className="text-neutral-400 text-[10px]">02 · EXPERIENCE</p>
+            <h3 className="text-base font-bold text-brand-navy font-sans">Live Demonstration</h3>
             <p className="text-neutral-600 font-sans text-xs leading-relaxed">
-              Equipped with a modern commercial passenger lift so senior citizens, families, and homeowners can comfortably explore all electronics floors without climbing stairs.
+              Active display units allowing homeowners and families to test picture quality, viewing angles, audio performance, and build finishes before deciding.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function AboutPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
-                alt="Sharma Electronics 5-floor showroom facility in Vasant Kunj"
+                alt="Sharma Bazaar showroom facility in Vasant Kunj"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
             Visit Our Showroom
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white max-w-xl mx-auto">
-            Experience Our Five Floors in Person
+            Experience Our Showroom in Person
           </h2>
           <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto">
             Walk into our showroom at Masoodpur Dairy, Vasant Kunj or message us on WhatsApp for price comparisons.

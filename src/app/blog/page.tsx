@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     'Expert consumer electronics advice for Delhi homeowners. AC tonnage calculation, TV OLED vs QLED comparisons, washing machine hard water protection, and smart shopping tips.',
   alternates: {
-    canonical: 'https://www.sharmaelectronics.com/blog',
+    canonical: 'https://www.sharmabazaar.com/blog',
   },
 };
 
@@ -20,7 +20,7 @@ export default function BlogIndexPage() {
 
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    `Hi Sharma Electronics, I was reading your blog guides and have a question regarding an electronics purchase.`
+    `Hi Sharma Bazaar, I was reading your blog guides and have a question regarding an electronics purchase.`
   );
 
   return (

@@ -61,14 +61,14 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
           <div className="p-6 border-b border-white/10 flex items-center justify-between">
             <Link href="/admin" className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-sm bg-white/10 border border-white/15 flex items-center justify-center font-mono text-xs font-bold text-white">
-                SE
+                SB
               </div>
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-white block">
                   Operations Vault
                 </span>
                 <span className="text-[10px] font-mono text-neutral-400 block">
-                  Sharma Electronics
+                  Sharma Bazaar
                 </span>
               </div>
             </Link>

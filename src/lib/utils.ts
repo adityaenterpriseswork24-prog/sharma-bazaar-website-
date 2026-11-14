@@ -41,7 +41,7 @@ export function buildWhatsAppUrl(phone: string, message: string): string {
  * Generate product specific WhatsApp inquiry message
  */
 export function generateProductWhatsAppMessage(productName: string, modelNumber?: string, ourPrice?: number): string {
-  let msg = `Hi Sharma Electronics,\n\nI visited your website and I am interested in:\n📌 *${productName}*`;
+  let msg = `Hi Sharma Bazaar,\n\nI visited your website and I am interested in:\n📌 *${productName}*`;
   if (modelNumber) {
     msg += `\nModel: ${modelNumber}`;
   }

@@ -8,7 +8,7 @@ import { useAuth } from '@/lib/auth-context';
 import { UserRole } from '@/types';
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState('admin@sharmaelectronics.com');
+  const [email, setEmail] = useState('admin@sharmabazaar.com');
   const [password, setPassword] = useState('Sharma@2026');
   const [role, setRole] = useState<UserRole>('admin');
   const [error, setError] = useState('');
@@ -43,9 +43,9 @@ export default function AdminLoginPage() {
   const handleSelectRole = (selectedRole: UserRole) => {
     setRole(selectedRole);
     if (selectedRole === 'admin') {
-      setEmail('admin@sharmaelectronics.com');
+      setEmail('admin@sharmabazaar.com');
     } else {
-      setEmail('manager@sharmaelectronics.com');
+      setEmail('manager@sharmabazaar.com');
     }
   };
 
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
 
           <div className="space-y-4 max-w-md">
             <div className="w-10 h-10 rounded-sm bg-white/10 border border-white/15 flex items-center justify-center font-mono text-sm font-bold">
-              SE
+              SB
             </div>
 
             <div className="space-y-1">
@@ -80,7 +80,7 @@ export default function AdminLoginPage() {
                 Staff Authentication
               </span>
               <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-white font-sans">
-                Sharma Electronics Operations Vault
+                Sharma Bazaar Operations Vault
               </h1>
             </div>
 
@@ -94,9 +94,9 @@ export default function AdminLoginPage() {
         <div className="pt-12 space-y-4">
           <div className="grid grid-cols-2 gap-3 font-mono text-xs">
             <div className="p-3.5 bg-white/5 border border-white/10 rounded-sm">
-              <p className="text-neutral-400 text-[10px] uppercase">COMMERCIAL SCALE</p>
-              <p className="text-white font-bold mt-0.5">5 Showroom Floors</p>
-              <p className="text-neutral-400 text-[10px]">~200 Gaj per floor</p>
+              <p className="text-neutral-400 text-[10px] uppercase">SHOWROOM FACILITY</p>
+              <p className="text-white font-bold mt-0.5">Physical Showroom</p>
+              <p className="text-neutral-400 text-[10px]">Serving South Delhi</p>
             </div>
             <div className="p-3.5 bg-white/5 border border-white/10 rounded-sm">
               <p className="text-neutral-400 text-[10px] uppercase">LOCATION</p>
@@ -215,7 +215,7 @@ export default function AdminLoginPage() {
             <div className="flex items-center gap-3">
               <button
                 type="button"
-                onClick={() => handleLogin(undefined, 'admin', 'admin@sharmaelectronics.com')}
+                onClick={() => handleLogin(undefined, 'admin', 'admin@sharmabazaar.com')}
                 className="text-brand-navy font-semibold hover:underline"
               >
                 Autofill Admin
@@ -223,7 +223,7 @@ export default function AdminLoginPage() {
               <span>·</span>
               <button
                 type="button"
-                onClick={() => handleLogin(undefined, 'shop_manager', 'manager@sharmaelectronics.com')}
+                onClick={() => handleLogin(undefined, 'shop_manager', 'manager@sharmabazaar.com')}
                 className="text-brand-navy font-semibold hover:underline"
               >
                 Autofill Manager

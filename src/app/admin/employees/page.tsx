@@ -18,21 +18,21 @@ export default function AdminEmployeesPage() {
     {
       uid: 'staff-1',
       name: 'Showroom Owner / Director',
-      email: 'admin@sharmaelectronics.com',
+      email: 'admin@sharmabazaar.com',
       role: 'admin',
       createdAt: '2026-01-01T10:00:00Z',
     },
     {
       uid: 'staff-2',
       name: 'Vasant Kunj Store Manager',
-      email: 'manager@sharmaelectronics.com',
+      email: 'manager@sharmabazaar.com',
       role: 'shop_manager',
       createdAt: '2026-02-15T10:00:00Z',
     },
     {
       uid: 'staff-3',
       name: 'Electronics Procurement Lead',
-      email: 'inventory@sharmaelectronics.com',
+      email: 'inventory@sharmabazaar.com',
       role: 'shop_manager',
       createdAt: '2026-03-01T10:00:00Z',
     },
@@ -182,7 +182,7 @@ export default function AdminEmployeesPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="vikram@sharmaelectronics.com"
+                placeholder="vikram@sharmabazaar.com"
                 className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
               />
             </div>
