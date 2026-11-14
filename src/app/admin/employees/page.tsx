@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   ShieldAlert,
   UserCheck,
@@ -38,6 +38,25 @@ export default function AdminEmployeesPage() {
       createdAt: '2026-03-01T10:00:00Z',
     },
   ]);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('sharma_admin_employees');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setEmployees(parsed);
+        }
+      }
+    } catch {
+      // keep initial
+    }
+  }, []);
+
+  const saveEmployees = (list: UserAccount[]) => {
+    setEmployees(list);
+    localStorage.setItem('sharma_admin_employees', JSON.stringify(list));
+  };
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -82,7 +101,7 @@ export default function AdminEmployeesPage() {
       createdAt: new Date().toISOString(),
     };
 
-    setEmployees([...employees, newEmp]);
+    saveEmployees([...employees, newEmp]);
     setName('');
     setEmail('');
     setShowAddForm(false);
@@ -101,14 +120,14 @@ export default function AdminEmployeesPage() {
       }
       return emp;
     });
-    setEmployees(updated);
+    saveEmployees(updated);
     setNotification({ message: 'User role updated successfully.', type: 'success' });
     setTimeout(() => setNotification(null), 3000);
   };
 
   const handleDelete = (uid: string, empName: string) => {
     if (confirm(`Revoke staff account for ${empName}?`)) {
-      setEmployees(employees.filter((e) => e.uid !== uid));
+      saveEmployees(employees.filter((e) => e.uid !== uid));
       setNotification({ message: `Access revoked for ${empName}.`, type: 'success' });
       setTimeout(() => setNotification(null), 3000);
     }

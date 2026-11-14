@@ -1,12 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { MessageCircle, X } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export function FloatingWhatsApp() {
   const [closed, setClosed] = useState(false);
+  const pathname = usePathname();
+
+  if (pathname.startsWith('/admin')) {
+    return null;
+  }
 
   const defaultMsg = `Hi Sharma Electronics, I am on your website and want to check your best showroom price & availability.`;
   const url = buildWhatsAppUrl(SITE_CONFIG.whatsapp, defaultMsg);

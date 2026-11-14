@@ -51,6 +51,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({
     slug: p.slug,

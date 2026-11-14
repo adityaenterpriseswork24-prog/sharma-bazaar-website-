@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Search, RotateCcw, MessageCircle, X } from 'lucide-react';
 import { Product } from '@/types';
 import { ELECTRONICS_CATEGORIES, SITE_CONFIG } from '@/data/site-config';
@@ -18,23 +18,53 @@ export function CatalogueView({
   initialCategory = 'all',
   initialSearch = '',
 }: CatalogueViewProps) {
+  const [products, setProducts] = useState<Product[]>(initialProducts);
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
   const [selectedBrand, setSelectedBrand] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>(initialSearch);
   const [sortBy, setSortBy] = useState<string>('featured');
 
+  // Sync category when props change (e.g. navigation via header / mobile drawer)
+  useEffect(() => {
+    if (initialCategory) {
+      setSelectedCategory(initialCategory);
+    }
+  }, [initialCategory]);
+
+  // Sync search query when props change
+  useEffect(() => {
+    if (initialSearch !== undefined) {
+      setSearchQuery(initialSearch);
+    }
+  }, [initialSearch]);
+
+  // Sync with client-side admin inventory if modified
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('sharma_admin_products');
+      if (stored) {
+        const parsed: Product[] = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setProducts(parsed);
+        }
+      }
+    } catch {
+      // keep initial
+    }
+  }, []);
+
   // Extract all unique brands dynamically
   const availableBrands = useMemo(() => {
     const brands = new Set<string>();
-    initialProducts.forEach((p) => {
+    products.forEach((p) => {
       if (p.brand) brands.add(p.brand);
     });
     return Array.from(brands).sort();
-  }, [initialProducts]);
+  }, [products]);
 
   // Filter & sort products
   const filteredProducts = useMemo(() => {
-    let result = [...initialProducts];
+    let result = [...products];
 
     // Filter by category
     if (selectedCategory !== 'all') {
@@ -76,7 +106,7 @@ export function CatalogueView({
     }
 
     return result;
-  }, [initialProducts, selectedCategory, selectedBrand, searchQuery, sortBy]);
+  }, [products, selectedCategory, selectedBrand, searchQuery, sortBy]);
 
   const resetFilters = () => {
     setSelectedCategory('all');

@@ -1,8 +1,17 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import { Phone, MessageCircle, Navigation } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export function MobileBottomBar() {
+  const pathname = usePathname();
+
+  if (pathname.startsWith('/admin')) {
+    return null;
+  }
+
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
     `Hi Sharma Electronics, I am on your website and want to check showroom prices and current availability.`

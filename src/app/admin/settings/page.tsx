@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Save, CheckCircle2, Building2 } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site-config';
 
@@ -13,8 +13,27 @@ export default function AdminSettingsPage() {
   const [workingHours, setWorkingHours] = useState(SITE_CONFIG.workingHours);
   const [saved, setSaved] = useState(false);
 
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('sharma_admin_settings');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (parsed.businessName) setBusinessName(parsed.businessName);
+        if (parsed.phone) setPhone(parsed.phone);
+        if (parsed.whatsapp) setWhatsapp(parsed.whatsapp);
+        if (parsed.email) setEmail(parsed.email);
+        if (parsed.address) setAddress(parsed.address);
+        if (parsed.workingHours) setWorkingHours(parsed.workingHours);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const payload = { businessName, phone, whatsapp, email, address, workingHours };
+    localStorage.setItem('sharma_admin_settings', JSON.stringify(payload));
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
   };

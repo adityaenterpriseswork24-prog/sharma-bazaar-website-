@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import {
@@ -22,30 +22,26 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
 
+  useEffect(() => {
+    if (!loading && !user && pathname !== '/admin/login') {
+      router.replace('/admin/login');
+    }
+  }, [loading, user, pathname, router]);
+
   // If on /admin/login, don't show the dashboard sidebar wrapper
   if (pathname === '/admin/login') {
     return <>{children}</>;
   }
 
-  if (loading) {
+  if (loading || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
         <div className="flex flex-col items-center gap-3">
           <div className="w-10 h-10 border-4 border-brand-blue border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-sm font-semibold">Verifying Staff Authorization...</p>
+          <p className="text-sm font-semibold">
+            {loading ? 'Verifying Staff Authorization...' : 'Redirecting to Staff Login...'}
+          </p>
         </div>
-      </div>
-    );
-  }
-
-  // If not logged in, redirect to login
-  if (!user) {
-    if (typeof window !== 'undefined') {
-      router.push('/admin/login');
-    }
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
-        <p className="text-sm">Redirecting to Staff Login...</p>
       </div>
     );
   }
@@ -138,9 +134,9 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
           </Link>
 
           <button
-            onClick={() => {
-              logout();
-              router.push('/admin/login');
+            onClick={async () => {
+              await logout();
+              window.location.href = '/admin/login';
             }}
             className="w-full flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-rose-400 hover:bg-rose-950/40 transition-colors text-left"
           >

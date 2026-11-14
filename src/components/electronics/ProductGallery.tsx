@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface ProductGalleryProps {
   images: string[];
@@ -8,7 +8,16 @@ interface ProductGalleryProps {
 }
 
 export function ProductGallery({ images, productName }: ProductGalleryProps) {
-  const [selectedImage, setSelectedImage] = useState(images[0] || '');
+  const fallbackImage =
+    'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80';
+  const initialImg = images && images.length > 0 ? images[0] : fallbackImage;
+  const [selectedImage, setSelectedImage] = useState(initialImg);
+
+  useEffect(() => {
+    if (images && images.length > 0) {
+      setSelectedImage(images[0]);
+    }
+  }, [images]);
 
   return (
     <div className="space-y-4">
@@ -18,12 +27,15 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         <img
           src={selectedImage}
           alt={productName}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = fallbackImage;
+          }}
           className="w-full h-full object-contain object-center transition-all duration-300"
         />
       </div>
 
       {/* Thumbnails */}
-      {images.length > 1 && (
+      {images && images.length > 1 && (
         <div className="flex items-center gap-3 overflow-x-auto pb-2">
           {images.map((img, index) => (
             <button
@@ -40,6 +52,9 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               <img
                 src={img}
                 alt={`${productName} thumbnail ${index + 1}`}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = fallbackImage;
+                }}
                 className="w-full h-full object-contain"
               />
             </button>

@@ -23,8 +23,18 @@ export default function EditProductPage() {
 
     if (match) {
       setProduct(match);
+      setLoaded(true);
+    } else {
+      fetch(`/api/products?id=${encodeURIComponent(productId)}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.product) {
+            setProduct(data.product);
+          }
+          setLoaded(true);
+        })
+        .catch(() => setLoaded(true));
     }
-    setLoaded(true);
   }, [productId]);
 
   if (!loaded) {

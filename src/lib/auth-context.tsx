@@ -29,14 +29,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<UserAccount | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Helper to set cookie
+  const setSessionCookie = (account: UserAccount | null) => {
+    if (typeof document === 'undefined') return;
+    if (account) {
+      document.cookie = `sharma_admin_session=${encodeURIComponent(
+        JSON.stringify(account)
+      )}; path=/; max-age=604800; SameSite=Lax`;
+    } else {
+      document.cookie = 'sharma_admin_session=; path=/; max-age=0; SameSite=Lax';
+    }
+  };
+
   useEffect(() => {
-    const stored = localStorage.getItem('sharma_admin_session');
-    if (stored) {
-      try {
-        setUser(JSON.parse(stored));
-      } catch {
-        localStorage.removeItem('sharma_admin_session');
+    try {
+      const stored = localStorage.getItem('sharma_admin_session');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        setUser(parsed);
+        setSessionCookie(parsed);
       }
+    } catch {
+      localStorage.removeItem('sharma_admin_session');
+      setSessionCookie(null);
     }
 
     if (isFirebaseConfigured && auth) {
@@ -51,6 +66,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           };
           setUser(account);
           localStorage.setItem('sharma_admin_session', JSON.stringify(account));
+          setSessionCookie(account);
         }
         setLoading(false);
       });
@@ -75,19 +91,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         };
         setUser(account);
         localStorage.setItem('sharma_admin_session', JSON.stringify(account));
+        setSessionCookie(account);
         setLoading(false);
         return true;
       } else {
-        const role: UserRole = demoRole || (email.toLowerCase().includes('manager') ? 'shop_manager' : 'admin');
+        const role: UserRole =
+          demoRole || (email.toLowerCase().includes('manager') ? 'shop_manager' : 'admin');
         const account: UserAccount = {
           uid: `staff-${Date.now()}`,
-          email,
+          email: email || (role === 'admin' ? 'admin@sharmaelectronics.com' : 'manager@sharmaelectronics.com'),
           name: role === 'admin' ? 'Senior Administrator' : 'Showroom Manager',
           role,
           createdAt: new Date().toISOString(),
         };
         setUser(account);
         localStorage.setItem('sharma_admin_session', JSON.stringify(account));
+        setSessionCookie(account);
         setLoading(false);
         return true;
       }
@@ -108,6 +127,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
     setUser(null);
     localStorage.removeItem('sharma_admin_session');
+    setSessionCookie(null);
   };
 
   const isAdmin = user?.role === 'admin';

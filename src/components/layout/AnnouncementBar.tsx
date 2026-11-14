@@ -1,8 +1,17 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Phone, MapPin, Sparkles, Lock } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site-config';
 
 export function AnnouncementBar() {
+  const pathname = usePathname();
+
+  if (pathname.startsWith('/admin')) {
+    return null;
+  }
+
   return (
     <div className="bg-brand-navy text-white text-xs sm:text-sm py-2 px-4 border-b border-white/10">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-4 text-center sm:text-left">

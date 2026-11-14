@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import { Product, ProductCategory } from '@/types';
 import { INITIAL_PRODUCTS } from '@/data/initial-products';
 import { isFirebaseConfigured, db } from './firebase/client';
@@ -12,11 +14,27 @@ export interface ProductFilterOptions {
   featuredOnly?: boolean;
 }
 
+function getStoredOrInitialProducts(): Product[] {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'stored-products.json');
+    if (fs.existsSync(filePath)) {
+      const data = fs.readFileSync(filePath, 'utf-8');
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
+    }
+  } catch {
+    // fallback
+  }
+  return [...INITIAL_PRODUCTS];
+}
+
 /**
  * Fetch all active products with in-memory caching and fallback to seed data
  */
 export async function getActiveProducts(options: ProductFilterOptions = {}): Promise<Product[]> {
-  let products: Product[] = [...INITIAL_PRODUCTS];
+  let products: Product[] = getStoredOrInitialProducts();
 
   // If Firebase is configured on client/server, attempt fetching from Firestore
   if (isFirebaseConfigured && db) {
@@ -94,7 +112,8 @@ export async function getActiveProducts(options: ProductFilterOptions = {}): Pro
  * Fetch a single product by slug
  */
 export async function getProductBySlug(slug: string): Promise<Product | null> {
-  const localMatch = INITIAL_PRODUCTS.find((p) => p.slug === slug || p.id === slug);
+  const allProducts = getStoredOrInitialProducts();
+  const localMatch = allProducts.find((p) => p.slug === slug || p.id === slug);
   if (localMatch) return localMatch;
 
   if (isFirebaseConfigured && db) {

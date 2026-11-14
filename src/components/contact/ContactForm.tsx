@@ -12,6 +12,7 @@ export function ContactForm() {
   const [category, setCategory] = useState<ProductCategory>(ELECTRONICS_CATEGORIES[0].id);
   const [modelOrRequirement, setModelOrRequirement] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [targetWhatsAppUrl, setTargetWhatsAppUrl] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,9 +30,14 @@ export function ContactForm() {
     message += `\nPlease check your best showroom price and availability. Thank you!`;
 
     const url = buildWhatsAppUrl(SITE_CONFIG.whatsapp, message);
+    setTargetWhatsAppUrl(url);
     setSubmitted(true);
 
-    window.open(url, '_blank');
+    try {
+      window.open(url, '_blank');
+    } catch {
+      // browser popup blocker may catch it; fallback button is visible
+    }
   };
 
   return (
@@ -49,15 +55,33 @@ export function ContactForm() {
       </div>
 
       {submitted ? (
-        <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-3">
-          <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
-          <h4 className="text-base font-bold text-emerald-900">Inquiry Prepared!</h4>
-          <p className="text-xs text-emerald-700 leading-relaxed">
-            WhatsApp has been opened with your inquiry details. If it did not open automatically, click the button below:
-          </p>
+        <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-4">
+          <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
+          <div>
+            <h4 className="text-base font-bold text-emerald-900">Inquiry Ready to Send!</h4>
+            <p className="text-xs text-emerald-700 leading-relaxed mt-1">
+              If WhatsApp did not open automatically in your browser or phone, click the button below:
+            </p>
+          </div>
+          <div className="pt-2">
+            <a
+              href={targetWhatsAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-whatsapp hover:bg-brand-whatsappHover text-white font-bold text-sm shadow-md transition-all hover:scale-105"
+            >
+              <MessageCircle className="w-5 h-5 fill-white text-brand-whatsapp" />
+              <span>Open WhatsApp Now &rarr;</span>
+            </a>
+          </div>
           <button
-            onClick={() => setSubmitted(false)}
-            className="text-xs font-semibold text-brand-blue hover:underline block mx-auto pt-2"
+            onClick={() => {
+              setSubmitted(false);
+              setName('');
+              setPhone('');
+              setModelOrRequirement('');
+            }}
+            className="text-xs font-semibold text-slate-500 hover:text-brand-blue block mx-auto pt-2 hover:underline"
           >
             Submit Another Inquiry
           </button>

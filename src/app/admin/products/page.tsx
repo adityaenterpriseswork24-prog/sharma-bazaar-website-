@@ -40,13 +40,26 @@ export default function AdminProductsPage() {
   };
 
   const handleToggleActive = (id: string) => {
+    let changedProduct: Product | undefined;
     const updated = products.map((p) => {
       if (p.id === id) {
-        return { ...p, isActive: !p.isActive, updatedAt: new Date().toISOString() };
+        changedProduct = { ...p, isActive: !p.isActive, updatedAt: new Date().toISOString() };
+        return changedProduct;
       }
       return p;
     });
     saveProducts(updated);
+    if (changedProduct) {
+      try {
+        fetch('/api/products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(changedProduct),
+        }).catch((e) => console.warn('API sync notice:', e));
+      } catch {
+        // ignore
+      }
+    }
     setNotification({ message: 'Product visibility status updated successfully.', type: 'success' });
     setTimeout(() => setNotification(null), 3000);
   };
@@ -55,6 +68,13 @@ export default function AdminProductsPage() {
     if (confirm(`Are you sure you want to delete "${name}" from the catalogue?`)) {
       const updated = products.filter((p) => p.id !== id);
       saveProducts(updated);
+      try {
+        fetch(`/api/products?id=${encodeURIComponent(id)}`, {
+          method: 'DELETE',
+        }).catch((e) => console.warn('API sync notice:', e));
+      } catch {
+        // ignore
+      }
       setNotification({ message: `"${name}" removed from inventory.`, type: 'success' });
       setTimeout(() => setNotification(null), 3000);
     }
@@ -63,6 +83,13 @@ export default function AdminProductsPage() {
   const handleResetToDefaults = () => {
     if (confirm('Reset catalogue back to initial verified showroom models?')) {
       saveProducts(INITIAL_PRODUCTS);
+      try {
+        fetch('/api/products', {
+          method: 'PUT',
+        }).catch((e) => console.warn('API sync notice:', e));
+      } catch {
+        // ignore
+      }
       setNotification({ message: 'Catalogue reset to default showroom items.', type: 'success' });
       setTimeout(() => setNotification(null), 3000);
     }

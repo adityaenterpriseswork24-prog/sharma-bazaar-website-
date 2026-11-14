@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Tv, Lock, Mail, ArrowRight } from 'lucide-react';
+import { Tv, Lock, Mail, ArrowRight, Zap, CheckCircle2 } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
 import { UserRole } from '@/types';
 
@@ -12,22 +12,54 @@ export default function AdminLoginPage() {
   const [role, setRole] = useState<UserRole>('admin');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { login } = useAuth();
+  const { user, loading, login } = useAuth();
   const router = useRouter();
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+  // If already logged in, redirect straight to /admin
+  useEffect(() => {
+    if (!loading && user) {
+      router.replace('/admin');
+    }
+  }, [loading, user, router]);
+
+  const handleLogin = async (e?: React.FormEvent, customRole?: UserRole, customEmail?: string) => {
+    if (e) e.preventDefault();
     setIsSubmitting(true);
     setError('');
 
-    const success = await login(email, password, role);
+    const targetEmail = customEmail || email;
+    const targetRole = customRole || role;
+
+    const success = await login(targetEmail, password, targetRole);
     if (success) {
-      router.push('/admin');
+      // Use hard redirect or replace to ensure fresh layout state
+      window.location.href = '/admin';
     } else {
-      setError('Invalid credentials or Firebase configuration missing. Please try again.');
+      setError('Invalid credentials or configuration. Please try again.');
       setIsSubmitting(false);
     }
   };
+
+  const handleQuickLogin = (quickRole: UserRole) => {
+    const quickEmail =
+      quickRole === 'admin'
+        ? 'admin@sharmaelectronics.com'
+        : 'manager@sharmaelectronics.com';
+    setEmail(quickEmail);
+    setRole(quickRole);
+    handleLogin(undefined, quickRole, quickEmail);
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 text-white">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-10 h-10 border-4 border-brand-blue border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-sm font-semibold">Checking Session...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
@@ -49,7 +81,43 @@ export default function AdminLoginPage() {
             </div>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-4 text-xs sm:text-sm">
+          {/* Quick Demo Login Buttons */}
+          <div className="p-4 rounded-2xl bg-blue-50/80 border border-blue-200 space-y-2.5">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-brand-navy">
+              <Zap className="w-4 h-4 text-amber-500 fill-amber-500" />
+              <span>Instant 1-Click Access</span>
+            </div>
+            <p className="text-[11px] text-slate-600">
+              Select your role below to immediately enter the dashboard without typing:
+            </p>
+            <div className="grid grid-cols-2 gap-2 pt-1">
+              <button
+                type="button"
+                onClick={() => handleQuickLogin('admin')}
+                disabled={isSubmitting}
+                className="py-2.5 px-3 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-sm"
+              >
+                <span>⚡ Admin Login</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleQuickLogin('shop_manager')}
+                disabled={isSubmitting}
+                className="py-2.5 px-3 rounded-xl bg-brand-blue hover:bg-brand-blueHover text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-sm"
+              >
+                <span>⚡ Shop Manager</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="relative flex items-center justify-center">
+            <span className="h-px bg-slate-200 w-full absolute"></span>
+            <span className="relative bg-white px-3 text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
+              Or Manual Sign In
+            </span>
+          </div>
+
+          <form onSubmit={(e) => handleLogin(e)} className="space-y-4 text-xs sm:text-sm">
             <div>
               <label className="block font-bold text-slate-700 mb-1">Staff Email</label>
               <div className="relative">
@@ -76,48 +144,6 @@ export default function AdminLoginPage() {
                   className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 />
               </div>
-            </div>
-
-            {/* Role Switcher for RBAC Testing */}
-            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-600">
-                Select Testing Role (RBAC):
-              </label>
-              <div className="grid grid-cols-2 gap-2 text-xs">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setRole('admin');
-                    setEmail('admin@sharmaelectronics.com');
-                  }}
-                  className={`py-2 px-3 rounded-lg font-bold border transition-colors ${
-                    role === 'admin'
-                      ? 'bg-brand-navy text-white border-brand-navy shadow-sm'
-                      : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
-                  }`}
-                >
-                  Admin (Full Access)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setRole('shop_manager');
-                    setEmail('manager@sharmaelectronics.com');
-                  }}
-                  className={`py-2 px-3 rounded-lg font-bold border transition-colors ${
-                    role === 'shop_manager'
-                      ? 'bg-brand-blue text-white border-brand-blue shadow-sm'
-                      : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
-                  }`}
-                >
-                  Shop Manager
-                </button>
-              </div>
-              <p className="text-[10px] text-slate-500">
-                {role === 'admin'
-                  ? 'Full administrative control including staff & role management.'
-                  : 'Restricted to inventory catalog management. Employee management blocked.'}
-              </p>
             </div>
 
             <button

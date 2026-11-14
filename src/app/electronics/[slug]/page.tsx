@@ -59,6 +59,8 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
   };
 }
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const products = await getActiveProducts();
   return products.map((p) => ({

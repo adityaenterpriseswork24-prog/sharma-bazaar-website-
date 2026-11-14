@@ -38,6 +38,10 @@ export function Header() {
     `Hi Sharma Electronics, I am visiting your website and would like to inquire about showroom prices & availability.`
   );
 
+  if (pathname.startsWith('/admin')) {
+    return null;
+  }
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-200 bg-white/95 backdrop-blur-md ${

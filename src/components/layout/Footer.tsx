@@ -1,10 +1,19 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Phone, MessageCircle, MapPin, Clock, Building2, ExternalLink, Lock, BookOpen } from 'lucide-react';
 import { SITE_CONFIG, ELECTRONICS_CATEGORIES } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  if (pathname.startsWith('/admin')) {
+    return null;
+  }
+
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
     `Hi Sharma Electronics, I would like to inquire about showroom prices & visit directions.`

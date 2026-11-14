@@ -29,6 +29,15 @@ export default function AdminDashboardPage() {
       } catch {
         // ignore
       }
+    } else {
+      fetch('/api/products')
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.products && Array.isArray(data.products)) {
+            setProducts(data.products);
+          }
+        })
+        .catch(() => {});
     }
   }, []);
 

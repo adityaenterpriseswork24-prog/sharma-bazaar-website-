@@ -139,6 +139,17 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
 
     localStorage.setItem('sharma_admin_products', JSON.stringify(currentList));
 
+    // Persist via API to store file
+    try {
+      fetch('/api/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(productPayload),
+      }).catch((e) => console.warn('API sync notice:', e));
+    } catch {
+      // ignore
+    }
+
     setNotification({
       message: isEdit ? 'Product updated successfully.' : 'Product published to showroom catalogue.',
       type: 'success',
