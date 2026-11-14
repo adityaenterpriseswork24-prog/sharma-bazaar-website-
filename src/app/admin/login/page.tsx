@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
           </div>
           <h1 className="text-2xl font-black tracking-tight">Staff Portal Login</h1>
           <p className="text-xs text-slate-300">
-            Sharma Electronics &amp; Furniture Showroom Operations
+            Sharma Electronics Showroom Operations
           </p>
         </div>
 

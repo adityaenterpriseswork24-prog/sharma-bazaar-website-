@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, MessageCircle, MapPin, Clock, Building2, ExternalLink } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock, Building2, ExternalLink, Lock, BookOpen } from 'lucide-react';
 import { SITE_CONFIG, ELECTRONICS_CATEGORIES } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
@@ -23,7 +23,7 @@ export function Footer() {
             </Link>
             <p className="text-sm text-slate-400 mb-6 leading-relaxed max-w-sm">
               South Delhi&apos;s premier multi-brand consumer electronics destination.
-              Part of Sharma Furniture (Est. 2019) operating from our 5-floor commercial showroom
+              Established in 2019, operating from our dedicated 5-floor commercial showroom
               in Masoodpur Dairy, Vasant Kunj with commercial lift access.
             </p>
 
@@ -70,9 +70,13 @@ export function Footer() {
               <li>Munirka & Malviya Nagar</li>
               <li>Delhi Aerocity & Gurgaon Border</li>
             </ul>
-            <div className="mt-4 pt-3 border-t border-slate-800">
-              <Link href="/about" className="text-xs text-brand-blue hover:underline">
-                Our 2019 Business Story &rarr;
+            <div className="mt-4 pt-3 border-t border-slate-800 space-y-1.5">
+              <Link href="/blog" className="text-xs text-brand-blue hover:underline flex items-center gap-1">
+                <BookOpen className="w-3 h-3" />
+                <span>Electronics Buying Guides &rarr;</span>
+              </Link>
+              <Link href="/about" className="text-xs text-slate-400 hover:text-white block">
+                Showroom Heritage Story &rarr;
               </Link>
             </div>
           </div>
@@ -128,16 +132,23 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <Link href="/electronics" className="hover:text-slate-300 transition-colors">
-              Product Catalogue
+              Catalogue
+            </Link>
+            <Link href="/blog" className="hover:text-slate-300 transition-colors">
+              Buying Guides
             </Link>
             <Link href="/about" className="hover:text-slate-300 transition-colors">
-              About Showroom
+              About
             </Link>
             <Link href="/contact" className="hover:text-slate-300 transition-colors">
-              Directions & Contact
+              Contact
             </Link>
-            <Link href="/admin" className="hover:text-slate-300 transition-colors text-slate-400 hover:text-white font-medium">
-              Staff / Admin Portal
+            <Link
+              href="/admin/login"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-800 text-amber-300 hover:text-white hover:bg-slate-700 transition-colors font-semibold"
+            >
+              <Lock className="w-3 h-3" />
+              <span>Staff / Admin Portal</span>
             </Link>
           </div>
         </div>

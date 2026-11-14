@@ -10,7 +10,7 @@ export const SITE_CONFIG: BusinessSettings = {
   area: 'Vasant Kunj',
   city: 'New Delhi',
   pincode: '110070',
-  landmark: 'Opposite Masoodpur Flyover / Dairy, Next to Sharma Furniture Showroom',
+  landmark: 'Opposite Masoodpur Flyover / Dairy, Main Road, Vasant Kunj',
   workingHours: 'Open Daily: 10:00 AM – 9:00 PM',
   googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.2938830171637!2d77.15312!3d28.53985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1de9d28dbba3%3A0x6bfa3e82d7c58d04!2sMasoodpur%2C%20Vasant%20Kunj%2C%20New%20Delhi%2C%20Delhi%20110070!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
   googleMapsDirectionsUrl: 'https://maps.google.com/?q=Masoodpur+Dairy,+Vasant+Kunj,+New+Delhi+110070',
@@ -123,7 +123,7 @@ export const GOOGLE_REVIEWS_MOCK = [
     location: 'Munirka Enclave, South Delhi',
     rating: 5,
     date: '1 month ago',
-    text: 'We have been buying furniture from them since 2019. When we saw they launched electronics, we ordered a Bosch 8kg front load washing machine on WhatsApp. Authentic brand bill and manufacturer warranty provided immediately.',
+    text: 'Ordered a Bosch 8kg front load washing machine on WhatsApp after comparing prices with Croma and Reliance Digital. Sharma Electronics beat the quote by ₹1,500 with authentic brand bill and manufacturer warranty provided immediately.',
     category: 'Washing Machines',
   },
   {
@@ -132,7 +132,7 @@ export const GOOGLE_REVIEWS_MOCK = [
     location: 'Pocket 3, Sector D, Vasant Kunj',
     rating: 5,
     date: '2 months ago',
-    text: 'Visited the Masoodpur showroom personally. Very spacious five floors with a clean lift. They checked online prices right in front of us and gave us a genuine ₹1,200 discount on a Samsung double door refrigerator. Highly recommended.',
+    text: 'Visited the Masoodpur showroom personally. Very spacious five floors of electronics with a clean lift. They checked online prices right in front of us and gave us a genuine ₹1,200 discount on a Samsung double door refrigerator. Highly recommended.',
     category: 'Refrigerators',
   },
 ];

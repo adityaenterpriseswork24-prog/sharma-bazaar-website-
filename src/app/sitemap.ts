@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getActiveProducts } from '@/lib/products';
 import { ELECTRONICS_CATEGORIES } from '@/data/site-config';
+import { BLOG_POSTS } from '@/data/blog-posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.sharmaelectronics.com';
@@ -19,6 +20,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/about`,
@@ -50,5 +57,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...productRoutes];
+  // Dynamic Blog Post Pages
+  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...categoryRoutes, ...productRoutes, ...blogRoutes];
 }

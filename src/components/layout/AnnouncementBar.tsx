@@ -1,4 +1,5 @@
-import { Phone, MapPin, Sparkles } from 'lucide-react';
+import Link from 'next/link';
+import { Phone, MapPin, Sparkles, Lock } from 'lucide-react';
 import { SITE_CONFIG } from '@/data/site-config';
 
 export function AnnouncementBar() {
@@ -32,6 +33,14 @@ export function AnnouncementBar() {
             <Phone className="w-3.5 h-3.5 text-emerald-400" />
             <span>{SITE_CONFIG.phone}</span>
           </a>
+          <Link
+            href="/admin/login"
+            className="inline-flex items-center gap-1 bg-white/10 hover:bg-white/20 text-slate-200 hover:text-white px-2 py-0.5 rounded transition-colors text-[11px] font-semibold"
+            title="Showroom Staff Portal"
+          >
+            <Lock className="w-3 h-3 text-amber-300" />
+            <span>Staff Login</span>
+          </Link>
         </div>
       </div>
     </div>

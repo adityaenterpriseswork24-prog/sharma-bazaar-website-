@@ -453,7 +453,7 @@ export default async function HomePage() {
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">5. Established Since 2019</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Rooted in South Delhi since 2019 through Sharma Steel Furniture. Thousands of satisfied homeowners across Vasant Kunj trust our integrity and after-sales support.
+                Rooted in South Delhi since 2019. Thousands of satisfied homeowners across Vasant Kunj trust our integrity, fair pricing, and direct manufacturer after-sales support.
               </p>
             </div>
 
@@ -482,7 +482,7 @@ export default async function HomePage() {
                 Five-Floor Commercial Property
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight leading-tight">
-                Experience South Delhi&apos;s Dedicated Electronics &amp; Furniture Destination
+                Experience South Delhi&apos;s Dedicated Consumer Electronics Destination
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
                 Spanning five full floors of owned commercial space—approximately 200 gaj (1,800 sq.ft) per floor—our Masoodpur showroom offers an uncrowded, comfortable shopping experience equipped with a modern commercial lift.

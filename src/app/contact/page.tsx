@@ -37,7 +37,7 @@ export default function ContactPage() {
             Visit Our Vasant Kunj Showroom
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            We are situated on the main road in Masoodpur Dairy, Vasant Kunj with 5 floors of electronics and furniture displays and a commercial lift.
+            We are situated on the main road in Masoodpur Dairy, Vasant Kunj with 5 full floors of electronics displays and a commercial lift.
           </p>
         </div>
 
