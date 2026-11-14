@@ -132,7 +132,7 @@ export function Footer() {
           <p>© {currentYear} {SITE_CONFIG.businessName}. Physical showroom serving South Delhi since 2019.</p>
           <div className="flex items-center gap-6">
             <Link href="/electronics" className="hover:text-white transition-colors">
-              Catalogue
+              Products
             </Link>
             <Link href="/why-choose-us" className="hover:text-white transition-colors">
               Price Comparison

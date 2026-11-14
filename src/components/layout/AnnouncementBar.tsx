@@ -21,10 +21,10 @@ export function AnnouncementBar() {
             Showroom Direct
           </span>
           <span className="text-neutral-200 hidden sm:inline">
-            Premier Electronics Showroom · Masoodpur Dairy, Vasant Kunj · Authorized Distributor Network
+            Your Home Appliance Destination · Masoodpur Dairy, Vasant Kunj · Authorized Distributor Network
           </span>
           <span className="text-neutral-200 sm:hidden">
-            Vasant Kunj Showroom · Premier Electronics Destination
+            Your Home Appliance Destination · Vasant Kunj
           </span>
         </div>
 

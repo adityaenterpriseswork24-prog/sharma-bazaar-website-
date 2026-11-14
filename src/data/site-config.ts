@@ -2,7 +2,7 @@ import { BusinessSettings, CategoryInfo } from '@/types';
 
 export const SITE_CONFIG: BusinessSettings = {
   businessName: 'Sharma Bazaar',
-  tagline: 'Big Brands. Better Prices. Right Here in Vasant Kunj.',
+  tagline: 'Your Home Appliance Destination.',
   phone: '+91 70119 62356',
   whatsapp: '917011962356',
   email: 'contact@sharmabazaar.com',

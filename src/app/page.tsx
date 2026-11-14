@@ -110,12 +110,16 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 border border-neutral-200 px-2.5 py-1 rounded-sm">
                   Masoodpur Dairy · Vasant Kunj
                 </span>
                 <span className="text-xs font-mono text-neutral-400">
                   Est. 2019
+                </span>
+                <span className="w-1 h-1 rounded-full bg-neutral-300 hidden sm:inline"></span>
+                <span className="text-xs font-medium text-brand-navy font-sans">
+                  Your Home Appliance Destination.
                 </span>
               </div>
 
@@ -127,7 +131,7 @@ export default async function HomePage() {
               </h1>
 
               <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl font-normal">
-                Shop 4K Smart TVs, Inverter Air Conditioners, Multi-Door Refrigerators,
+                Your Home Appliance Destination. Shop 4K Smart TVs, Inverter Air Conditioners, Multi-Door Refrigerators,
                 and Laundry Care at competitive local showroom prices. Compare quotes with us before buying online.
               </p>
 
@@ -137,7 +141,7 @@ export default async function HomePage() {
                   href="/electronics"
                   className="px-6 py-3.5 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors text-center flex items-center justify-center gap-2"
                 >
-                  <span>Explore Catalogue</span>
+                  <span>Explore Products</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
@@ -266,7 +270,7 @@ export default async function HomePage() {
               href="/electronics"
               className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-navy hover:underline flex items-center gap-1.5"
             >
-              <span>View All Catalogue</span>
+              <span>View All Products</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>

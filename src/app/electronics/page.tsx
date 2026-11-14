@@ -31,7 +31,7 @@ export default async function ElectronicsPage({ searchParams }: ElectronicsPageP
             Showroom Inventory &amp; Distributor Index
           </span>
           <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-brand-navy">
-            Electronics Catalogue
+            Electronics &amp; Appliances
           </h1>
           <p className="text-sm text-neutral-600 leading-relaxed">
             All prices reflect genuine manufacturer merchandise with authentic GST tax invoice.
