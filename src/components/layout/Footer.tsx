@@ -134,6 +134,9 @@ export function Footer() {
             <Link href="/electronics" className="hover:text-slate-300 transition-colors">
               Catalogue
             </Link>
+            <Link href="/why-choose-us" className="hover:text-slate-300 transition-colors">
+              Why Choose Us
+            </Link>
             <Link href="/blog" className="hover:text-slate-300 transition-colors">
               Buying Guides
             </Link>

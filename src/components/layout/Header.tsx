@@ -27,6 +27,7 @@ export function Header() {
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Electronics', href: '/electronics' },
+    { label: 'Why Choose Us', href: '/why-choose-us' },
     { label: 'Buying Guides', href: '/blog' },
     { label: 'About Us', href: '/about' },
     { label: 'Contact', href: '/contact' },
