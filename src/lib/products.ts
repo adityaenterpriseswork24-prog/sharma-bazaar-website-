@@ -1,0 +1,134 @@
+import { Product, ProductCategory } from '@/types';
+import { INITIAL_PRODUCTS } from '@/data/initial-products';
+import { isFirebaseConfigured, db } from './firebase/client';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+
+export interface ProductFilterOptions {
+  category?: string;
+  brand?: string;
+  search?: string;
+  sortBy?: 'featured' | 'price-asc' | 'price-desc' | 'savings-desc';
+  limitCount?: number;
+  featuredOnly?: boolean;
+}
+
+/**
+ * Fetch all active products with in-memory caching and fallback to seed data
+ */
+export async function getActiveProducts(options: ProductFilterOptions = {}): Promise<Product[]> {
+  let products: Product[] = [...INITIAL_PRODUCTS];
+
+  // If Firebase is configured on client/server, attempt fetching from Firestore
+  if (isFirebaseConfigured && db) {
+    try {
+      const productsRef = collection(db, 'products');
+      const q = query(productsRef, where('isActive', '==', true));
+      const querySnapshot = await getDocs(q);
+      
+      if (!querySnapshot.empty) {
+        const firestoreProducts: Product[] = [];
+        querySnapshot.forEach((docSnap) => {
+          firestoreProducts.push({ id: docSnap.id, ...(docSnap.data() as Omit<Product, 'id'>) });
+        });
+        if (firestoreProducts.length > 0) {
+          products = firestoreProducts;
+        }
+      }
+    } catch (error) {
+      console.warn('Firestore fetch failed, using fallback catalogue:', error);
+    }
+  }
+
+  // Filter only active
+  products = products.filter((p) => p.isActive);
+
+  // Filter by featured
+  if (options.featuredOnly) {
+    products = products.filter((p) => p.isFeatured);
+  }
+
+  // Filter by category
+  if (options.category && options.category !== 'all') {
+    products = products.filter((p) => p.category.toLowerCase() === options.category?.toLowerCase());
+  }
+
+  // Filter by brand
+  if (options.brand && options.brand !== 'all') {
+    products = products.filter((p) => p.brand.toLowerCase() === options.brand?.toLowerCase());
+  }
+
+  // Filter by search keyword (name, model, brand, description)
+  if (options.search && options.search.trim()) {
+    const term = options.search.toLowerCase().trim();
+    products = products.filter(
+      (p) =>
+        p.name.toLowerCase().includes(term) ||
+        p.brand.toLowerCase().includes(term) ||
+        p.modelNumber.toLowerCase().includes(term) ||
+        p.category.toLowerCase().includes(term) ||
+        (p.subcategory && p.subcategory.toLowerCase().includes(term))
+    );
+  }
+
+  // Sort
+  if (options.sortBy === 'price-asc') {
+    products.sort((a, b) => a.ourPrice - b.ourPrice);
+  } else if (options.sortBy === 'price-desc') {
+    products.sort((a, b) => b.ourPrice - a.ourPrice);
+  } else if (options.sortBy === 'savings-desc') {
+    products.sort((a, b) => (b.mrpPrice - b.ourPrice) - (a.mrpPrice - a.ourPrice));
+  } else {
+    // Default featured first, then newest
+    products.sort((a, b) => (b.isFeatured ? 1 : 0) - (a.isFeatured ? 1 : 0));
+  }
+
+  // Limit
+  if (options.limitCount && options.limitCount > 0) {
+    products = products.slice(0, options.limitCount);
+  }
+
+  return products;
+}
+
+/**
+ * Fetch a single product by slug
+ */
+export async function getProductBySlug(slug: string): Promise<Product | null> {
+  const localMatch = INITIAL_PRODUCTS.find((p) => p.slug === slug || p.id === slug);
+  if (localMatch) return localMatch;
+
+  if (isFirebaseConfigured && db) {
+    try {
+      const productsRef = collection(db, 'products');
+      const q = query(productsRef, where('slug', '==', slug));
+      const snapshot = await getDocs(q);
+      if (!snapshot.empty) {
+        const docSnap = snapshot.docs[0];
+        return { id: docSnap.id, ...(docSnap.data() as Omit<Product, 'id'>) };
+      }
+    } catch (e) {
+      console.warn('Error fetching product by slug from Firestore:', e);
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Fetch related products from the same category
+ */
+export async function getRelatedProducts(productId: string, category: ProductCategory, limit = 3): Promise<Product[]> {
+  const allInCat = await getActiveProducts({ category });
+  return allInCat.filter((p) => p.id !== productId).slice(0, limit);
+}
+
+/**
+ * Extract unique brand list from active products
+ */
+export function getUniqueBrands(products: Product[]): string[] {
+  const brandsSet = new Set<string>();
+  products.forEach((p) => {
+    if (p.brand) brandsSet.add(p.brand);
+  });
+  return Array.from(brandsSet).sort();
+}
