@@ -13,9 +13,20 @@ import { SITE_CONFIG } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'About Us | Sharma Bazaar Showroom Vasant Kunj',
+  title: 'About Sharma Bazaar | Leading Electronics Dealer Vasant Kunj, South Delhi',
   description:
-    'Established in 2019 in Masoodpur Dairy, Vasant Kunj. Premier commercial showroom offering multi-brand electronics: TVs, ACs, Refrigerators, Washing Machines & Microwaves.',
+    'Established in 2019 at Masoodpur Dairy, Sharma Bazaar is South Delhi\'s trusted consumer electronics dealer & showroom serving Vasant Kunj, Munirka, Mehrauli, Saket & Dwarka.',
+  keywords: [
+    'electronics showroom vasant kunj',
+    'electronics dealer vasant kunj',
+    'consumer electronics vasant kunj',
+    'electronics store masoodpur vasant kunj',
+    'best electronics store south delhi',
+    'electronics showroom munirka delhi',
+    'tv dealer mehrauli delhi',
+    'electronics store mahipalpur',
+    'electronics store vasant vihar delhi',
+  ],
   alternates: {
     canonical: 'https://www.sharmabazaar.com/about',
   },

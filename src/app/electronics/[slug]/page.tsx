@@ -36,22 +36,22 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
   const formattedPrice = formatINR(product.ourPrice);
 
   return {
-    title: `${product.name} | Best Showroom Price Vasant Kunj`,
+    title: `${product.name} Price in Vasant Kunj | Sharma Bazaar`,
     description: `Buy ${product.name} (Model: ${product.modelNumber}) at Sharma Bazaar Vasant Kunj. Listed at ${formattedPrice}${
       hasSavings ? ` (Save ${formatINR(savingsAmount)} vs MRP)` : ''
-    }. Visit our Masoodpur Dairy showroom or enquire on WhatsApp.`,
+    }. Cheaper than online rates with authorized brand warranty & same-day South Delhi delivery.`,
     alternates: {
       canonical: `https://www.sharmabazaar.com/electronics/${product.slug}`,
     },
     openGraph: {
-      title: `${product.name} | Sharma Bazaar Vasant Kunj`,
+      title: `${product.name} | Best Price in Vasant Kunj | Sharma Bazaar`,
       description: `Best showroom price on ${product.brand} ${product.category}. Visit Sharma Bazaar Masoodpur Dairy, Vasant Kunj or message us on WhatsApp.`,
       images: [
         {
           url: product.imageUrl,
           width: 800,
           height: 600,
-          alt: product.name,
+          alt: `${product.name} - Electronics Showroom Vasant Kunj`,
         },
       ],
     },
@@ -103,7 +103,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     },
     offers: {
       '@type': 'Offer',
-      url: `https://www.sharmaelectronics.com/electronics/${product.slug}`,
+      url: `https://www.sharmabazaar.com/electronics/${product.slug}`,
       priceCurrency: 'INR',
       price: product.ourPrice,
       priceValidUntil: '2027-12-31',
@@ -113,14 +113,14 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           ? 'https://schema.org/InStock'
           : 'https://schema.org/PreOrder',
       seller: {
-        '@type': 'LocalBusiness',
+        '@type': 'ElectronicsStore',
         name: SITE_CONFIG.businessName,
         telephone: SITE_CONFIG.phone,
         address: {
           '@type': 'PostalAddress',
           streetAddress: SITE_CONFIG.address,
           addressLocality: SITE_CONFIG.area,
-          addressRegion: 'Delhi',
+          addressRegion: 'New Delhi',
           postalCode: SITE_CONFIG.pincode,
           addressCountry: 'IN',
         },
@@ -136,25 +136,25 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.sharmaelectronics.com',
+        item: 'https://www.sharmabazaar.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Electronics',
-        item: 'https://www.sharmaelectronics.com/electronics',
+        item: 'https://www.sharmabazaar.com/electronics',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: product.category,
-        item: `https://www.sharmaelectronics.com/electronics?category=${product.category}`,
+        item: `https://www.sharmabazaar.com/electronics?category=${product.category}`,
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: product.name,
-        item: `https://www.sharmaelectronics.com/electronics/${product.slug}`,
+        item: `https://www.sharmabazaar.com/electronics/${product.slug}`,
       },
     ],
   };

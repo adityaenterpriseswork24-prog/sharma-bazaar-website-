@@ -27,9 +27,33 @@ import { ProductCard } from '@/components/ui/ProductCard';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata = {
-  title: `${SITE_CONFIG.businessName} | Premier Electronics Showroom Vasant Kunj`,
+  title: 'Electronics Store Vasant Kunj | Best Price Electronics Showroom South Delhi',
   description:
-    'Vasant Kunj premier multi-brand consumer electronics showroom. Competitive local showroom prices on Sony, Samsung, LG, Daikin, Bosch TVs, ACs, Refrigerators and Washing Machines. Masoodpur Dairy showroom.',
+    'Premier electronics store in Vasant Kunj & South Delhi showroom. Beat Amazon & Flipkart prices on Sony 4K TVs, Daikin ACs, Samsung refrigerators & Bosch washers at Masoodpur Dairy showroom.',
+  keywords: [
+    'electronics store vasant kunj',
+    'electronics showroom vasant kunj',
+    'electronics shop vasant kunj delhi',
+    'home appliances store vasant kunj',
+    'consumer electronics vasant kunj',
+    'electronics store near vasant kunj metro',
+    'best electronics store south delhi',
+    'home appliances shop south delhi',
+    'electronics showroom south delhi',
+    'cheap electronics vasant kunj',
+    'best price electronics vasant kunj',
+    'electronics dealer vasant kunj',
+    'buy electronics vasant kunj',
+    'electronics store masoodpur vasant kunj',
+    'electronics cheaper than amazon delhi',
+    'tv price cheaper than flipkart delhi',
+    'beat amazon price electronics delhi',
+    'tv store vasant kunj',
+    'ac dealer vasant kunj',
+    'fridge store vasant kunj',
+    'washing machine store vasant kunj',
+    'electronics store near me',
+  ],
   alternates: {
     canonical: 'https://www.sharmabazaar.com',
   },
@@ -48,17 +72,50 @@ export default async function HomePage() {
     `Hi Sharma Bazaar, I have an online price quote for an electronic product. Can you share your best local showroom price?`
   );
 
+  // AEO & Local Search FAQs
+  const homeFaqs = [
+    {
+      q: 'Where is the best electronics store in Vasant Kunj, South Delhi?',
+      a: 'Sharma Bazaar is located at 80-B, Masoodpur Dairy, Main Road, Vasant Kunj, New Delhi - 110070 (opposite Masoodpur flyover). Established in 2019, we are an authorized multi-brand electronics showroom for Sony, Samsung, LG, Daikin, Bosch, IFB, and Voltas with live demonstration units and direct distributor pricing.',
+    },
+    {
+      q: 'Can I buy electronics cheaper than Amazon and Flipkart in Delhi?',
+      a: 'Yes. Sharma Bazaar offers genuine price matching and beats Amazon and Flipkart prices by ₹1,000 to ₹2,000 on selected 4K smart TVs, inverter split ACs, frost-free refrigerators, and washing machines, complete with original brand GST tax invoices and authorized manufacturer warranties.',
+    },
+    {
+      q: 'How can I reach Sharma Bazaar from Vasant Kunj Metro or Nelson Mandela Marg?',
+      a: 'Our showroom is situated on the main road at Masoodpur Dairy, just 8 to 12 minutes from Chattarpur Metro Station (Yellow Line), Delhi Aerocity Metro (Airport Express), and Vasant Vihar Metro (Magenta Line), directly accessible via Nelson Mandela Marg.',
+    },
+    {
+      q: 'Which air conditioner brands and tonnages are available for same-day delivery?',
+      a: 'We stock Daikin, Voltas, LG Dual Inverter, Hitachi, and Blue Star 1.5 Ton and 2.0 Ton 3-Star and 5-Star copper split ACs. All units come with express 2 to 6-hour same-day doorstep delivery across South Delhi and authorized brand installation coordination within 24 hours.',
+    },
+    {
+      q: 'Do you deliver appliances to nearby areas like Mahipalpur, Dwarka, Munirka, Saket, and Vasant Vihar?',
+      a: 'Yes, Sharma Bazaar provides white-glove doorstep delivery to 28 South Delhi localities, including Vasant Kunj, Mahipalpur, Dwarka, Munirka, Mehrauli, Saket, Vasant Vihar, Hauz Khas, Greater Kailash, and Defence Colony. Our 2-person delivery crew carries the appliance directly into your flat and unboxes it for seal inspection before payment.',
+    },
+    {
+      q: 'What payment options are available upon delivery?',
+      a: 'We offer zero-risk Cash on Delivery (COD) and doorstep UPI QR code scanning. You can physically verify the intact manufacturer seals, carton barcodes, and appliance condition inside your home before paying.',
+    },
+  ];
+
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'ElectronicsStore',
+    '@type': ['ElectronicsStore', 'HomeGoodsStore'],
     name: SITE_CONFIG.businessName,
+    alternateName: [
+      'Sharma Bazaar Vasant Kunj',
+      'Sharma Bazaar Electronics',
+      'Sharma Electronics Vasant Kunj',
+    ],
     image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80',
     telephone: SITE_CONFIG.phone,
     address: {
       '@type': 'PostalAddress',
       streetAddress: SITE_CONFIG.address,
       addressLocality: SITE_CONFIG.area,
-      addressRegion: 'Delhi',
+      addressRegion: 'New Delhi',
       postalCode: SITE_CONFIG.pincode,
       addressCountry: 'IN',
     },
@@ -67,7 +124,8 @@ export default async function HomePage() {
       latitude: SITE_CONFIG.coordinates.latitude,
       longitude: SITE_CONFIG.coordinates.longitude,
     },
-    url: 'https://www.sharmaelectronics.com',
+    hasMap: SITE_CONFIG.googleMapsDirectionsUrl,
+    url: 'https://www.sharmabazaar.com',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -85,15 +143,86 @@ export default async function HomePage() {
       },
     ],
     priceRange: '₹₹₹',
+    currenciesAccepted: 'INR',
+    paymentAccepted: 'Cash, Credit Card, Debit Card, UPI',
     areaServed: [
       'Vasant Kunj',
-      'Masoodpur',
+      'Masoodpur Dairy',
       'Mahipalpur',
-      'Vasant Vihar',
-      'Chattarpur',
+      'Dwarka',
       'Munirka',
+      'Mehrauli',
+      'Saket',
+      'RK Puram',
+      'Vasant Vihar',
+      'Kishangarh',
+      'Nelson Mandela Marg',
+      'Chattarpur',
+      'Hauz Khas',
+      'Green Park',
+      'Safdarjung Enclave',
+      'Greater Kailash',
+      'Defence Colony',
+      'Lajpat Nagar',
       'South Delhi',
     ],
+    makesOffer: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: '4K Ultra HD & OLED Smart Televisions',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: 'Split & Window Inverter Air Conditioners',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: 'Double Door & Frost-Free Refrigerators',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: 'Front Load & Top Load Washing Machines',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: 'Convection & Solo Microwave Ovens',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: 'Floor Standing Hot & Cold Water Dispensers',
+        },
+      },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: homeFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
   };
 
   return (
@@ -101,6 +230,10 @@ export default async function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* ====================================================
@@ -113,7 +246,7 @@ export default async function HomePage() {
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 border border-neutral-200 px-2.5 py-1 rounded-sm">
-                  Masoodpur Dairy · Vasant Kunj
+                  Electronics Store Vasant Kunj · Masoodpur Dairy
                 </span>
                 <span className="text-xs font-mono text-neutral-400">
                   Est. 2019
@@ -132,8 +265,7 @@ export default async function HomePage() {
               </h1>
 
               <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl font-normal">
-                Your Home Appliance Destination. Shop 4K Smart TVs, Inverter Air Conditioners, Multi-Door Refrigerators,
-                and Laundry Care at competitive local showroom prices. Compare quotes with us before buying online.
+                Welcome to Sharma Bazaar, your premier consumer electronics showroom and home appliances store in Vasant Kunj, South Delhi. Located at Masoodpur Dairy (near Vasant Kunj Metro), we offer wholesale showroom prices on 4K Smart TVs, Inverter Air Conditioners, Frost-Free Refrigerators, and Washing Machines. Compare online prices with us before you buy.
               </p>
 
               {/* Action Buttons */}
@@ -677,7 +809,38 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 9: FINAL CONVERSION CTA
+          SECTION 10: FREQUENTLY ASKED QUESTIONS (AEO & Local Search)
+      ==================================================== */}
+      <section className="py-20 bg-neutral-50/60 border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="max-w-3xl space-y-2">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+              Frequently Asked Questions · Vasant Kunj Electronics Showroom
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy">
+              Everything You Need to Know About Buying from Sharma Bazaar
+            </h2>
+            <p className="text-xs sm:text-sm text-neutral-600">
+              Clear answers on local showroom pricing, brand warranties, metro directions, and same-day South Delhi doorstep delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {homeFaqs.map((faq, idx) => (
+              <div
+                key={idx}
+                className="p-6 bg-white border border-neutral-200 rounded-sm space-y-2 shadow-subtle"
+              >
+                <h3 className="font-bold text-brand-navy text-sm sm:text-base">{faq.q}</h3>
+                <p className="text-xs text-neutral-600 leading-relaxed font-sans">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================
+          SECTION 11: FINAL CONVERSION CTA
       ==================================================== */}
       <section className="bg-brand-navy text-white py-16 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">

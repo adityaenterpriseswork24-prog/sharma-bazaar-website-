@@ -11,9 +11,20 @@ import { buildWhatsAppUrl } from '@/lib/utils';
 import { ContactForm } from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Showroom & Driving Directions | Sharma Bazaar Vasant Kunj',
+  title: 'Contact & Directions | Electronics Store Near Vasant Kunj Metro | Sharma Bazaar',
   description:
-    'Visit Sharma Bazaar at Masoodpur Dairy, Vasant Kunj, New Delhi 110070. Call +91 70119 62356 or WhatsApp. Complete directions from Chattarpur, Aerocity & Vasant Vihar Metro Stations.',
+    'Visit Sharma Bazaar electronics showroom at 80-B, Masoodpur Dairy, Vasant Kunj, New Delhi 110070. Near Chattarpur, Aerocity & Vasant Vihar Metro stations along Nelson Mandela Marg. Call +91 70119 62356.',
+  keywords: [
+    'electronics store near vasant kunj metro',
+    'electronics store near me',
+    'electronics shop near nelson mandela marg',
+    'electronics near vasant kunj extension',
+    'tv shop near vasant kunj metro',
+    'ac shop near vasant kunj metro',
+    'electronics showroom vasant kunj',
+    'electronics store masoodpur vasant kunj',
+    'electronics store mahipalpur',
+  ],
   alternates: {
     canonical: 'https://www.sharmabazaar.com/contact',
   },

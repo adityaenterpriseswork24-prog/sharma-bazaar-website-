@@ -46,7 +46,7 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.imageUrl}
-          alt={product.name}
+          alt={`${product.name} - Electronics Showroom Vasant Kunj`}
           onError={(e) => {
             (e.target as HTMLImageElement).src =
               'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80';

@@ -4,9 +4,23 @@ import { CatalogueView } from '@/components/electronics/CatalogueView';
 import { SITE_CONFIG } from '@/data/site-config';
 
 export const metadata: Metadata = {
-  title: 'Consumer Electronics Catalogue | Best Prices in Vasant Kunj Delhi',
+  title: 'Buy Electronics Vasant Kunj | TVs, ACs, Refrigerators & Washers | Sharma Bazaar',
   description:
-    'Browse 4K Smart TVs, Split Inverter ACs, Double Door Refrigerators, Washing Machines & Microwaves at Sharma Bazaar Vasant Kunj. Compare prices with online portals and visit our showroom.',
+    'Shop 4K Smart TVs, Split Inverter ACs, Frost-Free Refrigerators, Washing Machines & Microwaves at our Vasant Kunj showroom. Beat Amazon & Flipkart prices with local brand warranty and same-day delivery.',
+  keywords: [
+    'buy electronics vasant kunj',
+    'electronics shop vasant kunj delhi',
+    'electronics showroom vasant kunj',
+    'tv showroom vasant kunj',
+    'ac dealer vasant kunj',
+    'fridge store vasant kunj',
+    'washing machine store vasant kunj',
+    'microwave oven store vasant kunj',
+    'water dispenser dealer south delhi',
+    'best price electronics vasant kunj',
+    'cheap electronics vasant kunj',
+    'home appliances store vasant kunj',
+  ],
   alternates: {
     canonical: 'https://www.sharmabazaar.com/electronics',
   },
