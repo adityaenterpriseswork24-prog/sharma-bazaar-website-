@@ -126,7 +126,7 @@ export default async function HomePage() {
               <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-brand-navy leading-[1.08]">
                 Big Brands. Better Prices.{' '}
                 <span className="block text-neutral-500 font-medium mt-1">
-                  Right Here in Vasant Kunj.
+                  Right Here in South Delhi.
                 </span>
               </h1>
 
