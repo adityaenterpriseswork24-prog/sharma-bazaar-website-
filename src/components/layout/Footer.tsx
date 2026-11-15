@@ -26,14 +26,27 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
           {/* Col 1: Identity & Showroom Context */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="inline-block">
-              <div className="flex items-baseline gap-2">
-                <span className="text-xl font-bold tracking-tight text-white font-sans">
-                  SHARMA
-                </span>
-                <span className="text-xs font-mono tracking-widest text-neutral-400 uppercase">
-                  BAZAAR
-                </span>
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-sm bg-black overflow-hidden flex items-center justify-center border border-white/10 shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/sharma-bazaar-badge.png"
+                  alt="Sharma Bazaar Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-xl font-bold tracking-tight text-white font-sans">
+                    SHARMA
+                  </span>
+                  <span className="text-xs font-mono tracking-widest text-neutral-400 uppercase">
+                    BAZAAR
+                  </span>
+                </div>
+                <p className="text-[10px] font-mono text-neutral-400">
+                  Your Home Appliance Destination.
+                </p>
               </div>
             </Link>
 

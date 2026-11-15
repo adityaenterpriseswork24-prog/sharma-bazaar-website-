@@ -50,10 +50,15 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 lg:gap-6 xl:gap-8">
-          {/* Architectural Brand Identity with Tagline */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-10 h-10 rounded-sm bg-brand-navy flex items-center justify-center text-white font-mono text-sm font-bold tracking-tight shadow-sm group-hover:bg-black transition-colors shrink-0">
-              SB
+          {/* Architectural Brand Identity with Tagline & Official Logo Symbol */}
+          <Link href="/" className="flex items-center gap-3.5 group shrink-0">
+            <div className="w-11 h-11 rounded-sm bg-black overflow-hidden flex items-center justify-center shadow-subtle border border-neutral-900 group-hover:border-black transition-colors shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/sharma-bazaar-badge.png"
+                alt="Sharma Bazaar Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <div className="flex items-baseline gap-1.5">

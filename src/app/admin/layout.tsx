@@ -60,8 +60,13 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
           {/* Logo */}
           <div className="p-6 border-b border-white/10 flex items-center justify-between">
             <Link href="/admin" className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-sm bg-white/10 border border-white/15 flex items-center justify-center font-mono text-xs font-bold text-white">
-                SB
+              <div className="w-8 h-8 rounded-sm bg-black overflow-hidden flex items-center justify-center border border-white/15 shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/sharma-bazaar-badge.png"
+                  alt="Sharma Bazaar Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-white block">
