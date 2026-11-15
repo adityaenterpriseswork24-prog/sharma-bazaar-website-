@@ -545,7 +545,7 @@ export default async function HomePage() {
               href="/locations"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-navy hover:text-neutral-900 transition-colors shrink-0 group font-mono uppercase tracking-wider"
             >
-              <span>Explore All Delivery Areas</span>
+              <span>Explore All 28 Delivery Hubs</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
@@ -576,7 +576,7 @@ export default async function HomePage() {
 
           {/* Locality Quick Links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
-            {SOUTH_DELHI_LOCALITIES.slice(0, 6).map((loc) => (
+            {SOUTH_DELHI_LOCALITIES.slice(0, 12).map((loc) => (
               <Link
                 key={loc.slug}
                 href={`/locations/${loc.slug}`}

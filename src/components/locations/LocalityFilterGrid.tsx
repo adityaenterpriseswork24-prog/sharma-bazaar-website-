@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Search, MapPin, Clock, ArrowRight, MessageCircle, ShieldCheck, Truck } from 'lucide-react';
+import { Search, MapPin, ArrowRight, MessageCircle, ShieldCheck, Truck, Sparkles } from 'lucide-react';
 import { DeliveryLocality } from '@/data/locations';
 import { SITE_CONFIG } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
@@ -11,30 +11,114 @@ interface LocalityFilterGridProps {
   localities: DeliveryLocality[];
 }
 
+type ZoneTab =
+  | 'all'
+  | 'vasant-kunj'
+  | 'chattarpur-mg-road'
+  | 'vasant-vihar-munirka'
+  | 'saket-malviya'
+  | 'hauz-khas-safdarjung'
+  | 'gk-defcol-lajpat'
+  | 'dwarka-aerocity';
+
+interface ZoneDefinition {
+  id: ZoneTab;
+  label: string;
+  slugs: string[];
+}
+
+const ZONE_DEFINITIONS: ZoneDefinition[] = [
+  {
+    id: 'all',
+    label: 'All South Delhi (28)',
+    slugs: [],
+  },
+  {
+    id: 'vasant-kunj',
+    label: 'Vasant Kunj & Masoodpur',
+    slugs: ['vasant-kunj', 'masoodpur-kishangarh', 'mehrauli'],
+  },
+  {
+    id: 'chattarpur-mg-road',
+    label: 'Chattarpur & MG Road Belt',
+    slugs: ['chattarpur', 'sultanpur-ghitorni', 'sainik-farm', 'fatehpur-beri-asola', 'aya-nagar'],
+  },
+  {
+    id: 'vasant-vihar-munirka',
+    label: 'Vasant Vihar & Munirka',
+    slugs: ['vasant-vihar', 'munirka-jnu', 'mahipalpur'],
+  },
+  {
+    id: 'saket-malviya',
+    label: 'Saket, Malviya & Shivalik',
+    slugs: ['saket', 'malviya-nagar', 'panchsheel-park'],
+  },
+  {
+    id: 'hauz-khas-safdarjung',
+    label: 'Hauz Khas, Green Park & SDA',
+    slugs: ['hauz-khas', 'green-park', 'safdarjung-enclave'],
+  },
+  {
+    id: 'gk-defcol-lajpat',
+    label: 'GK, CR Park, Def Col & Lajpat',
+    slugs: [
+      'greater-kailash-1',
+      'greater-kailash-2',
+      'cr-park',
+      'alaknanda',
+      'kalkaji-nehru-place',
+      'defence-colony',
+      'south-extension',
+      'lajpat-nagar',
+    ],
+  },
+  {
+    id: 'dwarka-aerocity',
+    label: 'Dwarka & Aerocity Corridor',
+    slugs: ['dwarka', 'aerocity', 'kapashera-bijwasan'],
+  },
+];
+
 export function LocalityFilterGrid({ localities }: LocalityFilterGridProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedZone, setSelectedZone] = useState<ZoneTab>('all');
 
-  const filteredLocalities = localities.filter((loc) => {
-    const q = searchQuery.toLowerCase().trim();
-    if (!q) return true;
-    return (
-      loc.name.toLowerCase().includes(q) ||
-      loc.pincodes.some((pin) => pin.includes(q)) ||
-      loc.landmarkCoverage.some((lm) => lm.toLowerCase().includes(q)) ||
-      loc.keySectors.some((sec) => sec.toLowerCase().includes(q))
-    );
-  });
+  const filteredLocalities = useMemo(() => {
+    return localities.filter((loc) => {
+      // Zone filter check
+      if (selectedZone !== 'all') {
+        const zoneDef = ZONE_DEFINITIONS.find((z) => z.id === selectedZone);
+        if (zoneDef && !zoneDef.slugs.includes(loc.slug)) {
+          return false;
+        }
+      }
+
+      // Search query check
+      const q = searchQuery.toLowerCase().trim();
+      if (!q) return true;
+
+      return (
+        loc.name.toLowerCase().includes(q) ||
+        loc.tagline.toLowerCase().includes(q) ||
+        loc.pincodes.some((pin) => pin.includes(q)) ||
+        loc.landmarkCoverage.some((lm) => lm.toLowerCase().includes(q)) ||
+        loc.keySectors.some((sec) => sec.toLowerCase().includes(q))
+      );
+    });
+  }, [localities, searchQuery, selectedZone]);
+
+  const activeZoneDef = ZONE_DEFINITIONS.find((z) => z.id === selectedZone);
 
   return (
     <div className="space-y-8">
       {/* Search & Filter Header */}
-      <div className="bg-neutral-50 border border-neutral-200 p-4 sm:p-6 rounded-sm">
-        <div className="max-w-2xl">
+      <div className="bg-neutral-50 border border-neutral-200 p-5 sm:p-7 rounded-sm space-y-5">
+        <div className="max-w-3xl space-y-2">
           <label
             htmlFor="locality-search"
-            className="block font-mono text-[11px] uppercase tracking-widest text-neutral-500 mb-2"
+            className="block font-mono text-[11px] uppercase tracking-widest text-neutral-500"
           >
-            Check Delivery Availability for Your Sector or Locality
+            Check Doorstep Delivery Turnaround for Your Colony or Sector
           </label>
           <div className="relative">
             <Search className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -43,45 +127,94 @@ export function LocalityFilterGrid({ localities }: LocalityFilterGridProps) {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by sector (e.g. Sector B, Pocket 1), locality (e.g. Chattarpur, Vasant Kunj), or pincode (110070)..."
-              className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm bg-white border border-neutral-300 rounded-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy placeholder:text-neutral-400 font-sans"
+              placeholder="Type any South Delhi colony (e.g. GK 1, Defence Colony, Dwarka, Shivalik, Munirka, CR Park, Pincode 110048)..."
+              className="w-full pl-10 pr-16 py-3 text-xs sm:text-sm bg-white border border-neutral-300 rounded-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy placeholder:text-neutral-400 font-sans"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-neutral-400 hover:text-neutral-700"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-mono text-neutral-500 hover:text-neutral-900 bg-neutral-100 hover:bg-neutral-200 px-2 py-0.5 rounded-sm"
               >
                 Clear
               </button>
             )}
           </div>
-          <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px] font-mono text-neutral-500">
-            <span className="text-neutral-400">Quick Filters:</span>
-            {['Vasant Kunj', 'Chattarpur', 'Mahipalpur', 'Vasant Vihar', 'Saket', '110070'].map(
-              (tag) => (
-                <button
-                  key={tag}
-                  type="button"
-                  onClick={() => setSearchQuery(tag)}
-                  className="px-2 py-0.5 rounded-sm bg-white border border-neutral-200 hover:border-brand-navy text-neutral-700 transition-colors"
-                >
-                  {tag}
-                </button>
-              )
-            )}
+        </div>
+
+        {/* Zone Filter Tabs */}
+        <div className="space-y-2.5 pt-2 border-t border-neutral-200/80">
+          <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400">
+            <span className="uppercase tracking-wider">Browse by South Delhi Region</span>
+            <span>
+              Showing {filteredLocalities.length} of {localities.length} Areas
+            </span>
           </div>
+
+          <div className="flex flex-wrap gap-1.5 sm:gap-2">
+            {ZONE_DEFINITIONS.map((tab) => {
+              const isActive = selectedZone === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedZone(tab.id);
+                  }}
+                  className={`px-3 py-1.5 rounded-sm text-xs font-mono transition-all ${
+                    isActive
+                      ? 'bg-brand-navy text-white font-bold shadow-subtle'
+                      : 'bg-white border border-neutral-200 text-neutral-700 hover:border-brand-navy hover:text-brand-navy'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Popular Pincode Shortcuts */}
+        <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-mono text-neutral-500 pt-1">
+          <span className="text-neutral-400">Popular Pincodes:</span>
+          {['110070', '110074', '110057', '110017', '110048', '110024', '110016', '110075'].map((pin) => (
+            <button
+              key={pin}
+              type="button"
+              onClick={() => {
+                setSelectedZone('all');
+                setSearchQuery(pin);
+              }}
+              className="px-2 py-0.5 rounded-sm bg-white border border-neutral-200 hover:border-brand-navy text-neutral-700 hover:text-brand-navy transition-colors"
+            >
+              {pin}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Grid of Locality Cards */}
       {filteredLocalities.length === 0 ? (
-        <div className="p-12 text-center border border-dashed border-neutral-300 rounded-sm bg-white">
-          <MapPin className="w-8 h-8 text-neutral-400 mx-auto mb-3" />
-          <h3 className="text-base font-bold text-brand-navy">No exact match found for &ldquo;{searchQuery}&rdquo;</h3>
-          <p className="text-xs text-neutral-500 mt-1 max-w-md mx-auto">
-            We deliver to virtually all residential and commercial addresses in South Delhi. Contact our dispatch team directly on WhatsApp to check immediate van availability.
-          </p>
-          <div className="mt-4">
+        <div className="p-12 text-center border border-dashed border-neutral-300 rounded-sm bg-white space-y-4">
+          <MapPin className="w-8 h-8 text-neutral-400 mx-auto" />
+          <div className="space-y-1">
+            <h3 className="text-base font-bold text-brand-navy">
+              No exact match found for &ldquo;{searchQuery}&rdquo;
+            </h3>
+            <p className="text-xs text-neutral-500 max-w-md mx-auto">
+              We deliver to virtually all residential sectors, colonies, and commercial hubs in South Delhi. Contact our dispatch desk on WhatsApp to confirm immediate delivery turnaround.
+            </p>
+          </div>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedZone('all');
+              }}
+              className="px-4 py-2 text-xs font-mono border border-neutral-300 bg-white hover:bg-neutral-50 rounded-sm text-neutral-700"
+            >
+              Reset Filters
+            </button>
             <a
               href={buildWhatsAppUrl(
                 SITE_CONFIG.whatsapp,

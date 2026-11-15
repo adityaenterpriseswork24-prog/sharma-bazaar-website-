@@ -102,28 +102,38 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/locations/mahipalpur" className="text-neutral-400 hover:text-white transition-colors">
-                  Mahipalpur &amp; Aerocity
-                </Link>
-              </li>
-              <li>
                 <Link href="/locations/vasant-vihar" className="text-neutral-400 hover:text-white transition-colors">
                   Vasant Vihar &amp; Shanti Niketan
                 </Link>
               </li>
               <li>
                 <Link href="/locations/saket" className="text-neutral-400 hover:text-white transition-colors">
-                  Saket &amp; Sainik Farm
+                  Saket &amp; Malviya Nagar
                 </Link>
               </li>
               <li>
-                <Link href="/locations/mehrauli" className="text-neutral-400 hover:text-white transition-colors">
-                  Mehrauli &amp; Kishangarh
+                <Link href="/locations/greater-kailash-1" className="text-neutral-400 hover:text-white transition-colors">
+                  GK 1 &amp; GK 2
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/defence-colony" className="text-neutral-400 hover:text-white transition-colors">
+                  Defence Colony &amp; South Ex
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/cr-park" className="text-neutral-400 hover:text-white transition-colors">
+                  CR Park &amp; Alaknanda
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/dwarka" className="text-neutral-400 hover:text-white transition-colors">
+                  Dwarka (Sec 1–24)
                 </Link>
               </li>
               <li className="pt-1">
                 <Link href="/locations" className="text-emerald-400 hover:text-emerald-300 font-sans font-semibold text-xs inline-flex items-center gap-1">
-                  <span>View All Areas &rarr;</span>
+                  <span>View All 28 Areas &rarr;</span>
                 </Link>
               </li>
             </ul>

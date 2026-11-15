@@ -364,13 +364,13 @@ export default async function LocalityDetailPage({ params }: LocalityPageProps) 
               href="/locations"
               className="text-xs font-semibold text-brand-navy hover:underline flex items-center gap-1"
             >
-              <span>View All Locations</span>
+              <span>View All 28 Locations</span>
               <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {otherLocalities.map((other) => (
+            {otherLocalities.slice(0, 12).map((other) => (
               <Link
                 key={other.slug}
                 href={`/locations/${other.slug}`}
