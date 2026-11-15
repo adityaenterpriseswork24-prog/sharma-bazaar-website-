@@ -90,13 +90,42 @@ export function Footer() {
             <h4 className="font-mono text-[11px] uppercase tracking-widest text-white">
               Local Delivery Areas
             </h4>
-            <ul className="space-y-1.5 text-xs text-neutral-400 font-mono text-[11px]">
-              <li>Vasant Kunj (A-D)</li>
-              <li>Masoodpur Dairy</li>
-              <li>Mahipalpur</li>
-              <li>Vasant Vihar</li>
-              <li>Chattarpur</li>
-              <li>Aerocity Hub</li>
+            <ul className="space-y-1.5 text-xs font-mono text-[11px]">
+              <li>
+                <Link href="/locations/vasant-kunj" className="text-neutral-400 hover:text-white transition-colors">
+                  Vasant Kunj (A–D)
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/chattarpur" className="text-neutral-400 hover:text-white transition-colors">
+                  Chattarpur &amp; DLF
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/mahipalpur" className="text-neutral-400 hover:text-white transition-colors">
+                  Mahipalpur &amp; Aerocity
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/vasant-vihar" className="text-neutral-400 hover:text-white transition-colors">
+                  Vasant Vihar &amp; Shanti Niketan
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/saket" className="text-neutral-400 hover:text-white transition-colors">
+                  Saket &amp; Sainik Farm
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations/mehrauli" className="text-neutral-400 hover:text-white transition-colors">
+                  Mehrauli &amp; Kishangarh
+                </Link>
+              </li>
+              <li className="pt-1">
+                <Link href="/locations" className="text-emerald-400 hover:text-emerald-300 font-sans font-semibold text-xs inline-flex items-center gap-1">
+                  <span>View All Areas &rarr;</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -146,6 +175,9 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <Link href="/electronics" className="hover:text-white transition-colors">
               Products
+            </Link>
+            <Link href="/locations" className="hover:text-white transition-colors">
+              Delivery Areas
             </Link>
             <Link href="/why-choose-us" className="hover:text-white transition-colors">
               Price Comparison

@@ -27,6 +27,7 @@ export function Header() {
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Products', href: '/electronics' },
+    { label: 'Locations', href: '/locations' },
     { label: 'Why Choose Us', href: '/why-choose-us' },
     { label: 'Buying Guides', href: '/blog' },
     { label: 'About', href: '/about' },
@@ -76,7 +77,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-7 text-xs font-semibold uppercase tracking-wider text-neutral-600 shrink-0">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-6 text-xs font-semibold uppercase tracking-wider text-neutral-600 shrink-0">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
               return (

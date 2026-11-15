@@ -21,6 +21,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { SITE_CONFIG, ELECTRONICS_CATEGORIES, GOOGLE_REVIEWS_MOCK } from '@/data/site-config';
+import { SOUTH_DELHI_LOCALITIES } from '@/data/locations';
 import { getActiveProducts } from '@/lib/products';
 import { ProductCard } from '@/components/ui/ProductCard';
 import { buildWhatsAppUrl } from '@/lib/utils';
@@ -524,7 +525,80 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 8: SHOWROOM LOCATION & TRANSIT
+          SECTION 8: DOORSTEP DELIVERY ACROSS SOUTH DELHI
+      ==================================================== */}
+      <section className="py-20 bg-neutral-50/70 border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                White-Glove Logistics Hub
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
+                Same-Day Doorstep Delivery Across South Delhi
+              </h2>
+              <p className="text-xs sm:text-sm text-neutral-600 mt-2 leading-relaxed">
+                Direct dispatch from our Masoodpur Dairy showroom. We carry appliances into your apartment, unbox to inspect seals together, and you pay only after verifying your unit.
+              </p>
+            </div>
+            <Link
+              href="/locations"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-navy hover:text-neutral-900 transition-colors shrink-0 group font-mono uppercase tracking-wider"
+            >
+              <span>Explore All Delivery Areas</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+
+          {/* 4 Value Pillars */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 font-mono text-xs">
+            <div className="p-4 bg-white border border-neutral-200 rounded-sm">
+              <span className="text-[10px] uppercase text-neutral-400 block">Dispatch Window</span>
+              <span className="text-sm font-bold text-brand-navy">2 – 6 Hours</span>
+              <span className="text-[10px] text-emerald-700 block mt-0.5 font-sans">Same-Day Express</span>
+            </div>
+            <div className="p-4 bg-white border border-neutral-200 rounded-sm">
+              <span className="text-[10px] uppercase text-neutral-400 block">Carry-In Service</span>
+              <span className="text-sm font-bold text-brand-navy">In-Room Flat Delivery</span>
+              <span className="text-[10px] text-neutral-500 block mt-0.5 font-sans">No Gate Dumps</span>
+            </div>
+            <div className="p-4 bg-white border border-neutral-200 rounded-sm">
+              <span className="text-[10px] uppercase text-neutral-400 block">Zero Risk</span>
+              <span className="text-sm font-bold text-brand-navy">Inspect &amp; Pay</span>
+              <span className="text-[10px] text-neutral-500 block mt-0.5 font-sans">Cash or UPI on Delivery</span>
+            </div>
+            <div className="p-4 bg-white border border-neutral-200 rounded-sm">
+              <span className="text-[10px] uppercase text-neutral-400 block">Brand Installation</span>
+              <span className="text-sm font-bold text-brand-navy">Within 24 Hours</span>
+              <span className="text-[10px] text-neutral-500 block mt-0.5 font-sans">OEM Certified Engineers</span>
+            </div>
+          </div>
+
+          {/* Locality Quick Links */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
+            {SOUTH_DELHI_LOCALITIES.slice(0, 6).map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/locations/${loc.slug}`}
+                className="p-3.5 bg-white hover:bg-neutral-50 border border-neutral-200 hover:border-brand-navy rounded-sm transition-all text-left block space-y-1 group shadow-subtle"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-brand-navy group-hover:text-neutral-900 block truncate">
+                    {loc.name}
+                  </span>
+                  <ArrowRight className="w-3 h-3 text-neutral-400 group-hover:text-brand-navy group-hover:translate-x-0.5 transition-all" />
+                </div>
+                <span className="text-[10px] font-mono text-emerald-700 block truncate">
+                  {loc.deliveryPill}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================
+          SECTION 9: SHOWROOM LOCATION & TRANSIT
       ==================================================== */}
       <section className="py-20 bg-white border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

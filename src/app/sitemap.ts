@@ -2,9 +2,10 @@ import { MetadataRoute } from 'next';
 import { getActiveProducts } from '@/lib/products';
 import { ELECTRONICS_CATEGORIES } from '@/data/site-config';
 import { BLOG_POSTS } from '@/data/blog-posts';
+import { SOUTH_DELHI_LOCALITIES } from '@/data/locations';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.sharmaelectronics.com';
+  const baseUrl = 'https://www.sharmabazaar.com';
   const products = await getActiveProducts();
 
   // Static Pages
@@ -19,6 +20,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/electronics`,
       lastModified: new Date(),
       changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/locations`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
@@ -47,6 +54,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  // Locality Doorstep Delivery Routes (High Local SEO Impact)
+  const locationRoutes: MetadataRoute.Sitemap = SOUTH_DELHI_LOCALITIES.map((loc) => ({
+    url: `${baseUrl}/locations/${loc.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.85,
+  }));
+
   // Category Filter URLs
   const categoryRoutes: MetadataRoute.Sitemap = ELECTRONICS_CATEGORIES.map((cat) => ({
     url: `${baseUrl}/electronics?category=${cat.id}`,
@@ -71,5 +86,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.75,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...productRoutes, ...blogRoutes];
+  return [...staticRoutes, ...locationRoutes, ...categoryRoutes, ...productRoutes, ...blogRoutes];
 }
