@@ -46,6 +46,8 @@ export interface UserAccount {
   email: string;
   role: UserRole;
   createdAt: string;
+  isEmailVerified?: boolean;
+  verificationSentAt?: string;
 }
 
 export interface BusinessSettings {

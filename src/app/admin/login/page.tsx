@@ -21,7 +21,7 @@ import { useAuth } from '@/lib/auth-context';
 import { UserRole } from '@/types';
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState('admin@sharmabazaar.com');
+  const [email, setEmail] = useState('adityaenterprises.work24@gmail.com');
   const [password, setPassword] = useState('Sharma@2026');
   const [showPassword, setShowPassword] = useState(false);
   const [role, setRole] = useState<UserRole>('admin');
@@ -30,13 +30,13 @@ export default function AdminLoginPage() {
 
   // Forgot Password Modal State
   const [showForgotModal, setShowForgotModal] = useState(false);
-  const [forgotEmail, setForgotEmail] = useState('admin@sharmabazaar.com');
+  const [forgotEmail, setForgotEmail] = useState('adityaenterprises.work24@gmail.com');
   const [forgotSubmitted, setForgotSubmitted] = useState(false);
   const [forgotSubmitting, setForgotSubmitting] = useState(false);
 
   // Email Verification State
   const [showVerifyModal, setShowVerifyModal] = useState(false);
-  const [verifyEmail, setVerifyEmail] = useState('admin@sharmabazaar.com');
+  const [verifyEmail, setVerifyEmail] = useState('adityaenterprises.work24@gmail.com');
   const [verifySent, setVerifySent] = useState(false);
 
   const { user, loading, login, logout } = useAuth();
@@ -61,9 +61,9 @@ export default function AdminLoginPage() {
   const handleSelectRole = (selectedRole: UserRole) => {
     setRole(selectedRole);
     if (selectedRole === 'admin') {
-      setEmail('admin@sharmabazaar.com');
-      setForgotEmail('admin@sharmabazaar.com');
-      setVerifyEmail('admin@sharmabazaar.com');
+      setEmail('adityaenterprises.work24@gmail.com');
+      setForgotEmail('adityaenterprises.work24@gmail.com');
+      setVerifyEmail('adityaenterprises.work24@gmail.com');
     } else {
       setEmail('manager@sharmabazaar.com');
       setForgotEmail('manager@sharmabazaar.com');
@@ -328,10 +328,10 @@ export default function AdminLoginPage() {
             <div className="flex items-center gap-3">
               <button
                 type="button"
-                onClick={() => handleLogin(undefined, 'admin', 'admin@sharmabazaar.com')}
+                onClick={() => handleLogin(undefined, 'admin', 'adityaenterprises.work24@gmail.com')}
                 className="text-brand-navy font-semibold hover:underline"
               >
-                Autofill Admin
+                Autofill Admin (adityaenterprises.work24@gmail.com)
               </button>
               <span>·</span>
               <button
@@ -472,19 +472,19 @@ export default function AdminLoginPage() {
             <div className="space-y-3 text-xs">
               <div className="p-3 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1.5 font-mono text-[11px]">
                 <div className="flex items-center justify-between">
-                  <span className="text-neutral-500 uppercase">DOMAIN:</span>
-                  <span className="text-brand-navy font-bold">@sharmabazaar.com</span>
+                  <span className="text-neutral-500 uppercase">ADMIN EMAIL:</span>
+                  <span className="text-brand-navy font-bold truncate max-w-[200px]">adityaenterprises.work24@gmail.com</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-neutral-500 uppercase">STATUS:</span>
                   <span className="text-emerald-700 font-bold flex items-center gap-1">
                     <CheckCircle2 className="w-3 h-3" />
-                    Whitelisted &amp; Active
+                    Verified Executive Administrator
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-neutral-500 uppercase">SMTP SERVICE:</span>
-                  <span className="text-neutral-700 font-bold">Firebase Auth / Local Gateway</span>
+                  <span className="text-neutral-500 uppercase">STAFF PROTOCOL:</span>
+                  <span className="text-neutral-700 font-bold">Mail Verification Enforced</span>
                 </div>
               </div>
 
