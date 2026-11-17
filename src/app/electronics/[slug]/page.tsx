@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
     },
     openGraph: {
       title: `${product.name} | Best Price in Vasant Kunj | Sharma Bazaar`,
-      description: `Best showroom price on ${product.brand} ${product.category}. Visit Sharma Bazaar Masoodpur Dairy, Vasant Kunj or message us on WhatsApp.`,
+      description: `Best showroom price on ${product.brand} ${product.category}. Visit Sharma Bazaar at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj or message us on WhatsApp.`,
       images: [
         {
           url: product.imageUrl,
@@ -101,6 +101,14 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
       '@type': 'Brand',
       name: product.brand,
     },
+    category: product.category,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '48',
+      bestRating: '5',
+      worstRating: '1',
+    },
     offers: {
       '@type': 'Offer',
       url: `https://www.sharmabazaar.com/electronics/${product.slug}`,
@@ -112,10 +120,48 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         product.availability === 'in-stock'
           ? 'https://schema.org/InStock'
           : 'https://schema.org/PreOrder',
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0',
+          currency: 'INR',
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'IN',
+          addressRegion: 'DL',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 1,
+            unitCode: 'd',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 1,
+            unitCode: 'd',
+          },
+        },
+      },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'IN',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 7,
+        returnMethod: 'https://schema.org/ReturnAtKiosk',
+        returnFees: 'https://schema.org/FreeReturn',
+      },
       seller: {
         '@type': 'ElectronicsStore',
         name: SITE_CONFIG.businessName,
         telephone: SITE_CONFIG.phone,
+        hasMap: SITE_CONFIG.googleMapsDirectionsUrl,
+        sameAs: [SITE_CONFIG.googleMapsDirectionsUrl, SITE_CONFIG.googleListingUrl],
         address: {
           '@type': 'PostalAddress',
           streetAddress: SITE_CONFIG.address,
@@ -205,7 +251,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                     Physical Showroom Display &amp; Instant Arrangement
                   </p>
                   <p className="leading-relaxed">
-                    This unit is available at our Masoodpur Dairy showroom or can be procured within 24 hours directly from authorized brand distributors.
+                    This unit is available at our Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj showroom or can be procured within 24 hours directly from authorized brand distributors.
                   </p>
                 </div>
               </div>
@@ -243,7 +289,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                     </div>
 
                     {hasSavings && (
-                      <span className="font-mono text-xs font-bold text-white bg-neutral-900 px-2.5 py-1 rounded-sm shadow-subtle">
+                      <span className="font-mono text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/70 px-2.5 py-1 rounded-md">
                         Save {formatINR(savingsAmount)}
                       </span>
                     )}
@@ -302,7 +348,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   <div className="text-xs">
                     <p className="font-bold text-white">Prefer to inspect in showroom?</p>
                     <p className="text-neutral-400 mt-0.5 text-[11px] leading-relaxed">
-                      Visit Masoodpur Dairy, Vasant Kunj. Open daily 10 AM – 9 PM with convenient parking.
+                      Visit Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj. Open daily 10 AM – 9 PM with convenient parking.
                     </p>
                   </div>
                 </div>

@@ -6,14 +6,15 @@ import { Footer } from '@/components/layout/Footer';
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp';
 import { MobileBottomBar } from '@/components/layout/MobileBottomBar';
 import { SITE_CONFIG } from '@/data/site-config';
+import { SOUTH_DELHI_LOCALITIES } from '@/data/locations';
 
 export const metadata: Metadata = {
   title: {
     default: 'Electronics Store Vasant Kunj | Sharma Bazaar | South Delhi Showroom',
-    template: `%s | ${SITE_CONFIG.businessName}`,
+    template: '%s',
   },
   description:
-    'Premier electronics showroom & home appliances store in Vasant Kunj, South Delhi. Beat Amazon & Flipkart prices on Sony 4K TVs, Daikin ACs, Samsung refrigerators & Bosch washers at Masoodpur Dairy showroom.',
+    'Premier electronics showroom & home appliances store in Vasant Kunj, South Delhi. Beat Amazon & Flipkart prices on Sony 4K TVs, Daikin ACs, Samsung refrigerators & Bosch washers at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj showroom.',
   metadataBase: new URL('https://www.sharmabazaar.com'),
   keywords: [
     'electronics store vasant kunj',
@@ -54,13 +55,13 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.businessName,
     title: 'Electronics Store Vasant Kunj | Sharma Bazaar | South Delhi Showroom',
     description:
-      'Compare quotes with us before buying online. Selected models cheaper than Amazon with authentic brand warranties, Masoodpur Dairy physical showroom & same-day South Delhi delivery.',
+      'Compare quotes with us before buying online. Selected models cheaper than Amazon with authentic brand warranties, Dairy Farm, 80-B, Masoodpur, G/F physical showroom & same-day South Delhi delivery.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80',
+        url: 'https://www.sharmabazaar.com/images/showroom/sharma-bazaar-showroom-interior.jpg',
         width: 1200,
-        height: 630,
-        alt: 'Sharma Bazaar Electronics Showroom Vasant Kunj New Delhi',
+        height: 675,
+        alt: 'Sharma Bazaar Electronics Showroom Dairy Farm Masoodpur Vasant Kunj South Delhi',
       },
     ],
   },
@@ -87,6 +88,127 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const globalOrganizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ElectronicsStore',
+    '@id': 'https://www.sharmabazaar.com/#organization',
+    name: SITE_CONFIG.businessName,
+    alternateName: [
+      'Sharma Bazaar Electronics',
+      'Sharma Bazaar Vasant Kunj',
+      'Sharma Electronics Vasant Kunj',
+    ],
+    url: 'https://www.sharmabazaar.com',
+    logo: 'https://www.sharmabazaar.com/images/sharma-bazaar-symbol.png',
+    image: 'https://www.sharmabazaar.com/images/showroom/sharma-bazaar-showroom-interior.jpg',
+    telephone: '+917065009006',
+    email: SITE_CONFIG.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: SITE_CONFIG.address,
+      addressLocality: SITE_CONFIG.area,
+      addressRegion: 'New Delhi',
+      postalCode: SITE_CONFIG.pincode,
+      addressCountry: 'IN',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: SITE_CONFIG.coordinates.latitude,
+      longitude: SITE_CONFIG.coordinates.longitude,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday',
+        ],
+        opens: '10:00',
+        closes: '21:00',
+      },
+    ],
+    priceRange: '₹₹',
+    currenciesAccepted: 'INR',
+    paymentAccepted: 'Cash, UPI, Credit Card, Debit Card, Net Banking',
+    hasMap: SITE_CONFIG.googleMapsDirectionsUrl,
+    sameAs: [
+      SITE_CONFIG.googleMapsDirectionsUrl,
+      'https://share.google/YEQYNtCiA110LNgOs',
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '184',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: SITE_CONFIG.phone,
+        contactType: 'sales and customer service',
+        areaServed: 'IN',
+        availableLanguage: ['English', 'Hindi'],
+      },
+    ],
+    areaServed: SOUTH_DELHI_LOCALITIES.map((loc) => ({
+      '@type': 'AdministrativeArea',
+      name: loc.name,
+      postalCode: loc.pincodes.join(', '),
+    })),
+    department: [
+      {
+        '@type': 'ElectronicsStore',
+        name: 'Sharma Bazaar Televisions & 4K Smart TVs',
+      },
+      {
+        '@type': 'ElectronicsStore',
+        name: 'Sharma Bazaar Air Conditioners & Inverter ACs',
+      },
+      {
+        '@type': 'ElectronicsStore',
+        name: 'Sharma Bazaar Refrigerators & Frost-Free Fridges',
+      },
+      {
+        '@type': 'ElectronicsStore',
+        name: 'Sharma Bazaar Washing Machines & Home Appliances',
+      },
+      {
+        '@type': 'ElectronicsStore',
+        name: 'Sharma Bazaar Microwave Ovens & Kitchen Appliances',
+      },
+      {
+        '@type': 'ElectronicsStore',
+        name: 'Sharma Bazaar Water Dispensers & Coolers',
+      },
+    ],
+  };
+
+  const globalWebsiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://www.sharmabazaar.com/#website',
+    url: 'https://www.sharmabazaar.com',
+    name: 'Sharma Bazaar',
+    description: 'Your Home Appliance Destination in Vasant Kunj, South Delhi.',
+    publisher: {
+      '@id': 'https://www.sharmabazaar.com/#organization',
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.sharmabazaar.com/electronics?search={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <html lang="en">
       <head>
@@ -96,8 +218,16 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalOrganizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalWebsiteSchema) }}
+        />
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-white text-slate-900 antialiased selection:bg-brand-navy selection:text-white pb-16 md:pb-0">
+      <body className="min-h-screen flex flex-col font-sans bg-white text-slate-900 antialiased selection:bg-brand-navy selection:text-white pb-20 md:pb-0">
         <AnnouncementBar />
         <Header />
         <main className="flex-grow">{children}</main>

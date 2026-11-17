@@ -57,7 +57,7 @@ export const SOUTH_DELHI_LOCALITIES: DeliveryLocality[] = [
       'Kishangarh',
     ],
     overview:
-      'As our primary neighborhood showroom located at 80-B, Masoodpur Dairy, Vasant Kunj residents enjoy our fastest white-glove doorstep delivery. Large appliances—including 4K Smart TVs, double door refrigerators, front load washing machines, and split air conditioners—are dispatched directly from our local warehouse within 2 to 3 hours.',
+      'As our primary neighborhood showroom located at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj residents enjoy our fastest white-glove doorstep delivery. Large appliances—including 4K Smart TVs, double door refrigerators, front load washing machines, and split air conditioners—are dispatched directly from our local warehouse within 2 to 3 hours.',
     deliveryHighlights: [
       {
         title: 'Room Carry-In & Unboxing',
@@ -106,7 +106,7 @@ export const SOUTH_DELHI_LOCALITIES: DeliveryLocality[] = [
       {
         question: 'How quickly can an appliance be delivered to Vasant Kunj?',
         answer:
-          'Because our physical showroom is located at Masoodpur Dairy right in Vasant Kunj, we offer express same-day dispatch. In-stock models are typically delivered to Sectors A, B, C, D, and Masoodpur within 2 to 3 hours of order confirmation.',
+          'Because our physical showroom is located at Dairy Farm, 80-B, Masoodpur, G/F right in Vasant Kunj, we offer express same-day dispatch. In-stock models are typically delivered to Sectors A, B, C, D, and Masoodpur within 2 to 3 hours of order confirmation.',
       },
       {
         question: 'Will the delivery team carry the heavy appliance up to my apartment floor?',
@@ -143,7 +143,7 @@ export const SOUTH_DELHI_LOCALITIES: DeliveryLocality[] = [
     ],
     keySectors: ['Masoodpur Dairy', 'Masoodpur Village', 'Kishangarh', 'JNU Gate Area'],
     overview:
-      'Located directly at 80-B, Masoodpur Dairy, we offer instant 90-minute doorstep delivery to local families, tenants, and business owners across Masoodpur and Kishangarh. Visit our showroom in person or order via WhatsApp.',
+      'Located directly at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj, we offer instant 90-minute doorstep delivery to local families, tenants, and business owners across Masoodpur and Kishangarh. Visit our showroom in person or order via WhatsApp.',
     deliveryHighlights: [
       {
         title: '90-Minute Express Dispatch',
@@ -191,12 +191,12 @@ export const SOUTH_DELHI_LOCALITIES: DeliveryLocality[] = [
       {
         question: 'Can I see the appliance at the showroom before it gets delivered to my room in Masoodpur?',
         answer:
-          'Yes! Visit 80-B, Masoodpur Dairy (opposite the flyover). Choose your appliance, verify the serial number, and we will dispatch it to your room immediately.',
+          'Yes! Visit Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj (opposite the flyover). Choose your appliance, verify the serial number, and we will dispatch it to your room immediately.',
       },
     ],
     metaTitle: 'Appliance Delivery in Masoodpur & Kishangarh | Sharma Bazaar',
     metaDescription:
-      'Instant 90-min appliance delivery in Masoodpur Dairy & Kishangarh from Sharma Bazaar showroom. Lowest prices on ACs, TVs, fridges & washers with COD.',
+      'Instant 90-min appliance delivery in Masoodpur & Kishangarh from Sharma Bazaar showroom (Dairy Farm, 80-B, Masoodpur, G/F). Great prices on ACs, TVs, fridges & washers with COD.',
   },
 
   // 3. Chattarpur & Sultanpur
@@ -705,7 +705,7 @@ export const SOUTH_DELHI_LOCALITIES: DeliveryLocality[] = [
       {
         question: 'Why buy from Sharma Bazaar instead of shopping at Saket mall outlets?',
         answer:
-          'Mall retail stores in Saket carry huge rental overheads that are baked into their prices. Because Sharma Bazaar operates from our established showroom in Masoodpur Dairy, we pass wholesale distributor savings directly to you—saving you ₹1,500 to ₹5,000 on identical models with identical OEM warranties.',
+          'Mall retail stores in Saket carry huge rental overheads that are baked into their prices. Because Sharma Bazaar operates from our showroom at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj, we pass wholesale distributor savings directly to you—offering up to ₹1,000–₹5,000 in savings on select models with identical OEM warranties.',
       },
     ],
     metaTitle: 'Appliance Doorstep Delivery in Saket & Press Enclave | Sharma Bazaar',
@@ -1055,7 +1055,7 @@ export const SOUTH_DELHI_LOCALITIES: DeliveryLocality[] = [
     ],
     keySectors: ['Panchsheel North', 'Panchsheel South', 'Panchsheel Enclave', 'August Kranti Marg'],
     overview:
-      'Supplying high-end homes and bungalows across Panchsheel Park and Panchsheel Enclave with premium OLED TVs, multi-door refrigerators, and quiet inverter laundry systems.',
+      'Supplying high-end homes and bungalows across Panchsheel Park and Panchsheel Enclave with premium OLED TVs, multi-door refrigerators, and quiet inverter washing machines.',
     deliveryHighlights: [
       {
         title: 'White-Glove Floor Care',
@@ -1431,7 +1431,7 @@ export const SOUTH_DELHI_LOCALITIES: DeliveryLocality[] = [
     ],
     keySectors: ['Block A', 'Block B', 'Block C', 'Block D', 'Block E', 'Def Col Market'],
     overview:
-      'Providing discreet, careful white-glove appliance deliveries to bungalows and luxury builder floors in Defence Colony. We supply top-of-the-line OLED TVs, multi-door refrigeration, and quiet laundry appliances.',
+      'Providing discreet, careful white-glove appliance deliveries to bungalows and luxury builder floors in Defence Colony. We supply top-of-the-line OLED TVs, multi-door refrigeration, and quiet washing machines.',
     deliveryHighlights: [
       {
         title: 'Upright OLED & TV Transport',
@@ -1628,7 +1628,7 @@ export const SOUTH_DELHI_LOCALITIES: DeliveryLocality[] = [
     deliveryHighlights: [
       {
         title: 'Hyper-Local 2-Hour Response',
-        description: 'Minutes away from Masoodpur Dairy. Same-afternoon delivery on all in-stock appliances.',
+        description: 'Minutes away from Dairy Farm, 80-B, Masoodpur, G/F. Same-afternoon delivery on all in-stock appliances.',
       },
       {
         title: 'Narrow Lane & Stilt Navigation',

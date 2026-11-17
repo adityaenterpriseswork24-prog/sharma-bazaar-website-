@@ -13,7 +13,7 @@ import { ContactForm } from '@/components/contact/ContactForm';
 export const metadata: Metadata = {
   title: 'Contact & Directions | Electronics Store Near Vasant Kunj Metro | Sharma Bazaar',
   description:
-    'Visit Sharma Bazaar electronics showroom at 80-B, Masoodpur Dairy, Vasant Kunj, New Delhi 110070. Near Chattarpur, Aerocity & Vasant Vihar Metro stations along Nelson Mandela Marg. Call +91 70119 62356.',
+    'Visit Sharma Bazaar electronics showroom at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj, New Delhi, Delhi 110070. Near Chattarpur, Aerocity & Vasant Vihar Metro stations along Nelson Mandela Marg. Call +91 70650 09006.',
   keywords: [
     'electronics store near vasant kunj metro',
     'electronics store near me',
@@ -48,7 +48,7 @@ export default function ContactPage() {
             Visit Our Vasant Kunj Showroom
           </h1>
           <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
-            Located on the main thoroughfare of Masoodpur Dairy, Vasant Kunj with spacious electronics display zones and convenient showroom parking.
+            Located at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj with spacious electronics display zones and convenient showroom parking.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function ContactPage() {
               <span className="text-[10px] uppercase">WhatsApp Quote</span>
               <MessageCircle className="w-3.5 h-3.5" />
             </div>
-            <p className="text-base font-bold text-brand-navy">+91 {SITE_CONFIG.whatsapp}</p>
+            <p className="text-base font-bold text-brand-navy">{SITE_CONFIG.phone}</p>
             <p className="text-neutral-500 font-sans text-xs">Share online link for instant showroom match</p>
           </a>
 
@@ -90,7 +90,7 @@ export default function ContactPage() {
               <span className="text-[10px] uppercase">Location</span>
               <Navigation className="w-3.5 h-3.5" />
             </div>
-            <p className="text-base font-bold text-brand-navy">Masoodpur Dairy</p>
+            <p className="text-base font-bold text-brand-navy">Dairy Farm, Masoodpur</p>
             <p className="text-neutral-500 font-sans text-xs">Turn-by-turn Google Maps navigation</p>
           </a>
         </div>
@@ -102,7 +102,7 @@ export default function ContactPage() {
             <div className="border border-neutral-200 rounded-sm overflow-hidden bg-white">
               <div className="p-5 border-b border-neutral-200 flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-brand-navy">Masoodpur Dairy Showroom</h3>
+                  <h3 className="text-sm font-bold text-brand-navy">Masoodpur Showroom (G/F)</h3>
                   <p className="text-xs text-neutral-500 font-mono mt-0.5">
                     {SITE_CONFIG.address}, {SITE_CONFIG.area}, New Delhi - {SITE_CONFIG.pincode}
                   </p>

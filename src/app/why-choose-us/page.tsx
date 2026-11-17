@@ -14,7 +14,7 @@ import { buildWhatsAppUrl } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'Electronics Cheaper Than Amazon Delhi | Beat Online Prices | Sharma Bazaar',
   description:
-    'Save money on electronics in Delhi. Sharma Bazaar beats Amazon & Flipkart prices by ₹1,000–₹2,000 on 4K TVs, split ACs, refrigerators & washers with authentic brand warranty & same-day delivery.',
+    'Save money on electronics in Delhi. Sharma Bazaar offers savings of up to ₹1,000–₹5,000 on select 4K TVs, split ACs, refrigerators & washers compared to major online portals with authentic brand warranty & same-day delivery.',
   keywords: [
     'electronics cheaper than amazon delhi',
     'tv price cheaper than flipkart delhi',
@@ -43,7 +43,7 @@ export default function WhyChooseUsPage() {
   const comparisonRows = [
     {
       feature: 'Pricing Advantage',
-      sharma: 'Selected models ₹1,000–₹2,000 cheaper than major online portals',
+      sharma: 'Selected models offer ₹1,000–₹5,000 in savings compared to major online portals',
       online: 'Platform commissions (8–15%) and dynamic surge pricing',
       mall: 'High mall rental overheads priced into retail markup',
       highlight: true,
@@ -91,8 +91,8 @@ export default function WhyChooseUsPage() {
       a: 'Yes, absolutely. We source all electronics directly through authorized regional distributor networks for Sony, Samsung, LG, Daikin, Bosch, IFB, and Voltas. Every product comes in a factory-sealed box with an authentic GST tax invoice. Brand engineers handle doorstep installation and comprehensive manufacturer warranty.',
     },
     {
-      q: 'How can your prices be ₹1,000–₹2,000 cheaper than Amazon or Flipkart?',
-      a: 'Online marketplaces charge merchants 8% to 15% in platform commissions, payment gateway fees, and return logistics overhead. Furthermore, shopping mall retailers pay massive monthly mall rentals. Because we operate from our owned commercial showroom property in Masoodpur Dairy and procure directly from regional distributors, we operate on lower margins and pass those savings directly to local buyers.',
+      q: 'How can showroom prices offer up to ₹1,000–₹5,000 in savings compared to online portals?',
+      a: 'Online marketplaces charge merchants 8% to 15% in platform commissions, payment gateway fees, and return logistics overhead. Furthermore, shopping mall retailers pay massive monthly mall rentals. Because we operate from our showroom property at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj and procure directly from regional distributors, we operate on lower margins and pass savings of up to ₹1,000–₹5,000 on select models directly to local buyers.',
     },
     {
       q: 'Can you arrange a specific electronics model that is not on display?',
@@ -104,7 +104,7 @@ export default function WhyChooseUsPage() {
     },
     {
       q: 'How does the WhatsApp price counter-quote work?',
-      a: 'Simply take a screenshot of any electronic product price you find on Amazon, Flipkart, or a retail quote. Send it to our WhatsApp (+91 70119 62356). Our store manager checks distributor inventory and gives you our best local showroom counter-price within minutes.',
+      a: 'Simply take a screenshot of any electronic product price you find on Amazon, Flipkart, or a retail quote. Send it to our WhatsApp (+91 70650 09006). Our store manager checks distributor inventory and gives you our best local showroom counter-price within minutes.',
     },
   ];
 
@@ -145,9 +145,14 @@ export default function WhyChooseUsPage() {
           </div>
 
           {/* Head-to-Head Comparison Matrix */}
-          <div className="border border-neutral-200 rounded-sm overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
+          <div className="space-y-2">
+            <div className="sm:hidden flex items-center justify-between text-[11px] font-mono text-neutral-400 px-1">
+              <span>Comparison Matrix</span>
+              <span>Scroll horizontally →</span>
+            </div>
+            <div className="border border-neutral-200 rounded-sm overflow-hidden">
+              <div className="overflow-x-auto no-scrollbar sm:overflow-x-visible">
+                <table className="w-full text-left text-xs border-collapse min-w-[640px] sm:min-w-0">
                 <thead>
                   <tr className="border-b border-neutral-200 bg-neutral-50 font-mono text-[11px] uppercase tracking-wider text-neutral-500">
                     <th className="py-4 px-5 w-1/4">Key Consideration</th>
@@ -189,6 +194,7 @@ export default function WhyChooseUsPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
           </div>
 
@@ -216,7 +222,7 @@ export default function WhyChooseUsPage() {
                 <p className="text-neutral-400 text-[10px]">STEP 02</p>
                 <h3 className="text-sm font-bold text-brand-navy font-sans">Share With Showroom</h3>
                 <p className="text-neutral-600 font-sans text-xs leading-relaxed">
-                  Send the screenshot or model name directly to our store WhatsApp (+91 70119 62356).
+                  Send the screenshot or model name directly to our store WhatsApp (+91 70650 09006).
                 </p>
               </div>
 
@@ -260,7 +266,7 @@ export default function WhyChooseUsPage() {
               Ready to Experience Better Prices &amp; Genuine Local Care?
             </h2>
             <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto">
-              Visit our showroom at Masoodpur Dairy, Vasant Kunj or message our store manager on WhatsApp.
+              Visit our showroom at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj or message our store manager on WhatsApp.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">

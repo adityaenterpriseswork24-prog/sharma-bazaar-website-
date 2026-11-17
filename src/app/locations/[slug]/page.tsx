@@ -112,6 +112,31 @@ export default async function LocalityDetailPage({ params }: LocalityPageProps) 
     })),
   };
 
+  const breadcrumbsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.sharmabazaar.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Delivery Locations',
+        item: 'https://www.sharmabazaar.com/locations',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: locality.name,
+        item: `https://www.sharmabazaar.com/locations/${locality.slug}`,
+      },
+    ],
+  };
+
   const otherLocalities = SOUTH_DELHI_LOCALITIES.filter((l) => l.slug !== locality.slug);
 
   return (
@@ -123,6 +148,10 @@ export default async function LocalityDetailPage({ params }: LocalityPageProps) 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
       />
 
       {/* Breadcrumb Navigation */}
@@ -199,7 +228,7 @@ export default async function LocalityDetailPage({ params }: LocalityPageProps) 
                 Logistics &amp; Fulfillment
               </span>
               <h2 className="text-2xl font-bold text-brand-navy">
-                Fast, Safe Appliance Delivery Directly from Masoodpur Dairy
+                Fast, Safe Appliance Delivery Directly from Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj
               </h2>
               <p className="text-sm text-neutral-700 leading-relaxed font-sans">
                 {locality.overview}
@@ -307,7 +336,7 @@ export default async function LocalityDetailPage({ params }: LocalityPageProps) 
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-neutral-400">Showroom Base:</span>
-                  <span className="font-bold text-white">80-B Masoodpur</span>
+                  <span className="font-bold text-white">Dairy Farm, 80-B, Masoodpur, G/F</span>
                 </div>
               </div>
 

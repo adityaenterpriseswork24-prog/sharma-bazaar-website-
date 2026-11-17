@@ -12,6 +12,11 @@ html {
   color-scheme: light;
 }
 
+/* Ensure sticky header never covers anchor link targets */
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 body {
   color: #0A1128;
   background-color: #FFFFFF;
@@ -58,3 +63,32 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Infinite Marquee Animation for Reviews & Testimonials */
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+

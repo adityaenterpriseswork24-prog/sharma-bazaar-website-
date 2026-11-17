@@ -32,6 +32,9 @@ export default function AdminSettingsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!businessName.trim() || !phone.trim() || !address.trim()) {
+      return;
+    }
     const payload = { businessName, phone, whatsapp, email, address, workingHours };
     localStorage.setItem('sharma_admin_settings', JSON.stringify(payload));
     setSaved(true);
@@ -73,6 +76,7 @@ export default function AdminSettingsPage() {
             </label>
             <input
               type="text"
+              required
               value={businessName}
               onChange={(e) => setBusinessName(e.target.value)}
               className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs focus:outline-none focus:border-brand-navy font-sans"
@@ -97,6 +101,7 @@ export default function AdminSettingsPage() {
             </label>
             <input
               type="text"
+              required
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
@@ -121,6 +126,7 @@ export default function AdminSettingsPage() {
             </label>
             <input
               type="text"
+              required
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs focus:outline-none focus:border-brand-navy font-sans"

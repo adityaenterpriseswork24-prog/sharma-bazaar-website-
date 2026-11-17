@@ -24,6 +24,22 @@ export function Header() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setMobileMenuOpen(false);
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Products', href: '/electronics' },
@@ -45,15 +61,15 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md ${
-        scrolled ? 'border-b border-neutral-200 py-3 shadow-subtle' : 'border-b border-neutral-100 py-4'
+      className={`sticky top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md w-full overflow-x-clip ${
+        scrolled ? 'border-b border-neutral-200 py-2.5 shadow-subtle' : 'border-b border-neutral-100 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4 lg:gap-6 xl:gap-8">
+        <div className="flex items-center justify-between gap-3 lg:gap-4 xl:gap-6">
           {/* Architectural Brand Identity with Tagline & Official Logo Symbol */}
-          <Link href="/" className="flex items-center gap-3.5 group shrink-0">
-            <div className="w-11 h-11 rounded-sm bg-black overflow-hidden flex items-center justify-center shadow-subtle border border-neutral-900 group-hover:border-black transition-colors shrink-0">
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
+            <div className="w-10 h-10 rounded-sm bg-black overflow-hidden flex items-center justify-center shadow-subtle border border-neutral-900 group-hover:border-black transition-colors shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/sharma-bazaar-badge.png"
@@ -63,21 +79,21 @@ export function Header() {
             </div>
             <div>
               <div className="flex items-baseline gap-1.5">
-                <span className="text-lg font-bold tracking-tight text-brand-navy font-sans">
+                <span className="text-base sm:text-lg font-bold tracking-tight text-brand-navy font-sans">
                   SHARMA
                 </span>
-                <span className="text-xs font-mono tracking-widest text-neutral-500 uppercase">
+                <span className="text-[11px] sm:text-xs font-mono tracking-widest text-neutral-500 uppercase">
                   BAZAAR
                 </span>
               </div>
-              <p className="text-[11px] font-medium text-neutral-500 tracking-tight leading-tight">
+              <p className="text-[10.5px] sm:text-[11px] font-medium text-neutral-500 tracking-tight leading-tight">
                 Your Home Appliance Destination.
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-3 xl:gap-6 text-xs font-semibold uppercase tracking-wider text-neutral-600 shrink-0">
+          <nav className="hidden lg:flex items-center gap-2 xl:gap-3.5 2xl:gap-5 text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-neutral-600 shrink-0">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
               return (
@@ -100,24 +116,35 @@ export function Header() {
           </nav>
 
           {/* Desktop Call & WhatsApp Actions */}
-          <div className="hidden sm:flex items-center gap-2.5 xl:gap-3 shrink-0">
+          <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
+            {/* Full phone button on 2xl screens */}
             <a
               href={`tel:${SITE_CONFIG.phone}`}
-              className="hidden xl:flex items-center gap-2 px-3.5 py-2 text-xs font-mono font-medium text-brand-navy hover:bg-neutral-50 rounded-sm transition-colors border border-neutral-200 whitespace-nowrap"
+              className="hidden 2xl:flex items-center gap-2 px-3 py-2 text-xs font-mono font-medium text-brand-navy hover:bg-neutral-50 rounded-sm transition-colors border border-neutral-200 whitespace-nowrap"
               title="Call Showroom"
             >
               <Phone className="w-3.5 h-3.5 text-neutral-500" />
               <span>{SITE_CONFIG.phone}</span>
             </a>
 
+            {/* Compact phone button on lg to 2xl screens */}
+            <a
+              href={`tel:${SITE_CONFIG.phone}`}
+              className="hidden lg:flex 2xl:hidden p-2 text-neutral-600 hover:text-brand-navy hover:bg-neutral-50 rounded-sm transition-colors border border-neutral-200 shrink-0"
+              title={`Call Showroom: ${SITE_CONFIG.phone}`}
+            >
+              <Phone className="w-3.5 h-3.5 text-neutral-500" />
+            </a>
+
             <a
               href={defaultWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3.5 xl:px-4 py-2 text-xs font-semibold text-white bg-brand-whatsapp hover:bg-brand-whatsappDark rounded-sm transition-colors shadow-subtle whitespace-nowrap"
+              className="flex items-center gap-2 px-3 xl:px-3.5 py-2 text-xs font-semibold text-white bg-brand-whatsapp hover:bg-brand-whatsappDark rounded-sm transition-colors shadow-subtle whitespace-nowrap"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-white" />
-              <span>Inquire on WhatsApp</span>
+              <span className="hidden xl:inline">WhatsApp Quote</span>
+              <span className="xl:hidden">WhatsApp</span>
             </a>
 
             <Link
@@ -142,8 +169,9 @@ export function Header() {
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-brand-navy hover:bg-neutral-100 rounded-sm transition-colors"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-navy hover:bg-neutral-100 rounded-sm transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -153,7 +181,14 @@ export function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-white border-b border-neutral-200 shadow-xl px-6 py-6 transition-all duration-200 z-50">
+        <>
+          {/* Backdrop overlay */}
+          <div
+            onClick={() => setMobileMenuOpen(false)}
+            className="lg:hidden fixed inset-0 top-[65px] bg-black/30 backdrop-blur-xs z-40 transition-opacity"
+            aria-hidden="true"
+          />
+          <div className="lg:hidden fixed inset-x-0 top-full bg-white border-b border-neutral-200 shadow-2xl px-6 py-6 transition-all duration-200 z-50 max-h-[calc(100vh-75px)] overflow-y-auto overscroll-contain">
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <Link
@@ -211,10 +246,11 @@ export function Header() {
           </div>
 
           <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-neutral-400">
-            <span>Masoodpur Dairy, Vasant Kunj</span>
+            <span>Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj</span>
             <span className="text-emerald-700 font-sans font-semibold">Open 10 AM - 9 PM</span>
           </div>
-        </div>
+          </div>
+        </>
       )}
     </header>
   );

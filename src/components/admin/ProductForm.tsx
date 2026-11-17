@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   Save,
@@ -9,6 +9,11 @@ import {
   Trash2,
   Check,
   AlertCircle,
+  UploadCloud,
+  Image as ImageIcon,
+  Loader2,
+  X,
+  FileCheck,
 } from 'lucide-react';
 import Link from 'next/link';
 import { Product, ProductCategory, AvailabilityStatus } from '@/types';
@@ -36,7 +41,7 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
   const [mrpPrice, setMrpPrice] = useState<number>(initialProduct?.mrpPrice || 0);
   const [imageUrl, setImageUrl] = useState(
     initialProduct?.imageUrl ||
-      'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80'
+      '/images/showroom/sharma-bazaar-showroom-interior.jpg'
   );
   const [availability, setAvailability] = useState<AvailabilityStatus>(
     initialProduct?.availability || 'in-stock'
@@ -64,6 +69,85 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
 
   const { savingsAmount, discountPercent, hasSavings } = calculateSavings(mrpPrice, ourPrice);
 
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const [showUrlInput, setShowUrlInput] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const processFile = async (file: File) => {
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      setUploadError('Please select a valid image file (JPG, PNG, WEBP, AVIF).');
+      return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+      setUploadError('Image size exceeds 10MB limit. Please choose a smaller image.');
+      return;
+    }
+
+    setIsUploading(true);
+    setUploadError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.url) {
+        throw new Error(data.error || 'Server upload failed');
+      }
+
+      setImageUrl(data.url);
+    } catch (err: unknown) {
+      console.warn('Direct upload server fallback to base64:', err);
+      // Fallback to client-side data URL so work is never lost
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        if (e.target?.result) {
+          setImageUrl(e.target.result as string);
+        }
+      };
+      reader.readAsDataURL(file);
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      processFile(file);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file) {
+      processFile(file);
+    }
+  };
+
   const handleAddSpec = () => {
     setSpecs([...specs, { key: '', value: '' }]);
   };
@@ -78,9 +162,10 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
     setSpecs(updated);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    setNotification(null);
 
     if (!name.trim() || !brand.trim() || ourPrice <= 0) {
       setNotification({ message: 'Please complete all required fields.', type: 'error' });
@@ -115,7 +200,12 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
       ourPrice: Number(ourPrice),
       mrpPrice: Number(mrpPrice),
       imageUrl,
-      gallery: [imageUrl],
+      gallery:
+        initialProduct?.gallery && initialProduct.gallery.length > 0
+          ? initialProduct.gallery.includes(imageUrl)
+            ? initialProduct.gallery
+            : [imageUrl, ...initialProduct.gallery.filter((g) => g !== imageUrl)]
+          : [imageUrl],
       isActive,
       isFeatured,
       availability,
@@ -123,35 +213,45 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
       updatedAt: new Date().toISOString(),
     };
 
-    const stored = localStorage.getItem('sharma_admin_products');
-    let currentList: Product[] = stored ? JSON.parse(stored) : [...INITIAL_PRODUCTS];
-
-    if (isEdit) {
-      currentList = currentList.map((p) => (p.id === productPayload.id ? productPayload : p));
-    } else {
-      currentList.unshift(productPayload);
-    }
-
-    localStorage.setItem('sharma_admin_products', JSON.stringify(currentList));
-
     try {
-      fetch('/api/products', {
+      const res = await fetch('/api/products', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(productPayload),
-      }).catch((e) => console.warn('API sync notice:', e));
-    } catch {
-      // ignore
+      });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || 'Failed to save product to server inventory.');
+      }
+
+      // Update local storage as offline mirror
+      try {
+        const stored = localStorage.getItem('sharma_admin_products');
+        let currentList: Product[] = stored ? JSON.parse(stored) : [...INITIAL_PRODUCTS];
+        if (isEdit) {
+          currentList = currentList.map((p) => (p.id === productPayload.id ? productPayload : p));
+        } else {
+          currentList.unshift(productPayload);
+        }
+        localStorage.setItem('sharma_admin_products', JSON.stringify(currentList));
+      } catch {
+        // ignore
+      }
+
+      setNotification({
+        message: isEdit ? 'Product updated successfully.' : 'Product published to showroom catalogue.',
+        type: 'success',
+      });
+
+      setTimeout(() => {
+        router.push('/admin/products');
+      }, 700);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Network error saving product.';
+      setNotification({ message: msg, type: 'error' });
+      setSubmitting(false);
     }
-
-    setNotification({
-      message: isEdit ? 'Product updated successfully.' : 'Product published to showroom catalogue.',
-      type: 'success',
-    });
-
-    setTimeout(() => {
-      router.push('/admin/products');
-    }, 1000);
   };
 
   return (
@@ -342,33 +442,127 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
 
       {/* Fieldset 3: Media */}
       <div className="bg-white p-6 border border-neutral-200 rounded-sm space-y-4">
-        <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400 border-b border-neutral-100 pb-2">
-          03 · Imagery &amp; Photography
-        </h3>
+        <div className="flex items-center justify-between border-b border-neutral-100 pb-2">
+          <h3 className="font-mono text-xs uppercase tracking-widest text-neutral-400">
+            03 · Imagery &amp; Product Photography
+          </h3>
+          <button
+            type="button"
+            onClick={() => setShowUrlInput(!showUrlInput)}
+            className="text-[11px] font-mono text-neutral-500 hover:text-brand-navy underline"
+          >
+            {showUrlInput ? 'Hide manual path/URL' : 'Or paste image URL / local path'}
+          </button>
+        </div>
 
-        <div className="space-y-3 text-xs">
-          <div>
-            <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">
-              Product Image URL
-            </label>
+        <div className="space-y-4 text-xs">
+          {/* Direct Device Upload Dropzone */}
+          <div
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            onClick={() => fileInputRef.current?.click()}
+            className={`border-2 border-dashed rounded-sm p-6 text-center transition-all cursor-pointer select-none ${
+              isDragging
+                ? 'border-brand-navy bg-neutral-100'
+                : 'border-neutral-300 hover:border-brand-navy bg-neutral-50/60'
+            }`}
+          >
             <input
-              type="url"
-              value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
-              placeholder="https://..."
-              className="w-full px-3.5 py-2 bg-neutral-50 border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleFileChange}
             />
+
+            {isUploading ? (
+              <div className="flex flex-col items-center justify-center py-4 space-y-2">
+                <Loader2 className="w-8 h-8 text-brand-navy animate-spin" />
+                <p className="font-semibold text-brand-navy text-sm">Uploading photo from device...</p>
+                <p className="text-[11px] text-neutral-500">Saving to /public/images/products/</p>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center py-2 space-y-2">
+                <div className="w-12 h-12 rounded-full bg-white border border-neutral-200 shadow-subtle flex items-center justify-center text-brand-navy mb-1">
+                  <UploadCloud className="w-6 h-6" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm font-bold text-brand-navy">
+                    Click to upload photo directly from your device
+                  </p>
+                  <p className="text-[11px] text-neutral-500 font-normal">
+                    Select from phone gallery / camera or browse files on computer (JPG, PNG, WEBP up to 10MB)
+                  </p>
+                  <span className="inline-block mt-1 font-mono text-[10px] text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-sm border border-emerald-200">
+                    Auto-saved to public/images/products/
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
 
+          {uploadError && (
+            <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-sm flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0" />
+              <span>{uploadError}</span>
+            </div>
+          )}
+
+          {/* Optional Manual URL Input */}
+          {showUrlInput && (
+            <div className="p-3 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1.5">
+              <label className="block font-mono text-[10px] uppercase tracking-wider text-neutral-500">
+                Direct Image Path or External URL
+              </label>
+              <input
+                type="text"
+                value={imageUrl}
+                onChange={(e) => setImageUrl(e.target.value)}
+                placeholder="/images/products/example.jpg or https://..."
+                className="w-full px-3.5 py-2 bg-white border border-neutral-200 rounded-sm text-xs font-mono focus:outline-none focus:border-brand-navy"
+              />
+            </div>
+          )}
+
+          {/* Active Image Preview Card */}
           {imageUrl && (
-            <div className="flex items-center gap-4 p-3 bg-neutral-50 border border-neutral-200 rounded-sm">
-              <div className="w-16 h-16 bg-white border border-neutral-200 rounded-sm overflow-hidden p-1 shrink-0 flex items-center justify-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={imageUrl} alt="Preview" className="w-full h-full object-contain" />
+            <div className="flex items-center justify-between p-3.5 bg-neutral-50 border border-neutral-200 rounded-sm">
+              <div className="flex items-center gap-3.5 min-w-0">
+                <div className="w-16 h-16 bg-white border border-neutral-200 rounded-sm overflow-hidden p-1 shrink-0 flex items-center justify-center shadow-subtle">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={imageUrl} alt="Preview" className="w-full h-full object-contain" />
+                </div>
+                <div className="min-w-0 space-y-0.5">
+                  <div className="flex items-center gap-1.5">
+                    <FileCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span className="font-semibold text-brand-navy truncate text-xs">
+                      Active Product Photography
+                    </span>
+                  </div>
+                  <p className="font-mono text-[10px] text-neutral-500 truncate max-w-xs sm:max-w-md">
+                    {imageUrl}
+                  </p>
+                </div>
               </div>
-              <span className="font-mono text-[11px] text-neutral-400">
-                Live image frame verified
-              </span>
+
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="px-2.5 py-1.5 bg-white border border-neutral-200 hover:border-brand-navy text-[11px] font-semibold text-brand-navy rounded-sm transition-colors"
+                >
+                  Change
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setImageUrl('/images/showroom/sharma-bazaar-showroom-interior.jpg')}
+                  className="p-1.5 text-neutral-400 hover:text-red-600 rounded-sm transition-colors"
+                  title="Reset to default showroom image"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           )}
         </div>

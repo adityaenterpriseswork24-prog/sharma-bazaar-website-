@@ -18,12 +18,15 @@ export function ContactForm() {
     e.preventDefault();
     if (!name.trim()) return;
 
+    const selectedCategoryName =
+      ELECTRONICS_CATEGORIES.find((c) => c.id === category)?.name || category;
+
     let message = `Hi Sharma Bazaar,\n\nI am submitting a showroom inquiry from your website:\n\n`;
     message += `Name: ${name}\n`;
     if (phone.trim()) {
       message += `Phone: ${phone}\n`;
     }
-    message += `Category: ${category}\n`;
+    message += `Category: ${selectedCategoryName}\n`;
     if (modelOrRequirement.trim()) {
       message += `Requirement / Online Quote: ${modelOrRequirement}\n`;
     }
@@ -100,7 +103,7 @@ export function ContactForm() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Rahul Sharma"
-              className="w-full px-3.5 py-2.5 rounded-sm bg-white border border-neutral-200 text-xs text-neutral-900 focus:outline-none focus:border-brand-navy transition-colors font-sans"
+              className="w-full px-3.5 py-2.5 rounded-sm bg-white border border-neutral-200 text-sm sm:text-xs text-neutral-900 focus:outline-none focus:border-brand-navy transition-colors font-sans"
             />
           </div>
 
@@ -111,9 +114,9 @@ export function ContactForm() {
             <input
               type="tel"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="e.g. 98110XXXXX"
-              className="w-full px-3.5 py-2.5 rounded-sm bg-white border border-neutral-200 text-xs text-neutral-900 focus:outline-none focus:border-brand-navy transition-colors font-mono"
+              onChange={(e) => setPhone(e.target.value.replace(/[^\d\s+-]/g, '').slice(0, 15))}
+              placeholder="e.g. 98110XXXXX (10-digit mobile)"
+              className="w-full px-3.5 py-2.5 rounded-sm bg-white border border-neutral-200 text-sm sm:text-xs text-neutral-900 focus:outline-none focus:border-brand-navy transition-colors font-mono"
             />
           </div>
 
@@ -124,7 +127,7 @@ export function ContactForm() {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value as ProductCategory)}
-              className="w-full px-3.5 py-2.5 rounded-sm bg-white border border-neutral-200 text-xs text-neutral-900 focus:outline-none focus:border-brand-navy transition-colors font-sans"
+              className="w-full px-3.5 py-2.5 rounded-sm bg-white border border-neutral-200 text-sm sm:text-xs text-neutral-900 focus:outline-none focus:border-brand-navy transition-colors font-sans"
             >
               {ELECTRONICS_CATEGORIES.map((cat) => (
                 <option key={cat.id} value={cat.id}>
@@ -143,7 +146,7 @@ export function ContactForm() {
               value={modelOrRequirement}
               onChange={(e) => setModelOrRequirement(e.target.value)}
               placeholder="e.g. Sony 55-inch 4K TV or Daikin 1.5T 5-star AC. Got an Amazon quote of ₹53,000. What is your best showroom price?"
-              className="w-full px-3.5 py-2.5 rounded-sm bg-white border border-neutral-200 text-xs text-neutral-900 focus:outline-none focus:border-brand-navy transition-colors font-sans"
+              className="w-full px-3.5 py-2.5 rounded-sm bg-white border border-neutral-200 text-sm sm:text-xs text-neutral-900 focus:outline-none focus:border-brand-navy transition-colors font-sans"
             ></textarea>
           </div>
 

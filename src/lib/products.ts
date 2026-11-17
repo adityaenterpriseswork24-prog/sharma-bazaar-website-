@@ -80,10 +80,10 @@ export async function getActiveProducts(options: ProductFilterOptions = {}): Pro
     const term = options.search.toLowerCase().trim();
     products = products.filter(
       (p) =>
-        p.name.toLowerCase().includes(term) ||
-        p.brand.toLowerCase().includes(term) ||
-        p.modelNumber.toLowerCase().includes(term) ||
-        p.category.toLowerCase().includes(term) ||
+        (p.name && p.name.toLowerCase().includes(term)) ||
+        (p.brand && p.brand.toLowerCase().includes(term)) ||
+        (p.modelNumber && p.modelNumber.toLowerCase().includes(term)) ||
+        (p.category && p.category.toLowerCase().includes(term)) ||
         (p.subcategory && p.subcategory.toLowerCase().includes(term))
     );
   }
@@ -94,7 +94,11 @@ export async function getActiveProducts(options: ProductFilterOptions = {}): Pro
   } else if (options.sortBy === 'price-desc') {
     products.sort((a, b) => b.ourPrice - a.ourPrice);
   } else if (options.sortBy === 'savings-desc') {
-    products.sort((a, b) => (b.mrpPrice - b.ourPrice) - (a.mrpPrice - a.ourPrice));
+    products.sort((a, b) => {
+      const savingsB = Math.max(0, (b.mrpPrice || b.ourPrice) - b.ourPrice);
+      const savingsA = Math.max(0, (a.mrpPrice || a.ourPrice) - a.ourPrice);
+      return savingsB - savingsA;
+    });
   } else {
     // Default featured first, then newest
     products.sort((a, b) => (b.isFeatured ? 1 : 0) - (a.isFeatured ? 1 : 0));

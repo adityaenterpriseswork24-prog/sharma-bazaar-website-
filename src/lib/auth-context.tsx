@@ -99,7 +99,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           demoRole || (email.toLowerCase().includes('manager') ? 'shop_manager' : 'admin');
         const account: UserAccount = {
           uid: `staff-${Date.now()}`,
-          email: email || (role === 'admin' ? 'admin@sharmaelectronics.com' : 'manager@sharmaelectronics.com'),
+          email: email || (role === 'admin' ? 'admin@sharmabazaar.com' : 'manager@sharmabazaar.com'),
           name: role === 'admin' ? 'Senior Administrator' : 'Showroom Manager',
           role,
           createdAt: new Date().toISOString(),

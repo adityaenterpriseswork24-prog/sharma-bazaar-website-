@@ -16,20 +16,20 @@ export function AnnouncementBar() {
     <div className="bg-brand-navy text-white text-[11px] py-2 px-4 sm:px-8 border-b border-white/10 tracking-wide">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Left: Location & Showroom scale */}
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 border border-white/15 px-2 py-0.5 rounded-sm">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-neutral-400 border border-white/15 px-1.5 sm:px-2 py-0.5 rounded-sm shrink-0">
             Showroom Direct
           </span>
-          <span className="text-neutral-200 hidden sm:inline">
-            Your Home Appliance Destination · Masoodpur Dairy, Vasant Kunj · Authorized Distributor Network
+          <span className="text-neutral-200 hidden md:inline truncate">
+            Your Home Appliance Destination · Authorized Distributor Network
           </span>
-          <span className="text-neutral-200 sm:hidden">
-            Your Home Appliance Destination · Vasant Kunj
+          <span className="text-neutral-200 hidden sm:inline md:hidden truncate">
+            Your Home Appliance Destination
           </span>
         </div>
 
         {/* Right: Direct Contacts */}
-        <div className="flex items-center gap-5 text-neutral-300 font-medium">
+        <div className="flex items-center gap-3 sm:gap-5 text-neutral-300 font-medium shrink-0">
           <a
             href={SITE_CONFIG.googleMapsDirectionsUrl}
             target="_blank"
@@ -42,7 +42,7 @@ export function AnnouncementBar() {
 
           <a
             href={`tel:${SITE_CONFIG.phone}`}
-            className="inline-flex items-center gap-1.5 text-white hover:text-neutral-200 transition-colors font-mono"
+            className="inline-flex items-center gap-1.5 text-white hover:text-neutral-200 transition-colors font-mono whitespace-nowrap shrink-0"
           >
             <Phone className="w-3 h-3 text-neutral-400" />
             <span>{SITE_CONFIG.phone}</span>

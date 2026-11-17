@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Same-Day Doorstep Appliance Delivery in South Delhi | Sharma Bazaar',
     description:
-      'Order TVs, ACs, Refrigerators & Washing Machines with white-glove doorstep delivery directly from our Masoodpur Dairy showroom.',
+      'Order TVs, ACs, Refrigerators & Washing Machines with white-glove doorstep delivery directly from our Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj showroom.',
     url: 'https://www.sharmabazaar.com/locations',
     siteName: 'Sharma Bazaar',
     type: 'website',
@@ -57,7 +57,7 @@ export default function LocationsHubPage() {
     },
     {
       q: 'What if an appliance gets damaged or scratched during transit?',
-      a: 'Because we operate our own delivery vehicles directly from our Masoodpur Dairy showroom, transit damages are exceedingly rare. However, if any imperfection is spotted during unboxing, you do not have to accept or pay for it. We immediately swap it with a fresh unit from our showroom stock—no tedious online return tickets or weeks of waiting.',
+      a: 'Because we operate our own delivery vehicles directly from our Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj showroom, transit damages are exceedingly rare. However, if any imperfection is spotted during unboxing, you do not have to accept or pay for it. We immediately swap it with a fresh unit from our showroom stock—no tedious online return tickets or weeks of waiting.',
     },
     {
       q: 'How does installation work for Air Conditioners and Wall-Mount Televisions?',
@@ -166,7 +166,7 @@ export default function LocationsHubPage() {
             <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
               Dispatched directly from our physical showroom at{' '}
               <strong className="text-brand-navy font-semibold">
-                80-B, Masoodpur Dairy, Vasant Kunj
+                Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj
               </strong>
               . We carry the appliance right into your flat, verify the unbroken manufacturer seal with you, and you pay only after you are 100% satisfied.
             </p>
@@ -275,7 +275,7 @@ export default function LocationsHubPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
                   <div>
                     <strong className="text-neutral-900 block font-semibold">Instant Local Accountability:</strong>
-                    If anything is amiss, our physical showroom is located right at Masoodpur Dairy, Vasant Kunj. We swap units immediately.
+                    If anything is amiss, our physical showroom is located right at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj. We swap units immediately.
                   </div>
                 </li>
               </ul>

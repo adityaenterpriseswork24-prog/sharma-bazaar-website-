@@ -105,7 +105,7 @@ export default function AdminLoginPage() {
             </div>
             <div className="p-3.5 bg-white/5 border border-white/10 rounded-sm">
               <p className="text-neutral-400 text-[10px] uppercase">LOCATION</p>
-              <p className="text-white font-bold mt-0.5">Masoodpur Dairy</p>
+              <p className="text-white font-bold mt-0.5">Dairy Farm, 80-B, Masoodpur, G/F</p>
               <p className="text-neutral-400 text-[10px]">Vasant Kunj, Delhi</p>
             </div>
           </div>

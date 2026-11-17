@@ -62,6 +62,10 @@ export interface BusinessSettings {
   workingHours: string;
   googleMapsEmbedUrl: string;
   googleMapsDirectionsUrl: string;
+  googleListingUrl?: string;
+  googleCid?: string;
+  kgmid?: string;
+  plusCode?: string;
   coordinates: {
     latitude: number;
     longitude: number;

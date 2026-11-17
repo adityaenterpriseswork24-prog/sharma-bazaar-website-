@@ -9,7 +9,7 @@ interface ProductGalleryProps {
 
 export function ProductGallery({ images, productName }: ProductGalleryProps) {
   const fallbackImage =
-    'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80';
+    '/images/showroom/sharma-bazaar-showroom-interior.jpg';
   const initialImg = images && images.length > 0 ? images[0] : fallbackImage;
   const [selectedImage, setSelectedImage] = useState(initialImg);
 

@@ -22,23 +22,26 @@ export default function AdminDashboardPage() {
   const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
 
   useEffect(() => {
-    const cached = localStorage.getItem('sharma_admin_products');
-    if (cached) {
-      try {
+    // Populate with cached data first for instant view
+    try {
+      const cached = localStorage.getItem('sharma_admin_products');
+      if (cached) {
         setProducts(JSON.parse(cached));
-      } catch {
-        // ignore
       }
-    } else {
-      fetch('/api/products')
-        .then((res) => res.json())
-        .then((data) => {
-          if (data?.products && Array.isArray(data.products)) {
-            setProducts(data.products);
-          }
-        })
-        .catch(() => {});
+    } catch {
+      // ignore
     }
+
+    // Fetch fresh stats from server
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.products && Array.isArray(data.products)) {
+          setProducts(data.products);
+          localStorage.setItem('sharma_admin_products', JSON.stringify(data.products));
+        }
+      })
+      .catch((err) => console.warn('Could not refresh dashboard stats from server:', err));
   }, []);
 
   const totalProducts = products.length;

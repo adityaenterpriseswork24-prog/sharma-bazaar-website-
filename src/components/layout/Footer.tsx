@@ -52,7 +52,7 @@ export function Footer() {
 
             <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
               South Delhi&apos;s premier multi-brand consumer electronics showroom.
-              Physical store located in Masoodpur Dairy, Vasant Kunj with authorized distributor pricing.
+              Physical store located at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj with authorized distributor pricing.
             </p>
 
             <div className="p-3.5 rounded-sm bg-white/5 border border-white/10 space-y-1.5 font-mono text-[11px]">
@@ -61,7 +61,7 @@ export function Footer() {
                 <span className="text-neutral-400">Est. 2019</span>
               </div>
               <p className="text-neutral-400 text-[10px] leading-normal">
-                Direct regional dealer network · Televisions · Refrigeration · Air Conditioning · Laundry
+                Direct regional dealer network · Televisions · Refrigeration · Air Conditioning · Washing Machines
               </p>
             </div>
           </div>
@@ -180,20 +180,17 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-500 text-[11px]">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-500 text-[11px]">
           <p>© {currentYear} {SITE_CONFIG.businessName}. Physical showroom serving South Delhi since 2019.</p>
-          <div className="flex items-center gap-6">
-            <Link href="/electronics" className="hover:text-white transition-colors">
-              Products
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
             </Link>
-            <Link href="/locations" className="hover:text-white transition-colors">
-              Delivery Areas
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms of Service
             </Link>
-            <Link href="/why-choose-us" className="hover:text-white transition-colors">
-              Price Comparison
-            </Link>
-            <Link href="/blog" className="hover:text-white transition-colors">
-              Guides
+            <Link href="/return-policy" className="hover:text-white transition-colors">
+              Delivery &amp; Returns
             </Link>
             <Link href="/contact" className="hover:text-white transition-colors">
               Directions

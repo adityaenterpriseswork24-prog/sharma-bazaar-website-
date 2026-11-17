@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { Product } from '@/types';
 import { INITIAL_PRODUCTS } from '@/data/initial-products';
+import { verifyStaffSession, verifyAdminSession } from '@/lib/server-auth';
 
 const DATA_FILE_PATH = path.join(process.cwd(), 'src', 'data', 'stored-products.json');
 
@@ -58,9 +59,17 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// POST /api/products (Create or Update)
+// POST /api/products (Create or Update - Staff Protected)
 export async function POST(request: NextRequest) {
   try {
+    const authCheck = verifyStaffSession(request);
+    if (!authCheck.authenticated) {
+      return NextResponse.json(
+        { error: authCheck.error || 'Authentication required to modify inventory.' },
+        { status: 401 }
+      );
+    }
+
     const body: Product = await request.json();
 
     if (!body || !body.name || !body.brand || !body.ourPrice) {
@@ -93,9 +102,17 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// DELETE /api/products?id=...
+// DELETE /api/products?id=... (Staff Protected)
 export async function DELETE(request: NextRequest) {
   try {
+    const authCheck = verifyStaffSession(request);
+    if (!authCheck.authenticated) {
+      return NextResponse.json(
+        { error: authCheck.error || 'Authentication required to delete products.' },
+        { status: 401 }
+      );
+    }
+
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');
 
@@ -114,9 +131,17 @@ export async function DELETE(request: NextRequest) {
   }
 }
 
-// PUT /api/products/reset - resets to initial
+// PUT /api/products/reset - resets to initial (Admin Only Protected)
 export async function PUT(request: NextRequest) {
   try {
+    const authCheck = verifyAdminSession(request);
+    if (!authCheck.authenticated) {
+      return NextResponse.json(
+        { error: authCheck.error || 'Administrator access required to reset catalogue.' },
+        { status: 403 }
+      );
+    }
+
     await writeProducts(INITIAL_PRODUCTS);
     return NextResponse.json({ success: true, count: INITIAL_PRODUCTS.length });
   } catch (error) {

@@ -37,18 +37,10 @@ export function CatalogueView({
   }, [initialSearch]);
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem('sharma_admin_products');
-      if (stored) {
-        const parsed: Product[] = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setProducts(parsed);
-        }
-      }
-    } catch {
-      // keep initial
+    if (initialProducts && initialProducts.length > 0) {
+      setProducts(initialProducts);
     }
-  }, []);
+  }, [initialProducts]);
 
   const availableBrands = useMemo(() => {
     const brands = new Set<string>();
@@ -59,7 +51,7 @@ export function CatalogueView({
   }, [products]);
 
   const filteredProducts = useMemo(() => {
-    let result = [...products];
+    let result = products.filter((p) => p.isActive);
 
     if (selectedCategory !== 'all') {
       result = result.filter(
@@ -77,10 +69,10 @@ export function CatalogueView({
       const q = searchQuery.toLowerCase().trim();
       result = result.filter(
         (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.brand.toLowerCase().includes(q) ||
-          p.modelNumber.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
+          (p.name && p.name.toLowerCase().includes(q)) ||
+          (p.brand && p.brand.toLowerCase().includes(q)) ||
+          (p.modelNumber && p.modelNumber.toLowerCase().includes(q)) ||
+          (p.category && p.category.toLowerCase().includes(q)) ||
           (p.subcategory && p.subcategory.toLowerCase().includes(q))
       );
     }
@@ -90,7 +82,11 @@ export function CatalogueView({
     } else if (sortBy === 'price-desc') {
       result.sort((a, b) => b.ourPrice - a.ourPrice);
     } else if (sortBy === 'savings-desc') {
-      result.sort((a, b) => (b.mrpPrice - b.ourPrice) - (a.mrpPrice - a.ourPrice));
+      result.sort((a, b) => {
+        const savingsB = Math.max(0, (b.mrpPrice || b.ourPrice) - b.ourPrice);
+        const savingsA = Math.max(0, (a.mrpPrice || a.ourPrice) - a.ourPrice);
+        return savingsB - savingsA;
+      });
     } else {
       result.sort((a, b) => (b.isFeatured ? 1 : 0) - (a.isFeatured ? 1 : 0));
     }
@@ -169,7 +165,7 @@ export function CatalogueView({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by brand, TV size, tonnage, model number..."
-              className="w-full pl-9 pr-8 py-2.5 bg-white border border-neutral-200 text-xs text-neutral-900 rounded-sm focus:outline-none focus:border-brand-navy transition-colors font-sans"
+              className="w-full pl-9 pr-8 py-2.5 bg-white border border-neutral-200 text-sm sm:text-xs text-neutral-900 rounded-sm focus:outline-none focus:border-brand-navy transition-colors font-sans"
             />
             {searchQuery && (
               <button
@@ -187,7 +183,7 @@ export function CatalogueView({
             <select
               value={selectedBrand}
               onChange={(e) => setSelectedBrand(e.target.value)}
-              className="w-full py-2.5 px-3 bg-white border border-neutral-200 text-xs font-mono text-neutral-700 rounded-sm focus:outline-none focus:border-brand-navy"
+              className="w-full py-2.5 px-3 bg-white border border-neutral-200 text-sm sm:text-xs font-mono text-neutral-700 rounded-sm focus:outline-none focus:border-brand-navy"
             >
               <option value="all">All Brands ({availableBrands.length})</option>
               {availableBrands.map((b) => (
@@ -203,7 +199,7 @@ export function CatalogueView({
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="w-full py-2.5 px-3 bg-white border border-neutral-200 text-xs font-mono text-neutral-700 rounded-sm focus:outline-none focus:border-brand-navy"
+              className="w-full py-2.5 px-3 bg-white border border-neutral-200 text-sm sm:text-xs font-mono text-neutral-700 rounded-sm focus:outline-none focus:border-brand-navy"
             >
               <option value="featured">Sort: Featured First</option>
               <option value="price-asc">Sort: Price (Lowest First)</option>

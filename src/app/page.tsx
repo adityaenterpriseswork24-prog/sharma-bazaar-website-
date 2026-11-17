@@ -24,12 +24,13 @@ import { SITE_CONFIG, ELECTRONICS_CATEGORIES, GOOGLE_REVIEWS_MOCK } from '@/data
 import { SOUTH_DELHI_LOCALITIES } from '@/data/locations';
 import { getActiveProducts } from '@/lib/products';
 import { ProductCard } from '@/components/ui/ProductCard';
+import { ReviewsMarquee } from '@/components/home/ReviewsMarquee';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata = {
-  title: 'Electronics Store Vasant Kunj | Best Price Electronics Showroom South Delhi',
+  title: 'Electronics Store Vasant Kunj | Best Price Electronics Showroom | Sharma Bazaar',
   description:
-    'Premier electronics store in Vasant Kunj & South Delhi showroom. Beat Amazon & Flipkart prices on Sony 4K TVs, Daikin ACs, Samsung refrigerators & Bosch washers at Masoodpur Dairy showroom.',
+    'Premier electronics store in Vasant Kunj & South Delhi showroom. Beat Amazon & Flipkart prices on Sony 4K TVs, Daikin ACs, Samsung refrigerators & Bosch washers at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj showroom.',
   keywords: [
     'electronics store vasant kunj',
     'electronics showroom vasant kunj',
@@ -76,15 +77,15 @@ export default async function HomePage() {
   const homeFaqs = [
     {
       q: 'Where is the best electronics store in Vasant Kunj, South Delhi?',
-      a: 'Sharma Bazaar is located at 80-B, Masoodpur Dairy, Main Road, Vasant Kunj, New Delhi - 110070 (opposite Masoodpur flyover). Established in 2019, we are an authorized multi-brand electronics showroom for Sony, Samsung, LG, Daikin, Bosch, IFB, and Voltas with live demonstration units and direct distributor pricing.',
+      a: 'Sharma Bazaar is located at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj, New Delhi, Delhi 110070 (opposite Masoodpur flyover). Established in 2019, we are an authorized multi-brand electronics showroom for Sony, Samsung, LG, Daikin, Bosch, IFB, and Voltas with live demonstration units and direct distributor pricing.',
     },
     {
       q: 'Can I buy electronics cheaper than Amazon and Flipkart in Delhi?',
-      a: 'Yes. Sharma Bazaar offers genuine price matching and beats Amazon and Flipkart prices by ₹1,000 to ₹2,000 on selected 4K smart TVs, inverter split ACs, frost-free refrigerators, and washing machines, complete with original brand GST tax invoices and authorized manufacturer warranties.',
+      a: 'Yes. Sharma Bazaar offers highly competitive showroom counter-quotes, allowing customers to save up to ₹1,000 to ₹5,000 on selected 4K smart TVs, inverter split ACs, frost-free refrigerators, and washing machines compared to online portals, complete with original brand GST tax invoices and manufacturer warranties.',
     },
     {
       q: 'How can I reach Sharma Bazaar from Vasant Kunj Metro or Nelson Mandela Marg?',
-      a: 'Our showroom is situated on the main road at Masoodpur Dairy, just 8 to 12 minutes from Chattarpur Metro Station (Yellow Line), Delhi Aerocity Metro (Airport Express), and Vasant Vihar Metro (Magenta Line), directly accessible via Nelson Mandela Marg.',
+      a: 'Our showroom is situated at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj, just 8 to 12 minutes from Chattarpur Metro Station (Yellow Line), Delhi Aerocity Metro (Airport Express), and Vasant Vihar Metro (Magenta Line), directly accessible via Nelson Mandela Marg.',
     },
     {
       q: 'Which air conditioner brands and tonnages are available for same-day delivery?',
@@ -109,7 +110,7 @@ export default async function HomePage() {
       'Sharma Bazaar Electronics',
       'Sharma Electronics Vasant Kunj',
     ],
-    image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://www.sharmabazaar.com/images/showroom/sharma-bazaar-showroom-interior.jpg',
     telephone: SITE_CONFIG.phone,
     address: {
       '@type': 'PostalAddress',
@@ -125,6 +126,10 @@ export default async function HomePage() {
       longitude: SITE_CONFIG.coordinates.longitude,
     },
     hasMap: SITE_CONFIG.googleMapsDirectionsUrl,
+    sameAs: [
+      SITE_CONFIG.googleMapsDirectionsUrl,
+      'https://share.google/YEQYNtCiA110LNgOs',
+    ],
     url: 'https://www.sharmabazaar.com',
     openingHoursSpecification: [
       {
@@ -142,30 +147,14 @@ export default async function HomePage() {
         closes: '21:00',
       },
     ],
-    priceRange: '₹₹₹',
+    priceRange: '₹₹',
     currenciesAccepted: 'INR',
     paymentAccepted: 'Cash, Credit Card, Debit Card, UPI',
-    areaServed: [
-      'Vasant Kunj',
-      'Masoodpur Dairy',
-      'Mahipalpur',
-      'Dwarka',
-      'Munirka',
-      'Mehrauli',
-      'Saket',
-      'RK Puram',
-      'Vasant Vihar',
-      'Kishangarh',
-      'Nelson Mandela Marg',
-      'Chattarpur',
-      'Hauz Khas',
-      'Green Park',
-      'Safdarjung Enclave',
-      'Greater Kailash',
-      'Defence Colony',
-      'Lajpat Nagar',
-      'South Delhi',
-    ],
+    areaServed: SOUTH_DELHI_LOCALITIES.map((loc) => ({
+      '@type': 'AdministrativeArea',
+      name: loc.name,
+      postalCode: loc.pincodes.join(', '),
+    })),
     makesOffer: [
       {
         '@type': 'Offer',
@@ -246,7 +235,7 @@ export default async function HomePage() {
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 border border-neutral-200 px-2.5 py-1 rounded-sm">
-                  Electronics Store Vasant Kunj · Masoodpur Dairy
+                  Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj
                 </span>
                 <span className="text-xs font-mono text-neutral-400">
                   Est. 2019
@@ -265,7 +254,7 @@ export default async function HomePage() {
               </h1>
 
               <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl font-normal">
-                Welcome to Sharma Bazaar, your premier consumer electronics showroom and home appliances store in Vasant Kunj, South Delhi. Located at Masoodpur Dairy (near Vasant Kunj Metro), we offer wholesale showroom prices on 4K Smart TVs, Inverter Air Conditioners, Frost-Free Refrigerators, and Washing Machines. Compare online prices with us before you buy.
+                Welcome to Sharma Bazaar, your premier consumer electronics showroom and home appliances store in Vasant Kunj, South Delhi. Located at Dairy Farm, 80-B, Masoodpur, G/F (near Vasant Kunj Metro), we offer wholesale showroom prices on 4K Smart TVs, Inverter Air Conditioners, Frost-Free Refrigerators, and Washing Machines. Compare online prices with us before you buy.
               </p>
 
               {/* Action Buttons */}
@@ -312,8 +301,8 @@ export default async function HomePage() {
                 <div className="relative aspect-[4/3] bg-white border border-neutral-200/80 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
-                    alt="Premium 4K Smart TV display at Sharma Bazaar showroom Vasant Kunj"
+                    src="/images/showroom/sharma-bazaar-showroom-interior.jpg"
+                    alt="Sharma Bazaar electronics and home appliance showroom at Dairy Farm Masoodpur Vasant Kunj"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -342,15 +331,15 @@ export default async function HomePage() {
                 WHY PAY MORE ONLINE?
               </h2>
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                Compare prices with us before purchasing. Selected electronics products can be{' '}
-                <span className="text-white font-bold underline decoration-neutral-500">₹1,000–₹2,000 cheaper</span> than major online portals,
+                Compare prices with us before purchasing. Selected electronics products can save you{' '}
+                <span className="text-white font-bold underline decoration-neutral-500">₹1,000–₹5,000</span> compared to major online portals,
                 backed by verified brand warranty, doorstep white-glove delivery, and genuine store ownership.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 text-xs font-mono">
                 <div className="p-3 bg-white/5 border border-white/10 rounded-sm">
                   <p className="text-neutral-400 text-[10px]">SAVINGS</p>
-                  <p className="text-base font-bold text-white mt-0.5">₹1k–₹2k</p>
+                  <p className="text-base font-bold text-white mt-0.5">₹1k–₹5k</p>
                 </div>
                 <div className="p-3 bg-white/5 border border-white/10 rounded-sm">
                   <p className="text-neutral-400 text-[10px]">ASSISTANCE</p>
@@ -493,11 +482,11 @@ export default async function HomePage() {
                 Physical Retail Infrastructure
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-brand-navy">
-                A Real Showroom Experience. Masoodpur Dairy, Vasant Kunj.
+                A Real Showroom Experience. Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj.
               </h2>
               <p className="text-sm text-neutral-600 leading-relaxed">
                 Unlike online-only platforms operating without physical stock or local touchpoints, Sharma Bazaar
-                welcomes you to our dedicated consumer electronics showroom in Masoodpur Dairy, Vasant Kunj.
+                welcomes you to our dedicated consumer electronics showroom at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj.
               </p>
               <p className="text-sm text-neutral-600 leading-relaxed">
                 Families, seniors, and homeowners can walk in and inspect active television panels,
@@ -523,13 +512,13 @@ export default async function HomePage() {
                 <div className="aspect-[4/3] bg-neutral-100 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
-                    alt="Sharma Bazaar Showroom at Masoodpur Dairy Vasant Kunj"
+                    src="/images/showroom/sharma-bazaar-showroom-interior.jpg"
+                    alt="Sharma Bazaar Showroom interior display at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="mt-3 flex items-center justify-between text-xs font-mono text-neutral-500">
-                  <span>Masoodpur Dairy, Vasant Kunj</span>
+                  <span>Dairy Farm, 80-B, Masoodpur, G/F</span>
                   <span>Open Daily 10 AM – 9 PM</span>
                 </div>
               </div>
@@ -557,7 +546,7 @@ export default async function HomePage() {
               <p className="font-mono text-[11px] text-neutral-400 uppercase">01</p>
               <h3 className="text-base font-bold text-neutral-900">Wholesale Local Pricing</h3>
               <p className="text-xs text-neutral-500 leading-relaxed">
-                Direct regional dealer agreements allow us to offer select models ₹1,000–₹2,000 cheaper than marketplace listings.
+                Direct regional dealer agreements allow customers to save ₹1,000–₹5,000 on select models compared to marketplace listings.
               </p>
             </div>
 
@@ -565,7 +554,7 @@ export default async function HomePage() {
               <p className="font-mono text-[11px] text-neutral-400 uppercase">02</p>
               <h3 className="text-base font-bold text-neutral-900">Spacious Physical Showroom</h3>
               <p className="text-xs text-neutral-500 leading-relaxed">
-                Dedicated retail showroom at Masoodpur Dairy with genuine display models and courteous product specialists.
+                Dedicated retail showroom at Dairy Farm, 80-B, Masoodpur, G/F with genuine display models and courteous product specialists.
               </p>
             </div>
 
@@ -605,54 +594,11 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 7: REVIEWS & COMMUNITY TESTIMONIALS
+          SECTION 7: REVIEWS & COMMUNITY TESTIMONIALS (AUTO-SLIDING MARQUEE)
       ==================================================== */}
-      <section className="py-20 bg-neutral-50/50 border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
-                Verified Feedback
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
-                South Delhi Customer Experiences
-              </h2>
-            </div>
-            <a
-              href={SITE_CONFIG.googleMapsDirectionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-navy hover:underline flex items-center gap-1.5"
-            >
-              <span>Google Business Profile</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {GOOGLE_REVIEWS_MOCK.map((review, i) => (
-              <div
-                key={i}
-                className="p-6 bg-white border border-neutral-200 rounded-sm space-y-4 flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center gap-1 text-amber-500">
-                    {[...Array(review.rating)].map((_, idx) => (
-                      <Star key={idx} className="w-3.5 h-3.5 fill-amber-500" />
-                    ))}
-                  </div>
-                  <p className="text-xs text-neutral-600 leading-relaxed italic">
-                    &ldquo;{review.text}&rdquo;
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-[11px] font-mono text-neutral-400">
-                  <span className="font-bold text-neutral-800 font-sans">{review.author}</span>
-                  <span>{review.date}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section className="py-20 bg-neutral-50/50 border-b border-neutral-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ReviewsMarquee reviews={GOOGLE_REVIEWS_MOCK} />
         </div>
       </section>
 
@@ -670,15 +616,15 @@ export default async function HomePage() {
                 Same-Day Doorstep Delivery Across South Delhi
               </h2>
               <p className="text-xs sm:text-sm text-neutral-600 mt-2 leading-relaxed">
-                Direct dispatch from our Masoodpur Dairy showroom. We carry appliances into your apartment, unbox to inspect seals together, and you pay only after verifying your unit.
+                Direct dispatch from our Dairy Farm, 80-B, Masoodpur, G/F showroom. We carry appliances into your apartment, unbox to inspect seals together, and you pay only after verifying your unit.
               </p>
             </div>
             <Link
               href="/locations"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-navy hover:text-neutral-900 transition-colors shrink-0 group font-mono uppercase tracking-wider"
+              className="px-5 py-3 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2 shadow-subtle shrink-0 font-sans"
             >
-              <span>Explore All 28 Delivery Hubs</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              <span>Explore All 28 Delivery Locations</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
@@ -706,26 +652,7 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Locality Quick Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
-            {SOUTH_DELHI_LOCALITIES.slice(0, 12).map((loc) => (
-              <Link
-                key={loc.slug}
-                href={`/locations/${loc.slug}`}
-                className="p-3.5 bg-white hover:bg-neutral-50 border border-neutral-200 hover:border-brand-navy rounded-sm transition-all text-left block space-y-1 group shadow-subtle"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-brand-navy group-hover:text-neutral-900 block truncate">
-                    {loc.name}
-                  </span>
-                  <ArrowRight className="w-3 h-3 text-neutral-400 group-hover:text-brand-navy group-hover:translate-x-0.5 transition-all" />
-                </div>
-                <span className="text-[10px] font-mono text-emerald-700 block truncate">
-                  {loc.deliveryPill}
-                </span>
-              </Link>
-            ))}
-          </div>
+
         </div>
       </section>
 
@@ -744,7 +671,7 @@ export default async function HomePage() {
                   Visit Our Vasant Kunj Showroom
                 </h2>
                 <p className="text-xs text-neutral-500 mt-2 leading-relaxed">
-                  Located conveniently on the main thoroughfare of Masoodpur Dairy, Vasant Kunj with accessible ground-floor entry and parking.
+                  Located at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj with accessible ground-floor showroom entry and parking.
                 </p>
               </div>
 
@@ -792,17 +719,119 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 border border-neutral-200 bg-neutral-100 rounded-sm overflow-hidden min-h-[380px]">
-              <iframe
-                title="Sharma Bazaar Location in Masoodpur Vasant Kunj"
-                src={SITE_CONFIG.googleMapsEmbedUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: '380px' }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div className="lg:col-span-7 border border-neutral-200 bg-neutral-50 rounded-sm overflow-hidden flex flex-col justify-between p-6 sm:p-8 space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-sm font-semibold">
+                    Open Today: 10:00 AM – 9:00 PM
+                  </span>
+                  <span className="text-xs font-mono text-neutral-400">
+                    Opposite Masoodpur Flyover
+                  </span>
+                </div>
+
+                <div className="relative aspect-[16/9] border border-neutral-200 rounded-sm overflow-hidden bg-neutral-900 group">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/showroom/sharma-bazaar-showroom-interior.jpg"
+                    alt="Sharma Bazaar physical electronics showroom in Dairy Farm Masoodpur Vasant Kunj"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
+                    <p className="text-white text-xs font-sans">
+                      Ground Floor Physical Retail Facility · Dedicated Display Zones for TVs, Refrigerators, ACs &amp; Washing Machines
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-neutral-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-xs">
+                <Link
+                  href="/contact"
+                  className="px-4 py-2.5 bg-neutral-900 hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors text-center"
+                >
+                  View Metro Routes &amp; Map on Contact Page →
+                </Link>
+
+                <a
+                  href={SITE_CONFIG.googleMapsDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-navy hover:underline font-mono text-[11px] font-semibold text-center sm:text-right flex items-center justify-center sm:justify-end gap-1"
+                >
+                  <span>Open Coordinates in Google Maps</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================
+          SECTION 9.5: STORE ENTITY & QUICK FACTS (GEO / Generative Engine Optimization)
+      ==================================================== */}
+      <section className="py-16 bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="max-w-3xl space-y-2">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+              Verified Entity Profile · South Delhi Appliance Directory
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy">
+              Sharma Bazaar at a Glance: Quick Facts & Store Summary
+            </h2>
+            <p className="text-xs sm:text-sm text-neutral-600">
+              Authoritative details on our Vasant Kunj showroom location, authorized brand partnerships, pricing advantage, and South Delhi doorstep delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+            <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1">
+              <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold">Physical Showroom</span>
+              <p className="font-semibold text-brand-navy">Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj</p>
+              <p className="text-neutral-500">New Delhi, Delhi 110070 (Opp. Masoodpur Flyover)</p>
+            </div>
+
+            <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1">
+              <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold">Phone & WhatsApp</span>
+              <p className="font-semibold text-brand-navy">+91 70650 09006</p>
+              <p className="text-neutral-500">Call or WhatsApp for immediate live price quotes</p>
+            </div>
+
+            <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1">
+              <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold">Authorized Brands</span>
+              <p className="font-semibold text-brand-navy">Sony · Samsung · LG · Daikin</p>
+              <p className="text-neutral-500">Voltas · Bosch · IFB · Blue Star</p>
+            </div>
+
+            <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1">
+              <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold">Showroom Savings</span>
+              <p className="font-semibold text-brand-navy">Save ₹1,000–₹5,000</p>
+              <p className="text-neutral-500">On select models vs standard retail prices</p>
+            </div>
+
+            <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1">
+              <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold">Doorstep Delivery</span>
+              <p className="font-semibold text-brand-navy">Same-Day White Glove</p>
+              <p className="text-neutral-500">Room carry-in across all 28 South Delhi localities</p>
+            </div>
+
+            <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1">
+              <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold">Payment & Inspection</span>
+              <p className="font-semibold text-brand-navy">Zero-Risk Pay on Delivery</p>
+              <p className="text-neutral-500">Inspect box seals in your flat before UPI / Cash payment</p>
+            </div>
+
+            <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1">
+              <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold">Operating Hours</span>
+              <p className="font-semibold text-brand-navy">Open Daily: 10 AM – 9 PM</p>
+              <p className="text-neutral-500">Open 7 days a week including Sunday & bank holidays</p>
+            </div>
+
+            <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-1">
+              <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold">Warranty Assurance</span>
+              <p className="font-semibold text-brand-navy">100% Brand Warranty</p>
+              <p className="text-neutral-500">Official manufacturer GST invoice & brand engineer installation</p>
             </div>
           </div>
         </div>

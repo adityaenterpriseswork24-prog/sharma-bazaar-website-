@@ -12,7 +12,7 @@ import { useAuth } from '@/lib/auth-context';
 import { UserAccount, UserRole } from '@/types';
 
 export default function AdminEmployeesPage() {
-  const { isAdmin } = useAuth();
+  const { user, isAdmin } = useAuth();
 
   const [employees, setEmployees] = useState<UserAccount[]>([
     {
@@ -119,7 +119,19 @@ export default function AdminEmployeesPage() {
     setTimeout(() => setNotification(null), 3000);
   };
 
-  const handleDelete = (uid: string, empName: string) => {
+  const handleDelete = (uid: string, empName: string, empEmail: string) => {
+    if (user?.email && empEmail.toLowerCase() === user.email.toLowerCase()) {
+      setNotification({ message: 'You cannot revoke clearance for your own active session.', type: 'error' });
+      setTimeout(() => setNotification(null), 3000);
+      return;
+    }
+    const adminCount = employees.filter((e) => e.role === 'admin').length;
+    const target = employees.find((e) => e.uid === uid);
+    if (target?.role === 'admin' && adminCount <= 1) {
+      setNotification({ message: 'At least one executive administrator must remain in the system.', type: 'error' });
+      setTimeout(() => setNotification(null), 3000);
+      return;
+    }
     if (confirm(`Revoke staff account for ${empName}?`)) {
       saveEmployees(employees.filter((e) => e.uid !== uid));
       setNotification({ message: `Access revoked for ${empName}.`, type: 'success' });
@@ -247,9 +259,10 @@ export default function AdminEmployeesPage() {
                   </td>
                   <td className="py-3.5 px-4 text-right">
                     <button
-                      onClick={() => handleDelete(emp.uid, emp.name)}
-                      className="p-1.5 text-neutral-400 hover:text-rose-600 transition-colors rounded-sm hover:bg-rose-50"
-                      title="Revoke clearance"
+                      onClick={() => handleDelete(emp.uid, emp.name, emp.email)}
+                      disabled={user?.email?.toLowerCase() === emp.email.toLowerCase()}
+                      className="p-1.5 text-neutral-400 hover:text-rose-600 disabled:opacity-30 disabled:hover:text-neutral-400 transition-colors rounded-sm hover:bg-rose-50"
+                      title={user?.email?.toLowerCase() === emp.email.toLowerCase() ? 'Current active session' : 'Revoke clearance'}
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>

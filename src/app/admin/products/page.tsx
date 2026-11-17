@@ -23,7 +23,33 @@ export default function AdminProductsPage() {
   const [category, setCategory] = useState('all');
   const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
+  const [loading, setLoading] = useState(true);
+
+  const loadProducts = async () => {
+    try {
+      const res = await fetch('/api/products');
+      const data = await res.json();
+      if (data?.products && Array.isArray(data.products)) {
+        setProducts(data.products);
+        localStorage.setItem('sharma_admin_products', JSON.stringify(data.products));
+      }
+    } catch (err) {
+      console.warn('API error, falling back to local storage cache:', err);
+      const cached = localStorage.getItem('sharma_admin_products');
+      if (cached) {
+        try {
+          setProducts(JSON.parse(cached));
+        } catch {
+          // ignore
+        }
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
+    // Populate immediately with cache if present to avoid blank screen
     const cached = localStorage.getItem('sharma_admin_products');
     if (cached) {
       try {
@@ -31,77 +57,105 @@ export default function AdminProductsPage() {
       } catch {
         // ignore
       }
-    } else {
-      fetch('/api/products')
-        .then((res) => res.json())
-        .then((data) => {
-          if (data?.products && Array.isArray(data.products)) {
-            setProducts(data.products);
-          }
-        })
-        .catch(() => {});
     }
+    // Fetch authoritative data from server
+    loadProducts();
   }, []);
 
-  const saveProducts = (updated: Product[]) => {
-    setProducts(updated);
-    localStorage.setItem('sharma_admin_products', JSON.stringify(updated));
-  };
+  const handleToggleActive = async (id: string) => {
+    const target = products.find((p) => p.id === id);
+    if (!target) return;
 
-  const handleToggleActive = (id: string) => {
-    let changedProduct: Product | undefined;
-    const updated = products.map((p) => {
-      if (p.id === id) {
-        changedProduct = { ...p, isActive: !p.isActive, updatedAt: new Date().toISOString() };
-        return changedProduct;
+    const updatedProduct = {
+      ...target,
+      isActive: !target.isActive,
+      updatedAt: new Date().toISOString(),
+    };
+
+    // Optimistic UI update
+    const previousList = [...products];
+    const updatedList = products.map((p) => (p.id === id ? updatedProduct : p));
+    setProducts(updatedList);
+    localStorage.setItem('sharma_admin_products', JSON.stringify(updatedList));
+
+    try {
+      const res = await fetch('/api/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedProduct),
+      });
+
+      if (!res.ok) {
+        throw new Error('Server update failed');
       }
-      return p;
-    });
-    saveProducts(updated);
-    if (changedProduct) {
-      try {
-        fetch('/api/products', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(changedProduct),
-        }).catch((e) => console.warn('API sync notice:', e));
-      } catch {
-        // ignore
-      }
+
+      setNotification({
+        message: `"${target.name}" is now ${updatedProduct.isActive ? 'live on display' : 'hidden from public view'}.`,
+        type: 'success',
+      });
+    } catch {
+      // Rollback
+      setProducts(previousList);
+      localStorage.setItem('sharma_admin_products', JSON.stringify(previousList));
+      setNotification({ message: 'Failed to update visibility on server.', type: 'error' });
     }
-    setNotification({ message: 'Product visibility status updated successfully.', type: 'success' });
+
     setTimeout(() => setNotification(null), 3000);
   };
 
-  const handleDelete = (id: string, name: string) => {
-    if (confirm(`Are you sure you want to delete "${name}" from the catalogue?`)) {
-      const updated = products.filter((p) => p.id !== id);
-      saveProducts(updated);
-      try {
-        fetch(`/api/products?id=${encodeURIComponent(id)}`, {
-          method: 'DELETE',
-        }).catch((e) => console.warn('API sync notice:', e));
-      } catch {
-        // ignore
-      }
-      setNotification({ message: `"${name}" removed from inventory.`, type: 'success' });
-      setTimeout(() => setNotification(null), 3000);
+  const handleDelete = async (id: string, name: string) => {
+    if (!confirm(`Are you sure you want to delete "${name}" from the catalogue?`)) {
+      return;
     }
+
+    const previousList = [...products];
+    const updatedList = products.filter((p) => p.id !== id);
+    setProducts(updatedList);
+    localStorage.setItem('sharma_admin_products', JSON.stringify(updatedList));
+
+    try {
+      const res = await fetch(`/api/products?id=${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+      });
+
+      if (!res.ok) {
+        throw new Error('Server delete failed');
+      }
+
+      setNotification({ message: `"${name}" removed from catalogue.`, type: 'success' });
+    } catch {
+      // Rollback
+      setProducts(previousList);
+      localStorage.setItem('sharma_admin_products', JSON.stringify(previousList));
+      setNotification({ message: 'Failed to delete product from server.', type: 'error' });
+    }
+
+    setTimeout(() => setNotification(null), 3000);
   };
 
-  const handleResetToDefaults = () => {
-    if (confirm('Reset catalogue back to initial verified showroom models?')) {
-      saveProducts(INITIAL_PRODUCTS);
-      try {
-        fetch('/api/products', {
-          method: 'PUT',
-        }).catch((e) => console.warn('API sync notice:', e));
-      } catch {
-        // ignore
-      }
-      setNotification({ message: 'Catalogue reset to default showroom items.', type: 'success' });
-      setTimeout(() => setNotification(null), 3000);
+  const handleResetToDefaults = async () => {
+    if (!confirm('Reset catalogue back to initial verified showroom models? This will restore default items.')) {
+      return;
     }
+
+    try {
+      const res = await fetch('/api/products', {
+        method: 'PUT',
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Reset failed');
+      }
+
+      await loadProducts();
+      setNotification({ message: 'Catalogue reset to default showroom items.', type: 'success' });
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Only administrators can reset the catalogue.';
+      setNotification({ message: msg, type: 'error' });
+    }
+
+    setTimeout(() => setNotification(null), 3500);
   };
 
   const filtered = products.filter((p) => {

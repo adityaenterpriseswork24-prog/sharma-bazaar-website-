@@ -15,7 +15,7 @@ import { buildWhatsAppUrl } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'About Sharma Bazaar | Leading Electronics Dealer Vasant Kunj, South Delhi',
   description:
-    'Established in 2019 at Masoodpur Dairy, Sharma Bazaar is South Delhi\'s trusted consumer electronics dealer & showroom serving Vasant Kunj, Munirka, Mehrauli, Saket & Dwarka.',
+    'Established in 2019 at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj, Sharma Bazaar is South Delhi\'s trusted consumer electronics dealer & showroom serving Vasant Kunj, Munirka, Mehrauli, Saket & Dwarka.',
   keywords: [
     'electronics showroom vasant kunj',
     'electronics dealer vasant kunj',
@@ -52,7 +52,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
-            Established in 2019 in Masoodpur Dairy, Vasant Kunj, Sharma Bazaar has grown into one of South Delhi&apos;s most dependable physical retail destinations. Operating from our owned commercial showroom property, we bring leading global electronics brands closer to you with competitive showroom prices and personal service.
+            Established in 2019 at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj, Sharma Bazaar has grown into one of South Delhi&apos;s most dependable physical retail destinations. Operating from our owned commercial showroom property, we bring leading global electronics brands closer to you with competitive showroom prices and personal service.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <p className="text-neutral-400 text-[10px]">01 · FACILITY</p>
             <h3 className="text-base font-bold text-brand-navy font-sans">Physical Showroom</h3>
             <p className="text-neutral-600 font-sans text-xs leading-relaxed">
-              Dedicated retail showroom space in Masoodpur Dairy, providing spacious display zones for televisions, refrigeration, air conditioning, and laundry care.
+              Dedicated retail showroom space at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj, providing spacious display zones for televisions, refrigeration, air conditioning, and washing machines.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <p className="text-neutral-400 text-[10px]">03 · ADVANTAGE</p>
             <h3 className="text-base font-bold text-brand-navy font-sans">Direct Dealer Pricing</h3>
             <p className="text-neutral-600 font-sans text-xs leading-relaxed">
-              Direct regional distributor agreements mean select models are ₹1,000–₹2,000 cheaper than Amazon and Flipkart, with authentic GST bills and manufacturer warranty.
+              Direct regional distributor agreements mean select models offer ₹1,000–₹5,000 in savings compared to major online portals, with authentic GST bills and manufacturer warranty.
             </p>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               Direct Regional Distributor Networks. Zero Platform Intermediaries.
             </h2>
             <p>
-              Since 2019, our philosophy at Masoodpur Dairy has been straightforward: deliver the authentic physical buying experience that homeowners deserve, free from the bloated overheads and commission surcharges of shopping mall retailers.
+              Since 2019, our philosophy at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj has been straightforward: deliver the authentic physical buying experience that homeowners deserve, free from the bloated overheads and commission surcharges of shopping mall retailers.
             </p>
             <p>
               We established direct procurement relationships with authorized regional distributors of Sony, Samsung, LG, Daikin, Bosch, IFB, and Voltas. When you speak with us, you receive honest recommendations tailored to Delhi&apos;s climate, room dimensions, and water conditions.
@@ -107,13 +107,13 @@ export default function AboutPage() {
             <div className="aspect-[4/3] bg-white overflow-hidden border border-neutral-200">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1000&q=80"
-                alt="Sharma Bazaar showroom facility in Vasant Kunj"
+                src="/images/showroom/sharma-bazaar-showroom-interior.jpg"
+                alt="Sharma Bazaar physical showroom facility at Dairy Farm Masoodpur Vasant Kunj South Delhi"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="mt-3 flex items-center justify-between text-xs font-mono text-neutral-500">
-              <span>Masoodpur Dairy, Vasant Kunj</span>
+              <span>Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj</span>
               <span>Serving South Delhi Since 2019</span>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
             Experience Our Showroom in Person
           </h2>
           <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto">
-            Walk into our showroom at Masoodpur Dairy, Vasant Kunj or message us on WhatsApp for price comparisons.
+            Walk into our showroom at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj or message us on WhatsApp for price comparisons.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">

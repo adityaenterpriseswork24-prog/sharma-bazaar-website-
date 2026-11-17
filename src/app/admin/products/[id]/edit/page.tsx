@@ -17,24 +17,32 @@ export default function EditProductPage() {
   useEffect(() => {
     if (!productId) return;
 
-    const stored = localStorage.getItem('sharma_admin_products');
-    const allProducts: Product[] = stored ? JSON.parse(stored) : [...INITIAL_PRODUCTS];
-    const match = allProducts.find((p) => p.id === productId || p.slug === productId);
-
-    if (match) {
-      setProduct(match);
-      setLoaded(true);
-    } else {
-      fetch(`/api/products?id=${encodeURIComponent(productId)}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data?.product) {
-            setProduct(data.product);
-          }
-          setLoaded(true);
-        })
-        .catch(() => setLoaded(true));
+    // Check cache first for immediate preview
+    try {
+      const stored = localStorage.getItem('sharma_admin_products');
+      if (stored) {
+        const allProducts: Product[] = JSON.parse(stored);
+        const match = allProducts.find((p) => p.id === productId || p.slug === productId);
+        if (match) {
+          setProduct(match);
+        }
+      }
+    } catch {
+      // ignore
     }
+
+    // Always fetch fresh authoritative record from server
+    fetch(`/api/products?id=${encodeURIComponent(productId)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.product) {
+          setProduct(data.product);
+        }
+        setLoaded(true);
+      })
+      .catch(() => {
+        setLoaded(true);
+      });
   }, [productId]);
 
   if (!loaded) {
