@@ -235,14 +235,14 @@ export default function RootLayout({
         {/* Google Tag Manager (noscript fallback) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MC2JN35T"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MSC3WWB3"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
 
-        {/* Google Tag Manager (GTM-MC2JN35T) & dataLayer Initialization */}
+        {/* Google Tag Manager (GTM-MSC3WWB3) & dataLayer Initialization */}
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
@@ -255,7 +255,7 @@ export default function RootLayout({
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-MC2JN35T');
+              })(window,document,'script','dataLayer','GTM-MSC3WWB3');
             `,
           }}
         />
