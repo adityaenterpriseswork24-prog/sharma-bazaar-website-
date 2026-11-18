@@ -36,8 +36,8 @@ function getStoredOrInitialProducts(): Product[] {
 export async function getActiveProducts(options: ProductFilterOptions = {}): Promise<Product[]> {
   let products: Product[] = getStoredOrInitialProducts();
 
-  // If Firebase is configured on client/server, attempt fetching from Firestore
-  if (isFirebaseConfigured && db) {
+  // If running in browser and Firebase is configured, attempt fetching from Firestore
+  if (typeof window !== 'undefined' && isFirebaseConfigured && db) {
     try {
       const productsRef = collection(db, 'products');
       const q = query(productsRef, where('isActive', '==', true));

@@ -20,6 +20,8 @@ import { Product, ProductCategory, AvailabilityStatus } from '@/types';
 import { ELECTRONICS_CATEGORIES } from '@/data/site-config';
 import { INITIAL_PRODUCTS } from '@/data/initial-products';
 import { formatINR, calculateSavings } from '@/lib/utils';
+import { db, isFirebaseConfigured } from '@/lib/firebase/client';
+import { doc, setDoc } from 'firebase/firestore';
 
 interface ProductFormProps {
   initialProduct?: Product;
@@ -294,6 +296,16 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
         }
       } catch (serverErr) {
         console.warn('Server sync offline note:', serverErr);
+      }
+
+      // 4. Save directly to Google Cloud Firestore (Permanent Cloud Sync)
+      if (isFirebaseConfigured && db) {
+        try {
+          await setDoc(doc(db, 'products', productPayload.id), productPayload);
+          console.log('Product synchronized with Google Cloud Firestore!');
+        } catch (fsErr) {
+          console.warn('Firestore write warning:', fsErr);
+        }
       }
 
       setNotification({

@@ -17,6 +17,8 @@ import { Product } from '@/types';
 import { INITIAL_PRODUCTS } from '@/data/initial-products';
 import { ELECTRONICS_CATEGORIES } from '@/data/site-config';
 import { formatINR, calculateSavings } from '@/lib/utils';
+import { db, isFirebaseConfigured } from '@/lib/firebase/client';
+import { collection, getDocs, doc, setDoc, deleteDoc } from 'firebase/firestore';
 
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
@@ -56,7 +58,24 @@ export default function AdminProductsPage() {
         // ignore
       }
 
-      // 2. Fetch server catalogue and intelligently merge
+      // 2. If Google Cloud Firestore is configured, load live cloud catalogue
+      if (isFirebaseConfigured && db) {
+        try {
+          const snap = await getDocs(collection(db, 'products'));
+          if (!snap.empty) {
+            const fsProducts: Product[] = [];
+            snap.forEach((d) => fsProducts.push({ id: d.id, ...(d.data() as Omit<Product, 'id'>) }));
+            setProducts(fsProducts);
+            localStorage.setItem('sharma_admin_products', JSON.stringify(fsProducts));
+            setLoading(false);
+            return;
+          }
+        } catch (e) {
+          console.warn('Firestore load note:', e);
+        }
+      }
+
+      // 3. Fallback: Fetch server catalogue and intelligently merge
       const res = await fetch('/api/products');
       const data = await res.json();
       if (data?.products && Array.isArray(data.products)) {
@@ -110,6 +129,15 @@ export default function AdminProductsPage() {
       type: 'success',
     });
 
+    // Cloud Firestore Sync
+    if (isFirebaseConfigured && db) {
+      try {
+        await setDoc(doc(db, 'products', id), updatedProduct);
+      } catch (e) {
+        console.warn('Firestore toggle note:', e);
+      }
+    }
+
     try {
       await fetch('/api/products', {
         method: 'POST',
@@ -136,6 +164,15 @@ export default function AdminProductsPage() {
     } catch {}
 
     setNotification({ message: `"${name}" removed from catalogue.`, type: 'success' });
+
+    // Cloud Firestore Delete
+    if (isFirebaseConfigured && db) {
+      try {
+        await deleteDoc(doc(db, 'products', id));
+      } catch (e) {
+        console.warn('Firestore delete note:', e);
+      }
+    }
 
     try {
       await fetch(`/api/products?id=${encodeURIComponent(id)}`, {
