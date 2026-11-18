@@ -242,7 +242,13 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* Google Tag Manager (GTM-MSC3WWB3) & dataLayer Initialization */}
+        {/* Google Analytics 4 (GA4: G-G6Y7V9MJZV) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-G6Y7V9MJZV"
+        />
+
+        {/* Google Tag Manager (GTM-MSC3WWB3) & GA4 Initialization */}
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
@@ -251,6 +257,9 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
+              gtag('config', 'G-G6Y7V9MJZV', {
+                page_path: window.location.pathname,
+              });
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
