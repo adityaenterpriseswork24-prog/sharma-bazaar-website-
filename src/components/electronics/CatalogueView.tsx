@@ -37,9 +37,23 @@ export function CatalogueView({
   }, [initialSearch]);
 
   useEffect(() => {
-    if (initialProducts && initialProducts.length > 0) {
-      setProducts(initialProducts);
+    let combined = initialProducts;
+    try {
+      const stored = localStorage.getItem('sharma_admin_products');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          const serverIds = new Set(initialProducts.map((p) => p.id));
+          const localOnly = parsed.filter((p: Product) => !serverIds.has(p.id));
+          const localMap = new Map(parsed.map((p: Product) => [p.id, p]));
+          const mergedServer = initialProducts.map((sp) => localMap.get(sp.id) || sp);
+          combined = [...localOnly, ...mergedServer];
+        }
+      }
+    } catch {
+      // ignore
     }
+    setProducts(combined);
   }, [initialProducts]);
 
   const availableBrands = useMemo(() => {

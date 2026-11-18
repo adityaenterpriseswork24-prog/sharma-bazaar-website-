@@ -18,6 +18,7 @@ export default function EditProductPage() {
     if (!productId) return;
 
     // Check cache first for immediate preview
+    let foundLocally = false;
     try {
       const stored = localStorage.getItem('sharma_admin_products');
       if (stored) {
@@ -25,13 +26,15 @@ export default function EditProductPage() {
         const match = allProducts.find((p) => p.id === productId || p.slug === productId);
         if (match) {
           setProduct(match);
+          setLoaded(true);
+          foundLocally = true;
         }
       }
     } catch {
       // ignore
     }
 
-    // Always fetch fresh authoritative record from server
+    // Also attempt to fetch fresh record from server
     fetch(`/api/products?id=${encodeURIComponent(productId)}`)
       .then((res) => res.json())
       .then((data) => {

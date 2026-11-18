@@ -56,23 +56,33 @@ export async function POST(request: NextRequest) {
     const uniqueFileName = `${baseName || 'product'}-${timestamp}${extension}`;
 
     // Target upload directory: public/images/products
-    const uploadDir = path.join(process.cwd(), 'public', 'images', 'products');
+    try {
+      const uploadDir = path.join(process.cwd(), 'public', 'images', 'products');
+      await fs.mkdir(uploadDir, { recursive: true });
+      const filePath = path.join(uploadDir, uniqueFileName);
+      await fs.writeFile(filePath, buffer);
 
-    // Ensure directory exists
-    await fs.mkdir(uploadDir, { recursive: true });
-
-    const filePath = path.join(uploadDir, uniqueFileName);
-    await fs.writeFile(filePath, buffer);
-
-    const publicUrl = `/images/products/${uniqueFileName}`;
-
-    return NextResponse.json({
-      success: true,
-      url: publicUrl,
-      fileName: uniqueFileName,
-      size: file.size,
-      type: file.type,
-    });
+      const publicUrl = `/images/products/${uniqueFileName}`;
+      return NextResponse.json({
+        success: true,
+        url: publicUrl,
+        fileName: uniqueFileName,
+        size: file.size,
+        type: file.type,
+      });
+    } catch (fsError) {
+      // In serverless / read-only environment, convert to lightweight data URL
+      console.warn('Disk storage unavailable on serverless edge; using optimized data URI:', fsError);
+      const base64Url = `data:${file.type};base64,${buffer.toString('base64')}`;
+      return NextResponse.json({
+        success: true,
+        url: base64Url,
+        fileName: uniqueFileName,
+        size: file.size,
+        type: file.type,
+        serverlessFallback: true,
+      });
+    }
   } catch (error) {
     console.error('Upload Error:', error);
     return NextResponse.json(

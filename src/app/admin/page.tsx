@@ -23,22 +23,37 @@ export default function AdminDashboardPage() {
 
   useEffect(() => {
     // Populate with cached data first for instant view
+    let localList: Product[] = [];
     try {
       const cached = localStorage.getItem('sharma_admin_products');
       if (cached) {
-        setProducts(JSON.parse(cached));
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          localList = parsed;
+          setProducts(parsed);
+        }
       }
     } catch {
       // ignore
     }
 
-    // Fetch fresh stats from server
+    // Fetch fresh stats from server and merge intelligently
     fetch('/api/products')
       .then((res) => res.json())
       .then((data) => {
         if (data?.products && Array.isArray(data.products)) {
-          setProducts(data.products);
-          localStorage.setItem('sharma_admin_products', JSON.stringify(data.products));
+          if (localList.length === 0) {
+            setProducts(data.products);
+            localStorage.setItem('sharma_admin_products', JSON.stringify(data.products));
+          } else {
+            const serverIds = new Set(data.products.map((p: Product) => p.id));
+            const localOnly = localList.filter((p: Product) => !serverIds.has(p.id));
+            const localMap = new Map(localList.map((p) => [p.id, p]));
+            const mergedServer = data.products.map((sp: Product) => localMap.get(sp.id) || sp);
+            const finalMerged = [...localOnly, ...mergedServer];
+            setProducts(finalMerged);
+            localStorage.setItem('sharma_admin_products', JSON.stringify(finalMerged));
+          }
         }
       })
       .catch((err) => console.warn('Could not refresh dashboard stats from server:', err));
