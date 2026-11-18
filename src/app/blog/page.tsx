@@ -9,7 +9,7 @@ import { BlogFilterView } from '@/components/blog/BlogFilterView';
 export const metadata: Metadata = {
   title: 'Electronics Buying Guides & Showroom Advice | Sharma Bazaar',
   description:
-    'Expert consumer electronics advice for Delhi homeowners. AC tonnage calculation, TV OLED vs QLED comparisons, washing machine hard water protection, and smart shopping tips.',
+    'Expert electronics buying guides for Delhi homes: 55-inch TV prices, AC tonnage calculators, washing machine hard water tips & beating online prices.',
   alternates: {
     canonical: 'https://www.sharmabazaar.com/blog',
   },

@@ -4,9 +4,9 @@ import { CatalogueView } from '@/components/electronics/CatalogueView';
 import { SITE_CONFIG } from '@/data/site-config';
 
 export const metadata: Metadata = {
-  title: 'Buy Electronics Vasant Kunj | TVs, ACs, Refrigerators & Washers | Sharma Bazaar',
+  title: 'Buy Electronics in Vasant Kunj | Sharma Bazaar Showroom',
   description:
-    'Shop 4K Smart TVs, Split Inverter ACs, Frost-Free Refrigerators, Washing Machines & Microwaves at our Vasant Kunj showroom. Beat Amazon & Flipkart prices with local brand warranty and same-day delivery.',
+    'Shop 4K TVs, ACs, Refrigerators & Washers in Vasant Kunj. Beat online prices with brand warranty, GST invoice & same-day delivery across South Delhi.',
   keywords: [
     'tv showroom near me',
     'electronics showroom near me',

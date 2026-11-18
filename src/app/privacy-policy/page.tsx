@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/data/site-config';
 export const metadata: Metadata = {
   title: 'Privacy Policy | Sharma Bazaar Vasant Kunj Showroom',
   description:
-    'Privacy Policy for Sharma Bazaar consumer electronics showroom in Vasant Kunj, South Delhi. Learn how we handle customer inquiries, WhatsApp communications, and essential session data.',
+    'Privacy Policy for Sharma Bazaar electronics showroom in Vasant Kunj. Learn how we protect customer data, WhatsApp inquiries and essential session logs.',
   alternates: {
     canonical: 'https://www.sharmabazaar.com/privacy-policy',
   },

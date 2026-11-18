@@ -35,11 +35,16 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
   const { savingsAmount, hasSavings } = calculateSavings(product.mrpPrice, product.ourPrice);
   const formattedPrice = formatINR(product.ourPrice);
 
+  // Keep title tight (< 60 chars) so Google never truncates in SERPs
+  const shortBrandModel = `${product.brand} ${product.modelNumber || product.subcategory}`;
+  const pageTitle = `${shortBrandModel} Price Vasant Kunj | Sharma Bazaar`;
+  const metaDescription = `Buy ${product.brand} ${product.modelNumber} at Sharma Bazaar Vasant Kunj for ${formattedPrice}${
+    hasSavings ? ` (Save ${formatINR(savingsAmount)})` : ''
+  }. Authorized brand warranty & same-day South Delhi doorstep delivery.`;
+
   return {
-    title: `${product.name} Price in Vasant Kunj | Sharma Bazaar`,
-    description: `Buy ${product.name} (Model: ${product.modelNumber}) at Sharma Bazaar Vasant Kunj. Listed at ${formattedPrice}${
-      hasSavings ? ` (Save ${formatINR(savingsAmount)} vs MRP)` : ''
-    }. Cheaper than online rates with authorized brand warranty & same-day South Delhi delivery.`,
+    title: pageTitle.length <= 65 ? pageTitle : `${product.brand} ${product.category} Price | Sharma Bazaar`,
+    description: metaDescription.length <= 160 ? metaDescription : metaDescription.substring(0, 155) + '...',
     alternates: {
       canonical: `https://www.sharmabazaar.com/electronics/${product.slug}`,
     },
@@ -48,7 +53,7 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
       description: `Best showroom price on ${product.brand} ${product.category}. Visit Sharma Bazaar at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj or message us on WhatsApp.`,
       images: [
         {
-          url: product.imageUrl,
+          url: product.imageUrl.startsWith('http') ? product.imageUrl : `https://www.sharmabazaar.com${product.imageUrl}`,
           width: 800,
           height: 600,
           alt: `${product.name} - Electronics Showroom Vasant Kunj`,
@@ -88,12 +93,15 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   const whatsappUrl = buildWhatsAppUrl(SITE_CONFIG.whatsapp, whatsappMessage);
 
   const images = product.gallery && product.gallery.length > 0 ? product.gallery : [product.imageUrl];
+  const absoluteImages = images.map((img) =>
+    img.startsWith('http') ? img : `https://www.sharmabazaar.com${img}`
+  );
 
   const productSchema = {
     '@context': 'https://schema.org/',
     '@type': 'Product',
     name: product.name,
-    image: images,
+    image: absoluteImages,
     description: product.description,
     sku: product.modelNumber,
     mpn: product.modelNumber,

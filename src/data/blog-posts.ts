@@ -29,6 +29,8 @@ export interface BlogPost {
   title: string;
   subtitle: string;
   excerpt: string;
+  metaTitle?: string;
+  metaDescription?: string;
   category: string;
   readTime: string;
   publishedDate: string;
@@ -49,6 +51,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'ac-tonnage-buying-guide-delhi-summer',
     title: 'How to Choose the Right AC Tonnage for Delhi Summers: 1.0 Ton vs 1.5 Ton vs 2.0 Ton (2026 Guide)',
+    metaTitle: 'AC Tonnage Guide for Delhi Summer | Sharma Bazaar',
+    metaDescription:
+      'Pick the right AC tonnage for Delhi 45°C+ heat. Compare 1.0 Ton vs 1.5 Ton vs 2.0 Ton for top-floor heat, power bills & best deals in South Delhi.',
     subtitle: 'Why generic online AC sizing charts fail during Delhi’s 45°C+ summer heat wave. Master room sizing calculations, top-floor sunlight penalties, 3-Star vs 5-Star inverter savings, and installation advice for South Delhi homes.',
     excerpt: 'Undersizing your AC can double your electricity bills in Delhi’s 45°C+ summer heat. A practical guide to room sizing, roof heat radiation, 3-Star vs 5-Star inverter savings, and installation tips for Vasant Kunj and South Delhi homes.',
     category: 'Air Conditioners',
@@ -174,6 +179,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'why-buy-from-local-electronics-showroom-delhi',
     title: 'Why Buying Electronics from a Local Showroom Beats Online Marketplaces in Delhi (2026 Guide)',
+    metaTitle: 'Why Buy Electronics From Local Showroom in Delhi',
+    metaDescription:
+      'Why buying electronics from a Vasant Kunj showroom beats online portals: save ₹1,000–₹5,000, avoid transit damage and get genuine brand warranty in Delhi.',
     subtitle: 'Avoid open-box returns, courier drop-offs at building gates, and counterfeit distributor listings. How purchasing from an authorized local showroom in Vasant Kunj saves up to ₹1,000–₹5,000 while ensuring 100% factory-sealed warranty protection.',
     excerpt: 'From transit damage protection to saving up to ₹1,000–₹5,000 on select counter-quotes. Here is how local dealer procurement and physical showroom inspections protect your electronics investment across South Delhi.',
     category: 'Showroom Tips',
@@ -284,6 +292,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'hard-water-washing-machines-south-delhi',
     title: 'Best Washing Machines for South Delhi Hard Water: Front Load vs Top Load Guide (2026)',
+    metaTitle: 'Best Washing Machine for South Delhi Hard Water (2026)',
+    metaDescription:
+      'Vasant Kunj TDS exceeds 800 ppm. Learn which washing machines with ceramic heaters and built-in water softeners resist scale buildup and protect fabrics.',
     subtitle: 'Groundwater TDS in Vasant Kunj, Mehrauli & Chattarpur frequently exceeds 800–1,200 ppm. Learn how hard water scale destroys heating elements and fabric fibers, and which built-in descaling features protect your washing machine investment.',
     excerpt: 'Groundwater TDS in Vasant Kunj, Mehrauli & Chattarpur frequently exceeds 800 ppm. Which washing machines feature built-in water softeners, ceramic heaters, and hard-water wash programs that protect fabrics and prevent scale buildup?',
     category: 'Washing Machines',
@@ -390,6 +401,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'oled-vs-qled-4k-tv-comparison',
     title: 'OLED vs QLED vs Mini-LED 4K TVs: The Ultimate Buying Guide for Indian Living Rooms (2026)',
+    metaTitle: 'OLED vs QLED vs Mini-LED TV Buying Guide (2026)',
+    metaDescription:
+      'Compare OLED vs QLED vs Mini-LED 4K TVs for Indian living rooms: contrast, peak brightness for sunny rooms, cricket motion clarity & local showroom deals.',
     subtitle: 'Bright sunny drawing rooms with balcony glare or cinematic dark-room movie marathons? Compare Sony Bravia, Samsung QLED, and LG OLED side-by-side to choose the perfect display panel technology for your home.',
     excerpt: 'Bright drawing room with balcony sunlight or dark cinematic movie nights? A complete side-by-side guide comparing Sony Bravia, Samsung QLED, and LG OLED on black levels, peak brightness, Indian OTT streaming, and warranty protection.',
     category: 'Televisions',
@@ -514,6 +528,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'best-55-inch-tv-price-vasant-kunj-delhi',
     title: 'Best 55-Inch TV Under ₹60,000 in Delhi — 2025 Buying Guide',
+    metaTitle: 'Best 55-Inch TV Price Vasant Kunj Delhi 2025',
+    metaDescription:
+      'Looking for the best 55-inch TV price in Vasant Kunj, Delhi? Compare Samsung, LG & Sony 4K TVs. Get price cheaper than Amazon at our local showroom.',
     subtitle: 'Looking for the best 55-inch TV price in Vasant Kunj, Delhi? Compare Samsung, LG & Sony 4K TVs with genuine brand warranty, live showroom demonstrations, and pricing cheaper than online portals.',
     excerpt: 'Looking for the best 55-inch TV price in Vasant Kunj, Delhi? Compare Samsung, LG & Sony 4K TVs. Get price cheaper than Amazon at our local showroom.',
     category: 'Televisions',
@@ -672,6 +689,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: '1-5-ton-vs-2-ton-ac-price-vasant-kunj-delhi',
     title: '1.5 Ton vs 2 Ton AC — Which is the Right Size for Your Room in Delhi?',
+    metaTitle: '1.5 Ton vs 2 Ton AC Price Vasant Kunj Delhi 2025',
+    metaDescription:
+      'Confused between 1.5 ton and 2 ton AC? Our AC dealer in Vasant Kunj explains everything. Best inverter AC prices in South Delhi — cheaper than Amazon.',
     subtitle: 'Confused between a 1.5 Ton and 2 Ton AC? Discover how extreme Delhi summer temperatures (45°C+), top-floor heat radiation, room dimensions, and BSES electricity tariffs determine your ideal cooling size.',
     excerpt: 'Confused between 1.5 ton and 2 ton AC? Our AC dealer in Vasant Kunj explains room sizing, Delhi 45°C+ heat wave loads, electricity bill calculations, and wholesale showroom pricing on Daikin, LG & Samsung inverter ACs.',
     category: 'Air Conditioners',

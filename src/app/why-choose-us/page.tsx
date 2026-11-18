@@ -12,9 +12,9 @@ import { SITE_CONFIG } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Electronics Cheaper Than Amazon Delhi | Beat Online Prices | Sharma Bazaar',
+  title: 'Electronics Cheaper Than Amazon Delhi | Sharma Bazaar',
   description:
-    'Save money on electronics in Delhi. Sharma Bazaar offers savings of up to ₹1,000–₹5,000 on select 4K TVs, split ACs, refrigerators & washers compared to major online portals with authentic brand warranty & same-day delivery.',
+    'Save ₹1,000–₹5,000 on 4K TVs, inverter ACs, fridges & washers in Delhi vs online portals. Enjoy genuine brand warranty & same-day Vasant Kunj delivery.',
   keywords: [
     'electronics cheaper than amazon delhi',
     'tv price cheaper than flipkart delhi',

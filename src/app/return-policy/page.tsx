@@ -5,9 +5,9 @@ import { SITE_CONFIG } from '@/data/site-config';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Delivery, Inspection & Replacement Policy | Sharma Bazaar South Delhi',
+  title: 'Delivery & Replacement Policy | Sharma Bazaar Vasant Kunj',
   description:
-    'Transparent doorstep delivery, unboxing inspection, zero-risk COD, and 7-day transit replacement policy for electronics purchases at Sharma Bazaar Vasant Kunj showroom.',
+    'Doorstep delivery, unboxing inspection, zero-risk COD, and 7-day transit replacement terms for appliance purchases at Sharma Bazaar Vasant Kunj showroom.',
   alternates: {
     canonical: 'https://www.sharmabazaar.com/return-policy',
   },

@@ -36,15 +36,18 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     return { title: 'Article Not Found | Sharma Bazaar' };
   }
 
+  const title = post.metaTitle || (post.title.length <= 48 ? `${post.title} | Sharma Bazaar` : post.title.slice(0, 60));
+  const description = post.metaDescription || (post.excerpt.length > 155 ? `${post.excerpt.slice(0, 152)}...` : post.excerpt);
+
   return {
-    title: `${post.title} | Sharma Bazaar`,
-    description: post.excerpt,
+    title,
+    description,
     alternates: {
       canonical: `https://www.sharmabazaar.com/blog/${post.slug}`,
     },
     openGraph: {
-      title: `${post.title} | Sharma Bazaar`,
-      description: post.excerpt,
+      title,
+      description,
       type: 'article',
       publishedTime: post.publishedDate,
       modifiedTime: post.modifiedDate || post.publishedDate,

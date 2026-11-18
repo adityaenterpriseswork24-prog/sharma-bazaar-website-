@@ -19,14 +19,14 @@ import { buildWhatsAppUrl } from '@/lib/utils';
 import { LocalityFilterGrid } from '@/components/locations/LocalityFilterGrid';
 
 export const metadata: Metadata = {
-  title: 'Same-Day Doorstep Appliance Delivery in South Delhi | Sharma Bazaar',
+  title: 'Appliance Delivery South Delhi | Sharma Bazaar Showroom',
   description:
-    'White-glove home appliance doorstep delivery across South Delhi. 2–6 hr same-day delivery to Vasant Kunj, Chattarpur, Mahipalpur, Vasant Vihar, Saket & Hauz Khas. Room carry-in, COD & seal check.',
+    'Same-day appliance delivery across South Delhi: Vasant Kunj, Saket, Chattarpur & Hauz Khas. Room carry-in, COD and carton unboxing verification included.',
   alternates: {
     canonical: 'https://www.sharmabazaar.com/locations',
   },
   openGraph: {
-    title: 'Same-Day Doorstep Appliance Delivery in South Delhi | Sharma Bazaar',
+    title: 'Appliance Delivery South Delhi | Sharma Bazaar Showroom',
     description:
       'Order TVs, ACs, Refrigerators & Washing Machines with white-glove doorstep delivery directly from our Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj showroom.',
     url: 'https://www.sharmabazaar.com/locations',

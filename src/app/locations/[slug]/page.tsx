@@ -41,15 +41,25 @@ export async function generateMetadata({ params }: LocalityPageProps): Promise<M
     };
   }
 
+  const title =
+    locality.metaTitle.length <= 60
+      ? locality.metaTitle
+      : `Appliance Delivery ${locality.name} | Sharma Bazaar`;
+
+  const description =
+    locality.metaDescription.length <= 155
+      ? locality.metaDescription
+      : `${locality.metaDescription.slice(0, 151)}...`;
+
   return {
-    title: locality.metaTitle,
-    description: locality.metaDescription,
+    title,
+    description,
     alternates: {
       canonical: `https://www.sharmabazaar.com/locations/${locality.slug}`,
     },
     openGraph: {
-      title: locality.metaTitle,
-      description: locality.metaDescription,
+      title,
+      description,
       url: `https://www.sharmabazaar.com/locations/${locality.slug}`,
       siteName: 'Sharma Bazaar',
       type: 'website',

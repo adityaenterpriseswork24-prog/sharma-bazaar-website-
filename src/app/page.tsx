@@ -28,9 +28,9 @@ import { ReviewsMarquee } from '@/components/home/ReviewsMarquee';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export const metadata = {
-  title: 'Electronics Store Vasant Kunj | Best Price Electronics Showroom | Sharma Bazaar',
+  title: 'Electronics Store Vasant Kunj | Sharma Bazaar Showroom',
   description:
-    'Premier electronics store in Vasant Kunj & South Delhi showroom. Beat Amazon & Flipkart prices on Sony 4K TVs, Daikin ACs, Samsung refrigerators & Bosch washers at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj showroom.',
+    'Premier electronics store in Vasant Kunj, Delhi. Beat Amazon & Flipkart prices on Sony 4K TVs, Daikin ACs, fridges & washers with authentic brand warranty.',
   keywords: [
     'electronics store vasant kunj',
     'electronics showroom vasant kunj',
@@ -101,106 +101,6 @@ export default async function HomePage() {
     },
   ];
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': ['ElectronicsStore', 'HomeGoodsStore'],
-    name: SITE_CONFIG.businessName,
-    alternateName: [
-      'Sharma Bazaar Vasant Kunj',
-      'Sharma Bazaar Electronics',
-      'Sharma Electronics Vasant Kunj',
-    ],
-    image: 'https://www.sharmabazaar.com/images/showroom/sharma-bazaar-showroom-interior.jpg',
-    telephone: SITE_CONFIG.phone,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: SITE_CONFIG.address,
-      addressLocality: SITE_CONFIG.area,
-      addressRegion: 'New Delhi',
-      postalCode: SITE_CONFIG.pincode,
-      addressCountry: 'IN',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: SITE_CONFIG.coordinates.latitude,
-      longitude: SITE_CONFIG.coordinates.longitude,
-    },
-    hasMap: SITE_CONFIG.googleMapsDirectionsUrl,
-    sameAs: [
-      SITE_CONFIG.googleMapsDirectionsUrl,
-      'https://share.google/YEQYNtCiA110LNgOs',
-    ],
-    url: 'https://www.sharmabazaar.com',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday',
-          'Sunday',
-        ],
-        opens: '10:00',
-        closes: '21:00',
-      },
-    ],
-    priceRange: '₹₹',
-    currenciesAccepted: 'INR',
-    paymentAccepted: 'Cash, Credit Card, Debit Card, UPI',
-    areaServed: SOUTH_DELHI_LOCALITIES.map((loc) => ({
-      '@type': 'AdministrativeArea',
-      name: loc.name,
-      postalCode: loc.pincodes.join(', '),
-    })),
-    makesOffer: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Product',
-          name: '4K Ultra HD & OLED Smart Televisions',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Product',
-          name: 'Split & Window Inverter Air Conditioners',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Product',
-          name: 'Double Door & Frost-Free Refrigerators',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Product',
-          name: 'Front Load & Top Load Washing Machines',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Product',
-          name: 'Convection & Solo Microwave Ovens',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Product',
-          name: 'Floor Standing Hot & Cold Water Dispensers',
-        },
-      },
-    ],
-  };
-
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -216,10 +116,6 @@ export default async function HomePage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
