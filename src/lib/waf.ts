@@ -162,7 +162,7 @@ const authRateMap = new Map<string, RateLimitRecord>();
 
 // Clean up stale entries every 5 minutes to prevent memory leak
 if (typeof setInterval !== 'undefined') {
-  setInterval(() => {
+  const cleanupTimer = setInterval(() => {
     const now = Date.now();
     publicRateMap.forEach((rec, ip) => {
       if (now > rec.resetAt) publicRateMap.delete(ip);
@@ -174,6 +174,9 @@ if (typeof setInterval !== 'undefined') {
       if (now > rec.resetAt) authRateMap.delete(ip);
     });
   }, 5 * 60 * 1000);
+  if (typeof cleanupTimer === 'object' && cleanupTimer !== null && 'unref' in cleanupTimer) {
+    (cleanupTimer as NodeJS.Timeout).unref();
+  }
 }
 
 export type RateLimitTier = 'public' | 'api' | 'auth';
