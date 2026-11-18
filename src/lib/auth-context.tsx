@@ -95,21 +95,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setLoading(false);
         return true;
       } else {
-        const role: UserRole =
-          demoRole || (email.toLowerCase().includes('manager') ? 'shop_manager' : 'admin');
-        const account: UserAccount = {
-          uid: `staff-${Date.now()}`,
-          email: email || (role === 'admin' ? 'adityaenterprises.work24@gmail.com' : 'manager@sharmabazaar.com'),
-          name: role === 'admin' ? 'Aditya Enterprises (Administrator)' : 'Showroom Manager',
-          role,
-          createdAt: new Date().toISOString(),
-          isEmailVerified: true,
-        };
-        setUser(account);
-        localStorage.setItem('sharma_admin_session', JSON.stringify(account));
-        setSessionCookie(account);
-        setLoading(false);
-        return true;
+        // Authenticate via secure server endpoint with rate limiting & password verification
+        const response = await fetch('/api/admin/auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            password: pass,
+            role: demoRole,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success && data.user) {
+          setUser(data.user);
+          localStorage.setItem('sharma_admin_session', JSON.stringify(data.user));
+          setSessionCookie(data.user);
+          setLoading(false);
+          return true;
+        } else {
+          console.warn('Authentication rejected:', data.error || 'Invalid credentials');
+          setLoading(false);
+          return false;
+        }
       }
     } catch (error) {
       console.error('Authentication error:', error);
@@ -119,6 +128,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const logout = async () => {
+    try {
+      await fetch('/api/admin/auth', { method: 'DELETE' });
+    } catch {
+      // ignore
+    }
     if (isFirebaseConfigured && auth) {
       try {
         await firebaseSignOut(auth);

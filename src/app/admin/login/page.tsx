@@ -53,7 +53,9 @@ export default function AdminLoginPage() {
     if (success) {
       window.location.href = '/admin';
     } else {
-      setError('Invalid credentials or configuration. Please check your staff records.');
+      setError(
+        'Access denied: Invalid password or unauthorized email. Only authorized showroom administrators and staff can log in.'
+      );
       setIsSubmitting(false);
     }
   };
