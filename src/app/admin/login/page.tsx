@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Lock,
   Mail,
@@ -109,11 +110,12 @@ export default function AdminLoginPage() {
           </Link>
 
           <div className="space-y-4 max-w-md">
-            <div className="w-12 h-12 rounded-sm bg-black overflow-hidden flex items-center justify-center border border-white/15 shrink-0 shadow-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="w-12 h-12 rounded-sm bg-black overflow-hidden flex items-center justify-center border border-white/15 shrink-0 shadow-sm relative">
+              <Image
                 src="/images/sharma-bazaar-badge.png"
                 alt="Sharma Bazaar Logo"
+                width={48}
+                height={48}
                 className="w-full h-full object-contain"
               />
             </div>

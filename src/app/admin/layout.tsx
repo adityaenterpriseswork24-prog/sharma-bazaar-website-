@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard,
@@ -60,11 +61,12 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
           {/* Logo */}
           <div className="p-6 border-b border-white/10 flex items-center justify-between">
             <Link href="/admin" className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-sm bg-black overflow-hidden flex items-center justify-center border border-white/15 shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="w-8 h-8 rounded-sm bg-black overflow-hidden flex items-center justify-center border border-white/15 shrink-0 relative">
+                <Image
                   src="/images/sharma-bazaar-badge.png"
                   alt="Sharma Bazaar Logo"
+                  width={32}
+                  height={32}
                   className="w-full h-full object-contain"
                 />
               </div>

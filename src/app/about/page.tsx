@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Building2,
   Percent,
@@ -104,12 +105,14 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-6 border border-neutral-200 p-3 bg-neutral-50 rounded-sm">
-            <div className="aspect-[4/3] bg-white overflow-hidden border border-neutral-200">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative aspect-[4/3] bg-white overflow-hidden border border-neutral-200">
+              <Image
                 src="/images/showroom/sharma-bazaar-showroom-interior.jpg"
                 alt="Sharma Bazaar physical showroom facility at Dairy Farm Masoodpur Vasant Kunj South Delhi"
-                className="w-full h-full object-cover"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
             <div className="mt-3 flex items-center justify-between text-xs font-mono text-neutral-500">

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Clock, Calendar, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { SITE_CONFIG } from '@/data/site-config';
@@ -53,12 +54,14 @@ export default function BlogIndexPage() {
         {featuredPost && (
           <div className="border border-neutral-200 rounded-lg overflow-hidden bg-white shadow-subtle hover:border-brand-navy/60 transition-all duration-200">
             <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-              <div className="lg:col-span-6 relative aspect-[16/10] lg:aspect-auto bg-neutral-100 border-b lg:border-b-0 lg:border-r border-neutral-200">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="lg:col-span-6 relative aspect-[16/10] lg:aspect-auto min-h-[280px] bg-neutral-100 border-b lg:border-b-0 lg:border-r border-neutral-200">
+                <Image
                   src={featuredPost.coverImage}
                   alt={featuredPost.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
                 <span className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-wider text-white bg-black/80 px-2.5 py-1 rounded-sm shadow-subtle">
                   Featured Guide

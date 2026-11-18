@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Clock,
   Calendar,
@@ -330,12 +331,14 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </header>
 
           {/* Featured Image */}
-          <div className="max-w-[720px] mx-auto border border-neutral-200 rounded-lg overflow-hidden aspect-[16/9] bg-neutral-100 shadow-subtle">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="relative max-w-[720px] mx-auto border border-neutral-200 rounded-lg overflow-hidden aspect-[16/9] bg-neutral-100 shadow-subtle">
+            <Image
               src={post.coverImage}
               alt={post.title}
-              className="w-full h-full object-cover"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 720px"
+              className="object-cover"
             />
           </div>
 
@@ -619,13 +622,15 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     className="group flex flex-col bg-white border border-neutral-200 rounded-sm overflow-hidden hover:border-brand-navy/60 hover:shadow-subtle transition-all duration-200"
                   >
                     <div className="relative aspect-[16/9] bg-neutral-100 overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <Image
                         src={rel.coverImage}
                         alt={rel.title}
-                        className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover group-hover:scale-102 transition-transform duration-300"
+                        loading="lazy"
                       />
-                      <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-brand-navy/90 text-white text-[10px] font-bold uppercase tracking-wider">
+                      <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-brand-navy/90 text-white text-[10px] font-bold uppercase tracking-wider z-10">
                         {rel.category}
                       </span>
                     </div>

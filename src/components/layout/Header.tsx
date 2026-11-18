@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, MessageCircle, ChevronRight, Lock } from 'lucide-react';
 import { SITE_CONFIG, ELECTRONICS_CATEGORIES } from '@/data/site-config';
@@ -69,11 +70,13 @@ export function Header() {
         <div className="flex items-center justify-between gap-3 lg:gap-4 xl:gap-6">
           {/* Architectural Brand Identity with Tagline & Official Logo Symbol */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-10 h-10 rounded-sm bg-black overflow-hidden flex items-center justify-center shadow-subtle border border-neutral-900 group-hover:border-black transition-colors shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="w-10 h-10 rounded-sm bg-black overflow-hidden flex items-center justify-center shadow-subtle border border-neutral-900 group-hover:border-black transition-colors shrink-0 relative">
+              <Image
                 src="/images/sharma-bazaar-badge.png"
                 alt="Sharma Bazaar Logo"
+                width={40}
+                height={40}
+                priority
                 className="w-full h-full object-contain"
               />
             </div>

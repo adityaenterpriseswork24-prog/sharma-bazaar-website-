@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Product } from '@/types';
 import { formatINR, calculateSavings, buildWhatsAppUrl, generateProductWhatsAppMessage } from '@/lib/utils';
@@ -101,17 +102,16 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Product Image with smooth hover zoom */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={product.imageUrl}
-          alt={`${product.name} - Electronics Showroom Vasant Kunj`}
-          onError={(e) => {
-            (e.target as HTMLImageElement).src =
-              '/images/showroom/sharma-bazaar-showroom-interior.jpg';
-          }}
-          className="w-full h-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-105"
-          loading="lazy"
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src={product.imageUrl}
+            alt={`${product.name} - Electronics Showroom Vasant Kunj`}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       {/* Card Content */}

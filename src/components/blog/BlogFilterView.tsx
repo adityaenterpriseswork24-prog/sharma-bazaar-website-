@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Clock, Calendar, ArrowRight, Search, X } from 'lucide-react';
 import { BlogPost } from '@/data/blog-posts';
 
@@ -113,14 +114,15 @@ export function BlogFilterView({ posts }: BlogFilterViewProps) {
             >
               {/* Cover Image */}
               <Link href={`/blog/${post.slug}`} className="block relative aspect-[16/10] bg-neutral-100 overflow-hidden border-b border-neutral-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={post.coverImage}
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-102 transition-transform duration-300"
                   loading="lazy"
                 />
-                <span className="absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full bg-brand-navy text-white text-[10px] font-bold uppercase tracking-wider shadow-subtle">
+                <span className="absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full bg-brand-navy text-white text-[10px] font-bold uppercase tracking-wider shadow-subtle z-10">
                   {post.category}
                 </span>
               </Link>

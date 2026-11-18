@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   PlusCircle,
   Search,
@@ -260,12 +261,13 @@ export default function AdminProductsPage() {
                   <tr key={product.id} className="hover:bg-neutral-50/70 transition-colors">
                     <td className="py-3.5 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-sm bg-neutral-50 border border-neutral-200 overflow-hidden shrink-0 p-1 flex items-center justify-center">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                        <div className="w-10 h-10 rounded-sm bg-neutral-50 border border-neutral-200 overflow-hidden shrink-0 p-1 flex items-center justify-center relative">
+                          <Image
                             src={product.imageUrl}
                             alt={product.name}
-                            className="w-full h-full object-contain"
+                            width={36}
+                            height={36}
+                            className="object-contain"
                           />
                         </div>
                         <div className="max-w-xs sm:max-w-md">

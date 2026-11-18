@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Phone, MessageCircle, MapPin, Clock, ExternalLink, Lock } from 'lucide-react';
 import { SITE_CONFIG, ELECTRONICS_CATEGORIES } from '@/data/site-config';
@@ -27,11 +28,12 @@ export function Footer() {
           {/* Col 1: Identity & Showroom Context */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-sm bg-black overflow-hidden flex items-center justify-center border border-white/10 shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="w-10 h-10 rounded-sm bg-black overflow-hidden flex items-center justify-center border border-white/10 shrink-0 relative">
+                <Image
                   src="/images/sharma-bazaar-badge.png"
                   alt="Sharma Bazaar Logo"
+                  width={40}
+                  height={40}
                   className="w-full h-full object-contain"
                 />
               </div>

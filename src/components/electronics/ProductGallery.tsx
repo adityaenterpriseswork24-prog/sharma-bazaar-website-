@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface ProductGalleryProps {
   images: string[];
@@ -23,14 +24,13 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
     <div className="space-y-4">
       {/* Main Image Display */}
       <div className="relative aspect-[4/3] bg-neutral-50/70 border border-neutral-200 rounded-sm overflow-hidden p-8 flex items-center justify-center">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={selectedImage}
           alt={productName}
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = fallbackImage;
-          }}
-          className="w-full h-full object-contain object-center transition-all duration-300"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 55vw"
+          className="object-contain object-center transition-all duration-300 p-6"
         />
       </div>
 
@@ -48,14 +48,12 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               }`}
               aria-label={`View image ${index + 1}`}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={img}
                 alt={`${productName} thumbnail ${index + 1}`}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = fallbackImage;
-                }}
-                className="w-full h-full object-contain"
+                fill
+                sizes="64px"
+                className="object-contain p-1"
               />
             </button>
           ))}

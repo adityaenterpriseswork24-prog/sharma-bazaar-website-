@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   MessageCircle,
@@ -195,11 +196,13 @@ export default async function HomePage() {
             <div className="lg:col-span-5">
               <div className="relative border border-neutral-200 bg-neutral-50 p-4 sm:p-6 rounded-sm">
                 <div className="relative aspect-[4/3] bg-white border border-neutral-200/80 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="/images/showroom/sharma-bazaar-showroom-interior.jpg"
                     alt="Sharma Bazaar electronics and home appliance showroom at Dairy Farm Masoodpur Vasant Kunj"
-                    className="w-full h-full object-cover"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    className="object-cover"
                   />
                 </div>
 
@@ -300,14 +303,15 @@ export default async function HomePage() {
                 className="group flex flex-col bg-white border border-neutral-200 rounded-sm overflow-hidden hover:border-brand-navy transition-colors"
               >
                 <div className="relative aspect-[16/10] bg-neutral-100 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={cat.imageUrl}
                     alt={cat.name}
-                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-102 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <span className="absolute bottom-2 left-3 font-mono text-[10px] text-white bg-black/60 px-2 py-0.5 rounded-sm">
+                  <span className="absolute bottom-2 left-3 font-mono text-[10px] text-white bg-black/60 px-2 py-0.5 rounded-sm z-10">
                     {cat.brands.slice(0, 3).join(' · ')}
                   </span>
                 </div>
@@ -405,12 +409,14 @@ export default async function HomePage() {
 
             <div className="lg:col-span-6">
               <div className="relative border border-neutral-200 p-3 bg-white rounded-sm">
-                <div className="aspect-[4/3] bg-neutral-100 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className="relative aspect-[4/3] bg-neutral-100 overflow-hidden">
+                  <Image
                     src="/images/showroom/sharma-bazaar-showroom-interior.jpg"
                     alt="Sharma Bazaar Showroom interior display at Dairy Farm, 80-B, Masoodpur, G/F, Vasant Kunj"
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="mt-3 flex items-center justify-between text-xs font-mono text-neutral-500">
@@ -627,13 +633,15 @@ export default async function HomePage() {
                 </div>
 
                 <div className="relative aspect-[16/9] border border-neutral-200 rounded-sm overflow-hidden bg-neutral-900 group">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="/images/showroom/sharma-bazaar-showroom-interior.jpg"
                     alt="Sharma Bazaar physical electronics showroom in Dairy Farm Masoodpur Vasant Kunj"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4 z-10">
                     <p className="text-white text-xs font-sans">
                       Ground Floor Physical Retail Facility · Dedicated Display Zones for TVs, Refrigerators, ACs &amp; Washing Machines
                     </p>
