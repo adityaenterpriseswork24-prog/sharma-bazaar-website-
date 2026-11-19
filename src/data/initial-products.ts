@@ -20,8 +20,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Screen Mirroring": "Yes (Smartphone to TV Casting)",
       "Warranty": "1 Year Comprehensive Warranty"
     },
-    "ourPrice": 12990,
-    "mrpPrice": 18990,
+    "ourPrice": 13490,
+    "mrpPrice": 18900,
     "imageUrl": "/images/products/samsung-32-inch-h4600-tv.jpg",
     "gallery": [
       "/images/products/samsung-32-inch-h4600-tv.jpg",
@@ -33,7 +33,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "lg-32-inch-full-hd-smart-tv-32lb651cpla",
@@ -55,8 +55,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Smart Ecosystem": "LG ThinQ AI & Apple HomeKit",
       "Warranty": "1 Year Comprehensive Warranty"
     },
-    "ourPrice": 16990,
-    "mrpPrice": 23990,
+    "ourPrice": 17490,
+    "mrpPrice": 24990,
     "imageUrl": "/images/products/lg-32-inch-fhd-tv.jpg",
     "gallery": [
       "/images/products/lg-32-inch-fhd-tv.jpg",
@@ -68,7 +68,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "samsung-32-inch-hd-ready-smart-tv-ua32h4680fuxxl",
@@ -91,7 +91,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Warranty": "1 Year Comprehensive Warranty"
     },
     "ourPrice": 13990,
-    "mrpPrice": 19990,
+    "mrpPrice": 19900,
     "imageUrl": "/images/products/samsung-32-inch-h4680f-tv.jpg",
     "gallery": [
       "/images/products/samsung-32-inch-h4680f-tv.jpg",
@@ -103,7 +103,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "samsung-43-inch-full-hd-smart-tv-ua43f5600fuxxl",
@@ -127,7 +127,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Warranty": "1 Year Comprehensive Brand Warranty"
     },
     "ourPrice": 26990,
-    "mrpPrice": 37990,
+    "mrpPrice": 37900,
     "imageUrl": "/images/products/samsung-43-inch-fhd-tv.jpg",
     "gallery": [
       "/images/products/samsung-43-inch-fhd-tv.jpg",
@@ -139,14 +139,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "haier-9kg-semi-automatic-htw90-196bbk",
-    "name": "Haier 9 kg Semi-Automatic Top Load Washing Machine (Black)",
+    "name": "Haier 9 kg 5 Star Semi-Automatic Top Load Washing Machine (HTW90-196BBK, Black)",
     "slug": "haier-9kg-semi-automatic-htw90-196bbk",
     "brand": "Haier",
-    "modelNumber": "HTW90-196BBK-9.0KG",
+    "modelNumber": "HTW90-196BBK",
     "category": "washing-machines",
     "subcategory": "Semi-Automatic Top Load",
     "description": "A large 9kg Haier semi-automatic top-load washing machine suitable for bigger families. With a dual-tub design for simultaneous washing and spinning, it delivers fast and efficient laundry performance. Easy mechanical controls, transparent lid for load visibility, durable stainless steel spin tub, and child-safe design. Available in an attractive Black finish.",
@@ -159,7 +159,7 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Ideal For": "6–8 Members",
       "Warranty": "1 Year Comprehensive + 5 Years Motor Warranty"
     },
-    "ourPrice": 14990,
+    "ourPrice": 13490,
     "mrpPrice": 19990,
     "imageUrl": "/images/products/haier-9kg-semi-automatic.jpg",
     "gallery": [
@@ -172,7 +172,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "lg-8kg-5-star-semi-automatic-p8015sgaz",
@@ -194,8 +194,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Dimensions (WxDxH)": "795 × 480 × 975 mm",
       "Warranty": "2 Years Comprehensive + 5 Years Motor Warranty"
     },
-    "ourPrice": 13490,
-    "mrpPrice": 17990,
+    "ourPrice": 15490,
+    "mrpPrice": 21490,
     "imageUrl": "/images/products/lg-8kg-semi-automatic.jpg",
     "gallery": [
       "/images/products/lg-8kg-semi-automatic.jpg",
@@ -207,7 +207,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "lg-10kg-5-star-semi-automatic-p1040rgaz",
@@ -229,8 +229,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Protection": "Rat Away Technology",
       "Warranty": "2 Years Comprehensive + 5 Years Motor Warranty"
     },
-    "ourPrice": 16490,
-    "mrpPrice": 21990,
+    "ourPrice": 17490,
+    "mrpPrice": 23990,
     "imageUrl": "/images/products/lg-10kg-semi-automatic.jpg",
     "gallery": [
       "/images/products/lg-10kg-semi-automatic.jpg",
@@ -242,28 +242,29 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "haier-3-5kg-compact-semi-automatic-htw85-186bbk",
-    "name": "Haier 3.5 kg Compact Semi-Automatic Top Load Washing Machine (Black)",
+    "name": "Haier 8.5 kg 5 Star Semi-Automatic Top Load Washing Machine (HTW85-186BBK, Black)",
     "slug": "haier-3-5kg-compact-semi-automatic-htw85-186bbk",
     "brand": "Haier",
-    "modelNumber": "HTW85-186BBK-3.5KG",
+    "modelNumber": "HTW85-186BBK",
     "category": "washing-machines",
-    "subcategory": "Semi-Automatic Top Load",
-    "description": "A compact 3.5kg semi-automatic Haier washing machine designed for small families, couples, or as a secondary machine. With a manual pulsator wash system and spin dryer, it is simple to operate and low on water usage. The sturdy plastic body and stainless steel tub ensure durability. Ideal for daily quick washes of light clothing.",
+    "subcategory": "semi-automatic",
+    "description": "A high-capacity 8.5 kg semi-automatic washing machine featuring 5-star energy efficiency, 1300 RPM spin speed, anti-bacterial vortex pulsator, transparent soft-fall lid, and durable rust-free plastic body.",
     "specifications": {
-      "Capacity": "3.5 kg",
-      "Load Type": "Semi Automatic, Top Load",
-      "Drum Material": "Stainless Steel Spin Tub",
-      "Wash System": "Pulsator Wash",
-      "Colour Finish": "Black Finish",
-      "Ideal For": "1–2 Members / Quick Daily Washes",
-      "Warranty": "1 Year Comprehensive + 5 Years Motor Warranty"
+      "Capacity": "8.5 kg",
+      "Energy Rating": "5 Star BEE",
+      "Type": "Semi-Automatic Top Load",
+      "Spin Speed": "1300 RPM",
+      "Pulsator": "Vortex Pulsator with Anti-Bacterial Technology",
+      "Lid": "Toughened Glass Soft-Fall Lid",
+      "Wash Modes": "3 Wash Programs (Gentle / Normal / Strong)",
+      "Motor Warranty": "5 Years Motor Warranty"
     },
-    "ourPrice": 8490,
-    "mrpPrice": 11990,
+    "ourPrice": 12990,
+    "mrpPrice": 17990,
     "imageUrl": "/images/products/haier-3-5kg-semi-automatic.jpg",
     "gallery": [
       "/images/products/haier-3-5kg-semi-automatic.jpg",
@@ -275,7 +276,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "lg-8-5kg-5-star-semi-automatic-p8035sraza",
@@ -297,8 +298,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Water Level Selector": "Yes (Custom water saving)",
       "Warranty": "2 Years Comprehensive + 10 Years Motor Warranty"
     },
-    "ourPrice": 13990,
-    "mrpPrice": 18990,
+    "ourPrice": 16990,
+    "mrpPrice": 20990,
     "imageUrl": "/images/products/lg-8-5kg-semi-automatic.jpg",
     "gallery": [
       "/images/products/lg-8-5kg-semi-automatic.jpg",
@@ -310,29 +311,29 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "samsung-8kg-digital-inverter-front-load-wt80f4560gd",
-    "name": "Samsung 8 kg Digital Inverter Front Load Washing Machine (Silver)",
+    "name": "Samsung 8 kg 5 Star Semi-Automatic Top Load Washing Machine (Hexa Storm Pulsator, WT80F4560GD)",
     "slug": "samsung-8kg-digital-inverter-front-load-wt80f4560gd",
     "brand": "Samsung",
     "modelNumber": "W/M 8.0KG WT80F4560GD/TL SEMI",
     "category": "washing-machines",
-    "subcategory": "Front Load Fully Automatic",
-    "description": "An 8kg Samsung front-load washing machine with WD (Wash+Dry) technology. Features diamond drum design for gentle fabric care, Digital Inverter Motor for energy savings and quiet operation, multiple wash programs, and built-in heater. Silver Nano technology helps inhibit growth of bacteria on clothes and drum.",
+    "subcategory": "semi-automatic",
+    "description": "An 8 kg 5-star energy rated semi-automatic washing machine with Hexa Storm Pulsator for dynamic multi-directional water flow, Magic Filter to capture lint, Air Turbo Drying system, and rat protection body.",
     "specifications": {
       "Capacity": "8 kg",
-      "Load Type": "Front Load Fully Automatic",
-      "Motor Type": "Digital Inverter Motor (1200 RPM)",
-      "Drum Design": "Diamond Drum Fabric Care",
-      "In-Built Heater": "Yes (Hygiene Steam & Hot Wash)",
-      "Anti-Bacterial": "Silver Nano Technology",
-      "Colour Finish": "White / Metallic Silver",
-      "Warranty": "1 Year Comprehensive + 10 Years Motor Warranty"
+      "Energy Rating": "5 Star BEE",
+      "Type": "Semi-Automatic Top Load",
+      "Pulsator": "Hexa Storm Pulsator",
+      "Drying System": "Air Turbo Drying System",
+      "Filter": "Magic Filter (Dual Lint Filter)",
+      "Body": "Non-Corrosive Rust-Proof Body",
+      "Motor Warranty": "5 Years Motor Warranty"
     },
-    "ourPrice": 29990,
-    "mrpPrice": 39990,
+    "ourPrice": 14990,
+    "mrpPrice": 18490,
     "imageUrl": "/images/products/samsung-8kg-front-load.jpg",
     "gallery": [
       "/images/products/samsung-8kg-front-load.jpg",
@@ -344,30 +345,28 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "whirlpool-9kg-inverter-front-load-edge",
-    "name": "Whirlpool 9 kg Inverter Fully Automatic Front Load Washing Machine (Midnight Grey)",
+    "name": "Godrej 7.5 kg 5 Star Semi-Automatic Top Load Washing Machine (Edge Classic, Midnight Grey)",
     "slug": "whirlpool-9kg-inverter-front-load-edge",
-    "brand": "Whirlpool",
+    "brand": "Godrej",
     "modelNumber": "W/M 7.5KGEDGE CLS 75 5.0 PRA MIGR",
     "category": "washing-machines",
-    "subcategory": "Front Load Fully Automatic",
-    "description": "A powerful 9kg front-load fully automatic washing machine with 6th Sense Technology for auto-load sensing, in-built heater, and multiple wash programs. The Edge series features a larger loading capacity perfect for large families with heavy daily laundry. Advanced drum motion adapts for delicate fabrics while still providing powerful stain removal.",
+    "subcategory": "semi-automatic",
+    "description": "A reliable 7.5 kg 5-star semi-automatic top-load washing machine featuring a rust-proof body, powerful wash motor, 1400 RPM spin cycle, and rain shower rinse mechanism for water-efficient daily laundry.",
     "specifications": {
-      "Capacity": "9 kg (Heavy Duty Load)",
-      "Load Type": "Front Load, Fully Automatic",
-      "Series": "Edge / Ultimate Care Series",
-      "In-Built Heater": "Yes (Allergy & Stain Wash)",
-      "Motor Type": "Inverter Motor",
-      "Drum Material": "Stainless Steel",
-      "Colour Finish": "Midnight Grey",
-      "Ideal For": "Families with 6–8 Members",
-      "Warranty": "2 Years Comprehensive + 10 Years Motor Warranty"
+      "Capacity": "7.5 kg",
+      "Energy Rating": "5 Star BEE",
+      "Type": "Semi-Automatic Top Load",
+      "Spin Speed": "1400 RPM",
+      "Wash Technology": "Power Wash & Rain Shower Rinse",
+      "Body": "100% Rust-Proof Polypropylene",
+      "Motor Warranty": "5 Years Motor Warranty"
     },
-    "ourPrice": 32490,
-    "mrpPrice": 43990,
+    "ourPrice": 10490,
+    "mrpPrice": 16900,
     "imageUrl": "/images/products/whirlpool-9kg-front-load.jpg",
     "gallery": [
       "/images/products/whirlpool-9kg-front-load.jpg",
@@ -379,31 +378,29 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "whirlpool-8kg-5-star-front-load-ults80",
-    "name": "Whirlpool 8 kg 5 Star Inverter Fully Automatic Front Load Washing Machine (ULTS80)",
+    "name": "Godrej 8 kg 5 Star Semi-Automatic Top Load Washing Machine (Edge Ultima, Steel Grey)",
     "slug": "whirlpool-8kg-5-star-front-load-ults80",
-    "brand": "Whirlpool",
+    "brand": "Godrej",
     "modelNumber": "ULTS80 5.0 DB2CSGR STEEL",
     "category": "washing-machines",
-    "subcategory": "Front Load Fully Automatic",
-    "description": "A premium 8kg front-load fully automatic washing machine featuring 6th Sense SoftMove Technology that adapts wash motion to fabric type, 15 wash programs, in-built heater for hot wash up to 90°C, Steam Wash Technology for deep cleaning, and a durable stainless steel drum. Inverter motor for whisper-quiet operation and energy efficiency. Ideal for 6–8 member families.",
+    "subcategory": "semi-automatic",
+    "description": "An 8 kg 5-star semi-automatic washing machine featuring a high-speed 1440 RPM spin motor, toughened glass soft-shut lid, rust-proof polypropylene body, and active soak technology for superior stain removal in Indian water conditions.",
     "specifications": {
       "Capacity": "8 kg",
-      "Load Type": "Front Load, Fully Automatic",
-      "Energy Star Rating": "5 Star BEE",
-      "Wash Programs": "15 Wash Programs",
-      "In-Built Heater": "Yes (Hot Wash up to 90°C)",
-      "Motor Type": "Inverter Silent Direct Motor",
-      "Drum Material": "Stainless Steel Drum",
-      "Special Features": "6th Sense SoftMove, Steam Wash Sanitization",
-      "Colour Finish": "Steel / Grey",
-      "Warranty": "2 Years Comprehensive + 10 Years Motor Warranty"
+      "Energy Rating": "5 Star BEE",
+      "Type": "Semi-Automatic Top Load",
+      "Spin Speed": "1440 RPM",
+      "Pulsator": "Active Soak & Tri-Roto Scrub Pulsator",
+      "Body": "100% Rust-Proof Polypropylene Body",
+      "Lid": "Toughened Glass Soft-Shut Lid",
+      "Motor Warranty": "5 Years Motor Warranty"
     },
-    "ourPrice": 28990,
-    "mrpPrice": 38990,
+    "ourPrice": 13990,
+    "mrpPrice": 18200,
     "imageUrl": "/images/products/whirlpool-8kg-front-load.jpg",
     "gallery": [
       "/images/products/whirlpool-8kg-front-load.jpg",
@@ -415,7 +412,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "lg-322l-2-star-smart-inverter-gl-t3216vvyds",
@@ -438,8 +435,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Colour Finish": "Dazzle Steel",
       "Warranty": "1 Year Comprehensive + 10 Years Compressor Warranty"
     },
-    "ourPrice": 33990,
-    "mrpPrice": 42990,
+    "ourPrice": 37990,
+    "mrpPrice": 54990,
     "imageUrl": "/images/products/lg-322l-double-door.jpg",
     "gallery": [
       "/images/products/lg-322l-double-door.jpg",
@@ -451,7 +448,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "lg-185l-3-star-smart-inverter-gld1935yarw",
@@ -474,8 +471,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Gasket": "Anti-Bacterial Removable Gasket",
       "Warranty": "1 Year Comprehensive + 10 Years Compressor Warranty"
     },
-    "ourPrice": 15490,
-    "mrpPrice": 19990,
+    "ourPrice": 16490,
+    "mrpPrice": 20490,
     "imageUrl": "/images/products/lg-185l-single-door.jpg",
     "gallery": [
       "/images/products/lg-185l-single-door.jpg",
@@ -487,7 +484,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "godrej-244l-2-star-inverter-frost-free-rt-eoncrystal-280b",
@@ -510,8 +507,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Net Weight": "57.4 kg",
       "Warranty": "1 Year Comprehensive + 10 Years Compressor Warranty"
     },
-    "ourPrice": 22990,
-    "mrpPrice": 30990,
+    "ourPrice": 25990,
+    "mrpPrice": 40990,
     "imageUrl": "/images/products/godrej-244l-frost-free.jpg",
     "gallery": [
       "/images/products/godrej-244l-frost-free.jpg",
@@ -523,7 +520,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "godrej-238l-2-star-inverter-frost-free-rt-eonalpha-270bn",
@@ -546,8 +543,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Stabilizer Free": "Yes",
       "Warranty": "1 Year Comprehensive + 10 Years Compressor Warranty"
     },
-    "ourPrice": 21490,
-    "mrpPrice": 28990,
+    "ourPrice": 21990,
+    "mrpPrice": 32800,
     "imageUrl": "/images/products/godrej-238l-frost-free.jpg",
     "gallery": [
       "/images/products/godrej-238l-frost-free.jpg",
@@ -559,7 +556,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.087Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "haier-165l-1-star-direct-cool-hrd-1851smsa-p",
@@ -582,8 +579,8 @@ export const INITIAL_PRODUCTS: Product[] = [
       "Stabilizer Free Operation": "Yes (135V – 290V)",
       "Warranty": "1 Year Comprehensive + 10 Years Compressor Warranty"
     },
-    "ourPrice": 11990,
-    "mrpPrice": 15990,
+    "ourPrice": 12990,
+    "mrpPrice": 17390,
     "imageUrl": "/images/products/haier-165l-single-door.jpg",
     "gallery": [
       "/images/products/haier-165l-single-door.jpg",
@@ -595,7 +592,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T12:41:35.080Z"
+    "updatedAt": "2026-11-19T13:30:00.000Z"
   },
   {
     "id": "sony-bravia-55-4k-kd-55x74l",
