@@ -53,72 +53,35 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.removeItem('sharma_admin_session');
       setSessionCookie(null);
     }
-
-    if (isFirebaseConfigured && auth) {
-      const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-        if (firebaseUser) {
-          const account: UserAccount = {
-            uid: firebaseUser.uid,
-            email: firebaseUser.email || '',
-            name: firebaseUser.displayName || 'Showroom Staff',
-            role: firebaseUser.email?.includes('admin') ? 'admin' : 'shop_manager',
-            createdAt: new Date().toISOString(),
-          };
-          setUser(account);
-          localStorage.setItem('sharma_admin_session', JSON.stringify(account));
-          setSessionCookie(account);
-        }
-        setLoading(false);
-      });
-      return () => unsubscribe();
-    } else {
-      setLoading(false);
-    }
+    setLoading(false);
   }, []);
 
   const login = async (email: string, pass: string, demoRole?: UserRole): Promise<boolean> => {
     setLoading(true);
     try {
-      if (isFirebaseConfigured && auth) {
-        const userCredential = await signInWithEmailAndPassword(auth, email, pass);
-        const fbUser = userCredential.user;
-        const account: UserAccount = {
-          uid: fbUser.uid,
-          email: fbUser.email || email,
-          name: fbUser.displayName || 'Showroom Staff',
-          role: email.toLowerCase().includes('admin') ? 'admin' : 'shop_manager',
-          createdAt: new Date().toISOString(),
-        };
-        setUser(account);
-        localStorage.setItem('sharma_admin_session', JSON.stringify(account));
-        setSessionCookie(account);
+      // Authenticate directly via authoritative server endpoint with rate limiting & password verification
+      const response = await fetch('/api/admin/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim(),
+          password: pass.trim(),
+          role: demoRole,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success && data.user) {
+        setUser(data.user);
+        localStorage.setItem('sharma_admin_session', JSON.stringify(data.user));
+        setSessionCookie(data.user);
         setLoading(false);
         return true;
       } else {
-        // Authenticate via secure server endpoint with rate limiting & password verification
-        const response = await fetch('/api/admin/auth', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email,
-            password: pass,
-            role: demoRole,
-          }),
-        });
-
-        const data = await response.json();
-
-        if (response.ok && data.success && data.user) {
-          setUser(data.user);
-          localStorage.setItem('sharma_admin_session', JSON.stringify(data.user));
-          setSessionCookie(data.user);
-          setLoading(false);
-          return true;
-        } else {
-          console.warn('Authentication rejected:', data.error || 'Invalid credentials');
-          setLoading(false);
-          return false;
-        }
+        console.warn('Authentication rejected:', data.error || 'Invalid credentials');
+        setLoading(false);
+        return false;
       }
     } catch (error) {
       console.error('Authentication error:', error);
