@@ -24,16 +24,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 18900,
     "imageUrl": "/images/products/samsung-32-inch-h4600-tv.jpg",
     "gallery": [
-      "/images/products/samsung-32-inch-h4600-tv.jpg",
-      "/images/categories/televisions.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/samsung-32-inch-h4600-tv.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "lg-32-inch-full-hd-smart-tv-32lb651cpla",
@@ -59,16 +57,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 24990,
     "imageUrl": "/images/products/lg-32-inch-fhd-tv.jpg",
     "gallery": [
-      "/images/products/lg-32-inch-fhd-tv.jpg",
-      "/images/categories/televisions.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-32-inch-fhd-tv.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "samsung-32-inch-hd-ready-smart-tv-ua32h4680fuxxl",
@@ -94,16 +90,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 19900,
     "imageUrl": "/images/products/samsung-32-inch-h4680f-tv.jpg",
     "gallery": [
-      "/images/products/samsung-32-inch-h4680f-tv.jpg",
-      "/images/categories/televisions.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/samsung-32-inch-h4680f-tv.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "samsung-43-inch-full-hd-smart-tv-ua43f5600fuxxl",
@@ -130,16 +124,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 37900,
     "imageUrl": "/images/products/samsung-43-inch-fhd-tv.jpg",
     "gallery": [
-      "/images/products/samsung-43-inch-fhd-tv.jpg",
-      "/images/categories/televisions.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/samsung-43-inch-fhd-tv.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "haier-9kg-semi-automatic-htw90-196bbk",
@@ -164,15 +156,15 @@ export const INITIAL_PRODUCTS: Product[] = [
     "imageUrl": "/images/products/haier-9kg-semi-automatic.jpg",
     "gallery": [
       "/images/products/haier-9kg-semi-automatic.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/haier-9kg-htw90-angle.jpg",
+      "/images/products/haier-9kg-htw90-control.png"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "lg-8kg-5-star-semi-automatic-p8015sgaz",
@@ -199,15 +191,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "imageUrl": "/images/products/lg-8kg-semi-automatic.jpg",
     "gallery": [
       "/images/products/lg-8kg-semi-automatic.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-8kg-p8015sgaz-angle.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "lg-10kg-5-star-semi-automatic-p1040rgaz",
@@ -233,16 +224,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 23990,
     "imageUrl": "/images/products/lg-10kg-semi-automatic.jpg",
     "gallery": [
-      "/images/products/lg-10kg-semi-automatic.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-10kg-semi-automatic.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "haier-3-5kg-compact-semi-automatic-htw85-186bbk",
@@ -267,16 +256,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 17990,
     "imageUrl": "/images/products/haier-3-5kg-semi-automatic.jpg",
     "gallery": [
-      "/images/products/haier-3-5kg-semi-automatic.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/haier-3-5kg-semi-automatic.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "lg-8-5kg-5-star-semi-automatic-p8035sraza",
@@ -302,16 +289,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 20990,
     "imageUrl": "/images/products/lg-8-5kg-semi-automatic.jpg",
     "gallery": [
-      "/images/products/lg-8-5kg-semi-automatic.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-8-5kg-semi-automatic.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "samsung-8kg-digital-inverter-front-load-wt80f4560gd",
@@ -336,16 +321,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 18490,
     "imageUrl": "/images/products/samsung-8kg-front-load.jpg",
     "gallery": [
-      "/images/products/samsung-8kg-front-load.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/samsung-8kg-front-load.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "whirlpool-9kg-inverter-front-load-edge",
@@ -369,16 +352,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 16900,
     "imageUrl": "/images/products/whirlpool-9kg-front-load.jpg",
     "gallery": [
-      "/images/products/whirlpool-9kg-front-load.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/whirlpool-9kg-front-load.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "whirlpool-8kg-5-star-front-load-ults80",
@@ -403,16 +384,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 18200,
     "imageUrl": "/images/products/whirlpool-8kg-front-load.jpg",
     "gallery": [
-      "/images/products/whirlpool-8kg-front-load.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/whirlpool-8kg-front-load.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "lg-322l-2-star-smart-inverter-gl-t3216vvyds",
@@ -439,16 +418,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 54990,
     "imageUrl": "/images/products/lg-322l-double-door.jpg",
     "gallery": [
-      "/images/products/lg-322l-double-door.jpg",
-      "/images/categories/refrigerators.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-322l-double-door.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "lg-185l-3-star-smart-inverter-gld1935yarw",
@@ -475,16 +452,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 20490,
     "imageUrl": "/images/products/lg-185l-single-door.jpg",
     "gallery": [
-      "/images/products/lg-185l-single-door.jpg",
-      "/images/categories/refrigerators.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-185l-single-door.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "godrej-244l-2-star-inverter-frost-free-rt-eoncrystal-280b",
@@ -511,16 +486,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 40990,
     "imageUrl": "/images/products/godrej-244l-frost-free.jpg",
     "gallery": [
-      "/images/products/godrej-244l-frost-free.jpg",
-      "/images/categories/refrigerators.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/godrej-244l-frost-free.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "godrej-238l-2-star-inverter-frost-free-rt-eonalpha-270bn",
@@ -547,16 +520,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 32800,
     "imageUrl": "/images/products/godrej-238l-frost-free.jpg",
     "gallery": [
-      "/images/products/godrej-238l-frost-free.jpg",
-      "/images/categories/refrigerators.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/godrej-238l-frost-free.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "haier-165l-1-star-direct-cool-hrd-1851smsa-p",
@@ -583,16 +554,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     "mrpPrice": 17390,
     "imageUrl": "/images/products/haier-165l-single-door.jpg",
     "gallery": [
-      "/images/products/haier-165l-single-door.jpg",
-      "/images/categories/refrigerators.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/haier-165l-single-door.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "isCategoryHero": false,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-11-19T13:30:00.000Z"
+    "updatedAt": "2026-11-19T13:45:00.000Z"
   },
   {
     "id": "sony-bravia-55-4k-kd-55x74l",
@@ -618,15 +587,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 52990,
     "imageUrl": "/images/products/sony-bravia-55.jpg",
     "gallery": [
-      "/images/products/sony-bravia-55.jpg",
-      "/images/categories/televisions.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/sony-bravia-55.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-10T10:00:00.000Z",
-    "updatedAt": "2026-11-19T08:33:46.184Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": true
   },
   {
@@ -653,15 +620,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 41990,
     "imageUrl": "/images/products/samsung-crystal-55.jpg",
     "gallery": [
-      "/images/products/samsung-crystal-55.jpg",
-      "/images/categories/televisions.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/samsung-crystal-55.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-12T10:00:00.000Z",
-    "updatedAt": "2026-03-05T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": false
   },
   {
@@ -687,15 +652,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 28990,
     "imageUrl": "/images/products/lg-43-uhd.jpg",
     "gallery": [
-      "/images/products/lg-43-uhd.jpg",
-      "/images/categories/televisions.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-43-uhd.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
     "availability": "in-stock",
     "createdAt": "2026-01-15T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": false
   },
   {
@@ -720,15 +683,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 43990,
     "imageUrl": "/images/products/daikin-1-5-ton.jpg",
     "gallery": [
-      "/images/products/daikin-1-5-ton.jpg",
-      "/images/categories/air-conditioners.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/daikin-1-5-ton.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-16T10:00:00.000Z",
-    "updatedAt": "2026-03-02T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": true
   },
   {
@@ -752,15 +713,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 32990,
     "imageUrl": "/images/products/voltas-1-5-ton.jpg",
     "gallery": [
-      "/images/products/voltas-1-5-ton.jpg",
-      "/images/categories/air-conditioners.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/voltas-1-5-ton.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-18T10:00:00.000Z",
-    "updatedAt": "2026-03-03T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": false
   },
   {
@@ -784,15 +743,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 25490,
     "imageUrl": "/images/products/samsung-253l-fridge.jpg",
     "gallery": [
-      "/images/products/samsung-253l-fridge.jpg",
-      "/images/categories/refrigerators.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/samsung-253l-fridge.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-20T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": true
   },
   {
@@ -816,15 +773,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 24490,
     "imageUrl": "/images/products/lg-242l-fridge.jpg",
     "gallery": [
-      "/images/products/lg-242l-fridge.jpg",
-      "/images/categories/refrigerators.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-242l-fridge.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
     "availability": "in-stock",
     "createdAt": "2026-01-22T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": false
   },
   {
@@ -850,15 +805,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 31990,
     "imageUrl": "/images/products/bosch-7kg-front-load.jpg",
     "gallery": [
-      "/images/products/bosch-7kg-front-load.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/bosch-7kg-front-load.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-25T10:00:00.000Z",
-    "updatedAt": "2026-03-04T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": true
   },
   {
@@ -882,15 +835,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 33490,
     "imageUrl": "/images/products/ifb-7-5kg-front-load.jpg",
     "gallery": [
-      "/images/products/ifb-7-5kg-front-load.jpg",
-      "/images/categories/washing-machines.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/ifb-7-5kg-front-load.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
     "availability": "in-stock",
     "createdAt": "2026-01-26T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": false
   },
   {
@@ -915,15 +866,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 12990,
     "imageUrl": "/images/products/samsung-28l-microwave.jpg",
     "gallery": [
-      "/images/products/samsung-28l-microwave.jpg",
-      "/images/categories/microwave-ovens.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/samsung-28l-microwave.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-28T10:00:00.000Z",
-    "updatedAt": "2026-03-02T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": true
   },
   {
@@ -947,15 +896,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 21490,
     "imageUrl": "/images/products/lg-28l-microwave.jpg",
     "gallery": [
-      "/images/products/lg-28l-microwave.jpg",
-      "/images/categories/microwave-ovens.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/lg-28l-microwave.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
     "availability": "in-stock",
     "createdAt": "2026-01-30T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": false
   },
   {
@@ -980,15 +927,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 10490,
     "imageUrl": "/images/products/voltas-water-dispenser.jpg",
     "gallery": [
-      "/images/products/voltas-water-dispenser.jpg",
-      "/images/categories/water-dispensers.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/voltas-water-dispenser.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-03-02T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": true
   },
   {
@@ -1012,15 +957,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     "ourPrice": 14290,
     "imageUrl": "/images/products/blue-star-water-dispenser.jpg",
     "gallery": [
-      "/images/products/blue-star-water-dispenser.jpg",
-      "/images/categories/water-dispensers.jpg",
-      "/images/showroom/sharma-bazaar-showroom-interior.jpg"
+      "/images/products/blue-star-water-dispenser.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
     "availability": "limited-display",
     "createdAt": "2026-02-05T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "updatedAt": "2026-11-19T13:45:00.000Z",
     "isCategoryHero": false
   }
 ];
