@@ -24,7 +24,7 @@ import {
 import { SITE_CONFIG, ELECTRONICS_CATEGORIES, GOOGLE_REVIEWS_MOCK } from '@/data/site-config';
 import { SOUTH_DELHI_LOCALITIES } from '@/data/locations';
 import { getHomepageShowcaseProducts } from '@/lib/products';
-import { ProductCard } from '@/components/ui/ProductCard';
+import { FeaturedShowcaseSection } from '@/components/home/FeaturedShowcaseSection';
 import { ReviewsMarquee } from '@/components/home/ReviewsMarquee';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
@@ -341,35 +341,9 @@ export default async function HomePage() {
       </section>
 
       {/* ====================================================
-          SECTION 4: FEATURED SHOWROOM INVENTORY
+          SECTION 4: FEATURED SHOWROOM INVENTORY (Dynamic & Real-Time)
       ==================================================== */}
-      <section className="py-20 bg-white border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
-                Verified Inventory
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-navy mt-1">
-                Featured Showroom Models
-              </h2>
-            </div>
-            <Link
-              href="/electronics"
-              className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-navy hover:underline flex items-center gap-1.5"
-            >
-              <span>Explore All Models</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturedShowcaseSection initialProducts={featuredProducts} />
 
       {/* ====================================================
           SECTION 5: THE PHYSICAL SHOWROOM EXPERIENCE

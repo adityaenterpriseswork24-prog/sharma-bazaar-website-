@@ -10,14 +10,14 @@
     "description": "Experience stunning 4K HDR picture quality powered by the X1 4K Processor. Features Live Color technology, Motionflow XR 100, Dolby Audio, and Google TV voice control with hands-free Google Assistant.",
     "specifications": {
       "Screen Size": "55 Inches (139 cm)",
-      "Display Technology": "4K LED HDR",
-      "Resolution": "3840 x 2160 Pixels",
-      "Refresh Rate": "60 Hz with Motionflow XR 100",
       "Processor": "X1 4K Processor",
-      "Audio Output": "20 Watts Dolby Audio Open Baffle Speaker",
-      "Operating System": "Google TV",
       "Connectivity": "3 HDMI Ports, 2 USB Ports, Dual Band Wi-Fi, Bluetooth 5.0",
-      "Warranty": "1 Year Comprehensive Brand Warranty + 1 Year on Panel"
+      "Display Technology": "4K LED HDR",
+      "Warranty": "1 Year Comprehensive Brand Warranty + 1 Year on Panel",
+      "Operating System": "Google TV",
+      "Refresh Rate": "60 Hz with Motionflow XR 100",
+      "Audio Output": "20 Watts Dolby Audio Open Baffle Speaker",
+      "Resolution": "3840 x 2160 Pixels"
     },
     "mrpPrice": 79900,
     "ourPrice": 52990,
@@ -31,7 +31,7 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-10T10:00:00.000Z",
-    "updatedAt": "2026-11-15T14:11:23.743Z",
+    "updatedAt": "2026-11-19T08:33:46.184Z",
     "isCategoryHero": true
   },
   {

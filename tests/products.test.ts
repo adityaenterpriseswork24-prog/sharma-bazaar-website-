@@ -1,7 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { INITIAL_PRODUCTS } from '../src/data/initial-products';
-import { getActiveProducts, getHomepageShowcaseProducts, HOMEPAGE_SHOWCASE_CATEGORIES } from '../src/lib/products';
+import {
+  getActiveProducts,
+  getHomepageShowcaseProducts,
+  computeShowcaseProducts,
+  HOMEPAGE_SHOWCASE_CATEGORIES,
+} from '../src/lib/products';
 
 test('INITIAL_PRODUCTS has valid structure and required fields for all items', () => {
   assert.ok(INITIAL_PRODUCTS.length >= 10, 'Expected at least 10 initial products');
@@ -84,4 +89,35 @@ test('getHomepageShowcaseProducts returns exactly 1 hero product per core catego
   for (const product of showcase) {
     assert.equal(product.isActive, true, 'Showcase product must be active');
   }
+});
+
+test('computeShowcaseProducts allows removing heroes and handles empty category inventory', () => {
+  // If a category has no product marked as isCategoryHero, it is omitted
+  const noTvHeroList = INITIAL_PRODUCTS.map((p) =>
+    p.category === 'televisions' ? { ...p, isCategoryHero: false } : p
+  );
+  const showcaseNoTv = computeShowcaseProducts(noTvHeroList);
+  assert.equal(showcaseNoTv.length, 5, 'Should have 5 heroes when television hero is removed');
+  assert.ok(
+    !showcaseNoTv.some((p) => p.category === 'televisions'),
+    'Televisions must be omitted when hero is removed'
+  );
+
+  // If a new product is marked as isCategoryHero, it becomes the hero
+  const customHeroList = INITIAL_PRODUCTS.map((p) => {
+    if (p.id === 'lg-43-inch-4k-uhd-43ur7500psc') {
+      return { ...p, isCategoryHero: true };
+    }
+    if (p.category === 'televisions' && p.id !== 'lg-43-inch-4k-uhd-43ur7500psc') {
+      return { ...p, isCategoryHero: false };
+    }
+    return p;
+  });
+  const customShowcase = computeShowcaseProducts(customHeroList);
+  const tvHero = customShowcase.find((p) => p.category === 'televisions');
+  assert.equal(tvHero?.id, 'lg-43-inch-4k-uhd-43ur7500psc', 'LG 43 inch should now be the hero');
+
+  // Empty inventory handles gracefully
+  const emptyShowcase = computeShowcaseProducts([]);
+  assert.equal(emptyShowcase.length, 0, 'Empty products array returns empty showcase');
 });

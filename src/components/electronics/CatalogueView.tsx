@@ -6,6 +6,8 @@ import { Product } from '@/types';
 import { ELECTRONICS_CATEGORIES, SITE_CONFIG } from '@/data/site-config';
 import { ProductCard } from '@/components/ui/ProductCard';
 import { buildWhatsAppUrl } from '@/lib/utils';
+import { db, isFirebaseConfigured } from '@/lib/firebase/client';
+import { collection, getDocs } from 'firebase/firestore';
 
 interface CatalogueViewProps {
   initialProducts: Product[];
@@ -37,23 +39,60 @@ export function CatalogueView({
   }, [initialSearch]);
 
   useEffect(() => {
-    let combined = initialProducts;
-    try {
-      const stored = localStorage.getItem('sharma_admin_products');
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          const serverIds = new Set(initialProducts.map((p) => p.id));
-          const localOnly = parsed.filter((p: Product) => !serverIds.has(p.id));
-          const localMap = new Map(parsed.map((p: Product) => [p.id, p]));
-          const mergedServer = initialProducts.map((sp) => localMap.get(sp.id) || sp);
-          combined = [...localOnly, ...mergedServer];
+    let isMounted = true;
+
+    async function syncCatalogue() {
+      // 1. Fetch live products from Cloud Firestore as single source of truth
+      if (isFirebaseConfigured && db) {
+        try {
+          const snap = await getDocs(collection(db, 'products'));
+          if (!snap.empty && isMounted) {
+            const fsProducts: Product[] = [];
+            snap.forEach((d) => {
+              fsProducts.push({ id: d.id, ...(d.data() as Omit<Product, 'id'>) });
+            });
+            if (fsProducts.length > 0) {
+              setProducts(fsProducts);
+              try {
+                localStorage.setItem('sharma_admin_products', JSON.stringify(fsProducts));
+              } catch {}
+              return;
+            }
+          }
+        } catch (e) {
+          console.warn('CatalogueView Firestore sync note:', e);
         }
       }
-    } catch {
-      // ignore
+
+      // 2. Fallback to localStorage if available
+      try {
+        const stored = localStorage.getItem('sharma_admin_products');
+        if (stored && isMounted) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setProducts(parsed);
+            return;
+          }
+        }
+      } catch {}
+
+      // 3. Fallback to initialProducts
+      if (isMounted) {
+        setProducts(initialProducts);
+      }
     }
-    setProducts(combined);
+
+    syncCatalogue();
+
+    const handleUpdate = () => syncCatalogue();
+    window.addEventListener('storage', handleUpdate);
+    window.addEventListener('sharma_products_updated', handleUpdate);
+
+    return () => {
+      isMounted = false;
+      window.removeEventListener('storage', handleUpdate);
+      window.removeEventListener('sharma_products_updated', handleUpdate);
+    };
   }, [initialProducts]);
 
   const availableBrands = useMemo(() => {

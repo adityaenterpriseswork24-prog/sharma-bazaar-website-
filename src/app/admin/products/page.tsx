@@ -123,6 +123,7 @@ export default function AdminProductsPage() {
     setProducts(updatedList);
     try {
       localStorage.setItem('sharma_admin_products', JSON.stringify(updatedList));
+      window.dispatchEvent(new Event('sharma_products_updated'));
     } catch {}
 
     setNotification({
@@ -183,6 +184,7 @@ export default function AdminProductsPage() {
     setProducts(updatedList);
     try {
       localStorage.setItem('sharma_admin_products', JSON.stringify(updatedList));
+      window.dispatchEvent(new Event('sharma_products_updated'));
     } catch {}
 
     const catName = target.category.replace('-', ' ');
@@ -247,6 +249,7 @@ export default function AdminProductsPage() {
     setProducts(updatedList);
     try {
       localStorage.setItem('sharma_admin_products', JSON.stringify(updatedList));
+      window.dispatchEvent(new Event('sharma_products_updated'));
     } catch {}
 
     setNotification({ message: `"${name}" removed from catalogue.`, type: 'success' });
@@ -281,6 +284,7 @@ export default function AdminProductsPage() {
     try {
       setProducts(INITIAL_PRODUCTS);
       localStorage.setItem('sharma_admin_products', JSON.stringify(INITIAL_PRODUCTS));
+      window.dispatchEvent(new Event('sharma_products_updated'));
 
       await fetch('/api/products', {
         method: 'PUT',

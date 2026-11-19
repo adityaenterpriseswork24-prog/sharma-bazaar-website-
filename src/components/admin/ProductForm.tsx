@@ -287,6 +287,7 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
           currentList = [productPayload, ...currentList.filter((p) => p.id !== productPayload.id)];
         }
         localStorage.setItem('sharma_admin_products', JSON.stringify(currentList));
+        window.dispatchEvent(new Event('sharma_products_updated'));
       } catch (localErr) {
         console.warn('LocalStorage save warning:', localErr);
       }
