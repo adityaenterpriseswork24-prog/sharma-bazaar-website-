@@ -31,7 +31,8 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-10T10:00:00.000Z",
-    "updatedAt": "2026-11-15T14:11:23.743Z"
+    "updatedAt": "2026-11-15T14:11:23.743Z",
+    "isCategoryHero": true
   },
   {
     "id": "samsung-55-crystal-4k-ua55due77",
@@ -65,7 +66,8 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-12T10:00:00.000Z",
-    "updatedAt": "2026-03-05T12:00:00.000Z"
+    "updatedAt": "2026-03-05T12:00:00.000Z",
+    "isCategoryHero": false
   },
   {
     "id": "lg-43-inch-4k-uhd-43ur7500psc",
@@ -80,7 +82,7 @@
       "Screen Size": "43 Inches (108 cm)",
       "Resolution": "3840 x 2160 Pixels (4K UHD)",
       "Refresh Rate": "60 Hz",
-      "Processor": "\u03b15 AI Processor 4K Gen6",
+      "Processor": "α5 AI Processor 4K Gen6",
       "Audio Output": "20 Watts AI Sound Pro (Virtual 5.1)",
       "Operating System": "webOS 23 with ThinQ AI",
       "Connectivity": "3 HDMI Ports, 2 USB Ports, Optical Out, Wi-Fi, Bluetooth",
@@ -98,7 +100,8 @@
     "isFeatured": false,
     "availability": "in-stock",
     "createdAt": "2026-01-15T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z"
+    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "isCategoryHero": false
   },
   {
     "id": "daikin-1-5-ton-5-star-mtkm50u",
@@ -108,7 +111,7 @@
     "modelNumber": "MTKM50U",
     "category": "air-conditioners",
     "subcategory": "Inverter Split AC",
-    "description": "Engineered for extreme Delhi summers, operating flawlessly even at 54\u00b0C ambient heat. Features Patented Neo Swing Inverter Compressor, 3D Airflow, Dew Clean Technology, and PM 2.5 air purification filter.",
+    "description": "Engineered for extreme Delhi summers, operating flawlessly even at 54°C ambient heat. Features Patented Neo Swing Inverter Compressor, 3D Airflow, Dew Clean Technology, and PM 2.5 air purification filter.",
     "specifications": {
       "Capacity": "1.5 Ton (Ideal for rooms up to 180 sq.ft)",
       "Energy Rating": "5 Star ISEER 5.2",
@@ -130,7 +133,8 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-16T10:00:00.000Z",
-    "updatedAt": "2026-03-02T12:00:00.000Z"
+    "updatedAt": "2026-03-02T12:00:00.000Z",
+    "isCategoryHero": true
   },
   {
     "id": "voltas-1-5-ton-3-star-inverter-183v-vectra-platina",
@@ -140,7 +144,7 @@
     "modelNumber": "183V Vectra Platina",
     "category": "air-conditioners",
     "subcategory": "Adjustable Inverter AC",
-    "description": "All-weather comfort with 4-in-1 adjustable cooling modes. Delivers high ambient cooling even at 52\u00b0C with anti-microbial protection, superdry mode for Delhi monsoons, and copper tubes.",
+    "description": "All-weather comfort with 4-in-1 adjustable cooling modes. Delivers high ambient cooling even at 52°C with anti-microbial protection, superdry mode for Delhi monsoons, and copper tubes.",
     "specifications": {
       "Capacity": "1.5 Ton",
       "Energy Rating": "3 Star ISEER 3.81",
@@ -161,7 +165,8 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-18T10:00:00.000Z",
-    "updatedAt": "2026-03-03T12:00:00.000Z"
+    "updatedAt": "2026-03-03T12:00:00.000Z",
+    "isCategoryHero": false
   },
   {
     "id": "samsung-253l-3-star-inverter-rt28c3053s8",
@@ -192,7 +197,8 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-20T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z"
+    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "isCategoryHero": true
   },
   {
     "id": "lg-242l-3-star-smart-inverter-gl-i292rpzx",
@@ -223,7 +229,8 @@
     "isFeatured": false,
     "availability": "in-stock",
     "createdAt": "2026-01-22T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z"
+    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "isCategoryHero": false
   },
   {
     "id": "bosch-7kg-5-star-front-load-waj2416sin",
@@ -240,7 +247,7 @@
       "Spin Speed": "1200 RPM for Faster Drying",
       "Motor": "EcoSilence Drive Friction-Free Motor",
       "Wash Programs": "15 Wash Programs including AllergyPlus & Quick 15/30",
-      "Heater": "Built-in Inox Hot Water Heater up to 90\u00b0C",
+      "Heater": "Built-in Inox Hot Water Heater up to 90°C",
       "Special Features": "ActiveWater Plus, Reload Function, Anti-Vibration Design",
       "Warranty": "2 Years Comprehensive, 12 Years on Motor"
     },
@@ -256,7 +263,8 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-25T10:00:00.000Z",
-    "updatedAt": "2026-03-04T12:00:00.000Z"
+    "updatedAt": "2026-03-04T12:00:00.000Z",
+    "isCategoryHero": true
   },
   {
     "id": "ifb-7-5kg-5-star-front-load-senorita-vxs",
@@ -287,7 +295,8 @@
     "isFeatured": false,
     "availability": "in-stock",
     "createdAt": "2026-01-26T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z"
+    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "isCategoryHero": false
   },
   {
     "id": "samsung-28l-convection-mc28a5145vk",
@@ -319,12 +328,13 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-01-28T10:00:00.000Z",
-    "updatedAt": "2026-03-02T12:00:00.000Z"
+    "updatedAt": "2026-03-02T12:00:00.000Z",
+    "isCategoryHero": true
   },
   {
     "id": "lg-28l-charcoal-convection-mj2886bfum",
     "slug": "lg-28l-charcoal-convection-microwave-oven-mj2886bfum",
-    "name": "LG 28 L Charcoal Convection Microwave Oven with 360\u00b0 Rotisserie",
+    "name": "LG 28 L Charcoal Convection Microwave Oven with 360° Rotisserie",
     "brand": "LG",
     "modelNumber": "MJ2886BFUM",
     "category": "microwaves",
@@ -350,7 +360,8 @@
     "isFeatured": false,
     "availability": "in-stock",
     "createdAt": "2026-01-30T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z"
+    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "isCategoryHero": false
   },
   {
     "id": "voltas-floor-standing-cooling-cabinet-fpc",
@@ -362,7 +373,7 @@
     "subcategory": "Hot, Normal & Cold Dispenser",
     "description": "Heavy duty commercial and domestic water dispenser with 3-tap dispensing (Hot, Cold, Normal) and a built-in 14-litre bottom refrigerator compartment for cans and snacks.",
     "specifications": {
-      "Dispensing Modes": "3 Faucets: Hot (85-90\u00b0C), Cold (10-13\u00b0C) and Ambient Normal",
+      "Dispensing Modes": "3 Faucets: Hot (85-90°C), Cold (10-13°C) and Ambient Normal",
       "Cooling Capacity": "3 Litres / Hour fast chilling",
       "Heating Capacity": "5 Litres / Hour hot water output",
       "Cabinet": "Built-in 14-Litre Cooling Refrigerator Compartment at Base",
@@ -382,7 +393,8 @@
     "isFeatured": true,
     "availability": "in-stock",
     "createdAt": "2026-02-01T10:00:00.000Z",
-    "updatedAt": "2026-03-02T12:00:00.000Z"
+    "updatedAt": "2026-03-02T12:00:00.000Z",
+    "isCategoryHero": true
   },
   {
     "id": "blue-star-bottom-loading-bld-b1",
@@ -392,7 +404,7 @@
     "modelNumber": "BWD3FMRGA Bottom Load",
     "category": "water-dispensers",
     "subcategory": "Bottom Loading Dispenser",
-    "description": "Premium modern design where the 20-litre water jar slides effortlessly into the bottom door cabinet\u2014no back-straining heavy lifting required. Features silent suction pump and LED status indicators.",
+    "description": "Premium modern design where the 20-litre water jar slides effortlessly into the bottom door cabinet—no back-straining heavy lifting required. Features silent suction pump and LED status indicators.",
     "specifications": {
       "Loading Type": "Bottom Loading (Concealed 20L Bottle Compartment)",
       "Dispense Types": "Hot, Cold, Normal Taps",
@@ -413,6 +425,7 @@
     "isFeatured": false,
     "availability": "limited-display",
     "createdAt": "2026-02-05T10:00:00.000Z",
-    "updatedAt": "2026-03-01T12:00:00.000Z"
+    "updatedAt": "2026-03-01T12:00:00.000Z",
+    "isCategoryHero": false
   }
 ]

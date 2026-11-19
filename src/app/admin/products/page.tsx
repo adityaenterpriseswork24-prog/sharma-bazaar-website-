@@ -12,6 +12,7 @@ import {
   RotateCcw,
   Eye,
   EyeOff,
+  Star,
 } from 'lucide-react';
 import { Product } from '@/types';
 import { INITIAL_PRODUCTS } from '@/data/initial-products';
@@ -150,6 +151,91 @@ export default function AdminProductsPage() {
     }
 
     setTimeout(() => setNotification(null), 3000);
+  };
+
+  const handleToggleCategoryHero = async (id: string) => {
+    const target = products.find((p) => p.id === id);
+    if (!target) return;
+
+    const nextHeroState = !target.isCategoryHero;
+
+    // Update list: ensure only 1 hero exists for this category
+    const updatedList = products.map((p) => {
+      if (p.category.toLowerCase() === target.category.toLowerCase()) {
+        if (p.id === target.id) {
+          return {
+            ...p,
+            isCategoryHero: nextHeroState,
+            isActive: nextHeroState ? true : p.isActive, // Hero must be active
+            updatedAt: new Date().toISOString(),
+          };
+        } else if (nextHeroState) {
+          return {
+            ...p,
+            isCategoryHero: false,
+            updatedAt: new Date().toISOString(),
+          };
+        }
+      }
+      return p;
+    });
+
+    setProducts(updatedList);
+    try {
+      localStorage.setItem('sharma_admin_products', JSON.stringify(updatedList));
+    } catch {}
+
+    const catName = target.category.replace('-', ' ');
+    setNotification({
+      message: nextHeroState
+        ? `⭐ "${target.name}" is now the homepage showcase hero for ${catName}.`
+        : `Removed hero designation from "${target.name}".`,
+      type: 'success',
+    });
+
+    // Cloud Firestore Sync
+    if (isFirebaseConfigured && db) {
+      try {
+        const updatedTarget = updatedList.find((p) => p.id === target.id);
+        if (updatedTarget) {
+          await setDoc(doc(db, 'products', target.id), updatedTarget);
+        }
+        if (nextHeroState) {
+          const prevHero = products.find(
+            (p) =>
+              p.category.toLowerCase() === target.category.toLowerCase() &&
+              p.isCategoryHero &&
+              p.id !== target.id
+          );
+          if (prevHero) {
+            await setDoc(doc(db, 'products', prevHero.id), {
+              ...prevHero,
+              isCategoryHero: false,
+              updatedAt: new Date().toISOString(),
+            });
+          }
+        }
+      } catch (e) {
+        console.warn('Firestore hero sync note:', e);
+      }
+    }
+
+    // Server API Sync
+    try {
+      const updatedTarget = updatedList.find((p) => p.id === target.id);
+      if (updatedTarget) {
+        await fetch('/api/products', {
+          method: 'POST',
+          headers: getAuthHeaders(),
+          credentials: 'include',
+          body: JSON.stringify(updatedTarget),
+        });
+      }
+    } catch (err) {
+      console.warn('Server sync note:', err);
+    }
+
+    setTimeout(() => setNotification(null), 3500);
   };
 
   const handleDelete = async (id: string, name: string) => {
@@ -303,6 +389,7 @@ export default function AdminProductsPage() {
                 <th className="py-3.5 px-4 font-mono text-right">Showroom Price</th>
                 <th className="py-3.5 px-4 font-mono text-right">MRP</th>
                 <th className="py-3.5 px-4 text-center">Status</th>
+                <th className="py-3.5 px-4 text-center">Homepage Hero</th>
                 <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
@@ -364,6 +451,31 @@ export default function AdminProductsPage() {
                             <span>Hidden</span>
                           </>
                         )}
+                      </button>
+                    </td>
+
+                    <td className="py-3.5 px-4 text-center font-mono">
+                      <button
+                        onClick={() => handleToggleCategoryHero(product.id)}
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm text-[10px] font-semibold tracking-wider uppercase transition-colors ${
+                          product.isCategoryHero
+                            ? 'bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100 shadow-xs'
+                            : 'bg-neutral-50 text-neutral-400 border border-neutral-200 hover:text-neutral-700 hover:bg-neutral-100'
+                        }`}
+                        title={
+                          product.isCategoryHero
+                            ? `Designated showcase hero for ${product.category.replace('-', ' ')} on homepage`
+                            : `Click to make this the homepage showcase model for ${product.category.replace('-', ' ')}`
+                        }
+                      >
+                        <Star
+                          className={`w-3 h-3 ${
+                            product.isCategoryHero
+                              ? 'fill-amber-500 text-amber-500'
+                              : 'text-neutral-400'
+                          }`}
+                        />
+                        <span>{product.isCategoryHero ? 'Hero Model' : 'Set Hero'}</span>
                       </button>
                     </td>
 

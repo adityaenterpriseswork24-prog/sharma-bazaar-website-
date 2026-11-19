@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import { SITE_CONFIG, ELECTRONICS_CATEGORIES, GOOGLE_REVIEWS_MOCK } from '@/data/site-config';
 import { SOUTH_DELHI_LOCALITIES } from '@/data/locations';
-import { getActiveProducts } from '@/lib/products';
+import { getHomepageShowcaseProducts } from '@/lib/products';
 import { ProductCard } from '@/components/ui/ProductCard';
 import { ReviewsMarquee } from '@/components/home/ReviewsMarquee';
 import { buildWhatsAppUrl } from '@/lib/utils';
@@ -62,7 +62,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const featuredProducts = await getActiveProducts({ featuredOnly: true, limitCount: 6 });
+  const featuredProducts = await getHomepageShowcaseProducts();
 
   const heroWhatsAppUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,

@@ -1,5 +1,6 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, doc, setDoc } from 'firebase/firestore';
+import { initializeFirestore, collection, getDocs, doc, setDoc } from 'firebase/firestore';
 import fs from 'fs';
 import path from 'path';
 
@@ -13,7 +14,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = initializeFirestore(app, { experimentalForceLongPolling: true });
 
 // Read INITIAL_PRODUCTS
 const storedPath = path.join(process.cwd(), 'src', 'data', 'stored-products.json');

@@ -77,6 +77,21 @@ export async function POST(request: NextRequest) {
     }
 
     let products = await readProducts();
+
+    // If setting as category hero, unset hero status on any other product in that category
+    if (body.isCategoryHero) {
+      products = products.map((p) => {
+        if (
+          p.category.toLowerCase() === body.category.toLowerCase() &&
+          p.id !== body.id &&
+          p.slug !== body.slug
+        ) {
+          return { ...p, isCategoryHero: false };
+        }
+        return p;
+      });
+    }
+
     const existingIndex = products.findIndex((p) => p.id === body.id || p.slug === body.slug);
 
     if (existingIndex >= 0) {

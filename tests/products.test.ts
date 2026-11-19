@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { INITIAL_PRODUCTS } from '../src/data/initial-products';
-import { getActiveProducts } from '../src/lib/products';
+import { getActiveProducts, getHomepageShowcaseProducts, HOMEPAGE_SHOWCASE_CATEGORIES } from '../src/lib/products';
 
 test('INITIAL_PRODUCTS has valid structure and required fields for all items', () => {
   assert.ok(INITIAL_PRODUCTS.length >= 10, 'Expected at least 10 initial products');
@@ -63,4 +63,25 @@ test('getActiveProducts filters and sorts correctly', async () => {
   // Test limitCount
   const limited = await getActiveProducts({ limitCount: 3 });
   assert.equal(limited.length, 3);
+});
+
+test('getHomepageShowcaseProducts returns exactly 1 hero product per core category', async () => {
+  assert.equal(HOMEPAGE_SHOWCASE_CATEGORIES.length, 6, 'Must define 6 canonical categories');
+
+  const showcase = await getHomepageShowcaseProducts();
+  assert.equal(showcase.length, 6, 'Homepage showcase must contain exactly 6 products');
+
+  // Verify that each of the 6 canonical categories is represented exactly once
+  const categoriesInShowcase = showcase.map((p) => p.category);
+  for (const cat of HOMEPAGE_SHOWCASE_CATEGORIES) {
+    assert.ok(
+      categoriesInShowcase.includes(cat),
+      `Expected category "${cat}" to be in homepage showcase`
+    );
+  }
+
+  // Verify all products in the showcase are active
+  for (const product of showcase) {
+    assert.equal(product.isActive, true, 'Showcase product must be active');
+  }
 });

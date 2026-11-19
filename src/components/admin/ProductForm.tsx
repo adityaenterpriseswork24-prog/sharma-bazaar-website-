@@ -14,6 +14,7 @@ import {
   Loader2,
   X,
   FileCheck,
+  Star,
 } from 'lucide-react';
 import Link from 'next/link';
 import { Product, ProductCategory, AvailabilityStatus } from '@/types';
@@ -21,7 +22,7 @@ import { ELECTRONICS_CATEGORIES } from '@/data/site-config';
 import { INITIAL_PRODUCTS } from '@/data/initial-products';
 import { formatINR, calculateSavings } from '@/lib/utils';
 import { db, isFirebaseConfigured } from '@/lib/firebase/client';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, collection, getDocs, query, where } from 'firebase/firestore';
 
 interface ProductFormProps {
   initialProduct?: Product;
@@ -53,6 +54,9 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
   );
   const [isFeatured, setIsFeatured] = useState<boolean>(
     initialProduct !== undefined ? initialProduct.isFeatured : false
+  );
+  const [isCategoryHero, setIsCategoryHero] = useState<boolean>(
+    initialProduct !== undefined ? Boolean(initialProduct.isCategoryHero) : false
   );
 
   const [specs, setSpecs] = useState<{ key: string; value: string }[]>(
@@ -250,8 +254,9 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
             ? initialProduct.gallery
             : [imageUrl, ...initialProduct.gallery.filter((g) => g !== imageUrl)]
           : [imageUrl],
-      isActive,
+      isActive: isCategoryHero ? true : isActive,
       isFeatured,
+      isCategoryHero,
       availability,
       createdAt: initialProduct?.createdAt || new Date().toISOString(),
       updatedAt: new Date().toISOString(),
@@ -262,6 +267,20 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
       try {
         const stored = localStorage.getItem('sharma_admin_products');
         let currentList: Product[] = stored ? JSON.parse(stored) : [...INITIAL_PRODUCTS];
+
+        // If setting this product as Category Hero, unset hero on any other product in the same category
+        if (isCategoryHero) {
+          currentList = currentList.map((p) => {
+            if (
+              p.category.toLowerCase() === productPayload.category.toLowerCase() &&
+              p.id !== productPayload.id
+            ) {
+              return { ...p, isCategoryHero: false };
+            }
+            return p;
+          });
+        }
+
         if (isEdit) {
           currentList = currentList.map((p) => (p.id === productPayload.id ? productPayload : p));
         } else {
@@ -301,6 +320,24 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
       // 4. Save directly to Google Cloud Firestore (Permanent Cloud Sync)
       if (isFirebaseConfigured && db) {
         try {
+          if (isCategoryHero) {
+            // Unset previous hero for this category in Firestore
+            const heroQuery = query(
+              collection(db, 'products'),
+              where('category', '==', productPayload.category),
+              where('isCategoryHero', '==', true)
+            );
+            const heroSnap = await getDocs(heroQuery);
+            for (const docSnap of heroSnap.docs) {
+              if (docSnap.id !== productPayload.id) {
+                await setDoc(doc(db, 'products', docSnap.id), {
+                  ...docSnap.data(),
+                  isCategoryHero: false,
+                  updatedAt: new Date().toISOString(),
+                });
+              }
+            }
+          }
           await setDoc(doc(db, 'products', productPayload.id), productPayload);
           console.log('Product synchronized with Google Cloud Firestore!');
         } catch (fsErr) {
@@ -689,7 +726,7 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
           05 · Showroom Visibility &amp; Flags
         </h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono">
           <label className="flex items-center gap-2.5 p-3 bg-neutral-50 border border-neutral-200 rounded-sm cursor-pointer">
             <input
               type="checkbox"
@@ -708,6 +745,26 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
               className="rounded-sm text-brand-navy"
             />
             <span className="font-semibold text-neutral-800">Featured Deal</span>
+          </label>
+
+          <label className="flex items-center gap-2.5 p-3 bg-neutral-50 border border-neutral-200 rounded-sm cursor-pointer">
+            <input
+              type="checkbox"
+              checked={isCategoryHero}
+              onChange={(e) => {
+                setIsCategoryHero(e.target.checked);
+                if (e.target.checked) setIsActive(true);
+              }}
+              className="rounded-sm text-amber-600"
+            />
+            <div className="flex items-center gap-1.5">
+              <Star
+                className={`w-3.5 h-3.5 ${
+                  isCategoryHero ? 'fill-amber-500 text-amber-500' : 'text-neutral-400'
+                }`}
+              />
+              <span className="font-semibold text-neutral-800">Homepage Hero</span>
+            </div>
           </label>
 
           <div>

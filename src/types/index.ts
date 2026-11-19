@@ -33,6 +33,7 @@ export interface Product {
   gallery: string[];
   isActive: boolean;
   isFeatured: boolean;
+  isCategoryHero?: boolean;
   availability: AvailabilityStatus;
   createdAt: string;
   updatedAt: string;
