@@ -51,8 +51,17 @@ export async function getActiveProducts(options: ProductFilterOptions = {}): Pro
         querySnapshot.forEach((docSnap) => {
           firestoreProducts.push({ id: docSnap.id, ...(docSnap.data() as Omit<Product, 'id'>) });
         });
-        if (firestoreProducts.length > 0) {
+        if (firestoreProducts.length >= products.length) {
           products = firestoreProducts;
+        } else if (firestoreProducts.length > 0) {
+          // Merge by ID to ensure full catalogue is never overwritten by partial Firestore data
+          const fsMap = new Map(firestoreProducts.map((p) => [p.id, p]));
+          products = products.map((p) => fsMap.get(p.id) || p);
+          firestoreProducts.forEach((fp) => {
+            if (!products.some((p) => p.id === fp.id)) {
+              products.unshift(fp);
+            }
+          });
         }
       }
     } catch (error) {

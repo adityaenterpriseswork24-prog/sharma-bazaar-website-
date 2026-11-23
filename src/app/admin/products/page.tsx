@@ -59,44 +59,26 @@ export default function AdminProductsPage() {
         // ignore
       }
 
-      // 2. If Google Cloud Firestore is configured, load live cloud catalogue
-      if (isFirebaseConfigured && db) {
-        try {
-          const snap = await getDocs(collection(db, 'products'));
-          if (!snap.empty) {
-            const fsProducts: Product[] = [];
-            snap.forEach((d) => fsProducts.push({ id: d.id, ...(d.data() as Omit<Product, 'id'>) }));
-            setProducts(fsProducts);
-            localStorage.setItem('sharma_admin_products', JSON.stringify(fsProducts));
-            setLoading(false);
-            return;
-          }
-        } catch (e) {
-          console.warn('Firestore load note:', e);
-        }
-      }
-
-      // 3. Fallback: Fetch server catalogue and intelligently merge
+      // 2. Fetch authoritative server catalogue from /api/products
       const res = await fetch('/api/products');
       const data = await res.json();
-      if (data?.products && Array.isArray(data.products)) {
-        if (localList.length === 0) {
-          setProducts(data.products);
-          localStorage.setItem('sharma_admin_products', JSON.stringify(data.products));
-        } else {
-          // Keep locally added custom products that do not exist on the server
-          const serverIds = new Set(data.products.map((p: Product) => p.id));
-          const localOnly = localList.filter((p: Product) => !serverIds.has(p.id));
-
-          // Preserve any local modifications for existing items
-          const localMap = new Map(localList.map((p) => [p.id, p]));
-          const mergedServer = data.products.map((sp: Product) => localMap.get(sp.id) || sp);
-
-          const finalMerged = [...localOnly, ...mergedServer];
-          setProducts(finalMerged);
-          localStorage.setItem('sharma_admin_products', JSON.stringify(finalMerged));
-        }
+      let authoritativeList: Product[] = [];
+      if (data?.products && Array.isArray(data.products) && data.products.length > 0) {
+        authoritativeList = data.products;
+      } else {
+        authoritativeList = [...INITIAL_PRODUCTS];
       }
+
+      // 3. Merge any pending local modifications if present
+      if (localList.length > 0) {
+        const localMap = new Map(localList.map((p) => [p.id, p]));
+        authoritativeList = authoritativeList.map((sp) => localMap.get(sp.id) || sp);
+      }
+
+      setProducts(authoritativeList);
+      localStorage.setItem('sharma_admin_products', JSON.stringify(authoritativeList));
+      setLoading(false);
+      return;
     } catch (err) {
       console.warn('API error, using local storage cache:', err);
     } finally {

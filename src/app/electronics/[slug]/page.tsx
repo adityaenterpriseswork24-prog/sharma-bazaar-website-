@@ -282,7 +282,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                 {/* Pricing Box */}
                 <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-sm space-y-2">
                   <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
-                    Showroom Verified Price
+                    Current Online Price
                   </span>
                   <div className="flex items-baseline justify-between">
                     <div className="flex items-baseline gap-3">

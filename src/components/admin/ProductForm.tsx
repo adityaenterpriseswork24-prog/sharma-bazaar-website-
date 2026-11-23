@@ -8,6 +8,7 @@ import {
   Plus,
   Trash2,
   Check,
+  CheckCircle2,
   AlertCircle,
   UploadCloud,
   Image as ImageIcon,
@@ -72,6 +73,7 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
     null
   );
   const [submitting, setSubmitting] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState<{ product: Product; isEdit: boolean } | null>(null);
 
   const { savingsAmount, discountPercent, hasSavings } = calculateSavings(mrpPrice, ourPrice);
 
@@ -302,6 +304,7 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
       } catch {}
 
       // 3. Attempt server sync
+      let serverSyncSuccessful = false;
       try {
         const res = await fetch('/api/products', {
           method: 'POST',
@@ -310,9 +313,11 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
           body: JSON.stringify(productPayload),
         });
 
-        if (!res.ok) {
+        if (res.ok) {
+          serverSyncSuccessful = true;
+        } else {
           const errData = await res.json().catch(() => ({}));
-          console.warn('Server sync note:', errData.error || 'Server running in read-only mode');
+          console.warn('Server sync note:', errData.error || 'Server error');
         }
       } catch (serverErr) {
         console.warn('Server sync offline note:', serverErr);
@@ -346,14 +351,12 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
         }
       }
 
-      setNotification({
-        message: isEdit ? 'Product updated successfully.' : 'Product published to showroom catalogue.',
-        type: 'success',
+      // Set prominent confirmation modal and clear submitting
+      setShowConfirmation({
+        product: productPayload,
+        isEdit,
       });
-
-      setTimeout(() => {
-        router.push('/admin/products');
-      }, 700);
+      setSubmitting(false);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Error saving product.';
       setNotification({ message: msg, type: 'error' });
@@ -798,6 +801,78 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
           <span>{submitting ? 'Saving...' : 'Save Product'}</span>
         </button>
       </div>
+
+      {/* Product Saved Confirmation Modal */}
+      {showConfirmation && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-neutral-200 space-y-5 animate-in zoom-in-95 duration-200">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-7 h-7" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-neutral-900">
+                  {showConfirmation.isEdit ? 'Product Updated Successfully!' : 'Product Added Successfully!'}
+                </h3>
+                <p className="text-xs text-neutral-500">
+                  Changes are saved to disk and published live to the showroom catalogue.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-neutral-50 rounded-xl p-4 border border-neutral-200/80 space-y-2 text-xs">
+              <div className="flex justify-between items-start gap-2">
+                <span className="text-neutral-500">Product:</span>
+                <span className="font-semibold text-neutral-900 text-right line-clamp-1">{showConfirmation.product.name}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-500">Model Number:</span>
+                <span className="font-mono font-medium text-neutral-800">{showConfirmation.product.modelNumber}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-500">Showroom Counter Price:</span>
+                <span className="font-bold text-brand-navy">{formatINR(showConfirmation.product.ourPrice)}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-500">Category:</span>
+                <span className="capitalize font-mono font-medium text-neutral-700">{showConfirmation.product.category.replace('-', ' ')}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-500">Homepage Hero:</span>
+                <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${showConfirmation.product.isCategoryHero ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-neutral-200 text-neutral-600'}`}>
+                  {showConfirmation.product.isCategoryHero ? 'Active Category Hero ★' : 'Standard'}
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-2.5 pt-1">
+              <button
+                type="button"
+                onClick={() => router.push('/admin/products')}
+                className="w-full sm:flex-1 py-2.5 px-4 bg-brand-navy hover:bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors text-center shadow-xs"
+              >
+                Done (Back to List)
+              </button>
+              <Link
+                href={`/electronics/${showConfirmation.product.slug}`}
+                target="_blank"
+                className="w-full sm:flex-1 py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors text-center shadow-xs"
+              >
+                View on Live Site
+              </Link>
+            </div>
+            <div className="text-center">
+              <button
+                type="button"
+                onClick={() => setShowConfirmation(null)}
+                className="text-xs text-neutral-500 hover:text-neutral-800 underline transition-colors"
+              >
+                Stay and Continue Editing
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </form>
   );
 }

@@ -14,49 +14,27 @@ interface FeaturedShowcaseSectionProps {
 }
 
 export function FeaturedShowcaseSection({ initialProducts }: FeaturedShowcaseSectionProps) {
-  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [products, setProducts] = useState<Product[]>(() => computeShowcaseProducts(initialProducts));
 
   useEffect(() => {
     let isMounted = true;
 
     async function syncHomepageShowcase() {
-      // 1. Fetch live products from Cloud Firestore
-      if (isFirebaseConfigured && db) {
-        try {
-          const snap = await getDocs(collection(db, 'products'));
-          if (!snap.empty && isMounted) {
-            const fsProducts: Product[] = [];
-            snap.forEach((d) => {
-              fsProducts.push({ id: d.id, ...(d.data() as Omit<Product, 'id'>) });
-            });
-            if (fsProducts.length > 0) {
-              const liveShowcase = computeShowcaseProducts(fsProducts);
-              setProducts(liveShowcase);
-              try {
-                localStorage.setItem('sharma_admin_products', JSON.stringify(fsProducts));
-              } catch {}
-              return;
-            }
-          }
-        } catch (e) {
-          console.warn('FeaturedShowcaseSection Firestore sync note:', e);
-        }
-      }
-
-      // 2. Fallback to localStorage if available
       try {
-        const stored = localStorage.getItem('sharma_admin_products');
-        if (stored && isMounted) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            const localShowcase = computeShowcaseProducts(parsed);
-            setProducts(localShowcase);
+        // 1. Fetch live products from local /api/products endpoint (updated by admin in real-time)
+        const res = await fetch('/api/products');
+        if (res.ok) {
+          const data = await res.json();
+          if (data?.products && Array.isArray(data.products) && data.products.length > 0 && isMounted) {
+            setProducts(computeShowcaseProducts(data.products));
             return;
           }
         }
-      } catch {}
+      } catch (err) {
+        console.warn('FeaturedShowcaseSection API sync note:', err);
+      }
 
-      // 3. Fallback to initialProducts
+      // 2. Authoritative fallback to initialProducts passed by Next.js SSR
       if (isMounted) {
         setProducts(computeShowcaseProducts(initialProducts));
       }
@@ -64,14 +42,12 @@ export function FeaturedShowcaseSection({ initialProducts }: FeaturedShowcaseSec
 
     syncHomepageShowcase();
 
-    // Listen for real-time inventory updates across tabs or admin edits
+    // Listen for real-time inventory updates
     const handleUpdate = () => syncHomepageShowcase();
-    window.addEventListener('storage', handleUpdate);
     window.addEventListener('sharma_products_updated', handleUpdate);
 
     return () => {
       isMounted = false;
-      window.removeEventListener('storage', handleUpdate);
       window.removeEventListener('sharma_products_updated', handleUpdate);
     };
   }, [initialProducts]);

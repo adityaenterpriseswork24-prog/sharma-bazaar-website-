@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -68,6 +69,9 @@ function extractKeySpecs(product: Product): string[] {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const [imgSrc, setImgSrc] = useState<string>(product.imageUrl);
+  const [imageFailed, setImageFailed] = useState<boolean>(false);
+
   const { savingsAmount, hasSavings } = calculateSavings(
     product.mrpPrice,
     product.ourPrice
@@ -85,9 +89,9 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group flex flex-col bg-white rounded-xl border border-neutral-200/80 hover:border-brand-navy/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
       {/* Product Image Frame */}
-      <div className="relative aspect-[4/3] bg-gradient-to-b from-neutral-50/90 via-neutral-50/30 to-white overflow-hidden border-b border-neutral-100/80 flex items-center justify-center p-5">
+      <div className="relative aspect-[4/3] bg-gradient-to-b from-neutral-50/90 via-neutral-50/30 to-white overflow-hidden border-b border-neutral-100/80 flex items-center justify-center p-5 select-none">
         {/* Live Showroom Stock Status Badge */}
-        <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">
+        <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 pointer-events-none">
           <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-emerald-800 border border-emerald-200/80 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             In Showroom
@@ -95,22 +99,39 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Brand Tag */}
-        <div className="absolute top-3 right-3 z-10">
+        <div className="absolute top-3 right-3 z-10 pointer-events-none">
           <span className="font-mono text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-neutral-800 border border-neutral-200/80 shadow-xs">
             {product.brand}
           </span>
         </div>
 
-        {/* Product Image with smooth hover zoom */}
-        <div className="relative w-full h-full">
-          <Image
-            src={product.imageUrl}
-            alt={`${product.name} - Electronics Showroom Vasant Kunj`}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
+        {/* Product Image with smooth hover zoom & robust error fallback */}
+        <div className="relative w-full h-full overflow-hidden flex items-center justify-center">
+          {!imageFailed ? (
+            <Image
+              src={imgSrc}
+              alt={`${product.name} - Electronics Showroom Vasant Kunj`}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-105"
+              loading="lazy"
+              onError={() => {
+                setImageFailed(true);
+              }}
+            />
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center text-center p-4 bg-neutral-50 rounded-lg border border-dashed border-neutral-200">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-navy">
+                {product.brand}
+              </span>
+              <span className="text-[11px] font-mono text-neutral-500 mt-0.5">
+                {product.modelNumber}
+              </span>
+              <span className="text-[10px] text-emerald-700 font-medium mt-2 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                Verified In Showroom
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -157,7 +178,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="flex items-end justify-between gap-2">
             <div>
               <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 font-medium">
-                Showroom Counter Price
+                Online Price
               </p>
               <div className="flex items-baseline gap-2 pt-0.5">
                 <span className="text-xl sm:text-2xl font-bold tracking-tight text-brand-navy font-sans">

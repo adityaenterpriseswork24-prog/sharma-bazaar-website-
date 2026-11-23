@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { formatINR, calculateSavings, buildWhatsAppUrl, generateProductWhatsAppMessage, cn } from '../src/lib/utils.ts';
-import { SITE_CONFIG, ELECTRONICS_CATEGORIES } from '../src/data/site-config.ts';
+import { formatINR, calculateSavings, buildWhatsAppUrl, generateProductWhatsAppMessage, cn } from '../src/lib/utils';
+import { SITE_CONFIG, ELECTRONICS_CATEGORIES } from '../src/data/site-config';
 
 test('formatINR formats currency to Indian Rupees correctly', () => {
   assert.equal(formatINR(0).replace(/\s+/g, ' '), '₹0');
@@ -36,7 +36,6 @@ test('calculateSavings accurately calculates discount and savings amount', () =>
   assert.equal(res3.discountPercent, 0);
 
   // Zero or undefined
-  // @ts-expect-error testing edge cases
   const res4 = calculateSavings(0, 50000);
   assert.equal(res4.hasSavings, false);
 });
