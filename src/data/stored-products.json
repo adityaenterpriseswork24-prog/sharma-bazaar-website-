@@ -367,9 +367,9 @@
     },
     "ourPrice": 10990,
     "mrpPrice": 16900,
-    "imageUrl": "/images/products/godrej-edge-classic-75-clean-front.jpg",
+    "imageUrl": "/images/products/godrej-edge-cls-75-official.jpg",
     "gallery": [
-      "/images/products/godrej-edge-classic-75-clean-front.jpg",
+      "/images/products/godrej-edge-cls-75-official.jpg",
       "/images/products/godrej-edge-classic-75-clean-side.jpg",
       "/images/products/godrej-edge-classic-75-front.jpg"
     ],
@@ -617,11 +617,11 @@
     },
     "mrpPrice": 79900,
     "ourPrice": 52990,
-    "imageUrl": "/images/products/sony-bravia-55-4k-kd-55x74l-real-1.jpg",
+    "imageUrl": "/images/products/sony-bravia-55.jpg",
     "gallery": [
-      "/images/products/sony-bravia-55-4k-kd-55x74l-real-1.jpg",
-      "/images/products/sony-bravia-55-4k-kd-55x74l-real-2.jpg",
-      "/images/products/sony-bravia-55-4k-kd-55x74l-real-3.jpg"
+      "/images/products/sony-bravia-55.jpg",
+      "/images/products/sony-bravia-55-detail-1.jpg",
+      "/images/products/sony-bravia-55-detail-2.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -883,11 +883,11 @@
     },
     "mrpPrice": 42990,
     "ourPrice": 34990,
-    "imageUrl": "/images/products/ifb-7-5kg-senorita-vxs-clean-angle.jpg",
+    "imageUrl": "/images/products/ifb-7-5kg-front-load.jpg",
     "gallery": [
-      "/images/products/ifb-7-5kg-senorita-vxs-clean-angle.jpg",
-      "/images/products/ifb-7-5kg-senorita-vxs-clean-front.jpg",
-      "/images/products/ifb-7-5kg-senorita-vxs-clean-side.jpg"
+      "/images/products/ifb-7-5kg-front-load.jpg",
+      "/images/products/ifb-7-5kg-front-load-detail-1.jpg",
+      "/images/products/ifb-7-5kg-front-load-detail-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1181,12 +1181,9 @@
     },
     "ourPrice": 17990,
     "mrpPrice": 22490,
-    "imageUrl": "/images/products/unique-gld2336yabw-img1.jpg",
+    "imageUrl": "/images/products/lg-gld1936yabw-authentic-front.jpg",
     "gallery": [
-      "/images/products/unique-gld2336yabw-img1.jpg",
-      "/images/products/lg-gld1936yabw-real-2.jpg",
-      "/images/products/lg-gld1936yabw-real-3.jpg",
-      "/images/products/lg-gld1936yabw-real-1.jpg"
+      "/images/products/lg-gld1936yabw-authentic-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1215,9 +1212,9 @@
     },
     "ourPrice": 17990,
     "mrpPrice": 22490,
-    "imageUrl": "/images/products/lg-gld1936yarw-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-gld1936yarw-real-3.jpg",
     "gallery": [
-      "/images/products/lg-gld1936yarw-authentic-front.jpg",
+      "/images/products/lg-gld1936yarw-real-3.jpg",
       "/images/products/lg-gld1936yarw-real-2.jpg",
       "/images/products/lg-gld1936yarw-real-3.jpg",
       "/images/products/lg-gld1936yarw-clean-front.jpg"
@@ -1249,12 +1246,10 @@
     },
     "ourPrice": 17990,
     "mrpPrice": 22490,
-    "imageUrl": "/images/products/lg-gld1936yawg-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-gld1936yawg-official.jpg",
     "gallery": [
-      "/images/products/lg-gld1936yawg-authentic-front.jpg",
-      "/images/products/lg-gld1936yawg-real-2.jpg",
-      "/images/products/lg-gld1936yawg-real-3.jpg",
-      "/images/products/lg-gld1936yawg-real-1.jpg"
+      "/images/products/lg-gld1936yawg-official.jpg",
+      "/images/products/lg-gld2156zhwg-wine_0.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1384,9 +1379,9 @@
     },
     "ourPrice": 19490,
     "mrpPrice": 24490,
-    "imageUrl": "/images/products/lg-gld2136yhba-aster_0.jpg",
+    "imageUrl": "/images/products/lg-gld2136yhba-aster_1.jpg",
     "gallery": [
-      "/images/products/lg-gld2136yhba-aster_0.jpg",
+      "/images/products/lg-gld2136yhba-aster_1.jpg",
       "/images/products/lg-gld2136yhba-real-2.jpg",
       "/images/products/lg-gld2136yhba-real-1.jpg"
     ],
@@ -1417,9 +1412,9 @@
     },
     "ourPrice": 19490,
     "mrpPrice": 24490,
-    "imageUrl": "/images/products/lg-gld2136yael-lily_1.jpg",
+    "imageUrl": "/images/products/lg-gld2136yael-clean-front.jpg",
     "gallery": [
-      "/images/products/lg-gld2136yael-lily_1.jpg",
+      "/images/products/lg-gld2136yael-clean-front.jpg",
       "/images/products/lg-gld2136yael-real-2.jpg",
       "/images/products/lg-gld2136yael-real-1.jpg"
     ],
@@ -1450,8 +1445,9 @@
     },
     "ourPrice": 21990,
     "mrpPrice": 27490,
-    "imageUrl": "/images/products/lg-gld2156zhwg-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-gld2156zhwg-wine_0.jpg",
     "gallery": [
+      "/images/products/lg-gld2156zhwg-wine_0.jpg",
       "/images/products/lg-gld2156zhwg-authentic-front.jpg",
       "/images/products/lg-gld2156zhwg-real-2.jpg",
       "/images/products/lg-gld2156zhwg-detail-1.jpg"
@@ -1585,9 +1581,9 @@
     },
     "ourPrice": 22990,
     "mrpPrice": 28490,
-    "imageUrl": "/images/products/unique-gld2336yarw-img1.jpg",
+    "imageUrl": "/images/products/lg-gld2336yarw-clean-v2.jpg",
     "gallery": [
-      "/images/products/unique-gld2336yarw-img1.jpg",
+      "/images/products/lg-gld2336yarw-clean-v2.jpg",
       "/images/products/unique-gld2336yarw-img2.jpg",
       "/images/products/unique-gld2336yarw-img3.jpg",
       "/images/products/unique-gld2336yarw-img5.jpg"
@@ -1619,9 +1615,9 @@
     },
     "ourPrice": 23990,
     "mrpPrice": 29490,
-    "imageUrl": "/images/products/lg-gld2336zars-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-gld2336zars-clean-front.jpg",
     "gallery": [
-      "/images/products/lg-gld2336zars-authentic-front.jpg",
+      "/images/products/lg-gld2336zars-clean-front.jpg",
       "/images/products/lg-gld2336zars-real-2.jpg",
       "/images/products/lg-gld2336zars-real-1.jpg"
     ],
@@ -1852,9 +1848,9 @@
     },
     "ourPrice": 26490,
     "mrpPrice": 34990,
-    "imageUrl": "/images/products/lg-glt2216wyri-real-2.jpg",
+    "imageUrl": "/images/products/lg-glt2216wyro-real-1.jpg",
     "gallery": [
-      "/images/products/lg-glt2216wyri-real-2.jpg",
+      "/images/products/lg-glt2216wyro-real-1.jpg",
       "/images/products/lg-gld1816wowr-authentic-front.jpg",
       "/images/products/lg-gld1816worr-authentic-front.jpg"
     ],
@@ -1986,9 +1982,9 @@
     },
     "ourPrice": 32990,
     "mrpPrice": 42990,
-    "imageUrl": "/images/products/lg-glt2816wxds-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-glt2816wxds-clean-front.jpg",
     "gallery": [
-      "/images/products/lg-glt2816wxds-authentic-front.jpg",
+      "/images/products/lg-glt2816wxds-clean-front.jpg",
       "/images/products/lg-glt2816wxds-real-1.jpg",
       "/images/products/lg-glt2816wxds-detail-1.jpg"
     ],
@@ -2019,12 +2015,12 @@
     },
     "ourPrice": 34490,
     "mrpPrice": 44990,
-    "imageUrl": "/images/products/lg-glt2826xwnb-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-glt2826xwnb-real-2.jpg",
     "gallery": [
+      "/images/products/lg-glt2826xwnb-real-2.jpg",
       "/images/products/lg-glt2826xwnb-authentic-front.jpg",
       "/images/products/lg-glt2826xwpz-real-3.jpg",
-      "/images/products/lg-glt2826xwpz-real-1.jpg",
-      "/images/products/lg-glt2816wxds-clean-front.jpg"
+      "/images/products/lg-glt2826xwpz-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2087,12 +2083,12 @@
     },
     "ourPrice": 36990,
     "mrpPrice": 47990,
-    "imageUrl": "/images/products/lg-glt2926odpz-real-2.jpg",
+    "imageUrl": "/images/products/lg-glt2926pdpz-front.jpg",
     "gallery": [
+      "/images/products/lg-glt2926pdpz-front.jpg",
       "/images/products/lg-glt2926odpz-real-2.jpg",
       "/images/products/lg-glt2926odpz-authentic-front.jpg",
-      "/images/products/lg-glt2926pdpz-real-1.jpg",
-      "/images/products/lg-glt2926pdpz-detail-1.jpg"
+      "/images/products/lg-glt2926pdpz-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2121,11 +2117,9 @@
     },
     "ourPrice": 35990,
     "mrpPrice": 46990,
-    "imageUrl": "/images/products/lg-glt2926odpz-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-glt2926odpz-real-2.jpg",
     "gallery": [
-      "/images/products/lg-glt2926odpz-authentic-front.jpg",
-      "/images/products/lg-glt2926odpz-real-3.jpg",
-      "/images/products/lg-glt2926odpz-detail-1.jpg"
+      "/images/products/lg-glt2926odpz-real-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2220,9 +2214,9 @@
     },
     "ourPrice": 48990,
     "mrpPrice": 64990,
-    "imageUrl": "/images/products/unique-glt3426snbm-img1.jpg",
+    "imageUrl": "/images/products/lg-glt3426snbm-clean-front.jpg",
     "gallery": [
-      "/images/products/unique-glt3426snbm-img1.jpg",
+      "/images/products/lg-glt3426snbm-clean-front.jpg",
       "/images/products/unique-glt3426snbm-img3.jpg",
       "/images/products/unique-glt3426snbm-img4.jpg"
     ],
@@ -2587,9 +2581,9 @@
     },
     "ourPrice": 13490,
     "mrpPrice": 18490,
-    "imageUrl": "/images/products/lg-p7510rgaz-authentic-front.jpg",
+    "imageUrl": "/images/products/test-p7010-front.jpg",
     "gallery": [
-      "/images/products/lg-p7510rgaz-authentic-front.jpg",
+      "/images/products/test-p7010-front.jpg",
       "/images/products/lg-p7510rgaz-real-3.jpg",
       "/images/products/lg-p7510rgaz-detail-1.jpg"
     ],
@@ -2655,12 +2649,9 @@
     },
     "ourPrice": 15690,
     "mrpPrice": 21790,
-    "imageUrl": "/images/products/lg-p8015skaz-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-skaz-cand-6.jpg",
     "gallery": [
-      "/images/products/lg-p8015skaz-authentic-front.jpg",
-      "/images/products/lg-p8015skaz-real-1.jpg",
-      "/images/products/lg-p8015skaz-real-2.jpg",
-      "/images/products/lg-p8015skaz-real-3.jpg"
+      "/images/products/lg-skaz-cand-6.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2722,9 +2713,9 @@
     },
     "ourPrice": 15990,
     "mrpPrice": 21990,
-    "imageUrl": "/images/products/lg-p8530sraz-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-p8530sraz-pure-front.jpg",
     "gallery": [
-      "/images/products/lg-p8530sraz-authentic-front.jpg",
+      "/images/products/lg-p8530sraz-pure-front.jpg",
       "/images/products/lg-p8530sraz-pure-front.jpg",
       "/images/products/lg-p8530sraz-real-2.jpg",
       "/images/products/lg-p8530sraz-detail-1.jpg"
@@ -2789,9 +2780,9 @@
     },
     "ourPrice": 17990,
     "mrpPrice": 23990,
-    "imageUrl": "/images/products/lg-p955asgaz-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-p955asgaz-real-3.jpg",
     "gallery": [
-      "/images/products/lg-p955asgaz-authentic-front.jpg",
+      "/images/products/lg-p955asgaz-real-3.jpg",
       "/images/products/lg-p9555skaz-real-1.jpg",
       "/images/products/lg-p955asgaz-real-2.jpg",
       "/images/products/lg-p955asgaz-real-3.jpg"
@@ -2823,12 +2814,9 @@
     },
     "ourPrice": 18490,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-p9555skaz-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-skaz-cand-5.jpg",
     "gallery": [
-      "/images/products/lg-p9555skaz-authentic-front.jpg",
-      "/images/products/lg-p9555skaz-real-1.jpg",
-      "/images/products/lg-p9555skaz-real-2.jpg",
-      "/images/products/lg-p9555skaz-real-3.jpg"
+      "/images/products/lg-skaz-cand-5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2924,9 +2912,9 @@
     },
     "ourPrice": 16690,
     "mrpPrice": 23190,
-    "imageUrl": "/images/products/lg-px900h9so2z-real-2.jpg",
+    "imageUrl": "/images/products/lg-px85003sk2z-real-3.jpg",
     "gallery": [
-      "/images/products/lg-px900h9so2z-real-2.jpg",
+      "/images/products/lg-px85003sk2z-real-3.jpg",
       "/images/products/p7010-4.jpg",
       "/images/products/lg-px900h9so2z-real-1.jpg",
       "/images/products/lg-px85003so2z-real-3.jpg"
@@ -2991,9 +2979,9 @@
     },
     "ourPrice": 17690,
     "mrpPrice": 24190,
-    "imageUrl": "/images/products/lg-px900hsd4z-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-px900hsd4z-real-2.jpg",
     "gallery": [
-      "/images/products/lg-px900hsd4z-authentic-front.jpg",
+      "/images/products/lg-px900hsd4z-real-2.jpg",
       "/images/products/lg-px900h7sk4z-real-2.jpg",
       "/images/products/lg-px900hsd4z-real-2.jpg",
       "/images/products/lg-px900hsd4z-real-3.jpg"
@@ -3058,9 +3046,9 @@
     },
     "ourPrice": 18490,
     "mrpPrice": 25490,
-    "imageUrl": "/images/products/lg-px900h7sk4z-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-px900h7sk4z-real-2.jpg",
     "gallery": [
-      "/images/products/lg-px900h7sk4z-authentic-front.jpg",
+      "/images/products/lg-px900h7sk4z-real-2.jpg",
       "/images/products/lg-px900h7sk4z-real-3.jpg",
       "/images/products/lg-px900h7sk4z-real-2.jpg",
       "/images/products/lg-px900h7sk4z-detail-1.jpg"
@@ -3126,9 +3114,9 @@
     },
     "ourPrice": 19990,
     "mrpPrice": 27990,
-    "imageUrl": "/images/products/lg-px110b3sd2z-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-px110b3sd2z-real-1.jpg",
     "gallery": [
-      "/images/products/lg-px110b3sd2z-authentic-front.jpg",
+      "/images/products/lg-px110b3sd2z-real-1.jpg",
       "/images/products/lg-px110b3sd2z-real-1.jpg",
       "/images/products/lg-px110b3sd2z-real-2.jpg",
       "/images/products/lg-px110b3sd2z-real-3.jpg"
@@ -3330,12 +3318,12 @@
     },
     "ourPrice": 35990,
     "mrpPrice": 47990,
-    "imageUrl": "/images/products/lg-tx311swo-authentic-front.jpg",
+    "imageUrl": "/images/products/tx310-1.jpg",
     "gallery": [
+      "/images/products/tx310-1.jpg",
       "/images/products/lg-tx311swo-authentic-front.jpg",
       "/images/products/test-t80-real-hxyj.jpg",
-      "/images/products/lg-tx311swo-real-3.jpg",
-      "/images/products/lg-tx311swo-detail-1.jpg"
+      "/images/products/lg-tx311swo-real-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3364,12 +3352,9 @@
     },
     "ourPrice": 38990,
     "mrpPrice": 51990,
-    "imageUrl": "/images/products/lg-tx511swo-authentic-front.jpg",
+    "imageUrl": "/images/products/tx310-2.jpg",
     "gallery": [
-      "/images/products/lg-tx511swo-authentic-front.jpg",
-      "/images/products/lg-tx511swo-real-1.jpg",
-      "/images/products/lg-tx511swo-real-2.jpg",
-      "/images/products/lg-tx511swo-real-3.jpg"
+      "/images/products/tx310-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3398,9 +3383,9 @@
     },
     "ourPrice": 31490,
     "mrpPrice": 41990,
-    "imageUrl": "/images/products/lg-thd09nwm-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-thd09nwm-real-1.jpg",
     "gallery": [
-      "/images/products/lg-thd09nwm-authentic-front.jpg",
+      "/images/products/lg-thd09nwm-real-1.jpg",
       "/images/products/lg-thd09nwm-real-1.jpg",
       "/images/products/lg-thd09nwm-real-2.jpg",
       "/images/products/lg-thd09nwm-real-3.jpg"
@@ -3432,9 +3417,9 @@
     },
     "ourPrice": 29490,
     "mrpPrice": 39990,
-    "imageUrl": "/images/products/lg-thd09npf-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-thd09-clean-front.jpg",
     "gallery": [
-      "/images/products/lg-thd09npf-authentic-front.jpg",
+      "/images/products/lg-thd09-clean-front.jpg",
       "/images/products/lg-thd09-clean-front.jpg",
       "/images/products/thd09-1.jpg",
       "/images/products/thd09-2.jpg"
@@ -3466,9 +3451,9 @@
     },
     "ourPrice": 32490,
     "mrpPrice": 43490,
-    "imageUrl": "/images/products/unique-thd09swm-img6.jpg",
+    "imageUrl": "/images/products/lg-thd09swm-real-1.jpg",
     "gallery": [
-      "/images/products/unique-thd09swm-img6.jpg",
+      "/images/products/lg-thd09swm-real-1.jpg",
       "/images/products/unique-thd09swm-img3.jpg",
       "/images/products/unique-thd09swm-img2.jpg",
       "/images/products/unique-thd09swm-img4.jpg"
@@ -3500,11 +3485,10 @@
     },
     "ourPrice": 36990,
     "mrpPrice": 48990,
-    "imageUrl": "/images/products/lg-fhb1207z4m-real-1.jpg",
+    "imageUrl": "/images/products/lg-fhb1207z4m-real-3.jpg",
     "gallery": [
-      "/images/products/lg-fhb1207z4m-real-1.jpg",
-      "/images/products/lg-fhb1207z4m-real-2.jpg",
-      "/images/products/lg-fhb1207z4m-real-3.jpg"
+      "/images/products/lg-fhb1207z4m-real-3.jpg",
+      "/images/products/lg-fhb1207z4m-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3533,12 +3517,10 @@
     },
     "ourPrice": 35990,
     "mrpPrice": 47990,
-    "imageUrl": "/images/products/lg-fhb1207z2m-real-1.jpg",
+    "imageUrl": "/images/products/lg-fhb1207z2m-verified-3.jpg",
     "gallery": [
-      "/images/products/lg-fhb1207z2m-real-1.jpg",
-      "/images/products/lg-fhb1207z2m-clean-front.jpg",
-      "/images/products/lg-fhb1207z2m-clean-angle.jpg",
-      "/images/products/lg-fhb1207z2m-clean-console.jpg"
+      "/images/products/lg-fhb1207z2m-verified-3.jpg",
+      "/images/products/lg-fhb1208z2m-authentic-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3567,12 +3549,10 @@
     },
     "ourPrice": 39990,
     "mrpPrice": 52990,
-    "imageUrl": "/images/products/lg-fhb1208z2m-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-fhb1208z2m-verified-3.jpg",
     "gallery": [
-      "/images/products/lg-fhb1208z2m-authentic-front.jpg",
-      "/images/products/unique-fhb1208z2m-img2.jpg",
-      "/images/products/unique-fhb1208z2m-img3.jpg",
-      "/images/products/unique-fhb1208z2m-img4.jpg"
+      "/images/products/lg-fhb1208z2m-verified-3.jpg",
+      "/images/products/lg-fhb1208z2m-authentic-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3604,8 +3584,7 @@
     "imageUrl": "/images/products/lg-fhb1208z4p-real-1.jpg",
     "gallery": [
       "/images/products/lg-fhb1208z4p-real-1.jpg",
-      "/images/products/lg-fhb1209z2m-authentic-front.jpg",
-      "/images/products/lg-fhb1208z2m-authentic-front.jpg"
+      "/images/products/lg-fhb1207z4m-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3634,12 +3613,10 @@
     },
     "ourPrice": 41990,
     "mrpPrice": 55990,
-    "imageUrl": "/images/products/lg-fhb1209z2m-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-fhb1209-clean-front.jpg",
     "gallery": [
-      "/images/products/lg-fhb1209z2m-authentic-front.jpg",
-      "/images/products/unique-fhb1209z2m-img2.jpg",
-      "/images/products/unique-fhb1209z2m-img3.jpg",
-      "/images/products/unique-fhb1209z2m-img5.jpg"
+      "/images/products/lg-fhb1209-clean-front.jpg",
+      "/images/products/lg-fhb1208z2m-authentic-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3668,9 +3645,9 @@
     },
     "ourPrice": 44990,
     "mrpPrice": 59990,
-    "imageUrl": "/images/products/lg-fhb1209z9b0-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-fhb1209z9b0-real-1.jpg",
     "gallery": [
-      "/images/products/lg-fhb1209z9b0-authentic-front.jpg",
+      "/images/products/lg-fhb1209z9b0-real-1.jpg",
       "/images/products/lg-fhb1209-clean-front.jpg",
       "/images/products/lg-fhb1209z9b0-verified-1.jpg",
       "/images/products/lg-fhb1209z9b0-verified-2.jpg"
@@ -4070,9 +4047,9 @@
     },
     "ourPrice": 21490,
     "mrpPrice": 28990,
-    "imageUrl": "/images/products/lg-mjen286ufw-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-mjen286ufw-real-2.jpg",
     "gallery": [
-      "/images/products/lg-mjen286ufw-authentic-front.jpg",
+      "/images/products/lg-mjen286ufw-real-2.jpg",
       "/images/products/lg-mjen286ufw-real-2.jpg",
       "/images/products/lg-mw-mjen286ufw-real-1.jpg",
       "/images/products/lg-mjen286ufw-detail-1.jpg"
@@ -4137,9 +4114,9 @@
     },
     "ourPrice": 21290,
     "mrpPrice": 28490,
-    "imageUrl": "/images/products/lg-mjen286uhw-authentic-front.jpg",
+    "imageUrl": "/images/products/unique-mjen286uhw-img2.jpg",
     "gallery": [
-      "/images/products/lg-mjen286uhw-authentic-front.jpg",
+      "/images/products/unique-mjen286uhw-img2.jpg",
       "/images/products/unique-mjen286uhw-img2.jpg",
       "/images/products/unique-mjen286uhw-img3.jpg",
       "/images/products/unique-mjen286uhw-img4.jpg"
@@ -4171,9 +4148,9 @@
     },
     "ourPrice": 20990,
     "mrpPrice": 27990,
-    "imageUrl": "/images/products/unique-mjen286uiw-img1.jpg",
+    "imageUrl": "/images/products/unique-mjen286uiw-img4.jpg",
     "gallery": [
-      "/images/products/unique-mjen286uiw-img1.jpg",
+      "/images/products/unique-mjen286uiw-img4.jpg",
       "/images/products/unique-mjen286uiw-img3.jpg",
       "/images/products/unique-mjen286uiw-img4.jpg"
     ],
@@ -4217,5 +4194,1309 @@
     "availability": "in-stock",
     "createdAt": "2026-11-19T14:30:00.000Z",
     "updatedAt": "2026-11-19T14:30:00.000Z"
+  },
+  {
+    "id": "sansui-32-inch-hd-ready-smart-led-tv-jswd32cshd",
+    "name": "Sansui 80 cm (32 inch) HD Ready Smart LED TV (Coolita OS, JSWD32CSHD)",
+    "slug": "sansui-32-inch-hd-ready-smart-led-tv-jswd32cshd",
+    "brand": "Sansui",
+    "modelNumber": "JSWD32CSHD",
+    "category": "televisions",
+    "subcategory": "HD Ready Smart TVs",
+    "description": "The Sansui JSWD32CSHD is a 32-inch HD Ready Smart LED TV powered by lightweight Coolita OS. Features Dolby Audio with 20W speakers, built-in Wi-Fi, pre-installed YouTube and Prime Video, and a quad-core processor for smooth navigation.",
+    "specifications": {
+      "Screen Size": "32 Inches (80 cm)",
+      "Resolution": "HD Ready (1366 × 768 Pixels)",
+      "Smart OS": "Coolita OS with In-Built App Store",
+      "Sound Output": "20W Stereo Speakers with Dolby Audio",
+      "Processor": "Quad Core Processor",
+      "Memory & Storage": "512 MB RAM + 4 GB ROM",
+      "Connectivity": "Wi-Fi Built-in, 2 HDMI, 2 USB, Satellite Tuner",
+      "Pre-installed Apps": "YouTube, Prime Video, Browser",
+      "Design": "Ultra-Thin Bezel Design"
+    },
+    "ourPrice": 13500,
+    "mrpPrice": 18990,
+    "imageUrl": "/images/products/sansui-32-inch-jswd32cshd-front.jpg",
+    "gallery": [
+      "/images/products/sansui-32-inch-jswd32cshd-front.jpg",
+      "/images/products/sansui-32-inch-hd-ready-smart-led-tv-jswd32cshd-detail-1.jpg",
+      "/images/products/sansui-32-inch-hd-ready-smart-led-tv-jswd32cshd-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-32-inch-hd-ready-smart-qled-tv-jsd32csqled",
+    "name": "Sansui 80 cm (32 inch) HD Ready Smart QLED TV with Built-in Soundbar (JSD32CSQLED)",
+    "slug": "sansui-32-inch-hd-ready-smart-qled-tv-jsd32csqled",
+    "brand": "Sansui",
+    "modelNumber": "JSD32CSQLED",
+    "category": "televisions",
+    "subcategory": "QLED Smart TVs",
+    "description": "Experience vibrant Quantum Dot color purity in a compact 32-inch size with the Sansui JSD32CSQLED. Equipped with an integrated front-firing soundbar with Dolby Audio, Coolita OS streaming apps, and ultra-thin bezels.",
+    "specifications": {
+      "Screen Size": "32 Inches (80 cm)",
+      "Display Technology": "Quantum Dot QLED",
+      "Resolution": "HD Ready (1366 × 768 Pixels)",
+      "Smart OS": "Coolita OS",
+      "Soundbar": "Integrated Built-in Front Soundbar (20W Dolby Audio)",
+      "Memory & Storage": "512 MB RAM + 4 GB Storage",
+      "Connectivity": "Wi-Fi, 2 HDMI, 2 USB, Satellite Tuner",
+      "Design": "Ultra-Thin Bezel-less Metallic Frame"
+    },
+    "ourPrice": 14000,
+    "mrpPrice": 19990,
+    "imageUrl": "/images/products/sansui-32-inch-jsd32csqled-front.jpg",
+    "gallery": [
+      "/images/products/sansui-32-inch-jsd32csqled-front.jpg",
+      "/images/products/sansui-32-inch-hd-ready-smart-qled-tv-jsd32csqled-detail-1.jpg",
+      "/images/products/sansui-32-inch-hd-ready-smart-qled-tv-jsd32csqled-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-32-inch-hd-ready-google-tv-jsc32hg5",
+    "name": "Sansui 80 cm (32 inch) HD Ready Google TV (Super Smart Voice Remote, JSC32HG5)",
+    "slug": "sansui-32-inch-hd-ready-google-tv-jsc32hg5",
+    "brand": "Sansui",
+    "modelNumber": "JSC32HG5",
+    "category": "televisions",
+    "subcategory": "Google TVs",
+    "description": "Certified Google 5.0 TV in a 32-inch form factor. Comes with voice assistant remote, built-in Chromecast, Wide Colour Gamut, Dolby Audio, and direct access to Netflix, Prime Video, Disney+ Hotstar, and 10,000+ apps.",
+    "specifications": {
+      "Screen Size": "32 Inches (80 cm)",
+      "Resolution": "HD Ready (1366 × 768 Pixels)",
+      "Smart Platform": "Official Google 5.0 TV",
+      "Voice Control": "Super Smart Voice Search Remote with Google Assistant",
+      "Audio": "20W Stereo Speakers with Dolby Audio",
+      "Colour Gamut": "Wide Colour Gamut (WCG)",
+      "Hardware": "Quad Core Processor, 1 GB RAM + 8 GB Storage",
+      "Connectivity": "Built-in Chromecast, Dual-Band Wi-Fi, Bluetooth 5.0, 2 HDMI, 2 USB"
+    },
+    "ourPrice": 16500,
+    "mrpPrice": 22990,
+    "imageUrl": "/images/products/sansui-32-inch-jsc32hg5-front.jpg",
+    "gallery": [
+      "/images/products/sansui-32-inch-jsc32hg5-front.jpg",
+      "/images/products/sansui-32-inch-hd-ready-google-tv-jsc32hg5-detail-1.jpg",
+      "/images/products/sansui-32-inch-hd-ready-google-tv-jsc32hg5-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-40-inch-full-hd-google-tv-jsw40fhg5",
+    "name": "Sansui 102 cm (40 inch) Full HD Google TV (Bezel-less, JSW40FHG5)",
+    "slug": "sansui-40-inch-full-hd-google-tv-jsw40fhg5",
+    "brand": "Sansui",
+    "modelNumber": "JSW40FHG5",
+    "category": "televisions",
+    "subcategory": "Full HD Smart TVs",
+    "description": "Full HD clarity on an immersive 40-inch bezel-less screen. Powered by Google TV with personalized recommendations, Google Assistant voice search, Dolby Audio acoustic clarity, and complete smart streaming connectivity.",
+    "specifications": {
+      "Screen Size": "40 Inches (102 cm)",
+      "Resolution": "Full HD (1920 × 1080 Pixels)",
+      "Smart Platform": "Certified Google TV",
+      "Remote": "Voice Remote with Google Assistant",
+      "Audio": "20W Dolby Audio Speakers",
+      "Hardware": "Quad Core Processor, 1 GB RAM + 8 GB Storage",
+      "Connectivity": "Wi-Fi, Bluetooth, Built-in Chromecast, 2 HDMI, 2 USB"
+    },
+    "ourPrice": 21200,
+    "mrpPrice": 27990,
+    "imageUrl": "/images/products/sansui-40-inch-jsw40fhg5-front.jpg",
+    "gallery": [
+      "/images/products/sansui-40-inch-jsw40fhg5-front.jpg",
+      "/images/products/sansui-40-inch-full-hd-google-tv-jsw40fhg5-detail-1.jpg",
+      "/images/products/sansui-40-inch-full-hd-google-tv-jsw40fhg5-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-43-inch-full-hd-smart-led-tv-jswd43csfhd",
+    "name": "Sansui 109 cm (43 inch) Full HD Smart LED TV (Coolita OS, JSWD43CSFHD)",
+    "slug": "sansui-43-inch-full-hd-smart-led-tv-jswd43csfhd",
+    "brand": "Sansui",
+    "modelNumber": "JSWD43CSFHD",
+    "category": "televisions",
+    "subcategory": "Full HD Smart TVs",
+    "description": "Crisp 43-inch Full HD display with Digital Color Enhancer and Dolby Audio. Features an ultra-thin bezel design, easy streaming on YouTube and Prime Video via Coolita OS, and dependable quad-core processing.",
+    "specifications": {
+      "Screen Size": "43 Inches (109 cm)",
+      "Resolution": "Full HD (1920 × 1080 Pixels)",
+      "Smart OS": "Coolita OS",
+      "Picture Enhancement": "Digital Color Enhancer",
+      "Sound Output": "20W Stereo Speakers with Dolby Audio",
+      "Hardware": "Quad Core Processor, 512 MB RAM + 4 GB ROM",
+      "Connectivity": "Wi-Fi Built-in, 2 HDMI, 2 USB, Satellite Tuner"
+    },
+    "ourPrice": 23000,
+    "mrpPrice": 29990,
+    "imageUrl": "/images/products/sansui-43-inch-jswd43csfhd-front.jpg",
+    "gallery": [
+      "/images/products/sansui-43-inch-jswd43csfhd-front.jpg",
+      "/images/products/sansui-43-inch-full-hd-smart-led-tv-jswd43csfhd-detail-1.jpg",
+      "/images/products/sansui-43-inch-full-hd-smart-led-tv-jswd43csfhd-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-43-inch-full-hd-google-tv-jsw43fhg5",
+    "name": "Sansui 109 cm (43 inch) Full HD Google TV (Bezel-less, JSW43FHG5)",
+    "slug": "sansui-43-inch-full-hd-google-tv-jsw43fhg5",
+    "brand": "Sansui",
+    "modelNumber": "JSW43FHG5",
+    "category": "televisions",
+    "subcategory": "Full HD Smart TVs",
+    "description": "Elevate home entertainment with the 43-inch Full HD Sansui Google TV. Offers seamless voice navigation, Wide Colour Gamut, built-in Chromecast, and instant access to thousands of OTT applications.",
+    "specifications": {
+      "Screen Size": "43 Inches (109 cm)",
+      "Resolution": "Full HD (1920 × 1080 Pixels)",
+      "Smart Platform": "Certified Google 5.0 TV",
+      "Audio": "20W Dolby Audio",
+      "Voice Remote": "Super Smart Voice Search Remote",
+      "Hardware": "1 GB RAM + 8 GB Storage, Quad Core Processor",
+      "Connectivity": "Chromecast Built-in, Dual-Band Wi-Fi, Bluetooth, 2 HDMI, 2 USB"
+    },
+    "ourPrice": 24800,
+    "mrpPrice": 32990,
+    "imageUrl": "/images/products/sansui-43-inch-jsw43fhg5-front.jpg",
+    "gallery": [
+      "/images/products/sansui-43-inch-jsw43fhg5-front.jpg",
+      "/images/products/sansui-43-inch-full-hd-google-tv-jsw43fhg5-detail-1.jpg",
+      "/images/products/sansui-43-inch-full-hd-google-tv-jsw43fhg5-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-43-inch-full-hd-qled-google-tv-jsw43fhg5q",
+    "name": "Sansui 109 cm (43 inch) Full HD QLED Google TV (Quantum Dot, JSW43FHG5Q)",
+    "slug": "sansui-43-inch-full-hd-qled-google-tv-jsw43fhg5q",
+    "brand": "Sansui",
+    "modelNumber": "JSW43FHG5Q",
+    "category": "televisions",
+    "subcategory": "QLED Smart TVs",
+    "description": "Combines Quantum Dot QLED vividness with Google TV versatility in a 43-inch form factor. Delivers cinematic color saturation, crisp Full HD detail, and voice-assisted Google smart home controls.",
+    "specifications": {
+      "Screen Size": "43 Inches (109 cm)",
+      "Display Technology": "Full HD Quantum Dot QLED (2K)",
+      "Resolution": "1920 × 1080 Pixels",
+      "Smart Platform": "Google 5.0 TV",
+      "Colour Reproduction": "100% Colour Volume with Wide Colour Gamut",
+      "Sound": "20W Dolby Audio",
+      "Hardware": "1 GB RAM + 8 GB Storage, Quad Core Processor",
+      "Connectivity": "Wi-Fi, Bluetooth, Chromecast, 2 HDMI, 2 USB"
+    },
+    "ourPrice": 27400,
+    "mrpPrice": 35990,
+    "imageUrl": "/images/products/sansui-43-inch-jsw43fhg5q-front.jpg",
+    "gallery": [
+      "/images/products/sansui-43-inch-jsw43fhg5q-front.jpg",
+      "/images/products/sansui-43-inch-full-hd-qled-google-tv-jsw43fhg5q-detail-1.jpg",
+      "/images/products/sansui-43-inch-full-hd-qled-google-tv-jsw43fhg5q-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-43-inch-4k-ultra-hd-smart-qled-google-tv-jsw43ug23q",
+    "name": "Sansui 109 cm (43 inch) 4K Ultra HD Smart QLED Google TV (Dolby Vision & Atmos, 120Hz HSR, JSW43UG23Q)",
+    "slug": "sansui-43-inch-4k-ultra-hd-smart-qled-google-tv-jsw43ug23q",
+    "brand": "Sansui",
+    "modelNumber": "JSW43UG23Q",
+    "category": "televisions",
+    "subcategory": "4K Ultra HD TVs",
+    "description": "Flagship 43-inch 4K QLED Google TV featuring Dolby Vision, cinema-grade Dolby Atmos 30W audio, 120Hz High Scan Rate with MEMC motion compensation, 2GB+32GB memory, and 5G Wi-Fi.",
+    "specifications": {
+      "Screen Size": "43 Inches (109 cm)",
+      "Resolution": "4K Ultra HD (3840 × 2160 Pixels)",
+      "Display": "Bezel Less Quantum Dot QLED",
+      "HDR Support": "Dolby Vision, HDR10",
+      "Audio": "30W Stereo Sound with Dolby Atmos",
+      "Gaming & Motion": "120Hz HSR, MEMC Motion Smoothing",
+      "Hardware": "2 GB RAM + 32 GB Internal Storage",
+      "Connectivity": "Dual-Band 5G Wi-Fi, Bluetooth 5.0, 3 HDMI, 2 USB"
+    },
+    "ourPrice": 35490,
+    "mrpPrice": 44990,
+    "imageUrl": "/images/products/sansui-43-inch-jsw43ug23q-front.jpg",
+    "gallery": [
+      "/images/products/sansui-43-inch-jsw43ug23q-front.jpg",
+      "/images/products/sansui-43-inch-4k-ultra-hd-smart-qled-google-tv-jsw43ug23q-detail-1.jpg",
+      "/images/products/sansui-43-inch-4k-ultra-hd-smart-qled-google-tv-jsw43ug23q-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-50-inch-4k-ultra-hd-smart-google-tv-jsw50ug23",
+    "name": "Sansui 127 cm (50 inch) 4K Ultra HD Smart Google TV (HDR10, DTS Studio Sound, JSW50UG23)",
+    "slug": "sansui-50-inch-4k-ultra-hd-smart-google-tv-jsw50ug23",
+    "brand": "Sansui",
+    "modelNumber": "JSW50UG23",
+    "category": "televisions",
+    "subcategory": "4K Ultra HD TVs",
+    "description": "50-inch big screen 4K Ultra HD entertainment with certified Google TV. Features HDR10 dynamic contrast, DTS Studio Sound, 2GB+32GB performance hardware, and voice search remote.",
+    "specifications": {
+      "Screen Size": "50 Inches (127 cm)",
+      "Resolution": "4K Ultra HD (3840 × 2160 Pixels)",
+      "HDR": "HDR10 & Wide Colour Gamut",
+      "Audio": "20W Speakers with Dolby Audio & DTS Studio Sound",
+      "Smart OS": "Google TV with Google Assistant",
+      "Hardware": "2 GB RAM + 32 GB Storage",
+      "Design": "Ultra-Thin Bezel-less Frame"
+    },
+    "ourPrice": 37990,
+    "mrpPrice": 49990,
+    "imageUrl": "/images/products/sansui-50-inch-jsw50ug23-front.jpg",
+    "gallery": [
+      "/images/products/sansui-50-inch-jsw50ug23-front.jpg",
+      "/images/products/sansui-50-inch-4k-ultra-hd-smart-google-tv-jsw50ug23-detail-1.jpg",
+      "/images/products/sansui-50-inch-4k-ultra-hd-smart-google-tv-jsw50ug23-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-50-inch-4k-ultra-hd-smart-qled-google-tv-jsw50ug23q",
+    "name": "Sansui 127 cm (50 inch) 4K Ultra HD Smart QLED Google TV (Dolby Vision & Atmos, 120Hz HSR, JSW50UG23Q)",
+    "slug": "sansui-50-inch-4k-ultra-hd-smart-qled-google-tv-jsw50ug23q",
+    "brand": "Sansui",
+    "modelNumber": "JSW50UG23Q",
+    "category": "televisions",
+    "subcategory": "QLED Smart TVs",
+    "description": "Premium 50-inch 4K QLED panel delivering billion-color brilliance. Equipped with Dolby Vision and Dolby Atmos, 30W sound, 120Hz High Scan Rate for sports and games, and 32GB memory.",
+    "specifications": {
+      "Screen Size": "50 Inches (127 cm)",
+      "Display Technology": "Quantum Dot QLED 4K Ultra HD",
+      "Resolution": "3840 × 2160 Pixels",
+      "HDR & Audio": "Dolby Vision, HDR10, 30W Dolby Atmos Speakers",
+      "Motion Rate": "120Hz HSR with MEMC",
+      "Storage": "2 GB RAM + 32 GB Internal Storage",
+      "Connectivity": "Dual Band 5G Wi-Fi, Bluetooth, 3 HDMI, 2 USB"
+    },
+    "ourPrice": 37990,
+    "mrpPrice": 51990,
+    "imageUrl": "/images/products/sansui-50-inch-jsw50ug23q-front.jpg",
+    "gallery": [
+      "/images/products/sansui-50-inch-jsw50ug23q-front.jpg",
+      "/images/products/sansui-50-inch-4k-ultra-hd-smart-qled-google-tv-jsw50ug23q-detail-1.jpg",
+      "/images/products/sansui-50-inch-4k-ultra-hd-smart-qled-google-tv-jsw50ug23q-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-55-inch-4k-ultra-hd-google-tv-neo-jsw55ug23",
+    "name": "Sansui 140 cm (55 inch) 4K Ultra HD Google TV Neo (30W DTS Audio, JSW55UG23)",
+    "slug": "sansui-55-inch-4k-ultra-hd-google-tv-neo-jsw55ug23",
+    "brand": "Sansui",
+    "modelNumber": "JSW55UG23",
+    "category": "televisions",
+    "subcategory": "4K Ultra HD TVs",
+    "description": "The Sansui Neo 55-inch 4K Google TV features a bezel-less border, HDR10 color dynamics, powerful 30W DTS Studio Sound, and voice-assisted smart curation from all leading streaming platforms.",
+    "specifications": {
+      "Screen Size": "55 Inches (140 cm)",
+      "Resolution": "4K Ultra HD (3840 × 2160 Pixels)",
+      "Smart Platform": "Certified Google TV",
+      "Picture": "Ultra High Definition, HDR10, Wide Colour Gamut",
+      "Audio": "30W Stereo Sound with Dolby Audio & DTS Studio Sound",
+      "Refresh Rate": "60Hz HSR",
+      "Hardware": "1.5 GB RAM + 8 GB Storage, Quad Core Processor"
+    },
+    "ourPrice": 42499,
+    "mrpPrice": 54990,
+    "imageUrl": "/images/products/sansui-55-inch-jsw55ug23-front.jpg",
+    "gallery": [
+      "/images/products/sansui-55-inch-jsw55ug23-front.jpg",
+      "/images/products/sansui-55-inch-4k-ultra-hd-google-tv-neo-jsw55ug23-detail-1.jpg",
+      "/images/products/sansui-55-inch-4k-ultra-hd-google-tv-neo-jsw55ug23-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-55-inch-4k-ultra-hd-smart-qled-google-tv-jskt55ugq",
+    "name": "Sansui 140 cm (55 inch) 4K Ultra HD Smart QLED Google TV (64GB Storage, Dolby Atmos, JSKT55UGQ)",
+    "slug": "sansui-55-inch-4k-ultra-hd-smart-qled-google-tv-jskt55ugq",
+    "brand": "Sansui",
+    "modelNumber": "JSKT55UGQ",
+    "category": "televisions",
+    "subcategory": "QLED Smart TVs",
+    "description": "Massive 64GB storage capacity paired with 55-inch 4K Quantum Dot brilliance. Experience cinema-standard Dolby Vision and Dolby Atmos, 30W acoustic output, and limitless app installation.",
+    "specifications": {
+      "Screen Size": "55 Inches (140 cm)",
+      "Display": "Bezel Less Quantum Dot QLED 4K",
+      "Resolution": "3840 × 2160 Pixels",
+      "Cinematic Tech": "Dolby Vision & Dolby Atmos",
+      "Sound Output": "30W Stereo Sound",
+      "Storage": "Massive 2 GB RAM + 64 GB Internal Storage",
+      "Connectivity": "Dual-Band 5G Wi-Fi, Bluetooth, 3 HDMI, 2 USB"
+    },
+    "ourPrice": 43999,
+    "mrpPrice": 57990,
+    "imageUrl": "/images/products/sansui-55-inch-jskt55ugq-front.jpg",
+    "gallery": [
+      "/images/products/sansui-55-inch-jskt55ugq-front.jpg",
+      "/images/products/sansui-55-inch-4k-ultra-hd-smart-qled-google-tv-jskt55ugq-detail-1.jpg",
+      "/images/products/sansui-55-inch-4k-ultra-hd-smart-qled-google-tv-jskt55ugq-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-65-inch-4k-ultra-hd-smart-google-tv-jsw65gsuhdff",
+    "name": "Sansui 165 cm (65 inch) 4K Ultra HD Smart Google TV (Hands-Free Voice, Dolby Atmos, JSW65GSUHDFF)",
+    "slug": "sansui-65-inch-4k-ultra-hd-smart-google-tv-jsw65gsuhdff",
+    "brand": "Sansui",
+    "modelNumber": "JSW65GSUHDFF",
+    "category": "televisions",
+    "subcategory": "4K Ultra HD TVs",
+    "description": "Transform your living room into a home theatre with the 65-inch 4K Sansui Google TV. Features built-in far-field microphones for hands-free voice commands, Dolby Vision, Dolby Atmos, and 2-way Bluetooth audio.",
+    "specifications": {
+      "Screen Size": "65 Inches (165 cm)",
+      "Resolution": "4K Ultra HD (3840 × 2160 Pixels)",
+      "Smart OS": "Certified Google TV with Hands-Free Far-Field Voice Command",
+      "Picture": "Dolby Vision, HDR10, Wide Colour Gamut",
+      "Audio": "24W Stereo Speakers with Dolby Atmos",
+      "Connectivity": "2-Way Bluetooth, 5G Wi-Fi, 3 HDMI, 2 USB",
+      "Hardware": "2 GB RAM + 32 GB Storage"
+    },
+    "ourPrice": 58990,
+    "mrpPrice": 74990,
+    "imageUrl": "/images/products/sansui-65-inch-jsw65gsuhdff-front.jpg",
+    "gallery": [
+      "/images/products/sansui-65-inch-jsw65gsuhdff-front.jpg",
+      "/images/products/sansui-65-inch-4k-ultra-hd-smart-google-tv-jsw65gsuhdff-detail-1.jpg",
+      "/images/products/sansui-65-inch-4k-ultra-hd-smart-google-tv-jsw65gsuhdff-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-65-inch-4k-ultra-hd-smart-qled-google-tv-jskt65ugq",
+    "name": "Sansui 165 cm (65 inch) 4K Ultra HD Smart QLED Google TV (Dolby Vision & Atmos, 64GB ROM, JSKT65UGQ)",
+    "slug": "sansui-65-inch-4k-ultra-hd-smart-qled-google-tv-jskt65ugq",
+    "brand": "Sansui",
+    "modelNumber": "JSKT65UGQ",
+    "category": "televisions",
+    "subcategory": "QLED Smart TVs",
+    "description": "Experience uncompressed Quantum Dot realism on an expansive 65-inch bezel-less canvas. Packed with 64GB storage, Dolby Vision, Dolby Atmos 30W speakers, and seamless Google TV entertainment.",
+    "specifications": {
+      "Screen Size": "65 Inches (165 cm)",
+      "Display": "Bezel Less Quantum Dot QLED 4K",
+      "Resolution": "3840 × 2160 Pixels",
+      "HDR & Sound": "Dolby Vision, HDR10, 30W Dolby Atmos Speakers",
+      "Storage": "2 GB RAM + 64 GB Storage",
+      "Connectivity": "Dual-Band 5G Wi-Fi, Bluetooth 5.0, 3 HDMI, 2 USB"
+    },
+    "ourPrice": 57999,
+    "mrpPrice": 79990,
+    "imageUrl": "/images/products/sansui-65-inch-jskt65ugq-front.jpg",
+    "gallery": [
+      "/images/products/sansui-65-inch-jskt65ugq-front.jpg",
+      "/images/products/sansui-65-inch-4k-ultra-hd-smart-qled-google-tv-jskt65ugq-detail-1.jpg",
+      "/images/products/sansui-65-inch-4k-ultra-hd-smart-qled-google-tv-jskt65ugq-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-75-inch-4k-ultra-hd-smart-qled-google-tv-jsw75ug23qf",
+    "name": "Sansui 190 cm (75 inch) 4K Ultra HD Smart QLED Google TV (120Hz HSR, MEMC, Hands-Free Voice, JSW75UG23QF)",
+    "slug": "sansui-75-inch-4k-ultra-hd-smart-qled-google-tv-jsw75ug23qf",
+    "brand": "Sansui",
+    "modelNumber": "JSW75UG23QF",
+    "category": "televisions",
+    "subcategory": "QLED Smart TVs",
+    "description": "Monumental 75-inch QLED display engineered for sports, gaming, and blockbuster cinema. Delivers 120Hz High Scan Rate with MEMC, hands-free Google voice interaction, Dolby Vision, and immersive Dolby Atmos.",
+    "specifications": {
+      "Screen Size": "75 Inches (190 cm)",
+      "Display Technology": "Bezel Less Quantum Dot QLED 4K",
+      "Resolution": "3840 × 2160 Pixels",
+      "Motion & Refresh": "120Hz HSR with MEMC Motion Smoothing",
+      "Audio & Video": "Dolby Vision, HDR10, 30W Dolby Atmos Sound",
+      "Voice Control": "Hands-Free Voice Command (Far-Field Mics)",
+      "Hardware": "2 GB RAM + 32 GB Storage, Dual-Band 5G Wi-Fi"
+    },
+    "ourPrice": 84990,
+    "mrpPrice": 119990,
+    "imageUrl": "/images/products/sansui-75-inch-jsw75ug23qf-front.jpg",
+    "gallery": [
+      "/images/products/sansui-75-inch-jsw75ug23qf-front.jpg",
+      "/images/products/sansui-75-inch-4k-ultra-hd-smart-qled-google-tv-jsw75ug23qf-detail-1.jpg",
+      "/images/products/sansui-75-inch-4k-ultra-hd-smart-qled-google-tv-jsw75ug23qf-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-86-inch-4k-ultra-hd-smart-android-tv-jsw86gsuhdff",
+    "name": "Sansui 218 cm (86 inch) 4K Ultra HD Smart Android TV (120Hz MEMC, Far-Field Voice, JSW86GSUHDFF)",
+    "slug": "sansui-86-inch-4k-ultra-hd-smart-android-tv-jsw86gsuhdff",
+    "brand": "Sansui",
+    "modelNumber": "JSW86GSUHDFF",
+    "category": "televisions",
+    "subcategory": "4K Ultra HD TVs",
+    "description": "A colossal 86-inch screen with native 120Hz refresh rate and MEMC motion compensation. Features certified Android OS with hands-free far-field voice control, Dolby Vision, and DTS TruSurround.",
+    "specifications": {
+      "Screen Size": "86 Inches (218 cm)",
+      "Resolution": "4K Ultra HD (3840 × 2160 Pixels)",
+      "Smart Platform": "Certified Android 10.0 with Hands-Free Voice Command",
+      "Refresh Rate": "120Hz Native Refresh Rate with MEMC",
+      "Audio": "Dolby Vision, Dolby Atmos, DTS TruSurround Sound",
+      "Connectivity": "2-Way Bluetooth, 5G Wi-Fi, 3 HDMI, 2 USB",
+      "Hardware": "2 GB RAM + 32 GB Storage, High-Power Quad Core Processor"
+    },
+    "ourPrice": 129990,
+    "mrpPrice": 179990,
+    "imageUrl": "/images/products/sansui-86-inch-jsw86gsuhdff-front.jpg",
+    "gallery": [
+      "/images/products/sansui-86-inch-jsw86gsuhdff-front.jpg",
+      "/images/products/sansui-86-inch-4k-ultra-hd-smart-android-tv-jsw86gsuhdff-detail-1.jpg",
+      "/images/products/sansui-86-inch-4k-ultra-hd-smart-android-tv-jsw86gsuhdff-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "sansui-86-inch-4k-ultra-hd-smart-qd-mini-led-google-tv-jsw86ugmqf",
+    "name": "Sansui 218 cm (86 inch) 4K Ultra HD Smart QD Mini LED Google TV (85W Subwoofer Soundbar, Local Dimming, JSW86UGMQF)",
+    "slug": "sansui-86-inch-4k-ultra-hd-smart-qd-mini-led-google-tv-jsw86ugmqf",
+    "brand": "Sansui",
+    "modelNumber": "JSW86UGMQF",
+    "category": "televisions",
+    "subcategory": "Mini LED Smart TVs",
+    "description": "The pinnacle of Sansui display engineering: an 86-inch Quantum Dot Mini LED panel with individual local dimming zones, an 85W integrated soundbar with dedicated subwoofer, 120Hz HSR, 3GB RAM, and Google TV.",
+    "specifications": {
+      "Screen Size": "86 Inches (218 cm)",
+      "Display Technology": "Quantum Dot Mini LED (QD Mini LED) with Local Dimming Zones",
+      "Resolution": "4K Ultra HD (3840 × 2160 Pixels)",
+      "Peak Audio": "85W High-Power Integrated Soundbar with Built-in Subwoofer",
+      "Motion & Refresh": "120Hz HSR with MEMC Motion Engine",
+      "Smart OS": "Google 5.0 TV with Hands-Free Voice Command",
+      "Hardware": "3 GB High-Speed RAM + 32 GB Storage",
+      "HDR Format": "Dolby Vision IQ, HDR10+, Dolby Atmos"
+    },
+    "ourPrice": 154990,
+    "mrpPrice": 219990,
+    "imageUrl": "/images/products/sansui-86-inch-jsw86ugmqf-front.jpg",
+    "gallery": [
+      "/images/products/sansui-86-inch-jsw86ugmqf-front.jpg",
+      "/images/products/sansui-86-inch-4k-ultra-hd-smart-qd-mini-led-google-tv-jsw86ugmqf-detail-1.jpg",
+      "/images/products/sansui-86-inch-4k-ultra-hd-smart-qd-mini-led-google-tv-jsw86ugmqf-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-7kg-5-star-semi-automatic-wtt70dlim",
+    "name": "Voltas Beko 7.0 kg 5 Star Semi-Automatic Washing Machine (Fast Dry, WTT70DLIM / BRSSWH5POD)",
+    "slug": "voltas-beko-7kg-5-star-semi-automatic-wtt70dlim",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT70DLIM",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "Voltas Beko 7.0 kg 5-star semi-automatic washing machine featuring Fast Dry technology, double waterfall circulation, and a rust-proof body tailored for Indian household washing conditions.",
+    "specifications": {
+      "Capacity": "7.0 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Color": "Burgundy and White",
+      "Wash Programs": "3 (Gentle, Normal, Strong)",
+      "Features": "Fast Dry, Double Waterfall, Magic Filter",
+      "Body Material": "Rust-Proof High Impact Polypropylene",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 11990,
+    "mrpPrice": 15990,
+    "imageUrl": "/images/products/voltas-beko-7kg-wtt70dlim-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-7kg-wtt70dlim-front.jpg",
+      "/images/products/voltas-beko-7kg-5-star-semi-automatic-wtt70dlim-detail-1.jpg",
+      "/images/products/voltas-beko-7kg-5-star-semi-automatic-wtt70dlim-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-7kg-5-star-semi-automatic-wtt70alim",
+    "name": "Voltas Beko 7.0 kg 5 Star Semi-Automatic Washing Machine (Toughened Glass, WTT70ALIM / BKSSBK4GTD)",
+    "slug": "voltas-beko-7kg-5-star-semi-automatic-wtt70alim",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT70ALIM",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "Equipped with durable toughened glass lids, a special scrub pulsator for collars and cuffs, and 5-star energy efficiency. Designed for water and detergent savings.",
+    "specifications": {
+      "Capacity": "7.0 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Color": "Black and Grey",
+      "Lid Type": "Toughened Glass Lid",
+      "Pulsator": "Special Scrub Pulsator",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 12490,
+    "mrpPrice": 16490,
+    "imageUrl": "/images/products/voltas-beko-7kg-wtt70alim-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-7kg-wtt70alim-front.jpg",
+      "/images/products/voltas-beko-7kg-5-star-semi-automatic-wtt70alim-detail-1.jpg",
+      "/images/products/voltas-beko-7kg-5-star-semi-automatic-wtt70alim-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-8kg-5-star-semi-automatic-wtt80uha",
+    "name": "Voltas Beko 8.0 kg 5 Star Semi-Automatic Washing Machine (Soft Close Lid, WTT80UHA / BRSSWH5PODE)",
+    "slug": "voltas-beko-8kg-5-star-semi-automatic-wtt80uha",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT80UHA",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "8.0 kg washing machine offering premium soft-closing toughened glass lids that prevent accidental slamming. Double waterfall circulation cleans bedsheets and daily laundry thoroughly.",
+    "specifications": {
+      "Capacity": "8.0 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Lid": "Soft Closed Toughened Glass Lid",
+      "Features": "Fast Dry, Double Waterfall, Castor Wheels",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 11500,
+    "mrpPrice": 16990,
+    "imageUrl": "/images/products/voltas-beko-8kg-wtt80uha-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-8kg-wtt80uha-front.jpg",
+      "/images/products/voltas-beko-8kg-5-star-semi-automatic-wtt80uha-detail-1.jpg",
+      "/images/products/voltas-beko-8kg-5-star-semi-automatic-wtt80uha-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-8kg-5-star-semi-automatic-wtt80dbrg",
+    "name": "Voltas Beko 8.0 kg 5 Star Semi-Automatic Washing Machine (Wing Pulsator, WTT80DBRG / BRSSWH4GTDE)",
+    "slug": "voltas-beko-8kg-5-star-semi-automatic-wtt80dbrg",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT80DBRG",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "Featuring a powerful Wing Pulsator that creates multi-directional water churn to dislodge stubborn grime without damaging fabrics. Finished in elegant Dark Burgundy.",
+    "specifications": {
+      "Capacity": "8.0 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Color": "Dark Burgundy",
+      "Pulsator": "Wing Pulsator Technology",
+      "Features": "Magic Filter, Rust-Free Polypropylene Body",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 13000,
+    "mrpPrice": 17990,
+    "imageUrl": "/images/products/voltas-beko-8kg-wtt80dbrg-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-8kg-wtt80dbrg-front.jpg",
+      "/images/products/voltas-beko-8kg-5-star-semi-automatic-wtt80dbrg-detail-1.jpg",
+      "/images/products/voltas-beko-8kg-5-star-semi-automatic-wtt80dbrg-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-8-5kg-5-star-semi-automatic-wtt85dgrg",
+    "name": "Voltas Beko 8.5 kg 5 Star Semi-Automatic Washing Machine (Floral Glass Lid, WTT85DGRG / FLRB5)",
+    "slug": "voltas-beko-8-5kg-5-star-semi-automatic-wtt85dgrg",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT85DGRG",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "A stylish 8.5 kg machine featuring a floral pattern toughened glass lid with hydraulic soft-close damping. Offers high-speed spin drying and deep scrubbing pulsator action.",
+    "specifications": {
+      "Capacity": "8.5 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Design": "Premium Floral Pattern Toughened Glass Lid",
+      "Color": "Dark Grey",
+      "Drying": "Fast Dry Air Turbo",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 13400,
+    "mrpPrice": 18490,
+    "imageUrl": "/images/products/voltas-beko-8-5kg-wtt85dgrg-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-8-5kg-wtt85dgrg-front.jpg",
+      "/images/products/voltas-beko-8-5kg-5-star-semi-automatic-wtt85dgrg-detail-1.jpg",
+      "/images/products/voltas-beko-8-5kg-5-star-semi-automatic-wtt85dgrg-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-9kg-5-star-semi-automatic-wtt90udx",
+    "name": "Voltas Beko 9.0 kg 5 Star Semi-Automatic Washing Machine (Heavy Duty Pulsator, WTT90UDX / BKGR4KGTD)",
+    "slug": "voltas-beko-9kg-5-star-semi-automatic-wtt90udx",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT90UDX",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "9.0 kg large-capacity semi-automatic machine designed for medium-to-large families. Includes a robust motor, castor wheels for easy relocation, and 5-star energy saving performance.",
+    "specifications": {
+      "Capacity": "9.0 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Color": "Black / Grey",
+      "Lid": "Toughened Glass Lid",
+      "Mobility": "360-Degree Castor Wheels",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 13800,
+    "mrpPrice": 19490,
+    "imageUrl": "/images/products/voltas-beko-9kg-wtt90udx-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-9kg-wtt90udx-front.jpg",
+      "/images/products/voltas-beko-9kg-5-star-semi-automatic-wtt90udx-detail-1.jpg",
+      "/images/products/voltas-beko-9kg-5-star-semi-automatic-wtt90udx-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-9-5kg-5-star-semi-automatic-wtt95uaa",
+    "name": "Voltas Beko 9.5 kg 5 Star Semi-Automatic Washing Machine (Double Waterfall, WTT95UAA / WNSSWH5GFD)",
+    "slug": "voltas-beko-9-5kg-5-star-semi-automatic-wtt95uaa",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT95UAA",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "9.5 kg semi-automatic washer with dual waterfall circulation that dissolves detergent completely before it touches clothing, preventing white residue on dark fabrics.",
+    "specifications": {
+      "Capacity": "9.5 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Color": "Wine / White",
+      "Wash Technology": "Double Waterfall Circulation",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 14700,
+    "mrpPrice": 20490,
+    "imageUrl": "/images/products/voltas-beko-9-5kg-wtt95uaa-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-9-5kg-wtt95uaa-front.jpg",
+      "/images/products/voltas-beko-9-5kg-5-star-semi-automatic-wtt95uaa-detail-1.jpg",
+      "/images/products/voltas-beko-9-5kg-5-star-semi-automatic-wtt95uaa-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-10kg-5-star-semi-automatic-wtt100upa",
+    "name": "Voltas Beko 10.0 kg 5 Star Semi-Automatic Washing Machine (Hydraulic Soft Close, WTT100UPA / BKSSDG5GTDA)",
+    "slug": "voltas-beko-10kg-5-star-semi-automatic-wtt100upa",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT100UPA",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "Generous 10.0 kg capacity effortlessly accommodates blankets, curtains, and heavy loads. Fitted with hydraulic soft-close glass lids and a deep clean pulsator.",
+    "specifications": {
+      "Capacity": "10.0 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Lid": "Toughened Glass Hydraulic Soft Close",
+      "Pulsator": "Deep Clean Pulsator",
+      "Color": "Dark Grey / Black",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 15300,
+    "mrpPrice": 21990,
+    "imageUrl": "/images/products/voltas-beko-10kg-wtt100upa-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-10kg-wtt100upa-front.jpg",
+      "/images/products/voltas-beko-12kg-wtt120upa-front.jpg",
+      "/images/products/voltas-beko-12kg-5-star-semi-automatic-wtt120upa-detail-1.jpg",
+      "/images/products/voltas-beko-12kg-5-star-semi-automatic-wtt120upa-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-12kg-5-star-semi-automatic-wtt120upa",
+    "name": "Voltas Beko 12.0 kg 5 Star Semi-Automatic Washing Machine (Large Capacity, WTT120UPA / BKSSDG5GTDA)",
+    "slug": "voltas-beko-12kg-5-star-semi-automatic-wtt120upa",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT120UPA",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "Heavy-duty 12.0 kg semi-automatic washing machine designed for joint families. High-spin speed motor extracts moisture rapidly, reducing line-drying times.",
+    "specifications": {
+      "Capacity": "12.0 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Features": "Fast Dry Air Turbo, Soft Close Glass Lids",
+      "Color": "Dark Grey / Black",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 15800,
+    "mrpPrice": 22990,
+    "imageUrl": "/images/products/voltas-beko-12kg-wtt120upa-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-12kg-wtt120upa-front.jpg",
+      "/images/products/voltas-beko-12kg-5-star-semi-automatic-wtt120upa-detail-1.jpg",
+      "/images/products/voltas-beko-12kg-5-star-semi-automatic-wtt120upa-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-14kg-5-star-semi-automatic-wtt140upa",
+    "name": "Voltas Beko 14.0 kg 5 Star Semi-Automatic Washing Machine (Jumbo Capacity, WTT140UPA / BKSSDG5GTDA)",
+    "slug": "voltas-beko-14kg-5-star-semi-automatic-wtt140upa",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTT140UPA",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "Jumbo 14.0 kg semi-automatic washer with commercial-grade tub capacity. Handles winter duvets, heavy denim, and bulk weekly wash cycles with 5-star energy efficiency.",
+    "specifications": {
+      "Capacity": "14.0 kg Jumbo Capacity",
+      "Energy Rating": "5 Star BEE Certified",
+      "Motor": "Heavy-Duty High Torque Motor",
+      "Lid": "Toughened Glass Soft Close",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 17200,
+    "mrpPrice": 24990,
+    "imageUrl": "/images/products/voltas-beko-14kg-wtt140upa-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-14kg-wtt140upa-front.jpg",
+      "/images/products/voltas-beko-14kg-5-star-semi-automatic-wtt140upa-detail-1.jpg",
+      "/images/products/voltas-beko-14kg-5-star-semi-automatic-wtt140upa-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-6-5kg-5-star-fully-automatic-top-load-wtl6504uea",
+    "name": "Voltas Beko 6.5 kg 5 Star Fully Automatic Top Load Washing Machine (Monsoon Dry, WTL6504UEA / BPBPOF)",
+    "slug": "voltas-beko-6-5kg-5-star-fully-automatic-top-load-wtl6504uea",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTL6504UEA",
+    "category": "washing-machines",
+    "subcategory": "Top Load Fully Automatic Washing Machines",
+    "description": "Compact and efficient 6.5 kg fully automatic top loader. Features Monsoon Dry technology for humid seasons, specialized Indian fabric care programs, and a soft-close glass lid.",
+    "specifications": {
+      "Capacity": "6.5 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Programs": "Indian Specific Wash Programs including Saree Wash",
+      "Drum": "Stainless Steel Drum with Monsoon Dry",
+      "Lid": "Soft Close Toughened Glass Lid",
+      "Warranty": "3 Years Comprehensive + 10 Years on Motor"
+    },
+    "ourPrice": 14800,
+    "mrpPrice": 20990,
+    "imageUrl": "/images/products/voltas-beko-6-5kg-wtl6504uea-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-6-5kg-wtl6504uea-front.jpg",
+      "/images/products/voltas-beko-6-5kg-5-star-fully-automatic-top-load-wtl6504uea-detail-1.jpg",
+      "/images/products/voltas-beko-6-5kg-5-star-fully-automatic-top-load-wtl6504uea-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-7kg-5-star-fully-automatic-top-load-wtl7004uea",
+    "name": "Voltas Beko 7.0 kg 5 Star Fully Automatic Top Load Washing Machine (Fountain Wash, WTL7004UEA / SPBPOD)",
+    "slug": "voltas-beko-7kg-5-star-fully-automatic-top-load-wtl7004uea",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTL7004UEA",
+    "category": "washing-machines",
+    "subcategory": "Top Load Fully Automatic Washing Machines",
+    "description": "7.0 kg top-loading washing machine with Fountain Wash technology for zero detergent residue, digital LED controls, and a stainless steel pulsator drum.",
+    "specifications": {
+      "Capacity": "7.0 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Wash Action": "Fountain Wash Technology",
+      "Display": "Digital LED Display Console",
+      "Color": "Silver Pearl",
+      "Warranty": "3 Years Comprehensive + 10 Years on Motor"
+    },
+    "ourPrice": 15500,
+    "mrpPrice": 21990,
+    "imageUrl": "/images/products/voltas-beko-7kg-wtl7004uea-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-7kg-wtl7004uea-front.jpg",
+      "/images/products/voltas-beko-7kg-5-star-fully-automatic-top-load-wtl7004uea-detail-1.jpg",
+      "/images/products/voltas-beko-7kg-5-star-fully-automatic-top-load-wtl7004uea-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-7kg-5-star-smart-inverter-top-load-wtl7006uaa",
+    "name": "Voltas Beko 7.0 kg 5 Star Smart Inverter Fully Automatic Top Load (ProSmart Motor, WTL7006UAA / SPC00D)",
+    "slug": "voltas-beko-7kg-5-star-smart-inverter-top-load-wtl7006uaa",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTL7006UAA",
+    "category": "washing-machines",
+    "subcategory": "Top Load Fully Automatic Washing Machines",
+    "description": "Powered by a friction-free ProSmart Inverter Motor for ultra-quiet operation and minimal power consumption. Includes free dry iron promotional offer.",
+    "specifications": {
+      "Capacity": "7.0 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Motor": "ProSmart Inverter Motor (Brushless)",
+      "Special Offer": "Free Dry Iron Included",
+      "Color": "Dark Silver",
+      "Warranty": "3 Years Comprehensive + 10 Years on Motor"
+    },
+    "ourPrice": 17000,
+    "mrpPrice": 23990,
+    "imageUrl": "/images/products/voltas-beko-7kg-wtl7006uaa-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-7kg-wtl7006uaa-front.jpg",
+      "/images/products/voltas-beko-7kg-5-star-smart-inverter-top-load-wtl7006uaa-detail-1.jpg",
+      "/images/products/voltas-beko-7kg-5-star-smart-inverter-top-load-wtl7006uaa-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-8kg-5-star-smart-inverter-top-load-wtl8006uaa",
+    "name": "Voltas Beko 8.0 kg 5 Star Smart Inverter Fully Automatic Top Load (Silent Tech, WTL8006UAA / SPC00D)",
+    "slug": "voltas-beko-8kg-5-star-smart-inverter-top-load-wtl8006uaa",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTL8006UAA",
+    "category": "washing-machines",
+    "subcategory": "Top Load Fully Automatic Washing Machines",
+    "description": "8.0 kg top loader featuring Silent Tech side-wall design that dampens vibration during high-speed spin cycles. ProSmart Inverter motor ensures whisper-quiet washes.",
+    "specifications": {
+      "Capacity": "8.0 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Motor": "ProSmart Inverter Motor with Silent Tech",
+      "Drum": "GentleWave Stainless Steel Drum",
+      "Color": "Charcoal Grey",
+      "Warranty": "3 Years Comprehensive + 10 Years on Motor"
+    },
+    "ourPrice": 18000,
+    "mrpPrice": 25490,
+    "imageUrl": "/images/products/voltas-beko-8kg-wtl8006uaa-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-8kg-wtl8006uaa-front.jpg",
+      "/images/products/voltas-beko-7kg-wtl7004uea-front.jpg",
+      "/images/products/voltas-beko-7kg-5-star-fully-automatic-top-load-wtl7004uea-detail-1.jpg",
+      "/images/products/voltas-beko-7kg-5-star-fully-automatic-top-load-wtl7004uea-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-9kg-5-star-smart-inverter-top-load-wtl9006ueah",
+    "name": "Voltas Beko 9.0 kg 5 Star Smart Inverter Fully Automatic Top Load (Hygiene Wash, WTL9006UEAH / DPB0HD)",
+    "slug": "voltas-beko-9kg-5-star-smart-inverter-top-load-wtl9006ueah",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTL9006UEAH",
+    "category": "washing-machines",
+    "subcategory": "Top Load Fully Automatic Washing Machines",
+    "description": "9.0 kg high-capacity top loader with dedicated Hygiene Wash cycle that eliminates 99.9% of household allergens and bacteria. ProSmart Inverter motor backed by 10-year warranty.",
+    "specifications": {
+      "Capacity": "9.0 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Wash Cycles": "Hygiene Wash & Hot Wash Cycle",
+      "Motor": "ProSmart Inverter Motor",
+      "Special Offer": "Free Dry Iron Included",
+      "Color": "Dark Pearl",
+      "Warranty": "3 Years Comprehensive + 10 Years on Motor"
+    },
+    "ourPrice": 19500,
+    "mrpPrice": 27990,
+    "imageUrl": "/images/products/voltas-beko-9kg-wtl9006ueah-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-9kg-wtl9006ueah-front.jpg",
+      "/images/products/voltas-beko-9kg-5-star-smart-inverter-top-load-wtl9006ueah-detail-1.jpg",
+      "/images/products/voltas-beko-9kg-5-star-smart-inverter-top-load-wtl9006ueah-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-10kg-5-star-smart-inverter-top-load-wtl1006ueah",
+    "name": "Voltas Beko 10.0 kg 5 Star Smart Inverter Fully Automatic Top Load (Large Tub, WTL1006UEAH / DPB0HD)",
+    "slug": "voltas-beko-10kg-5-star-smart-inverter-top-load-wtl1006ueah",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTL1006UEAH",
+    "category": "washing-machines",
+    "subcategory": "Top Load Fully Automatic Washing Machines",
+    "description": "10.0 kg capacity handles heavy bedding, curtains, and large family laundry in single batches. Inverter efficiency ensures minimal utility cost.",
+    "specifications": {
+      "Capacity": "10.0 kg",
+      "Energy Rating": "5 Star BEE Certified",
+      "Motor": "ProSmart Inverter Motor",
+      "Lid": "Soft Close Toughened Glass Lid",
+      "Special Offer": "Free Dry Iron Included",
+      "Warranty": "3 Years Comprehensive + 10 Years on Motor"
+    },
+    "ourPrice": 21400,
+    "mrpPrice": 29990,
+    "imageUrl": "/images/products/voltas-beko-10kg-wtl1006ueah-front.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-10kg-wtl1006ueah-front.jpg",
+      "/images/products/voltas-beko-7kg-wtl7004uea-front.jpg",
+      "/images/products/voltas-beko-7kg-5-star-fully-automatic-top-load-wtl7004uea-detail-1.jpg",
+      "/images/products/voltas-beko-7kg-5-star-fully-automatic-top-load-wtl7004uea-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "voltas-beko-11kg-5-star-smart-inverter-top-load-wtl1106ueah",
+    "name": "Voltas Beko 11.0 kg 5 Star Smart Inverter Fully Automatic Top Load (Jumbo Drum, WTL1106UEAH / DPB0HD)",
+    "slug": "voltas-beko-11kg-5-star-smart-inverter-top-load-wtl1106ueah",
+    "brand": "Voltas Beko",
+    "modelNumber": "WTL1106UEAH",
+    "category": "washing-machines",
+    "subcategory": "Top Load Fully Automatic Washing Machines",
+    "description": "Top-of-the-line 11.0 kg automatic washing machine with jumbo drum volume, smart inverter efficiency, multiple Indian stain cycles, and free dry iron promotional bundle.",
+    "specifications": {
+      "Capacity": "11.0 kg Jumbo Drum",
+      "Energy Rating": "5 Star BEE Certified",
+      "Motor": "ProSmart Inverter Motor",
+      "Special Offer": "Free Dry Iron Included",
+      "Color": "Dark Pearl",
+      "Warranty": "3 Years Comprehensive + 10 Years on Motor"
+    },
+    "ourPrice": 23000,
+    "mrpPrice": 32490,
+    "imageUrl": "/images/products/voltas-beko-11kg-5-star-smart-inverter-top-load-wtl1106ueah-detail-2.jpg",
+    "gallery": [
+      "/images/products/voltas-beko-11kg-5-star-smart-inverter-top-load-wtl1106ueah-detail-2.jpg",
+      "/images/products/voltas-beko-11kg-wtl1106ueah-front.jpg",
+      "/images/products/voltas-beko-11kg-5-star-smart-inverter-top-load-wtl1106ueah-detail-1.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "lg-8-5kg-5-star-semi-automatic-washing-machine-p8525sgaz",
+    "name": "LG 8.5 kg 5 Star Semi-Automatic Top Load Washing Machine (Roller Jet, P8525SGAZ)",
+    "slug": "lg-8-5kg-5-star-semi-automatic-washing-machine-p8525sgaz",
+    "brand": "LG",
+    "modelNumber": "P8525SGAZ",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "LG 8.5 kg 5-star semi-automatic washer with Roller Jet Pulsator that adds friction to wash off dust and mites. Equipped with Rat Away 3mm protective plastic cover and Wind Jet Dry.",
+    "specifications": {
+      "Capacity": "8.5 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Pulsator": "Roller Jet Pulsator",
+      "Features": "Rat Away Technology, Wind Jet Dry, Collar Scrubber",
+      "Color": "Dark Grey",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 16490,
+    "mrpPrice": 21990,
+    "imageUrl": "/images/products/lg-px85003so2z-real-2.jpg",
+    "gallery": [
+      "/images/products/lg-px85003so2z-real-2.jpg",
+      "/images/products/lg-8-5kg-5-star-semi-automatic-washing-machine-p8525sgaz-detail-1.jpg",
+      "/images/products/lg-8-5kg-5-star-semi-automatic-washing-machine-p8525sgaz-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "lg-9kg-5-star-semi-automatic-washing-machine-px900h3sk4z",
+    "name": "LG 9.0 kg 5 Star Semi-Automatic Washing Machine (Toughened Glass Lid, PX900H3SK4Z)",
+    "slug": "lg-9kg-5-star-semi-automatic-washing-machine-px900h3sk4z",
+    "brand": "LG",
+    "modelNumber": "PX900H3SK4Z",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "LG 9.0 kg 5-star semi-automatic machine with durable toughened glass lid and Punch+3 pulsator that drives water streams vertically to ensure uniform garment movement.",
+    "specifications": {
+      "Capacity": "9.0 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Lid": "Toughened Glass Soft Close Lid",
+      "Pulsator": "Roller Jet Pulsator with Punch+3",
+      "Color": "Dark Grey / Black",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 17490,
+    "mrpPrice": 23490,
+    "imageUrl": "/images/products/lg-px900h3sk4z-authentic-front.jpg",
+    "gallery": [
+      "/images/products/lg-px900h3sk4z-authentic-front.jpg",
+      "/images/products/lg-9kg-5-star-semi-automatic-washing-machine-px900h3sk4z-detail-1.jpg",
+      "/images/products/lg-9kg-5-star-semi-automatic-washing-machine-px900h3sk4z-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "lg-9kg-5-star-semi-automatic-washing-machine-px900h3sd4z",
+    "name": "LG 9.0 kg 5 Star Semi-Automatic Washing Machine (Soft Close Toughened Glass, PX900H3SD4Z)",
+    "slug": "lg-9kg-5-star-semi-automatic-washing-machine-px900h3sd4z",
+    "brand": "LG",
+    "modelNumber": "PX900H3SD4Z",
+    "category": "washing-machines",
+    "subcategory": "Semi-Automatic Washing Machines",
+    "description": "9.0 kg LG semi-automatic washer finished in premium Dark Steel with hydraulic soft-closing glass lids, anti-rust base, lint collector, and Rat Away chemicals.",
+    "specifications": {
+      "Capacity": "9.0 kg",
+      "Energy Rating": "5 Star BEE Rating",
+      "Lid": "Hydraulic Soft Close Toughened Glass Lid",
+      "Drying": "Wind Jet Dry System",
+      "Color": "Dark Steel",
+      "Warranty": "2 Years Comprehensive + 5 Years on Motor"
+    },
+    "ourPrice": 17990,
+    "mrpPrice": 23990,
+    "imageUrl": "/images/products/lg-px900h3sd4z-authentic-front.jpg",
+    "gallery": [
+      "/images/products/lg-px900h3sd4z-authentic-front.jpg",
+      "/images/products/lg-9kg-5-star-semi-automatic-washing-machine-px900h3sd4z-detail-1.jpg",
+      "/images/products/lg-9kg-5-star-semi-automatic-washing-machine-px900h3sd4z-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "lg-28l-charcoal-convection-microwave-mjen286viw",
+    "name": "LG 28 L Charcoal Healthy Heart Convection Microwave Oven (Floral White, MJEN286VIW)",
+    "slug": "lg-28l-charcoal-convection-microwave-mjen286viw",
+    "brand": "LG",
+    "modelNumber": "MJEN286VIW",
+    "category": "microwaves",
+    "subcategory": "Charcoal Convection Microwaves",
+    "description": "LG Charcoal Healthy Heart microwave oven in a floral white design. Uses real charcoal lighting heater for smoky tandoori flavors, pasteurizes milk without boiling over, and makes ghee in 12 minutes.",
+    "specifications": {
+      "Capacity": "28 Litres",
+      "Type": "Charcoal Convection Microwave Oven",
+      "Cavity": "Stainless Steel Cavity",
+      "Features": "Charcoal Lighting Heater, 30 Heart Friendly Recipes, Ghee in 12 Mins, Roti Basket",
+      "Color": "Floral Mirror Glass White",
+      "Warranty": "1 Year Comprehensive + 4 Years on Magnetron"
+    },
+    "ourPrice": 20490,
+    "mrpPrice": 27490,
+    "imageUrl": "/images/products/lg-mjen286viw-authentic-front.jpg",
+    "gallery": [
+      "/images/products/lg-mjen286viw-authentic-front.jpg",
+      "/images/products/lg-28l-charcoal-convection-microwave-mjen286viw-detail-1.jpg",
+      "/images/products/lg-28l-charcoal-convection-microwave-mjen286viw-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "lg-32l-charcoal-convection-microwave-mjen326ulw",
+    "name": "LG 32 L Charcoal Convection Microwave Oven (Motorised Rotisserie, MJEN326ULW)",
+    "slug": "lg-32l-charcoal-convection-microwave-mjen326ulw",
+    "brand": "LG",
+    "modelNumber": "MJEN326ULW",
+    "category": "microwaves",
+    "subcategory": "Charcoal Convection Microwaves",
+    "description": "Large 32-litre LG Charcoal Convection microwave oven with 360-degree motorized rotisserie for authentic tandoori and barbecue dishes at home. Features 301 auto cook menus and stainless steel cavity.",
+    "specifications": {
+      "Capacity": "32 Litres Large Capacity",
+      "Heater": "Charcoal Lighting Heater with Quartz Heater",
+      "Rotisserie": "360-Degree Motorised Rotisserie Barbecue",
+      "Auto Cook Menus": "301 Indian Auto Cook Menus",
+      "Cavity": "Antibacterial Stainless Steel Cavity",
+      "Warranty": "1 Year Comprehensive + 4 Years on Magnetron"
+    },
+    "ourPrice": 26490,
+    "mrpPrice": 34990,
+    "imageUrl": "/images/products/lg-mjen326ulw-authentic-front.jpg",
+    "gallery": [
+      "/images/products/lg-mjen326ulw-authentic-front.jpg",
+      "/images/products/lg-32l-charcoal-convection-microwave-mjen326ulw-detail-1.jpg",
+      "/images/products/lg-32l-charcoal-convection-microwave-mjen326ulw-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
+  },
+  {
+    "id": "lg-32l-charcoal-convection-microwave-mjen326uhw",
+    "name": "LG 32 L Charcoal Healthy Heart Convection Microwave Oven (Roti Basket, MJEN326UHW)",
+    "slug": "lg-32l-charcoal-convection-microwave-mjen326uhw",
+    "brand": "LG",
+    "modelNumber": "MJEN326UHW",
+    "category": "microwaves",
+    "subcategory": "Charcoal Convection Microwaves",
+    "description": "32-litre LG Healthy Heart microwave with Indian Roti Basket that bakes naans, lachha paranthas, and rotis with one touch. Charcoal lighting heater maintains crispy outside and juicy inside.",
+    "specifications": {
+      "Capacity": "32 Litres",
+      "Type": "Charcoal Healthy Heart Convection",
+      "Specialties": "Indian Roti Basket (12 Roti Varieties), Diet Fry, Milk Pasteurization",
+      "Cavity": "Stainless Steel Cavity",
+      "Finish": "Floral Mirror Glass",
+      "Warranty": "1 Year Comprehensive + 4 Years on Magnetron"
+    },
+    "ourPrice": 26990,
+    "mrpPrice": 35990,
+    "imageUrl": "/images/products/lg-mjen326uhw-authentic-front.jpg",
+    "gallery": [
+      "/images/products/lg-mjen326uhw-authentic-front.jpg",
+      "/images/products/lg-32l-charcoal-convection-microwave-mjen326uhw-detail-1.jpg",
+      "/images/products/lg-32l-charcoal-convection-microwave-mjen326uhw-detail-2.jpg"
+    ],
+    "isActive": true,
+    "isFeatured": false,
+    "isCategoryHero": false,
+    "availability": "in-stock",
+    "createdAt": "2026-11-24T12:00:00.000Z",
+    "updatedAt": "2026-11-24T12:00:00.000Z"
   }
 ]
