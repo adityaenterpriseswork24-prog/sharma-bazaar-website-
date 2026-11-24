@@ -57,11 +57,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17490,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-1.jpg",
+    "imageUrl": "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-3.jpg",
     "gallery": [
+      "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-3.jpg",
       "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-1.jpg",
-      "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-2.jpg",
-      "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-3.jpg"
+      "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-2.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -161,12 +161,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 13490,
     "mrpPrice": 19990,
-    "imageUrl": "/images/products/haier-9kg-htw90-angle.jpg",
+    "imageUrl": "/images/products/haier-9kg-semi-automatic-htw90-196bbk-clean-front.jpg",
     "gallery": [
-      "/images/products/haier-9kg-htw90-angle.jpg",
-      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-clean-side.jpg",
-      "/images/products/haier-9kg-htw90-control.png",
-      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-real-1.jpg"
+      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-clean-front.jpg",
+      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-verified-1.jpg",
+      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-verified-2.jpg",
+      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-verified-3.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -197,8 +197,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 15490,
     "mrpPrice": 21490,
-    "imageUrl": "/images/products/lg-8kg-5-star-semi-automatic-p8015sgaz-real-1.jpg",
+    "imageUrl": "/images/products/lg-p8015sgaz-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-p8015sgaz-authentic-front.jpg",
       "/images/products/lg-8kg-5-star-semi-automatic-p8015sgaz-real-1.jpg",
       "/images/products/lg-8kg-p8015sgaz-angle.jpg",
       "/images/products/lg-8kg-5-star-semi-automatic-p8015sgaz-real-3.jpg"
@@ -438,11 +439,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 37990,
     "mrpPrice": 54990,
-    "imageUrl": "/images/products/lg-322l-2-star-smart-inverter-gl-t3216vvyds-real-1.jpg",
+    "imageUrl": "/images/products/lg-322l-2-star-smart-inverter-gl-t3216vvyds-real-3.jpg",
     "gallery": [
+      "/images/products/lg-322l-2-star-smart-inverter-gl-t3216vvyds-real-3.jpg",
       "/images/products/lg-322l-2-star-smart-inverter-gl-t3216vvyds-real-1.jpg",
-      "/images/products/lg-322l-2-star-smart-inverter-gl-t3216vvyds-real-2.jpg",
-      "/images/products/lg-322l-2-star-smart-inverter-gl-t3216vvyds-real-3.jpg"
+      "/images/products/lg-322l-2-star-smart-inverter-gl-t3216vvyds-real-2.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -474,8 +475,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 16490,
     "mrpPrice": 20490,
-    "imageUrl": "/images/products/lg-185l-3-star-smart-inverter-gld1935yarw-real-1.jpg",
+    "imageUrl": "/images/products/lg-gld1935yarw-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-gld1935yarw-authentic-front.jpg",
       "/images/products/lg-185l-3-star-smart-inverter-gld1935yarw-real-1.jpg",
       "/images/products/lg-185l-3-star-smart-inverter-gld1935yarw-real-2.jpg",
       "/images/products/lg-gld1935yarw-detail-1.jpg"
@@ -850,8 +852,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "mrpPrice": 44990,
     "ourPrice": 31990,
-    "imageUrl": "/images/products/bosch-7kg-5-star-front-load-waj2416sin-verified-2.jpg",
+    "imageUrl": "/images/products/bosch-7kg-5-star-front-load-waj2416sin-authentic-front.jpg",
     "gallery": [
+      "/images/products/bosch-7kg-5-star-front-load-waj2416sin-authentic-front.jpg",
       "/images/products/bosch-7kg-5-star-front-load-waj2416sin-verified-2.jpg",
       "/images/products/bosch-7kg-front-load.jpg",
       "/images/products/bosch-7kg-5-star-front-load-waj2416sin-verified-3.jpg"
@@ -882,10 +885,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "mrpPrice": 42990,
     "ourPrice": 34990,
-    "imageUrl": "/images/products/ifb-7-5kg-senorita-vxs-clean-front.jpg",
+    "imageUrl": "/images/products/ifb-7-5kg-senorita-vxs-clean-angle.jpg",
     "gallery": [
-      "/images/products/ifb-7-5kg-senorita-vxs-clean-front.jpg",
       "/images/products/ifb-7-5kg-senorita-vxs-clean-angle.jpg",
+      "/images/products/ifb-7-5kg-senorita-vxs-clean-front.jpg",
       "/images/products/ifb-7-5kg-senorita-vxs-clean-side.jpg"
     ],
     "isActive": true,
@@ -915,11 +918,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "mrpPrice": 19990,
     "ourPrice": 12990,
-    "imageUrl": "/images/products/samsung-28l-convection-mc28a5145vk-real-1.jpg",
+    "imageUrl": "/images/products/samsung-28l-convection-mc28a5145vk-verified-1.jpg",
     "gallery": [
-      "/images/products/samsung-28l-convection-mc28a5145vk-real-1.jpg",
-      "/images/products/samsung-28l-convection-mc28a5145vk-real-2.jpg",
-      "/images/products/samsung-28l-convection-mc28a5145vk-real-3.jpg"
+      "/images/products/samsung-28l-convection-mc28a5145vk-verified-1.jpg",
+      "/images/products/samsung-28l-convection-mc28a5145vk-verified-2.jpg",
+      "/images/products/samsung-28l-convection-mc28a5145vk-verified-3.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -947,11 +950,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "mrpPrice": 28990,
     "ourPrice": 21490,
-    "imageUrl": "/images/products/lg-28l-charcoal-convection-mj2886bfum-real-2.jpg",
+    "imageUrl": "/images/products/lg-28l-charcoal-convection-mj2886bfum-verified-1.jpg",
     "gallery": [
-      "/images/products/lg-28l-charcoal-convection-mj2886bfum-real-2.jpg",
-      "/images/products/lg-28l-charcoal-convection-mj2886bfum-real-3.jpg",
-      "/images/products/lg-28l-charcoal-convection-mj2886bfum-real-1.jpg"
+      "/images/products/lg-28l-charcoal-convection-mj2886bfum-verified-1.jpg",
+      "/images/products/lg-28l-charcoal-convection-mj2886bfum-verified-2.jpg",
+      "/images/products/lg-28l-charcoal-convection-mj2886bfum-verified-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1045,11 +1048,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 15490,
     "mrpPrice": 18990,
-    "imageUrl": "/images/products/lg-gld1816wowr-clean-front.jpg",
+    "imageUrl": "/images/products/lg-gld1816wowr-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-gld1816wowr-authentic-front.jpg",
       "/images/products/lg-gld1816wowr-clean-front.jpg",
-      "/images/products/lg-gld1816wowr-real-3.jpg",
-      "/images/products/lg-gld1816wowr-detail-1.jpg"
+      "/images/products/lg-gld1816wowr-real-2.jpg",
+      "/images/products/lg-gld1816wowr-real-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1078,11 +1082,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 15490,
     "mrpPrice": 18990,
-    "imageUrl": "/images/products/lg-gld1816worr-verified-2.jpg",
+    "imageUrl": "/images/products/lg-gld1816worr-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-gld1816worr-verified-2.jpg",
+      "/images/products/lg-gld1816worr-authentic-front.jpg",
       "/images/products/lg-gld1816worr-real-1.jpg",
-      "/images/products/lg-gld1816worr-detail-1.jpg"
+      "/images/products/lg-gld1816worr-real-2.jpg",
+      "/images/products/lg-gld1816worr-verified-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1144,12 +1149,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 15290,
     "mrpPrice": 18790,
-    "imageUrl": "/images/products/lg-gld1816wolc-real-1.jpg",
+    "imageUrl": "/images/products/lg-gld1816woli-verified-1.jpg",
     "gallery": [
-      "/images/products/lg-gld1816wolc-real-1.jpg",
-      "/images/products/lg-gld1816wolc-real-3.jpg",
-      "/images/products/lg-gld1816wolc-real-2.jpg",
-      "/images/products/lg-gld1816wolc-detail-1.jpg"
+      "/images/products/lg-gld1816woli-verified-1.jpg",
+      "/images/products/unique-gld1816wolc-img3.jpg",
+      "/images/products/unique-gld1816wolc-img4.jpg",
+      "/images/products/unique-gld1816wolc-img5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1178,11 +1183,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 22490,
-    "imageUrl": "/images/products/lg-gld1936yabw-real-2.jpg",
+    "imageUrl": "/images/products/unique-gld2336yabw-img1.jpg",
     "gallery": [
+      "/images/products/unique-gld2336yabw-img1.jpg",
       "/images/products/lg-gld1936yabw-real-2.jpg",
-      "/images/products/lg-gld1936yabw-real-1.jpg",
-      "/images/products/lg-gld1936yabw-detail-1.jpg"
+      "/images/products/lg-gld1936yabw-real-3.jpg",
+      "/images/products/lg-gld1936yabw-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1211,11 +1217,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 22490,
-    "imageUrl": "/images/products/lg-gld1936yarw-clean-front.jpg",
+    "imageUrl": "/images/products/lg-gld1936yarw-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-gld1936yarw-clean-front.jpg",
-      "/images/products/lg-gld1936yarw-real-1.jpg",
-      "/images/products/lg-gld1936yarw-detail-1.jpg"
+      "/images/products/lg-gld1936yarw-authentic-front.jpg",
+      "/images/products/lg-gld1936yarw-real-2.jpg",
+      "/images/products/lg-gld1936yarw-real-3.jpg",
+      "/images/products/lg-gld1936yarw-clean-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1244,11 +1251,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 22490,
-    "imageUrl": "/images/products/lg-gld1936yawg-real-2.jpg",
+    "imageUrl": "/images/products/lg-gld1936yawg-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-gld1936yawg-authentic-front.jpg",
       "/images/products/lg-gld1936yawg-real-2.jpg",
-      "/images/products/lg-gld1936yawg-real-1.jpg",
-      "/images/products/lg-gld1936yawg-detail-1.jpg"
+      "/images/products/lg-gld1936yawg-real-3.jpg",
+      "/images/products/lg-gld1936yawg-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1277,11 +1285,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 16990,
     "mrpPrice": 20990,
-    "imageUrl": "/images/products/lg-gld1935yorb-real-1.jpg",
+    "imageUrl": "/images/products/unique-gld1935yorb-img6.jpg",
     "gallery": [
-      "/images/products/lg-gld1935yorb-real-1.jpg",
-      "/images/products/lg-gld1935yorb-real-2.jpg",
-      "/images/products/lg-gld1935yorb-detail-1.jpg"
+      "/images/products/unique-gld1935yorb-img6.jpg",
+      "/images/products/unique-gld1935yorb-img4.jpg",
+      "/images/products/unique-gld1935yorb-img3.jpg",
+      "/images/products/unique-gld1935yorb-img5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1310,11 +1319,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 19990,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-gld1956zael-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-gld1956zael-real-3.jpg",
     "gallery": [
-      "/images/products/lg-gld1956zael-clean-v2.jpg",
-      "/images/products/lg-gld1956zael-detail-1.jpg",
-      "/images/products/lg-gld1956zael-detail-2.jpg"
+      "/images/products/lg-gld1956zael-real-3.jpg",
+      "/images/products/unique-gld1956zael-img3.jpg",
+      "/images/products/unique-gld1956zael-img4.jpg",
+      "/images/products/unique-gld1956zael-img5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1343,9 +1353,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 19990,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-gld1956zasl-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-gld1956zasl-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-gld1956zasl-clean-v2.jpg",
+      "/images/products/lg-gld1956zasl-authentic-front.jpg",
       "/images/products/lg-gld1956zasl-real-3.jpg",
       "/images/products/lg-gld1956zasl-detail-1.jpg"
     ],
@@ -1376,12 +1386,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 19490,
     "mrpPrice": 24490,
-    "imageUrl": "/images/products/lg-gld1816woli-clean-detail.jpg",
+    "imageUrl": "/images/products/lg-gld2136yhba-aster_0.jpg",
     "gallery": [
-      "/images/products/lg-gld1816woli-clean-detail.jpg",
+      "/images/products/lg-gld2136yhba-aster_0.jpg",
       "/images/products/lg-gld2136yhba-real-2.jpg",
-      "/images/products/lg-gld2136yhba-real-1.jpg",
-      "/images/products/lg-gld2136yhba-detail-1.jpg"
+      "/images/products/lg-gld2136yhba-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1410,13 +1419,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 19490,
     "mrpPrice": 24490,
-    "imageUrl": "/images/products/lg-gld2136yael-real-3.jpg",
+    "imageUrl": "/images/products/lg-gld2136yael-lily_1.jpg",
     "gallery": [
-      "/images/products/lg-gld2136yael-real-3.jpg",
+      "/images/products/lg-gld2136yael-lily_1.jpg",
       "/images/products/lg-gld2136yael-real-2.jpg",
-      "/images/products/lg-gld1956zael-clean-front.jpg",
-      "/images/products/lg-gld2136yael-real-1.jpg",
-      "/images/products/lg-gld2136yael-detail-1.jpg"
+      "/images/products/lg-gld2136yael-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1445,9 +1452,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 21990,
     "mrpPrice": 27490,
-    "imageUrl": "/images/products/lg-gld2156zhwg-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-gld2156zhwg-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-gld2156zhwg-clean-v2.jpg",
+      "/images/products/lg-gld2156zhwg-authentic-front.jpg",
       "/images/products/lg-gld2156zhwg-real-2.jpg",
       "/images/products/lg-gld2156zhwg-detail-1.jpg"
     ],
@@ -1478,9 +1485,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 22490,
     "mrpPrice": 27990,
-    "imageUrl": "/images/products/lg-gld2236zaws-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-gld2236zaws-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-gld2236zaws-clean-v2.jpg",
+      "/images/products/lg-gld2236zaws-authentic-front.jpg",
       "/images/products/lg-gld2236zaws-real-1.jpg",
       "/images/products/lg-gld2236zaws-detail-1.jpg"
     ],
@@ -1511,13 +1518,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 21490,
     "mrpPrice": 26990,
-    "imageUrl": "/images/products/lg-gld1956zasl-real-3.jpg",
+    "imageUrl": "/images/products/lg-gld1956zasl-real-1.jpg",
     "gallery": [
+      "/images/products/lg-gld1956zasl-real-1.jpg",
       "/images/products/lg-gld1956zasl-real-3.jpg",
       "/images/products/lg-gld2236yasl-real-3.jpg",
-      "/images/products/lg-gld1956zasl-clean-front.jpg",
-      "/images/products/lg-gld2236yasl-real-1.jpg",
-      "/images/products/lg-gld2236yasl-detail-1.jpg"
+      "/images/products/lg-gld1956zasl-clean-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1546,13 +1552,13 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 22990,
     "mrpPrice": 28490,
-    "imageUrl": "/images/products/lg-gld2336yabw-real-2.jpg",
+    "imageUrl": "/images/products/lg-gld2336yabw-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-gld2336yabw-real-2.jpg",
-      "/images/products/lg-gld1936yabw-real-1.jpg",
-      "/images/products/lg-gld2336zars-clean-front.jpg",
-      "/images/products/lg-gld2336yabw-real-1.jpg",
-      "/images/products/lg-gld2336yabw-detail-1.jpg"
+      "/images/products/lg-gld2336yabw-authentic-front.jpg",
+      "/images/products/lg-gld2236zaws-authentic-front.jpg",
+      "/images/products/unique-gld2336yabw-img2.jpg",
+      "/images/products/unique-gld2336yabw-img3.jpg",
+      "/images/products/unique-gld2336yabw-img5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1581,11 +1587,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 22990,
     "mrpPrice": 28490,
-    "imageUrl": "/images/products/lg-gld2336yarw-clean-v2.jpg",
+    "imageUrl": "/images/products/unique-gld2336yarw-img1.jpg",
     "gallery": [
-      "/images/products/lg-gld2336yarw-clean-v2.jpg",
-      "/images/products/lg-gld2336yarw-real-3.jpg",
-      "/images/products/lg-gld2336yarw-detail-1.jpg"
+      "/images/products/unique-gld2336yarw-img1.jpg",
+      "/images/products/unique-gld2336yarw-img2.jpg",
+      "/images/products/unique-gld2336yarw-img3.jpg",
+      "/images/products/unique-gld2336yarw-img5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1614,9 +1621,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 23990,
     "mrpPrice": 29490,
-    "imageUrl": "/images/products/lg-gld2336zars-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-gld2336zars-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-gld2336zars-clean-v2.jpg",
+      "/images/products/lg-gld2336zars-authentic-front.jpg",
       "/images/products/lg-gld2336zars-real-2.jpg",
       "/images/products/lg-gld2336zars-real-1.jpg"
     ],
@@ -1647,11 +1654,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 25990,
     "mrpPrice": 32490,
-    "imageUrl": "/images/products/lg-gld2736ybes-clean-v2.jpg",
+    "imageUrl": "/images/products/unique-gld2736ybes-img6.jpg",
     "gallery": [
-      "/images/products/lg-gld2736ybes-clean-v2.jpg",
-      "/images/products/lg-gld2736ybes-real-1.jpg",
-      "/images/products/lg-gld2736ybes-detail-1.jpg"
+      "/images/products/unique-gld2736ybes-img6.jpg",
+      "/images/products/unique-gld2736ybes-img3.jpg",
+      "/images/products/unique-gld2736ybes-img4.jpg",
+      "/images/products/unique-gld2736ybes-img1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1680,9 +1688,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 25990,
     "mrpPrice": 32490,
-    "imageUrl": "/images/products/lg-gld2736ybrw-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-gld2736ybrw-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-gld2736ybrw-clean-v2.jpg",
+      "/images/products/lg-gld2736ybrw-authentic-front.jpg",
       "/images/products/lg-gld2736ybrw-real-3.jpg",
       "/images/products/lg-gld2736ybrw-detail-1.jpg"
     ],
@@ -1713,11 +1721,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 25490,
     "mrpPrice": 31990,
-    "imageUrl": "/images/products/lg-gld2736ybpz-real-1.jpg",
+    "imageUrl": "/images/products/unique-gld2736ybes-img1.jpg",
     "gallery": [
+      "/images/products/unique-gld2736ybes-img1.jpg",
+      "/images/products/lg-gld2736ybpz-detail-1.jpg",
       "/images/products/lg-gld2736ybpz-real-1.jpg",
-      "/images/products/lg-gld2736ybpz-real-3.jpg",
-      "/images/products/lg-gld2736ybpz-detail-1.jpg"
+      "/images/products/lg-gld2736ybpz-real-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1746,11 +1755,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 25990,
     "mrpPrice": 33990,
-    "imageUrl": "/images/products/lg-glt2216wyds-clean-v2.jpg",
+    "imageUrl": "/images/products/unique-glt2216wyds-img3.jpg",
     "gallery": [
-      "/images/products/lg-glt2216wyds-clean-v2.jpg",
-      "/images/products/lg-glt2216wyds-real-2.jpg",
-      "/images/products/lg-glt2216wyds-real-1.jpg"
+      "/images/products/unique-glt2216wyds-img3.jpg",
+      "/images/products/unique-glt2216wyds-img4.jpg",
+      "/images/products/unique-glt2216wyds-img6.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1779,11 +1788,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 26490,
     "mrpPrice": 34990,
-    "imageUrl": "/images/products/lg-glt2216wyob-real-1.jpg",
+    "imageUrl": "/images/products/lg-glt2216wyob-real-3.jpg",
     "gallery": [
+      "/images/products/lg-glt2216wyob-real-3.jpg",
       "/images/products/lg-glt2216wyob-real-1.jpg",
-      "/images/products/lg-glt2216wyob-real-2.jpg",
-      "/images/products/lg-glt2216wyob-real-3.jpg"
+      "/images/products/lg-glt2216wyob-real-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1845,11 +1854,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 26490,
     "mrpPrice": 34990,
-    "imageUrl": "/images/products/lg-glt2216wyro-real-1.jpg",
+    "imageUrl": "/images/products/lg-glt2216wyri-real-2.jpg",
     "gallery": [
-      "/images/products/lg-glt2216wyro-real-1.jpg",
-      "/images/products/lg-glt2216wyro-real-2.jpg",
-      "/images/products/lg-glt2216wyro-detail-1.jpg"
+      "/images/products/lg-glt2216wyri-real-2.jpg",
+      "/images/products/lg-gld1816wowr-authentic-front.jpg",
+      "/images/products/lg-gld1816worr-authentic-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1979,9 +1988,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 32990,
     "mrpPrice": 42990,
-    "imageUrl": "/images/products/lg-glt2816wxds-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-glt2816wxds-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-glt2816wxds-clean-v2.jpg",
+      "/images/products/lg-glt2816wxds-authentic-front.jpg",
       "/images/products/lg-glt2816wxds-real-1.jpg",
       "/images/products/lg-glt2816wxds-detail-1.jpg"
     ],
@@ -2012,13 +2021,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 34490,
     "mrpPrice": 44990,
-    "imageUrl": "/images/products/lg-glt2826xwpz-real-3.jpg",
+    "imageUrl": "/images/products/lg-glt2826xwnb-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-glt2826xwnb-authentic-front.jpg",
       "/images/products/lg-glt2826xwpz-real-3.jpg",
       "/images/products/lg-glt2826xwpz-real-1.jpg",
-      "/images/products/lg-glt2816wxds-clean-front.jpg",
-      "/images/products/lg-glt2826xwnb-detail-1.jpg",
-      "/images/products/lg-glt2826xwnb-detail-2.jpg"
+      "/images/products/lg-glt2816wxds-clean-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2047,8 +2055,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 33490,
     "mrpPrice": 43990,
-    "imageUrl": "/images/products/lg-glt2826xwpz-real-1.jpg",
+    "imageUrl": "/images/products/lg-glt2826xwpz-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-glt2826xwpz-authentic-front.jpg",
       "/images/products/lg-glt2826xwpz-real-1.jpg",
       "/images/products/lg-glt2826xwpz-real-2.jpg",
       "/images/products/lg-glt2826xwpz-real-3.jpg"
@@ -2080,9 +2089,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 36990,
     "mrpPrice": 47990,
-    "imageUrl": "/images/products/lg-glt2926pdpz-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-glt2926odpz-real-2.jpg",
     "gallery": [
-      "/images/products/lg-glt2926pdpz-clean-v2.jpg",
+      "/images/products/lg-glt2926odpz-real-2.jpg",
+      "/images/products/lg-glt2926odpz-authentic-front.jpg",
       "/images/products/lg-glt2926pdpz-real-1.jpg",
       "/images/products/lg-glt2926pdpz-detail-1.jpg"
     ],
@@ -2113,9 +2123,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 35990,
     "mrpPrice": 46990,
-    "imageUrl": "/images/products/lg-glt2926odpz-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-glt2926odpz-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-glt2926odpz-clean-v2.jpg",
+      "/images/products/lg-glt2926odpz-authentic-front.jpg",
       "/images/products/lg-glt2926odpz-real-3.jpg",
       "/images/products/lg-glt2926odpz-detail-1.jpg"
     ],
@@ -2146,10 +2156,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 41990,
     "mrpPrice": 54990,
-    "imageUrl": "/images/products/lg-glt3216nfds-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-glt3216nfds-real-2.jpg",
     "gallery": [
-      "/images/products/lg-glt3216nfds-clean-v2.jpg",
       "/images/products/lg-glt3216nfds-real-2.jpg",
+      "/images/products/lg-glt3416nfds-authentic-front.jpg",
       "/images/products/lg-glt3216nfds-detail-1.jpg"
     ],
     "isActive": true,
@@ -2212,11 +2222,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 48990,
     "mrpPrice": 64990,
-    "imageUrl": "/images/products/lg-glt3426snbm-clean-v2.jpg",
+    "imageUrl": "/images/products/unique-glt3426snbm-img1.jpg",
     "gallery": [
-      "/images/products/lg-glt3426snbm-clean-v2.jpg",
-      "/images/products/lg-glt3426snbm-real-1.jpg",
-      "/images/products/lg-glt3426snbm-detail-1.jpg"
+      "/images/products/unique-glt3426snbm-img1.jpg",
+      "/images/products/unique-glt3426snbm-img3.jpg",
+      "/images/products/unique-glt3426snbm-img4.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2278,8 +2288,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 45490,
     "mrpPrice": 61990,
-    "imageUrl": "/images/products/lg-glt3416nfds-real-1.jpg",
+    "imageUrl": "/images/products/lg-glt3416nfds-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-glt3416nfds-authentic-front.jpg",
       "/images/products/lg-glt3416nfds-real-1.jpg",
       "/images/products/lg-glt3416nfds-real-2.jpg",
       "/images/products/lg-glt3416nfds-real-3.jpg"
@@ -2344,11 +2355,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 54990,
     "mrpPrice": 72990,
-    "imageUrl": "/images/products/lg-glt4026snpz-clean-v2.jpg",
+    "imageUrl": "/images/products/unique-glt4026snpz-img6.jpg",
     "gallery": [
-      "/images/products/lg-glt4026snpz-clean-v2.jpg",
-      "/images/products/lg-glt4026snpz-real-1.jpg",
-      "/images/products/lg-glt4026snpz-detail-1.jpg"
+      "/images/products/unique-glt4026snpz-img6.jpg",
+      "/images/products/unique-glt4026snpz-img5.jpg",
+      "/images/products/unique-glt4026snpz-img3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2377,13 +2388,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 56990,
     "mrpPrice": 76990,
-    "imageUrl": "/images/products/lg-glt3416nfds-real-3.jpg",
+    "imageUrl": "/images/products/lg-glt4416cces-real-1.jpg",
     "gallery": [
+      "/images/products/lg-glt4416cces-real-1.jpg",
       "/images/products/lg-glt3416nfds-real-3.jpg",
       "/images/products/lg-glt3426snbm-clean-front.jpg",
-      "/images/products/lg-glt4026snpz-clean-front.jpg",
-      "/images/products/lg-glt4416cces-real-2.jpg",
-      "/images/products/lg-glt4416ccpz-real-3.jpg"
+      "/images/products/lg-glt4026snpz-clean-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2412,11 +2422,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 55990,
     "mrpPrice": 74990,
-    "imageUrl": "/images/products/lg-glt4416ccpz-clean-front.jpg",
+    "imageUrl": "/images/products/unique-glt4416ccpz-img4.jpg",
     "gallery": [
-      "/images/products/lg-glt4416ccpz-clean-front.jpg",
-      "/images/products/lg-glt4416ccpz-real-2.jpg",
-      "/images/products/lg-glt4416ccpz-real-3.jpg"
+      "/images/products/unique-glt4416ccpz-img4.jpg",
+      "/images/products/unique-glt4416ccpz-img6.jpg",
+      "/images/products/unique-glt4416ccpz-img2.jpg",
+      "/images/products/unique-glt4416ccpz-img3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2445,11 +2456,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 61990,
     "mrpPrice": 83990,
-    "imageUrl": "/images/products/lg-glt4616tepz-real-3.jpg",
+    "imageUrl": "/images/products/lg-glt4616tepz-verified-1.jpg",
     "gallery": [
-      "/images/products/lg-glt4616tepz-real-3.jpg",
-      "/images/products/lg-glt4616tepz-real-1.jpg",
-      "/images/products/lg-glt4616tepz-detail-1.jpg"
+      "/images/products/lg-glt4616tepz-verified-1.jpg",
+      "/images/products/lg-glt4616tepz-verified-2.jpg",
+      "/images/products/lg-glt4616tepz-verified-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2478,11 +2489,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 76990,
     "mrpPrice": 104990,
-    "imageUrl": "/images/products/lg-glt6816odpz-clean-v2.jpg",
+    "imageUrl": "/images/products/lg-glt6816odpz-verified-2.jpg",
     "gallery": [
-      "/images/products/lg-glt6816odpz-clean-v2.jpg",
-      "/images/products/lg-glt6816odpz-real-3.jpg",
-      "/images/products/lg-glt6816odpz-detail-1.jpg"
+      "/images/products/lg-glt6816odpz-verified-2.jpg",
+      "/images/products/lg-glt6816odpz-verified-1.jpg",
+      "/images/products/lg-glt6816odpz-verified-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2544,8 +2555,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 12490,
     "mrpPrice": 16990,
-    "imageUrl": "/images/products/lg-p7010ngaz-real-1.jpg",
+    "imageUrl": "/images/products/lg-p7010ngaz-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-p7010ngaz-authentic-front.jpg",
       "/images/products/lg-p7010ngaz-real-1.jpg",
       "/images/products/lg-p7010ngaz-real-2.jpg",
       "/images/products/lg-p7010ngaz-real-3.jpg"
@@ -2577,9 +2589,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 13490,
     "mrpPrice": 18490,
-    "imageUrl": "/images/products/p7010-1.jpg",
+    "imageUrl": "/images/products/lg-p7510rgaz-authentic-front.jpg",
     "gallery": [
-      "/images/products/p7010-1.jpg",
+      "/images/products/lg-p7510rgaz-authentic-front.jpg",
       "/images/products/lg-p7510rgaz-real-3.jpg",
       "/images/products/lg-p7510rgaz-detail-1.jpg"
     ],
@@ -2610,8 +2622,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 13690,
     "mrpPrice": 18690,
-    "imageUrl": "/images/products/lg-8-5kg-5-star-semi-automatic-p8035sraza-real-2.jpg",
+    "imageUrl": "/images/products/lg-p7510rraz-real-1.jpg",
     "gallery": [
+      "/images/products/lg-p7510rraz-real-1.jpg",
+      "/images/products/lg-p8530sraz-authentic-front.jpg",
       "/images/products/lg-8-5kg-5-star-semi-automatic-p8035sraza-real-2.jpg",
       "/images/products/p7010-2.jpg",
       "/images/products/lg-p7510rraz-detail-1.jpg"
@@ -2643,8 +2657,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 15690,
     "mrpPrice": 21790,
-    "imageUrl": "/images/products/lg-p8015skaz-real-1.jpg",
+    "imageUrl": "/images/products/lg-p8015skaz-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-p8015skaz-authentic-front.jpg",
       "/images/products/lg-p8015skaz-real-1.jpg",
       "/images/products/lg-p8015skaz-real-2.jpg",
       "/images/products/lg-p8015skaz-real-3.jpg"
@@ -2676,11 +2691,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 16990,
     "mrpPrice": 20990,
-    "imageUrl": "/images/products/lg-p8035sraza-real-1.jpg",
+    "imageUrl": "/images/products/unique-p8035sraza-img2.jpg",
     "gallery": [
-      "/images/products/lg-p8035sraza-real-1.jpg",
-      "/images/products/lg-p8035sraza-real-2.jpg",
-      "/images/products/lg-p8035sraza-real-3.jpg"
+      "/images/products/unique-p8035sraza-img2.jpg",
+      "/images/products/unique-p8035sraza-img4.jpg",
+      "/images/products/unique-p8035sraza-img5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2709,8 +2724,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 15990,
     "mrpPrice": 21990,
-    "imageUrl": "/images/products/lg-p8530sraz-pure-front.jpg",
+    "imageUrl": "/images/products/lg-p8530sraz-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-p8530sraz-authentic-front.jpg",
       "/images/products/lg-p8530sraz-pure-front.jpg",
       "/images/products/lg-p8530sraz-real-2.jpg",
       "/images/products/lg-p8530sraz-detail-1.jpg"
@@ -2775,13 +2791,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 23990,
-    "imageUrl": "/images/products/p7010-3.jpg",
+    "imageUrl": "/images/products/lg-p955asgaz-authentic-front.jpg",
     "gallery": [
-      "/images/products/p7010-3.jpg",
+      "/images/products/lg-p955asgaz-authentic-front.jpg",
       "/images/products/lg-p9555skaz-real-1.jpg",
       "/images/products/lg-p955asgaz-real-2.jpg",
-      "/images/products/lg-p955asgaz-real-3.jpg",
-      "/images/products/lg-p955asgaz-real-1.jpg"
+      "/images/products/lg-p955asgaz-real-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2810,8 +2825,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 18490,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-p9555skaz-real-1.jpg",
+    "imageUrl": "/images/products/lg-p9555skaz-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-p9555skaz-authentic-front.jpg",
       "/images/products/lg-p9555skaz-real-1.jpg",
       "/images/products/lg-p9555skaz-real-2.jpg",
       "/images/products/lg-p9555skaz-real-3.jpg"
@@ -2843,8 +2859,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 18990,
     "mrpPrice": 25990,
-    "imageUrl": "/images/products/lg-p105asraz-real-1.jpg",
+    "imageUrl": "/images/products/lg-p105asraz-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-p105asraz-authentic-front.jpg",
       "/images/products/lg-p105asraz-real-1.jpg",
       "/images/products/lg-p105asraz-real-2.jpg",
       "/images/products/lg-p105asraz-real-3.jpg"
@@ -2876,10 +2893,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 16490,
     "mrpPrice": 22990,
-    "imageUrl": "/images/products/test-silver-ehvg.jpg",
+    "imageUrl": "/images/products/lg-px85003sk2z-real-2.jpg",
     "gallery": [
-      "/images/products/test-silver-ehvg.jpg",
       "/images/products/lg-px85003sk2z-real-2.jpg",
+      "/images/products/test-silver-ehvg.jpg",
       "/images/products/lg-px85003sk2z-detail-1.jpg"
     ],
     "isActive": true,
@@ -2909,14 +2926,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 16690,
     "mrpPrice": 23190,
-    "imageUrl": "/images/products/p7010-4.jpg",
+    "imageUrl": "/images/products/lg-px900h9so2z-real-2.jpg",
     "gallery": [
-      "/images/products/p7010-4.jpg",
       "/images/products/lg-px900h9so2z-real-2.jpg",
+      "/images/products/p7010-4.jpg",
       "/images/products/lg-px900h9so2z-real-1.jpg",
-      "/images/products/lg-px85003so2z-real-3.jpg",
-      "/images/products/lg-px85003so2z-real-1.jpg",
-      "/images/products/lg-px85003so2z-detail-1.jpg"
+      "/images/products/lg-px85003so2z-real-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2945,10 +2960,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17490,
     "mrpPrice": 23990,
-    "imageUrl": "/images/products/lg-px900h3sk2z-real-3.jpg",
+    "imageUrl": "/images/products/lg-px900h3sk2z-real-2.jpg",
     "gallery": [
-      "/images/products/lg-px900h3sk2z-real-3.jpg",
       "/images/products/lg-px900h3sk2z-real-2.jpg",
+      "/images/products/lg-px900h3sk2z-real-3.jpg",
       "/images/products/lg-px900h3sk2z-detail-1.jpg"
     ],
     "isActive": true,
@@ -2978,12 +2993,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17690,
     "mrpPrice": 24190,
-    "imageUrl": "/images/products/lg-px900h7sk4z-real-2.jpg",
+    "imageUrl": "/images/products/lg-px900hsd4z-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-px900hsd4z-authentic-front.jpg",
       "/images/products/lg-px900h7sk4z-real-2.jpg",
       "/images/products/lg-px900hsd4z-real-2.jpg",
-      "/images/products/lg-px900hsd4z-real-3.jpg",
-      "/images/products/lg-px900hsd4z-detail-1.jpg"
+      "/images/products/lg-px900hsd4z-real-3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3045,8 +3060,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 18490,
     "mrpPrice": 25490,
-    "imageUrl": "/images/products/lg-px900h7sk4z-real-3.jpg",
+    "imageUrl": "/images/products/lg-px900h7sk4z-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-px900h7sk4z-authentic-front.jpg",
       "/images/products/lg-px900h7sk4z-real-3.jpg",
       "/images/products/lg-px900h7sk4z-real-2.jpg",
       "/images/products/lg-px900h7sk4z-detail-1.jpg"
@@ -3078,12 +3094,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 18490,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-px900h9so2z-real-3.jpg",
+    "imageUrl": "/images/products/unique-px100b3sd2z-img6.jpg",
     "gallery": [
-      "/images/products/lg-px900h9so2z-real-3.jpg",
-      "/images/products/lg-px100b3sd2z-real-2.jpg",
-      "/images/products/lg-px100b3sd2z-real-1.jpg",
-      "/images/products/lg-px100b3sd2z-real-3.jpg"
+      "/images/products/unique-px100b3sd2z-img6.jpg",
+      "/images/products/unique-px100b3sd2z-img2.jpg",
+      "/images/products/unique-px100b3sd2z-img3.jpg",
+      "/images/products/unique-px100b3sd2z-img4.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3112,8 +3128,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 19990,
     "mrpPrice": 27990,
-    "imageUrl": "/images/products/lg-px110b3sd2z-real-1.jpg",
+    "imageUrl": "/images/products/lg-px110b3sd2z-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-px110b3sd2z-authentic-front.jpg",
       "/images/products/lg-px110b3sd2z-real-1.jpg",
       "/images/products/lg-px110b3sd2z-real-2.jpg",
       "/images/products/lg-px110b3sd2z-real-3.jpg"
@@ -3145,8 +3162,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 20990,
     "mrpPrice": 28990,
-    "imageUrl": "/images/products/lg-12kg-semi-clean-side.jpg",
+    "imageUrl": "/images/products/lg-px120a3so4z-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-px120a3so4z-authentic-front.jpg",
       "/images/products/lg-12kg-semi-clean-side.jpg",
       "/images/products/lg-px120a3so4z-detail-1.jpg",
       "/images/products/lg-px120a3so4z-detail-2.jpg"
@@ -3178,11 +3196,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 22990,
     "mrpPrice": 30990,
-    "imageUrl": "/images/products/lg-12kg-semi-clean-front.jpg",
+    "imageUrl": "/images/products/unique-px120a9so4z-img4.jpg",
     "gallery": [
-      "/images/products/lg-12kg-semi-clean-front.jpg",
-      "/images/products/lg-12kg-semi-clean-side.jpg",
-      "/images/products/lg-px120a9so4z-detail-1.jpg"
+      "/images/products/unique-px120a9so4z-img4.jpg",
+      "/images/products/unique-px120a9so4z-img6.jpg",
+      "/images/products/unique-px120a9so4z-img5.jpg",
+      "/images/products/unique-px120a9so4z-img3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3211,8 +3230,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 20990,
     "mrpPrice": 27990,
-    "imageUrl": "/images/products/lg-t80kmmb3z-real-1.jpg",
+    "imageUrl": "/images/products/lg-t80kmmb3z-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-t80kmmb3z-authentic-front.jpg",
       "/images/products/lg-t80kmmb3z-real-1.jpg",
       "/images/products/lg-t80kmmb3z-real-2.jpg",
       "/images/products/lg-t80kmmb3z-real-3.jpg"
@@ -3244,8 +3264,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 22990,
     "mrpPrice": 30990,
-    "imageUrl": "/images/products/test-t90-clean-prhh.jpg",
+    "imageUrl": "/images/products/lg-t90kmmb3z-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-t90kmmb3z-authentic-front.jpg",
       "/images/products/test-t90-clean-prhh.jpg",
       "/images/products/lg-t90kmmb3z-real-2.jpg",
       "/images/products/lg-t90kmmb3z-detail-1.jpg"
@@ -3277,8 +3298,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 32990,
     "mrpPrice": 43990,
-    "imageUrl": "/images/products/lg-tx310-clean-front.jpg",
+    "imageUrl": "/images/products/lg-tx310nwo-real-1.jpg",
     "gallery": [
+      "/images/products/lg-tx310nwo-real-1.jpg",
       "/images/products/lg-tx310-clean-front.jpg",
       "/images/products/tx310-1.jpg",
       "/images/products/tx310-2.jpg"
@@ -3310,8 +3332,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 35990,
     "mrpPrice": 47990,
-    "imageUrl": "/images/products/test-t80-real-hxyj.jpg",
+    "imageUrl": "/images/products/lg-tx311swo-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-tx311swo-authentic-front.jpg",
       "/images/products/test-t80-real-hxyj.jpg",
       "/images/products/lg-tx311swo-real-3.jpg",
       "/images/products/lg-tx311swo-detail-1.jpg"
@@ -3343,8 +3366,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 38990,
     "mrpPrice": 51990,
-    "imageUrl": "/images/products/lg-tx511swo-real-1.jpg",
+    "imageUrl": "/images/products/lg-tx511swo-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-tx511swo-authentic-front.jpg",
       "/images/products/lg-tx511swo-real-1.jpg",
       "/images/products/lg-tx511swo-real-2.jpg",
       "/images/products/lg-tx511swo-real-3.jpg"
@@ -3376,8 +3400,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 31490,
     "mrpPrice": 41990,
-    "imageUrl": "/images/products/lg-thd09nwm-real-1.jpg",
+    "imageUrl": "/images/products/lg-thd09nwm-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-thd09nwm-authentic-front.jpg",
       "/images/products/lg-thd09nwm-real-1.jpg",
       "/images/products/lg-thd09nwm-real-2.jpg",
       "/images/products/lg-thd09nwm-real-3.jpg"
@@ -3409,8 +3434,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 29490,
     "mrpPrice": 39990,
-    "imageUrl": "/images/products/lg-thd09-clean-front.jpg",
+    "imageUrl": "/images/products/lg-thd09npf-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-thd09npf-authentic-front.jpg",
       "/images/products/lg-thd09-clean-front.jpg",
       "/images/products/thd09-1.jpg",
       "/images/products/thd09-2.jpg"
@@ -3442,11 +3468,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 32490,
     "mrpPrice": 43490,
-    "imageUrl": "/images/products/lg-thd09swm-real-3.jpg",
+    "imageUrl": "/images/products/unique-thd09swm-img6.jpg",
     "gallery": [
-      "/images/products/lg-thd09swm-real-3.jpg",
-      "/images/products/lg-thd09swm-real-2.jpg",
-      "/images/products/lg-thd09swm-detail-1.jpg"
+      "/images/products/unique-thd09swm-img6.jpg",
+      "/images/products/unique-thd09swm-img3.jpg",
+      "/images/products/unique-thd09swm-img2.jpg",
+      "/images/products/unique-thd09swm-img4.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3508,8 +3535,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 35990,
     "mrpPrice": 47990,
-    "imageUrl": "/images/products/lg-fhb1207z2m-clean-front.jpg",
+    "imageUrl": "/images/products/lg-fhb1207z2m-real-1.jpg",
     "gallery": [
+      "/images/products/lg-fhb1207z2m-real-1.jpg",
       "/images/products/lg-fhb1207z2m-clean-front.jpg",
       "/images/products/lg-fhb1207z2m-clean-angle.jpg",
       "/images/products/lg-fhb1207z2m-clean-console.jpg"
@@ -3541,11 +3569,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 39990,
     "mrpPrice": 52990,
-    "imageUrl": "/images/products/lg-fhb1208z2m-front.jpg",
+    "imageUrl": "/images/products/lg-fhb1208z2m-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-fhb1208z2m-front.jpg",
-      "/images/products/lg-fhb1208z2m-angle.jpg",
-      "/images/products/lg-fhb1208z2m-console.jpg"
+      "/images/products/lg-fhb1208z2m-authentic-front.jpg",
+      "/images/products/unique-fhb1208z2m-img2.jpg",
+      "/images/products/unique-fhb1208z2m-img3.jpg",
+      "/images/products/unique-fhb1208z2m-img4.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3574,11 +3603,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 41990,
     "mrpPrice": 55990,
-    "imageUrl": "/images/products/lg-fhb1208z4p-verified-3.jpg",
+    "imageUrl": "/images/products/lg-fhb1208z4p-real-1.jpg",
     "gallery": [
-      "/images/products/lg-fhb1208z4p-verified-3.jpg",
-      "/images/products/lg-fhb1208z4p-verified-1.jpg",
-      "/images/products/lg-fhb1208z4p-real-1.jpg"
+      "/images/products/lg-fhb1208z4p-real-1.jpg",
+      "/images/products/lg-fhb1209z2m-authentic-front.jpg",
+      "/images/products/lg-fhb1208z2m-authentic-front.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3607,11 +3636,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 41990,
     "mrpPrice": 55990,
-    "imageUrl": "/images/products/lg-fhb1209-clean-front.jpg",
+    "imageUrl": "/images/products/lg-fhb1209z2m-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-fhb1209-clean-front.jpg",
-      "/images/products/lg-fhb1209-clean-angle.jpg",
-      "/images/products/lg-fhb1209-clean-side.jpg"
+      "/images/products/lg-fhb1209z2m-authentic-front.jpg",
+      "/images/products/unique-fhb1209z2m-img2.jpg",
+      "/images/products/unique-fhb1209z2m-img3.jpg",
+      "/images/products/unique-fhb1209z2m-img5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3640,12 +3670,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 44990,
     "mrpPrice": 59990,
-    "imageUrl": "/images/products/lg-fhb1209-clean-front.jpg",
+    "imageUrl": "/images/products/lg-fhb1209z9b0-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-fhb1209z9b0-authentic-front.jpg",
       "/images/products/lg-fhb1209-clean-front.jpg",
       "/images/products/lg-fhb1209z9b0-verified-1.jpg",
-      "/images/products/lg-fhb1209z9b0-verified-2.jpg",
-      "/images/products/lg-fhb1209z9b0-verified-3.jpg"
+      "/images/products/lg-fhb1209z9b0-verified-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3674,11 +3704,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 53990,
     "mrpPrice": 71990,
-    "imageUrl": "/images/products/lg-fhp1412z9b-verified-1.jpg",
+    "imageUrl": "/images/products/lg-fhp1412z9b-verified-2.jpg",
     "gallery": [
-      "/images/products/lg-fhp1412z9b-verified-1.jpg",
+      "/images/products/lg-fhp1412z9b-verified-2.jpg",
       "/images/products/lg-fhp1412z9b-verified-3.jpg",
-      "/images/products/lg-fhp1412z9b-verified-2.jpg"
+      "/images/products/lg-fhp1412z9b-verified-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3707,8 +3737,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 8990,
     "mrpPrice": 10990,
-    "imageUrl": "/images/products/lg-solo-1.jpg",
+    "imageUrl": "/images/products/lg-mh2043db-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-mh2043db-authentic-front.jpg",
       "/images/products/lg-solo-1.jpg",
       "/images/products/lg-mw-mh2043db-real-1.jpg",
       "/images/products/lg-mw-mh2043db-real-3.jpg"
@@ -3740,11 +3771,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 9990,
     "mrpPrice": 12490,
-    "imageUrl": "/images/products/lg-solo-2.jpg",
+    "imageUrl": "/images/products/lg-mw-mh2044db-real-3.jpg",
     "gallery": [
+      "/images/products/lg-mw-mh2044db-real-3.jpg",
       "/images/products/lg-solo-2.jpg",
-      "/images/products/lg-mh2044db-real-1.jpg",
-      "/images/products/lg-mw-mh2044db-real-3.jpg"
+      "/images/products/lg-mh2044db-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3773,8 +3804,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 14490,
     "mrpPrice": 18990,
-    "imageUrl": "/images/products/lg-mw-mc2146bg-real-1.jpg",
+    "imageUrl": "/images/products/lg-mc2146bg-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-mc2146bg-authentic-front.jpg",
       "/images/products/lg-mw-mc2146bg-real-1.jpg",
       "/images/products/lg-mc2146bg-real-1.jpg",
       "/images/products/lg-mw-mc2146bg-real-3.jpg"
@@ -3806,8 +3838,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 16490,
     "mrpPrice": 21990,
-    "imageUrl": "/images/products/lg-mc2846bg-real-1.jpg",
+    "imageUrl": "/images/products/lg-mc2846bg-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-mc2846bg-authentic-front.jpg",
       "/images/products/lg-mc2846bg-real-1.jpg",
       "/images/products/lg-mw-mc2846bg-real-2.jpg",
       "/images/products/lg-mw-mc2846bg-real-1.jpg"
@@ -3839,8 +3872,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 23990,
-    "imageUrl": "/images/products/lg-mw-mc2886brum-real-1.jpg",
+    "imageUrl": "/images/products/lg-mc2886brum-authentic-front.jpg",
     "gallery": [
+      "/images/products/lg-mc2886brum-authentic-front.jpg",
       "/images/products/lg-mw-mc2886brum-real-1.jpg",
       "/images/products/lg-mw-mc2886brum-real-2.jpg",
       "/images/products/lg-mw-mc2886brum-real-3.jpg"
@@ -3872,11 +3906,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 23990,
-    "imageUrl": "/images/products/lg-mc2887bfum-real-2.jpg",
+    "imageUrl": "/images/products/unique-mc2887bfum-img6.jpg",
     "gallery": [
-      "/images/products/lg-mc2887bfum-real-2.jpg",
-      "/images/products/lg-mw-mc2887bfum-real-1.jpg",
-      "/images/products/lg-mc2887bfum-real-1.jpg"
+      "/images/products/unique-mc2887bfum-img6.jpg",
+      "/images/products/unique-mc2887bfum-img2.jpg",
+      "/images/products/unique-mc2887bfum-img3.jpg",
+      "/images/products/unique-mc2887bfum-img5.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3938,11 +3973,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 18490,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-mw-mc3286blu-real-1.jpg",
+    "imageUrl": "/images/products/lg-mw-mc3286blu-real-3.jpg",
     "gallery": [
+      "/images/products/lg-mw-mc3286blu-real-3.jpg",
       "/images/products/lg-mw-mc3286blu-real-1.jpg",
-      "/images/products/lg-mw-mc3286blu-real-2.jpg",
-      "/images/products/lg-mw-mc3286blu-real-3.jpg"
+      "/images/products/lg-mw-mc3286blu-real-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3971,11 +4006,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 19990,
     "mrpPrice": 26990,
-    "imageUrl": "/images/products/lg-mw-mj2887bwum-real-1.jpg",
+    "imageUrl": "/images/products/unique-mj2887bwum-img1.jpg",
     "gallery": [
-      "/images/products/lg-mw-mj2887bwum-real-1.jpg",
-      "/images/products/lg-mj2887bwum-detail-1.jpg",
-      "/images/products/lg-mj2887bwum-detail-2.jpg"
+      "/images/products/unique-mj2887bwum-img1.jpg",
+      "/images/products/unique-mj2887bwum-img2.jpg",
+      "/images/products/unique-mj2887bwum-img3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -4004,10 +4039,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 18990,
     "mrpPrice": 25490,
-    "imageUrl": "/images/products/lg-mj2887bium-real-1.jpg",
+    "imageUrl": "/images/products/lg-mw-mj2887bium-real-2.jpg",
     "gallery": [
-      "/images/products/lg-mj2887bium-real-1.jpg",
       "/images/products/lg-mw-mj2887bium-real-2.jpg",
+      "/images/products/lg-mj2887bium-real-1.jpg",
       "/images/products/lg-mj2887bium-detail-1.jpg"
     ],
     "isActive": true,
@@ -4037,12 +4072,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 21490,
     "mrpPrice": 28990,
-    "imageUrl": "/images/products/lg-mw-mjen286ufw-real-2.jpg",
+    "imageUrl": "/images/products/lg-mjen286ufw-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-mw-mjen286ufw-real-2.jpg",
-      "/images/products/lg-mw-mjen286ufw-real-1.jpg",
+      "/images/products/lg-mjen286ufw-authentic-front.jpg",
       "/images/products/lg-mjen286ufw-real-2.jpg",
-      "/images/products/lg-mjen286ufw-real-3.jpg"
+      "/images/products/lg-mw-mjen286ufw-real-1.jpg",
+      "/images/products/lg-mjen286ufw-detail-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -4104,11 +4139,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 21290,
     "mrpPrice": 28490,
-    "imageUrl": "/images/products/lg-mw-mjen286uhw-real-1.jpg",
+    "imageUrl": "/images/products/lg-mjen286uhw-authentic-front.jpg",
     "gallery": [
-      "/images/products/lg-mw-mjen286uhw-real-1.jpg",
-      "/images/products/lg-mjen286uhw-detail-1.jpg",
-      "/images/products/lg-mjen286uhw-real-3.jpg"
+      "/images/products/lg-mjen286uhw-authentic-front.jpg",
+      "/images/products/unique-mjen286uhw-img2.jpg",
+      "/images/products/unique-mjen286uhw-img3.jpg",
+      "/images/products/unique-mjen286uhw-img4.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -4137,11 +4173,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     },
     "ourPrice": 20990,
     "mrpPrice": 27990,
-    "imageUrl": "/images/products/lg-mw-mjen286uiw-real-1.jpg",
+    "imageUrl": "/images/products/unique-mjen286uiw-img1.jpg",
     "gallery": [
-      "/images/products/lg-mw-mjen286uiw-real-1.jpg",
-      "/images/products/lg-mjen286uiw-real-2.jpg",
-      "/images/products/lg-mjen286uiw-real-3.jpg"
+      "/images/products/unique-mjen286uiw-img1.jpg",
+      "/images/products/unique-mjen286uiw-img3.jpg",
+      "/images/products/unique-mjen286uiw-img4.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -4185,5 +4221,3 @@ export const INITIAL_PRODUCTS: Product[] = [
     "updatedAt": "2026-11-19T14:30:00.000Z"
   }
 ];
-
-export const initialProducts = INITIAL_PRODUCTS;
