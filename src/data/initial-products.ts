@@ -161,12 +161,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 13490,
     "mrpPrice": 19990,
-    "imageUrl": "/images/products/haier-9kg-semi-automatic-htw90-196bbk-clean-front.jpg",
+    "imageUrl": "/images/products/haier-9kg-semi-automatic.jpg",
     "gallery": [
-      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-clean-front.jpg",
-      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-verified-1.jpg",
-      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-verified-2.jpg",
-      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-verified-3.jpg"
+      "/images/products/haier-9kg-semi-automatic.jpg",
+      "/images/products/haier-9kg-semi-automatic-htw90-196bbk-clean-side.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -785,12 +783,11 @@ export const initialProducts: Product[] = [
     },
     "mrpPrice": 37990,
     "ourPrice": 25490,
-    "imageUrl": "/images/products/samsung-253l-3-star-inverter-rt28c3053s8-real-1.jpg",
+    "imageUrl": "/images/products/samsung-253l-fridge.jpg",
     "gallery": [
-      "/images/products/samsung-253l-3-star-inverter-rt28c3053s8-real-1.jpg",
-      "/images/products/samsung-253l-3-star-inverter-rt28c3053s8-real-2.jpg",
-      "/images/products/samsung-253l-3-star-inverter-rt28c3053s8-real-3.jpg",
-      "/images/products/samsung-253l-3-star-inverter-rt28c3053s8-detail-1.jpg"
+      "/images/products/samsung-253l-fridge.jpg",
+      "/images/products/samsung-253l-fridge-detail-1.jpg",
+      "/images/products/samsung-253l-fridge-detail-2.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
