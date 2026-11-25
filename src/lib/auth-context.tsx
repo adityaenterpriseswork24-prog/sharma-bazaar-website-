@@ -29,13 +29,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<UserAccount | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Helper to set cookie
+  // Helper to set cookie (Session cookie - discarded when browser closes)
   const setSessionCookie = (account: UserAccount | null) => {
     if (typeof document === 'undefined') return;
     if (account) {
       document.cookie = `sharma_admin_session=${encodeURIComponent(
         JSON.stringify(account)
-      )}; path=/; max-age=604800; SameSite=Lax`;
+      )}; path=/; SameSite=Lax`;
     } else {
       document.cookie = 'sharma_admin_session=; path=/; max-age=0; SameSite=Lax';
     }
@@ -43,15 +43,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem('sharma_admin_session');
+      // Purge any legacy permanent localStorage session to prevent automatic login on website visit
+      localStorage.removeItem('sharma_admin_session');
+
+      // Only maintain session for the current active browser tab via sessionStorage
+      const stored = sessionStorage.getItem('sharma_admin_session');
       if (stored) {
         const parsed = JSON.parse(stored);
         setUser(parsed);
         setSessionCookie(parsed);
+      } else {
+        setUser(null);
+        setSessionCookie(null);
       }
     } catch {
-      localStorage.removeItem('sharma_admin_session');
+      sessionStorage.removeItem('sharma_admin_session');
       setSessionCookie(null);
+      setUser(null);
     }
     setLoading(false);
   }, []);
@@ -74,7 +82,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (response.ok && data.success && data.user) {
         setUser(data.user);
-        localStorage.setItem('sharma_admin_session', JSON.stringify(data.user));
+        sessionStorage.setItem('sharma_admin_session', JSON.stringify(data.user));
         setSessionCookie(data.user);
         setLoading(false);
         return true;
@@ -104,6 +112,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     }
     setUser(null);
+    sessionStorage.removeItem('sharma_admin_session');
     localStorage.removeItem('sharma_admin_session');
     setSessionCookie(null);
   };

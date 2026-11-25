@@ -258,27 +258,13 @@ export interface AuthorizedAccount {
   passwordHash: string; // Plaintext or hash verified on server
 }
 
-// Authoritative Showroom Accounts
+// Authoritative Showroom Single Administrator Account
 export const AUTHORIZED_ACCOUNTS: AuthorizedAccount[] = [
   {
     email: 'adityaenterprises.work24@gmail.com',
-    name: 'Aditya Enterprises (Showroom Owner)',
+    name: 'Aditya Enterprises (Showroom Admin)',
     role: 'admin',
     isSuperAdmin: true,
     passwordHash: 'Sharma@2026',
-  },
-  {
-    email: 'manager@sharmabazaar.com',
-    name: 'Vasant Kunj Showroom Manager',
-    role: 'shop_manager',
-    isSuperAdmin: false,
-    passwordHash: 'Manager@2026',
-  },
-  {
-    email: 'inventory@sharmabazaar.com',
-    name: 'Electronics Procurement Lead',
-    role: 'shop_manager',
-    isSuperAdmin: false,
-    passwordHash: 'Inventory@2026',
   },
 ];

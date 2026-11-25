@@ -33,56 +33,55 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { email, password, role } = body;
+    const { email, password } = body;
 
-    if (!email || !password) {
+    if (!password || !String(password).trim()) {
       return NextResponse.json(
-        { error: 'Email and password are required.' },
+        { error: 'Administrator password is required.' },
         { status: 400 }
       );
     }
 
-    const normalizedEmail = String(email).trim().toLowerCase();
     const trimmedPassword = String(password).trim();
+    const normalizedEmail = email ? String(email).trim().toLowerCase() : 'adityaenterprises.work24@gmail.com';
 
-    // 2. Find matching authorized account
-    const matchedAccount = AUTHORIZED_ACCOUNTS.find(
-      (acc: AuthorizedAccount) => acc.email.toLowerCase() === normalizedEmail
-    );
+    // 2. Verify single authorized admin account
+    const singleAdmin = AUTHORIZED_ACCOUNTS[0]; // adityaenterprises.work24@gmail.com
 
-    if (!matchedAccount) {
+    if (
+      normalizedEmail &&
+      normalizedEmail !== singleAdmin.email.toLowerCase() &&
+      normalizedEmail !== 'admin' &&
+      normalizedEmail !== 'admin@sharmabazaar.com'
+    ) {
       return NextResponse.json(
         {
-          error:
-            'Access denied. This email is not registered in the showroom staff directory.',
-          code: 'ACCOUNT_NOT_FOUND',
+          error: 'Access denied: Only the primary showroom administrator is authorized to access this portal.',
+          code: 'UNAUTHORIZED_ACCOUNT',
         },
         { status: 401 }
       );
     }
 
-    // 3. Verify password (support exact match or case-insensitive for showroom owner)
-    const isPasswordValid =
-      trimmedPassword === matchedAccount.passwordHash ||
-      trimmedPassword.toLowerCase() === matchedAccount.passwordHash.toLowerCase() ||
-      (matchedAccount.isSuperAdmin && trimmedPassword.toLowerCase() === 'sharma@2026');
+    // 3. Verify exact administrator password
+    const isPasswordValid = trimmedPassword === singleAdmin.passwordHash;
 
     if (!isPasswordValid) {
       return NextResponse.json(
         {
-          error: 'Incorrect password. Default showroom administrator password is Sharma@2026.',
+          error: 'Incorrect administrator password. Access denied.',
           code: 'INVALID_CREDENTIALS',
         },
         { status: 401 }
       );
     }
 
-    // 4. Build authenticated user profile
+    // 4. Build authenticated admin profile
     const authenticatedUser: UserAccount = {
-      uid: `staff-${Date.now()}`,
-      email: matchedAccount.email,
-      name: matchedAccount.name,
-      role: matchedAccount.role,
+      uid: 'admin-owner',
+      email: singleAdmin.email,
+      name: singleAdmin.name,
+      role: 'admin',
       isEmailVerified: true,
       createdAt: new Date().toISOString(),
     };
@@ -91,17 +90,16 @@ export async function POST(request: NextRequest) {
       {
         success: true,
         user: authenticatedUser,
-        message: `Welcome back, ${matchedAccount.name}`,
+        message: 'Administrator authentication successful.',
       },
       { status: 200 }
     );
 
-    // 5. Set secure session cookie (HttpOnly, SameSite=Lax)
+    // 5. Set session cookie (cleared when browser session ends)
     const sessionCookieValue = encodeURIComponent(JSON.stringify(authenticatedUser));
     response.cookies.set('sharma_admin_session', sessionCookieValue, {
       path: '/',
-      maxAge: 7 * 24 * 60 * 60, // 7 days
-      httpOnly: false, // Accessible to client-side auth context
+      httpOnly: false,
       sameSite: 'lax',
       secure: process.env.NODE_ENV === 'production',
     });

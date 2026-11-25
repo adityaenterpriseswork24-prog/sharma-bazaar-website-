@@ -106,7 +106,7 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
       // Include auth headers
       const headers: Record<string, string> = {};
       try {
-        const stored = localStorage.getItem('sharma_admin_session');
+        const stored = sessionStorage.getItem('sharma_admin_session') || localStorage.getItem('sharma_admin_session');
         if (stored) headers['Authorization'] = `Bearer ${encodeURIComponent(stored)}`;
       } catch {}
 
@@ -297,7 +297,7 @@ export function ProductForm({ initialProduct, isEdit = false }: ProductFormProps
       // 2. Prepare auth headers
       const headers: Record<string, string> = { 'Content-Type': 'application/json' };
       try {
-        const storedSession = localStorage.getItem('sharma_admin_session');
+        const storedSession = sessionStorage.getItem('sharma_admin_session') || localStorage.getItem('sharma_admin_session');
         if (storedSession) {
           headers['Authorization'] = `Bearer ${encodeURIComponent(storedSession)}`;
         }

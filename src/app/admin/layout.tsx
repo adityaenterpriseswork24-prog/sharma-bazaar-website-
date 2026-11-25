@@ -49,7 +49,6 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
     { label: 'Dashboard Overview', href: '/admin', icon: LayoutDashboard },
     { label: 'Product Inventory', href: '/admin/products', icon: Package },
     { label: 'Add New Product', href: '/admin/products/new', icon: PlusCircle },
-    { label: 'Staff & Roles', href: '/admin/employees', icon: Users, adminOnly: true },
     { label: 'Showroom Settings', href: '/admin/settings', icon: Settings },
   ];
 
@@ -87,21 +86,14 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
               <p className="font-bold text-white text-[11px] truncate">{user.name}</p>
               <p className="text-[10px] text-neutral-400 truncate">{user.email}</p>
             </div>
-            <span
-              className={`text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-bold ${
-                user.role === 'admin'
-                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                  : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
-              }`}
-            >
-              {user.role === 'admin' ? 'Admin' : 'Shop Mgr'}
+            <span className="text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+              Admin
             </span>
           </div>
 
           {/* Navigation Links */}
           <nav className="px-3 space-y-1 font-mono text-xs">
             {navItems.map((item) => {
-              if (item.adminOnly && !isAdmin) return null;
               const isActive = pathname === item.href;
               const Icon = item.icon;
               return (
@@ -118,11 +110,6 @@ function AdminNavigation({ children }: { children: React.ReactNode }) {
                     <Icon className="w-3.5 h-3.5" />
                     <span>{item.label}</span>
                   </div>
-                  {item.adminOnly && (
-                    <span className="text-[9px] text-neutral-500 uppercase">
-                      Admin
-                    </span>
-                  )}
                 </Link>
               );
             })}

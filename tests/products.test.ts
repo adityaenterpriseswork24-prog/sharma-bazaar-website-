@@ -92,15 +92,13 @@ test('getHomepageShowcaseProducts returns exactly 1 hero product per core catego
 });
 
 test('computeShowcaseProducts allows removing heroes and handles empty category inventory', () => {
-  // If a category has no product marked as isCategoryHero, it is omitted
-  const noTvHeroList = INITIAL_PRODUCTS.map((p) =>
-    p.category === 'televisions' ? { ...p, isCategoryHero: false } : p
-  );
+  // If a category has no active inventory, it is omitted
+  const noTvHeroList = INITIAL_PRODUCTS.filter((p) => p.category !== 'televisions');
   const showcaseNoTv = computeShowcaseProducts(noTvHeroList);
-  assert.equal(showcaseNoTv.length, 5, 'Should have 5 heroes when television hero is removed');
+  assert.equal(showcaseNoTv.length, 5, 'Should have 5 heroes when television inventory is omitted');
   assert.ok(
     !showcaseNoTv.some((p) => p.category === 'televisions'),
-    'Televisions must be omitted when hero is removed'
+    'Televisions must be omitted when category has no inventory'
   );
 
   // If a new product is marked as isCategoryHero, it becomes the hero

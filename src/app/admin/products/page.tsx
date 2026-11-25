@@ -32,7 +32,7 @@ export default function AdminProductsPage() {
   const getAuthHeaders = (): Record<string, string> => {
     const headers: Record<string, string> = { 'Content-Type': 'application/json' };
     try {
-      const stored = localStorage.getItem('sharma_admin_session');
+      const stored = sessionStorage.getItem('sharma_admin_session') || localStorage.getItem('sharma_admin_session');
       if (stored) {
         headers['Authorization'] = `Bearer ${encodeURIComponent(stored)}`;
       }
