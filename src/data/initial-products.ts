@@ -1,3 +1,4 @@
+// Auto-generated initial product catalog (165 products)
 import { Product } from '@/types';
 
 export const initialProducts: Product[] = [
@@ -22,11 +23,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 12990,
     "mrpPrice": 18900,
-    "imageUrl": "/images/products/samsung-32-inch-hd-ready-smart-tv-32h4600-real-3.jpg",
+    "imageUrl": "/images/products/samsung-32-inch-h4600-tv-clean-studio.jpg",
     "gallery": [
-      "/images/products/samsung-32-inch-hd-ready-smart-tv-32h4600-real-3.jpg",
-      "/images/products/samsung-32-inch-hd-ready-smart-tv-32h4600-real-1.jpg",
-      "/images/products/samsung-32-inch-h4600-tv-detail-1.jpg"
+      "/images/products/samsung-32-inch-h4600-tv-clean-studio.jpg",
+      "/images/products/samsung-32-inch-h4600-tv-clean-side.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -57,11 +57,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 17490,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-3.jpg",
+    "imageUrl": "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-clean-studio.jpg",
     "gallery": [
-      "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-3.jpg",
-      "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-1.jpg",
-      "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-real-2.jpg"
+      "/images/products/lg-32-inch-full-hd-smart-tv-32lb651cpla-clean-studio.jpg",
+      "/images/products/lg-32-inch-fhd-tv.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -92,11 +91,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 13990,
     "mrpPrice": 19900,
-    "imageUrl": "/images/products/samsung-32-inch-hd-ready-smart-tv-ua32h4680fuxxl-real-1.jpg",
+    "imageUrl": "/images/products/samsung-32-inch-hd-ready-smart-tv-clean-studio.jpg",
     "gallery": [
-      "/images/products/samsung-32-inch-hd-ready-smart-tv-ua32h4680fuxxl-real-1.jpg",
-      "/images/products/samsung-32-inch-hd-ready-smart-tv-ua32h4680fuxxl-real-2.jpg",
-      "/images/products/samsung-32-inch-h4600-tv-detail-1.jpg"
+      "/images/products/samsung-32-inch-hd-ready-smart-tv-clean-studio.jpg",
+      "/images/products/samsung-32-inch-h4600-tv-clean-side.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -128,11 +126,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 26990,
     "mrpPrice": 37900,
-    "imageUrl": "/images/products/samsung-43-inch-full-hd-smart-tv-ua43f5600fuxxl-real-1.jpg",
+    "imageUrl": "/images/products/samsung-43-inch-full-hd-smart-tv-clean-studio.jpg",
     "gallery": [
-      "/images/products/samsung-43-inch-full-hd-smart-tv-ua43f5600fuxxl-real-1.jpg",
-      "/images/products/samsung-43-inch-full-hd-smart-tv-ua43f5600fuxxl-real-2.jpg",
-      "/images/products/samsung-43-inch-full-hd-smart-tv-ua43f5600fuxxl-real-3.jpg"
+      "/images/products/samsung-43-inch-full-hd-smart-tv-clean-studio.jpg",
+      "/images/products/samsung-43-inch-fhd-tv-detail-1.jpg"
     ],
     "isActive": true,
     "isFeatured": true,
@@ -1079,12 +1076,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 15490,
     "mrpPrice": 18990,
-    "imageUrl": "/images/products/lg-gld1816worr-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-gld1816worr-real-3.jpg",
     "gallery": [
-      "/images/products/lg-gld1816worr-authentic-front.jpg",
+      "/images/products/lg-gld1816worr-real-3.jpg",
       "/images/products/lg-gld1816worr-real-1.jpg",
-      "/images/products/lg-gld1816worr-real-2.jpg",
-      "/images/products/lg-gld1816worr-verified-3.jpg"
+      "/images/products/lg-gld1816worr-real-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1311,12 +1307,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 19990,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-gld1956zael-real-3.jpg",
+    "imageUrl": "/images/products/lg-gld1956zael-clean-front.jpg",
     "gallery": [
-      "/images/products/lg-gld1956zael-real-3.jpg",
-      "/images/products/unique-gld1956zael-img3.jpg",
-      "/images/products/unique-gld1956zael-img4.jpg",
-      "/images/products/unique-gld1956zael-img5.jpg"
+      "/images/products/lg-gld1956zael-clean-front.jpg",
+      "/images/products/lg-gld1956zael-clean-v2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1381,8 +1375,7 @@ export const initialProducts: Product[] = [
     "imageUrl": "/images/products/lg-gld2136yhba-aster_1.jpg",
     "gallery": [
       "/images/products/lg-gld2136yhba-aster_1.jpg",
-      "/images/products/lg-gld2136yhba-real-2.jpg",
-      "/images/products/lg-gld2136yhba-real-1.jpg"
+      "/images/products/lg-gld2136yhba-real-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1411,11 +1404,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 19490,
     "mrpPrice": 24490,
-    "imageUrl": "/images/products/lg-gld2136yael-clean-front.jpg",
+    "imageUrl": "/images/products/lg-gld2136yael-lily_1.jpg",
     "gallery": [
-      "/images/products/lg-gld2136yael-clean-front.jpg",
-      "/images/products/lg-gld2136yael-real-2.jpg",
-      "/images/products/lg-gld2136yael-real-1.jpg"
+      "/images/products/lg-gld2136yael-lily_1.jpg",
+      "/images/products/lg-gld2136yael-lily_0.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1647,12 +1639,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 25990,
     "mrpPrice": 32490,
-    "imageUrl": "/images/products/unique-gld2736ybes-img6.jpg",
+    "imageUrl": "/images/products/lg-gld2736ybes-real-3.jpg",
     "gallery": [
-      "/images/products/unique-gld2736ybes-img6.jpg",
-      "/images/products/unique-gld2736ybes-img3.jpg",
-      "/images/products/unique-gld2736ybes-img4.jpg",
-      "/images/products/unique-gld2736ybes-img1.jpg"
+      "/images/products/lg-gld2736ybes-real-3.jpg",
+      "/images/products/unique-gld2736ybes-img1.jpg",
+      "/images/products/unique-gld2736ybes-img2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -1714,11 +1705,9 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 25490,
     "mrpPrice": 31990,
-    "imageUrl": "/images/products/unique-gld2736ybes-img1.jpg",
+    "imageUrl": "/images/products/lg-gld2736ybpz-real-2.jpg",
     "gallery": [
-      "/images/products/unique-gld2736ybes-img1.jpg",
-      "/images/products/lg-gld2736ybpz-detail-1.jpg",
-      "/images/products/lg-gld2736ybpz-real-1.jpg",
+      "/images/products/lg-gld2736ybpz-real-2.jpg",
       "/images/products/lg-gld2736ybpz-real-3.jpg"
     ],
     "isActive": true,
@@ -1748,11 +1737,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 25990,
     "mrpPrice": 33990,
-    "imageUrl": "/images/products/unique-glt2216wyds-img3.jpg",
+    "imageUrl": "/images/products/lg-glt2216wyds-clean-front.jpg",
     "gallery": [
-      "/images/products/unique-glt2216wyds-img3.jpg",
-      "/images/products/unique-glt2216wyds-img4.jpg",
-      "/images/products/unique-glt2216wyds-img6.jpg"
+      "/images/products/lg-glt2216wyds-clean-front.jpg",
+      "/images/products/lg-glt2216wyds-clean-v2.jpg",
+      "/images/products/lg-glt2216wyds-detail-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2346,11 +2335,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 54990,
     "mrpPrice": 72990,
-    "imageUrl": "/images/products/unique-glt4026snpz-img6.jpg",
+    "imageUrl": "/images/products/lg-glt4026snpz-clean-front.jpg",
     "gallery": [
-      "/images/products/unique-glt4026snpz-img6.jpg",
-      "/images/products/unique-glt4026snpz-img5.jpg",
-      "/images/products/unique-glt4026snpz-img3.jpg"
+      "/images/products/lg-glt4026snpz-clean-front.jpg",
+      "/images/products/lg-glt4026snpz-clean-v2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2462,7 +2450,7 @@ export const initialProducts: Product[] = [
   },
   {
     "id": "lg-glt6816odpz",
-    "name": "LG 630 L Side-by-Side Smart Inverter French Door Refrigerator (Onyx Dazzle)",
+    "name": "LG 674 L Frost Free Double Door Refrigerator (Shiny Steel)",
     "slug": "lg-glt6816odpz",
     "brand": "LG",
     "modelNumber": "GLT6816ODPZ",
@@ -2480,11 +2468,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 76990,
     "mrpPrice": 104990,
-    "imageUrl": "/images/products/lg-glt6816odpz-verified-2.jpg",
+    "imageUrl": "/images/products/lg-glt6816odpz-verified-1.jpg",
     "gallery": [
-      "/images/products/lg-glt6816odpz-verified-2.jpg",
       "/images/products/lg-glt6816odpz-verified-1.jpg",
-      "/images/products/lg-glt6816odpz-verified-3.jpg"
+      "/images/products/lg-glt6816odpz-verified-3.jpg",
+      "/images/products/lg-glt6816odpz-verified-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -2679,9 +2667,9 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 16990,
     "mrpPrice": 20990,
-    "imageUrl": "/images/products/unique-p8035sraza-img2.jpg",
+    "imageUrl": "/images/products/unique-p8035sraza-img1.jpg",
     "gallery": [
-      "/images/products/unique-p8035sraza-img2.jpg",
+      "/images/products/unique-p8035sraza-img1.jpg",
       "/images/products/unique-p8035sraza-img4.jpg",
       "/images/products/unique-p8035sraza-img5.jpg"
     ],
@@ -2712,10 +2700,8 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 15990,
     "mrpPrice": 21990,
-    "imageUrl": "/images/products/lg-p8530sraz-pure-front.jpg",
+    "imageUrl": "/images/products/lg-p8530sraz-real-2.jpg",
     "gallery": [
-      "/images/products/lg-p8530sraz-pure-front.jpg",
-      "/images/products/lg-p8530sraz-pure-front.jpg",
       "/images/products/lg-p8530sraz-real-2.jpg",
       "/images/products/lg-p8530sraz-detail-1.jpg"
     ],
@@ -2779,12 +2765,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 23990,
-    "imageUrl": "/images/products/lg-p955asgaz-real-3.jpg",
+    "imageUrl": "/images/products/lg-p955asgaz-real-2.jpg",
     "gallery": [
-      "/images/products/lg-p955asgaz-real-3.jpg",
-      "/images/products/lg-p9555skaz-real-1.jpg",
       "/images/products/lg-p955asgaz-real-2.jpg",
-      "/images/products/lg-p955asgaz-real-3.jpg"
+      "/images/products/lg-p9555skaz-real-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3079,12 +3063,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 18490,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/unique-px100b3sd2z-img6.jpg",
+    "imageUrl": "/images/products/unique-px100b3sd2z-img1.jpg",
     "gallery": [
-      "/images/products/unique-px100b3sd2z-img6.jpg",
+      "/images/products/unique-px100b3sd2z-img1.jpg",
       "/images/products/unique-px100b3sd2z-img2.jpg",
-      "/images/products/unique-px100b3sd2z-img3.jpg",
-      "/images/products/unique-px100b3sd2z-img4.jpg"
+      "/images/products/unique-px100b3sd2z-img3.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3147,12 +3130,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 20990,
     "mrpPrice": 28990,
-    "imageUrl": "/images/products/lg-px120a3so4z-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-px110b3sd2z-real-3.jpg",
     "gallery": [
-      "/images/products/lg-px120a3so4z-authentic-front.jpg",
+      "/images/products/lg-px110b3sd2z-real-3.jpg",
       "/images/products/lg-12kg-semi-clean-side.jpg",
-      "/images/products/lg-px120a3so4z-detail-1.jpg",
-      "/images/products/lg-px120a3so4z-detail-2.jpg"
+      "/images/products/lg-px120a3so4z-detail-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3181,12 +3163,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 22990,
     "mrpPrice": 30990,
-    "imageUrl": "/images/products/unique-px120a9so4z-img4.jpg",
+    "imageUrl": "/images/products/lg-px120a3so4z-authentic-front.jpg",
     "gallery": [
-      "/images/products/unique-px120a9so4z-img4.jpg",
-      "/images/products/unique-px120a9so4z-img6.jpg",
-      "/images/products/unique-px120a9so4z-img5.jpg",
-      "/images/products/unique-px120a9so4z-img3.jpg"
+      "/images/products/lg-px120a3so4z-authentic-front.jpg",
+      "/images/products/lg-px120a9so4z-detail-1.jpg",
+      "/images/products/lg-px120a9so4z-detail-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3745,9 +3726,9 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 9990,
     "mrpPrice": 12490,
-    "imageUrl": "/images/products/lg-mw-mh2044db-real-3.jpg",
+    "imageUrl": "/images/products/lg-mw-mh2044db-real-1.jpg",
     "gallery": [
-      "/images/products/lg-mw-mh2044db-real-3.jpg",
+      "/images/products/lg-mw-mh2044db-real-1.jpg",
       "/images/products/lg-solo-2.jpg",
       "/images/products/lg-mh2044db-real-1.jpg"
     ],
@@ -3846,10 +3827,9 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 23990,
-    "imageUrl": "/images/products/lg-mc2886brum-authentic-front.jpg",
+    "imageUrl": "/images/products/lg-mc2886brum-real-1.jpg",
     "gallery": [
-      "/images/products/lg-mc2886brum-authentic-front.jpg",
-      "/images/products/lg-mw-mc2886brum-real-1.jpg",
+      "/images/products/lg-mc2886brum-real-1.jpg",
       "/images/products/lg-mw-mc2886brum-real-2.jpg",
       "/images/products/lg-mw-mc2886brum-real-3.jpg"
     ],
@@ -3880,12 +3860,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 17990,
     "mrpPrice": 23990,
-    "imageUrl": "/images/products/unique-mc2887bfum-img6.jpg",
+    "imageUrl": "/images/products/lg-mw-mc2887bfum-real-1.jpg",
     "gallery": [
-      "/images/products/unique-mc2887bfum-img6.jpg",
-      "/images/products/unique-mc2887bfum-img2.jpg",
-      "/images/products/unique-mc2887bfum-img3.jpg",
-      "/images/products/unique-mc2887bfum-img5.jpg"
+      "/images/products/lg-mw-mc2887bfum-real-1.jpg",
+      "/images/products/lg-mc2887bfum-detail-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -3929,7 +3907,7 @@ export const initialProducts: Product[] = [
   },
   {
     "id": "lg-mc3286blu",
-    "name": "LG 32 L Convection Microwave Oven with Indian Roti Basket (Floral Blue)",
+    "name": "LG 32 L Convection Microwave Oven with Indian Roti Basket (Black)",
     "slug": "lg-mc3286blu",
     "brand": "LG",
     "modelNumber": "MC3286BLU",
@@ -3947,9 +3925,8 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 18490,
     "mrpPrice": 24990,
-    "imageUrl": "/images/products/lg-mw-mc3286blu-real-3.jpg",
+    "imageUrl": "/images/products/lg-mw-mc3286blu-real-1.jpg",
     "gallery": [
-      "/images/products/lg-mw-mc3286blu-real-3.jpg",
       "/images/products/lg-mw-mc3286blu-real-1.jpg",
       "/images/products/lg-mw-mc3286blu-real-2.jpg"
     ],
@@ -4113,12 +4090,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 21290,
     "mrpPrice": 28490,
-    "imageUrl": "/images/products/unique-mjen286uhw-img2.jpg",
+    "imageUrl": "/images/products/lg-mjen286uhw-authentic-front.jpg",
     "gallery": [
-      "/images/products/unique-mjen286uhw-img2.jpg",
-      "/images/products/unique-mjen286uhw-img2.jpg",
-      "/images/products/unique-mjen286uhw-img3.jpg",
-      "/images/products/unique-mjen286uhw-img4.jpg"
+      "/images/products/lg-mjen286uhw-authentic-front.jpg",
+      "/images/products/lg-mjen286uhw-real-1.jpg",
+      "/images/products/lg-mjen286uhw-detail-1.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -4147,11 +4123,10 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 20990,
     "mrpPrice": 27990,
-    "imageUrl": "/images/products/unique-mjen286uiw-img4.jpg",
+    "imageUrl": "/images/products/lg-mw-mjen286uiw-real-1.jpg",
     "gallery": [
-      "/images/products/unique-mjen286uiw-img4.jpg",
-      "/images/products/unique-mjen286uiw-img3.jpg",
-      "/images/products/unique-mjen286uiw-img4.jpg"
+      "/images/products/lg-mw-mjen286uiw-real-1.jpg",
+      "/images/products/lg-mjen286uiw-real-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -4180,12 +4155,11 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 20490,
     "mrpPrice": 27490,
-    "imageUrl": "/images/products/lg-mw-mjen286vi-real-2.jpg",
+    "imageUrl": "/images/products/lg-mjen286vi-real-2.jpg",
     "gallery": [
-      "/images/products/lg-mw-mjen286vi-real-2.jpg",
       "/images/products/lg-mjen286vi-real-2.jpg",
-      "/images/products/lg-mw-mjen286vi-real-1.jpg",
-      "/images/products/lg-mjen286vi-detail-1.jpg"
+      "/images/products/lg-mjen286vi-detail-1.jpg",
+      "/images/products/lg-mjen286vi-detail-2.jpg"
     ],
     "isActive": true,
     "isFeatured": false,
@@ -5325,9 +5299,9 @@ export const initialProducts: Product[] = [
     },
     "ourPrice": 16490,
     "mrpPrice": 21990,
-    "imageUrl": "/images/products/lg-px85003so2z-real-2.jpg",
+    "imageUrl": "/images/products/lg-px85003so2z-real-3.jpg",
     "gallery": [
-      "/images/products/lg-px85003so2z-real-2.jpg",
+      "/images/products/lg-px85003so2z-real-3.jpg",
       "/images/products/lg-8-5kg-5-star-semi-automatic-washing-machine-p8525sgaz-detail-1.jpg",
       "/images/products/lg-8-5kg-5-star-semi-automatic-washing-machine-p8525sgaz-detail-2.jpg"
     ],
